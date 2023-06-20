@@ -1,4 +1,4 @@
-from .models import AcademicSession, AcademicTerm
+from .models import AcademicSession, AcademicSemester
 
 
 class SiteWideConfigs:
@@ -7,10 +7,10 @@ class SiteWideConfigs:
 
     def __call__(self, request):
         current_session = AcademicSession.objects.get(current=True)
-        current_term = AcademicTerm.objects.get(current=True)
+        current_semester = AcademicSemester.objects.get(current=True)
 
         request.current_session = current_session
-        request.current_term = current_term
+        request.current_semester = current_semester
 
         response = self.get_response(request)
 

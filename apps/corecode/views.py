@@ -9,18 +9,18 @@ from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from .forms import (
     AcademicSessionForm,
-    AcademicTermForm,
+    AcademicSemesterForm,
     CurrentSessionForm,
     SiteConfigForm,
-    StudentClassForm,
-    SubjectForm,
+    StudentCohortForm,
+    CourseForm,
 )
 from .models import (
     AcademicSession,
-    AcademicTerm,
+    AcademicSemester,
     SiteConfig,
-    StudentClass,
-    Subject,
+    StudentCohort,
+    Course,
 )
 
 
@@ -81,12 +81,12 @@ class SessionUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     def form_valid(self, form):
         obj = self.object
         if obj.current == False:
-            terms = (
+            semesters = (
                 AcademicSession.objects.filter(current=True)
                 .exclude(name=obj.name)
                 .exists()
             )
-            if not terms:
+            if not semesters:
                 messages.warning(self.request, "You must set a session to current.")
                 return redirect("session-list")
         return super().form_valid(form)
@@ -107,139 +107,139 @@ class SessionDeleteView(LoginRequiredMixin, DeleteView):
         return super(SessionDeleteView, self).delete(request, *args, **kwargs)
 
 
-class TermListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
-    model = AcademicTerm
-    template_name = "corecode/term_list.html"
+class SemesterListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
+    model = AcademicSemester
+    template_name = "corecode/semester_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = AcademicTermForm()
+        context["form"] = AcademicSemesterForm()
         return context
 
 
-class TermCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = AcademicTerm
-    form_class = AcademicTermForm
+class SemesterCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = AcademicSemester
+    form_class = AcademicSemesterForm
     template_name = "corecode/mgt_form.html"
-    success_url = reverse_lazy("terms")
-    success_message = "New term successfully added"
+    success_url = reverse_lazy("semesters")
+    success_message = "New semester successfully added"
 
 
-class TermUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = AcademicTerm
-    form_class = AcademicTermForm
-    success_url = reverse_lazy("terms")
-    success_message = "Term successfully updated."
+class SemesterUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = AcademicSemester
+    form_class = AcademicSemesterForm
+    success_url = reverse_lazy("semesters")
+    success_message = "Semester successfully updated."
     template_name = "corecode/mgt_form.html"
 
     def form_valid(self, form):
         obj = self.object
         if obj.current == False:
-            terms = (
-                AcademicTerm.objects.filter(current=True)
+            semesters = (
+                AcademicSemester.objects.filter(current=True)
                 .exclude(name=obj.name)
                 .exists()
             )
-            if not terms:
-                messages.warning(self.request, "You must set a term to current.")
-                return redirect("term")
+            if not semesters:
+                messages.warning(self.request, "You must set a semester to current.")
+                return redirect("semester")
         return super().form_valid(form)
 
 
-class TermDeleteView(LoginRequiredMixin, DeleteView):
-    model = AcademicTerm
-    success_url = reverse_lazy("terms")
+class SemesterDeleteView(LoginRequiredMixin, DeleteView):
+    model = AcademicSemester
+    success_url = reverse_lazy("semesters")
     template_name = "corecode/core_confirm_delete.html"
-    success_message = "The term {} has been deleted with all its attached content"
+    success_message = "The semester {} has been deleted with all its attached content"
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
         if obj.current == True:
-            messages.warning(request, "Cannot delete term as it is set to current")
-            return redirect("terms")
+            messages.warning(request, "Cannot delete semester as it is set to current")
+            return redirect("semesters")
         messages.success(self.request, self.success_message.format(obj.name))
-        return super(TermDeleteView, self).delete(request, *args, **kwargs)
+        return super(SemesterDeleteView, self).delete(request, *args, **kwargs)
 
 
-class ClassListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
-    model = StudentClass
-    template_name = "corecode/class_list.html"
+class CohortListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
+    model = StudentCohort
+    template_name = "corecode/cohort_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = StudentClassForm()
+        context["form"] = StudentCohortForm()
         return context
 
 
-class ClassCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = StudentClass
-    form_class = StudentClassForm
+class CohortCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = StudentCohort
+    form_class = StudentCohortForm
     template_name = "corecode/mgt_form.html"
-    success_url = reverse_lazy("classes")
-    success_message = "New class successfully added"
+    success_url = reverse_lazy("cohorts")
+    success_message = "New cohort successfully added"
 
 
-class ClassUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = StudentClass
+class CohortUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = StudentCohort
     fields = ["name"]
-    success_url = reverse_lazy("classes")
-    success_message = "class successfully updated."
+    success_url = reverse_lazy("cohorts")
+    success_message = "cohort successfully updated."
     template_name = "corecode/mgt_form.html"
 
 
-class ClassDeleteView(LoginRequiredMixin, DeleteView):
-    model = StudentClass
-    success_url = reverse_lazy("classes")
+class CohortDeleteView(LoginRequiredMixin, DeleteView):
+    model = StudentCohort
+    success_url = reverse_lazy("cohorts")
     template_name = "corecode/core_confirm_delete.html"
-    success_message = "The class {} has been deleted with all its attached content"
+    success_message = "The cohort {} has been deleted with all its attached content"
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
         print(obj.name)
         messages.success(self.request, self.success_message.format(obj.name))
-        return super(ClassDeleteView, self).delete(request, *args, **kwargs)
+        return super(CohortDeleteView, self).delete(request, *args, **kwargs)
 
 
-class SubjectListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
-    model = Subject
-    template_name = "corecode/subject_list.html"
+class CourseListView(LoginRequiredMixin, SuccessMessageMixin, ListView):
+    model = Course
+    template_name = "corecode/course_list.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["form"] = SubjectForm()
+        context["form"] = CourseForm()
         return context
 
 
-class SubjectCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = Subject
-    form_class = SubjectForm
+class CourseCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Course
+    form_class = CourseForm
     template_name = "corecode/mgt_form.html"
-    success_url = reverse_lazy("subjects")
-    success_message = "New subject successfully added"
+    success_url = reverse_lazy("courses")
+    success_message = "New Course successfully added"
 
 
-class SubjectUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = Subject
+class CourseUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Course
     fields = ["name"]
-    success_url = reverse_lazy("subjects")
-    success_message = "Subject successfully updated."
+    success_url = reverse_lazy("courses")
+    success_message = "Course successfully updated."
     template_name = "corecode/mgt_form.html"
 
 
-class SubjectDeleteView(LoginRequiredMixin, DeleteView):
-    model = Subject
-    success_url = reverse_lazy("subjects")
+class CourseDeleteView(LoginRequiredMixin, DeleteView):
+    model = Course
+    success_url = reverse_lazy("courses")
     template_name = "corecode/core_confirm_delete.html"
-    success_message = "The subject {} has been deleted with all its attached content"
+    success_message = "The Course {} has been deleted with all its attached content"
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
         messages.success(self.request, self.success_message.format(obj.name))
-        return super(SubjectDeleteView, self).delete(request, *args, **kwargs)
+        return super(CourseDeleteView, self).delete(request, *args, **kwargs)
 
 
-class CurrentSessionAndTermView(LoginRequiredMixin, View):
-    """Current SEssion and Term"""
+class CurrentSessionAndSemesterView(LoginRequiredMixin, View):
+    """Current SEssion and Semester"""
 
     form_class = CurrentSessionForm
     template_name = "corecode/current_session.html"
@@ -248,7 +248,7 @@ class CurrentSessionAndTermView(LoginRequiredMixin, View):
         form = self.form_class(
             initial={
                 "current_session": AcademicSession.objects.get(current=True),
-                "current_term": AcademicTerm.objects.get(current=True),
+                "current_semester": AcademicSemester.objects.get(current=True),
             }
         )
         return render(request, self.template_name, {"form": form})
@@ -258,14 +258,14 @@ class CurrentSessionAndTermView(LoginRequiredMixin, View):
             request.POST,
             initial={
                 "current_session": AcademicSession.objects.get(current=True),
-                "current_term": AcademicTerm.objects.get(current=True),
+                "current_semester": AcademicSemester.objects.get(current=True),
             }
         )
         if form.is_valid():
             session = form.cleaned_data["current_session"]
-            term = form.cleaned_data["current_term"]
+            semester = form.cleaned_data["current_semestegr"]
             AcademicSession.objects.filter(name=session).update(current=True)
             AcademicSession.objects.exclude(name=session).update(current=False)
-            AcademicTerm.objects.filter(name=term).update(current=True)
+            AcademicSemester.objects.filter(name=semester).update(current=True)
 
         return render(request, self.template_name, {"form": form})

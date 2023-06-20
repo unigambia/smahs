@@ -3,14 +3,14 @@
 
 
 {% block title %}
-Academic Term
+Academic semester
 {% endblock title %}
 
 
 {% block breadcrumb %}
   <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
     <i class="fa fa-plus"></i>
-    Add new term
+    Add new semester
   </a>
 {% endblock breadcrumb %}
   
@@ -29,9 +29,9 @@ Academic Term
                   Current <i class="fa fa-check"></i>
                 {% endif %}
               </td>
-              <td><a href="{% url 'term-update' object.id %}"><i
+              <td><a href="{% url 'semester-update' object.id %}"><i
                     class="fa fa-edit"></i></a> <a
-                  href="{% url 'term-delete' object.id %}"><i
+                  href="{% url 'semester-delete' object.id %}"><i
                     class="fa fa-trash-alt"></i></a></td>
             </tr>
             {% endfor %}
@@ -45,9 +45,9 @@ Academic Term
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form action="{% url 'term-create' %}" method="POST">
+        <form action="{% url 'semesters-create' %}" method="POST">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add new term</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add new semester</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

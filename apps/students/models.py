@@ -3,7 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 
-from apps.corecode.models import StudentClass
+from apps.corecode.models import StudentCohort
 
 
 class Student(models.Model):
@@ -21,7 +21,7 @@ class Student(models.Model):
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default="male")
     date_of_birth = models.DateField(default=timezone.now)
     current_class = models.ForeignKey(
-        StudentClass, on_delete=models.SET_NULL, blank=True, null=True
+        StudentCohort, on_delete=models.SET_NULL, blank=True, null=True
     )
     date_of_admission = models.DateField(default=timezone.now)
 

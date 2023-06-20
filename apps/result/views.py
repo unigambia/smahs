@@ -19,29 +19,29 @@ def create_result(request):
         if "finish" in request.POST:
             form = CreateResults(request.POST)
             if form.is_valid():
-                subjects = form.cleaned_data["subjects"]
+                courses = form.cleaned_data["courses"]
                 session = form.cleaned_data["session"]
-                term = form.cleaned_data["term"]
+                semester = form.cleaned_data["semester"]
                 students = request.POST["students"]
                 results = []
                 for student in students.split(","):
                     stu = Student.objects.get(pk=student)
                     if stu.current_class:
-                        for subject in subjects:
+                        for course in courses:
                             check = Result.objects.filter(
                                 session=session,
-                                term=term,
-                                current_class=stu.current_class,
-                                subject=subject,
+                                semester=semester,
+                                current_cohort=stu.current_cohort,
+                                course=course,
                                 student=stu,
                             ).first()
                             if not check:
                                 results.append(
                                     Result(
                                         session=session,
-                                        term=term,
+                                        semester=semester,
                                         current_class=stu.current_class,
-                                        subject=subject,
+                                        course=course,
                                         student=stu,
                                     )
                                 )
@@ -55,7 +55,7 @@ def create_result(request):
             form = CreateResults(
                 initial={
                     "session": request.current_session,
-                    "term": request.current_term,
+                    "semester": request.current_semester,
                 }
             )
             studentlist = ",".join(id_list)
@@ -95,16 +95,16 @@ class ResultListView(LoginRequiredMixin, View):
         for result in results:
             test_total = 0
             exam_total = 0
-            subjects = []
-            for subject in results:
-                if subject.student == result.student:
-                    subjects.append(subject)
-                    test_total += subject.test_score
-                    exam_total += subject.exam_score
+            courses = []
+            for course in results:
+                if course.student == result.student:
+                    course.append(course)
+                    test_total += course.test_score
+                    exam_total += course.exam_score
 
             bulk[result.student.id] = {
                 "student": result.student,
-                "subjects": subjects,
+                "courses": course,
                 "test_total": test_total,
                 "exam_total": exam_total,
                 "total_total": test_total + exam_total,

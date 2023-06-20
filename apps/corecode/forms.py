@@ -3,10 +3,10 @@ from django.forms import ModelForm, modelformset_factory
 
 from .models import (
     AcademicSession,
-    AcademicTerm,
+    AcademicSemester,
     SiteConfig,
-    StudentClass,
-    Subject,
+    StudentCohort,
+    Course,
 )
 
 SiteConfigForm = modelformset_factory(
@@ -27,27 +27,27 @@ class AcademicSessionForm(ModelForm):
         fields = ["name", "current"]
 
 
-class AcademicTermForm(ModelForm):
-    prefix = "Academic Term"
+class AcademicSemesterForm(ModelForm):
+    prefix = "Academic Semester"
 
     class Meta:
-        model = AcademicTerm
+        model = AcademicSemester
         fields = ["name", "current"]
 
 
-class SubjectForm(ModelForm):
-    prefix = "Subject"
+class CourseForm(ModelForm):
+    prefix = "Course"
 
     class Meta:
-        model = Subject
+        model = Course
         fields = ["name"]
 
 
-class StudentClassForm(ModelForm):
-    prefix = "Class"
+class StudentCohortForm(ModelForm):
+    prefix = "Cohort"
 
     class Meta:
-        model = StudentClass
+        model = StudentCohort
         fields = ["name"]
 
 
@@ -56,7 +56,7 @@ class CurrentSessionForm(forms.Form):
         queryset=AcademicSession.objects.all(),
         help_text='Click <a href="/session/create/?next=current-session/">here</a> to add new session',
     )
-    current_term = forms.ModelChoiceField(
-        queryset=AcademicTerm.objects.all(),
-        help_text='Click <a href="/term/create/?next=current-session/">here</a> to add new term',
+    current_semester = forms.ModelChoiceField(
+        queryset=AcademicSemester.objects.all(),
+        help_text='Click <a href="/semester/create/?next=current-session/">here</a> to add new semester',
     )

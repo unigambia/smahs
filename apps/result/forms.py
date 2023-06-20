@@ -1,16 +1,16 @@
 from django import forms
 from django.forms import modelformset_factory
 
-from apps.corecode.models import AcademicSession, AcademicTerm, Subject
+from apps.corecode.models import AcademicSession, AcademicSemester, Course
 
 from .models import Result
 
 
 class CreateResults(forms.Form):
     session = forms.ModelChoiceField(queryset=AcademicSession.objects.all())
-    term = forms.ModelChoiceField(queryset=AcademicTerm.objects.all())
-    subjects = forms.ModelMultipleChoiceField(
-        queryset=Subject.objects.all(), widget=forms.CheckboxSelectMultiple
+    semester = forms.ModelChoiceField(queryset=AcademicSemester.objects.all())
+    courses = forms.ModelMultipleChoiceField(
+        queryset=Course.objects.all(), widget=forms.CheckboxSelectMultiple
     )
 
 

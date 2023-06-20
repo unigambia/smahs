@@ -5,7 +5,7 @@ from io import StringIO
 from django.db.models.signals import post_delete, post_save
 from django.dispatch import receiver
 
-from apps.corecode.models import StudentClass
+from apps.corecode.models import StudentCohort
 
 from .models import Student, StudentBulkUpload
 
@@ -37,14 +37,14 @@ def create_bulk_student(sender, created, instance, *args, **kwargs):
                     else ""
                 )
                 address = row["address"] if "address" in row and row["address"] else ""
-                current_class = (
-                    row["current_class"]
-                    if "current_class" in row and row["current_class"]
+                current_cohort = (
+                    row["current_cohort"]
+                    if "current_cohort" in row and row["current_cohort"]
                     else ""
                 )
-                if current_class:
-                    theclass, kind = StudentClass.objects.get_or_create(
-                        name=current_class
+                if current_cohort:
+                    thecohort, kind = StudentCohort.objects.get_or_create(
+                        name=current_cohort
                     )
 
                 check = Student.objects.filter(registration_number=reg).exists()
@@ -56,7 +56,7 @@ def create_bulk_student(sender, created, instance, *args, **kwargs):
                             firstname=firstname,
                             other_name=other_names,
                             gender=gender,
-                            current_class=theclass,
+                            current_cohort=thecohort,
                             parent_mobile_number=phone,
                             address=address,
                             current_status="active",

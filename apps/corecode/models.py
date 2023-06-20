@@ -26,8 +26,8 @@ class AcademicSession(models.Model):
         return self.name
 
 
-class AcademicTerm(models.Model):
-    """Academic Term"""
+class AcademicSemester(models.Model):
+    """Academic Semester"""
 
     name = models.CharField(max_length=20, unique=True)
     current = models.BooleanField(default=True)
@@ -39,8 +39,8 @@ class AcademicTerm(models.Model):
         return self.name
 
 
-class Subject(models.Model):
-    """Subject"""
+class Course(models.Model):
+    """Course"""
 
     name = models.CharField(max_length=200, unique=True)
 
@@ -51,12 +51,12 @@ class Subject(models.Model):
         return self.name
 
 
-class StudentClass(models.Model):
+class StudentCohort(models.Model):
     name = models.CharField(max_length=200, unique=True)
 
     class Meta:
-        verbose_name = "Class"
-        verbose_name_plural = "Classes"
+        verbose_name = "Cohort"
+        verbose_name_plural = "Cohorts"
         ordering = ["name"]
 
     def __str__(self):

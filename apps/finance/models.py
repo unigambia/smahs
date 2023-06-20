@@ -2,16 +2,16 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 
-from apps.corecode.models import AcademicSession, AcademicTerm, StudentClass
+from apps.corecode.models import AcademicSession, AcademicSemester, StudentCohort
 from apps.students.models import Student
 
 
 class Invoice(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
-    term = models.ForeignKey(AcademicTerm, on_delete=models.CASCADE)
-    class_for = models.ForeignKey(StudentClass, on_delete=models.CASCADE)
-    balance_from_previous_term = models.IntegerField(default=0)
+    semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
+    class_for = models.ForeignKey(StudentCohort, on_delete=models.CASCADE)
+    balance_from_previous_semester = models.IntegerField(default=0)
     status = models.CharField(
         max_length=20,
         choices=[("active", "Active"), ("closed", "Closed")],
@@ -19,7 +19,7 @@ class Invoice(models.Model):
     )
 
     class Meta:
-        ordering = ["student", "term"]
+        ordering = ["student", "semester"]
 
     def __str__(self):
         return f"{self.student}"
@@ -37,7 +37,7 @@ class Invoice(models.Model):
         return total
 
     def total_amount_payable(self):
-        return self.balance_from_previous_term + self.amount_payable()
+        return self.balance_from_previous_semester + self.amount_payable()
 
     def total_amount_paid(self):
         receipts = Receipt.objects.filter(invoice=self)
