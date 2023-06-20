@@ -165,3 +165,32 @@ INFO 2023-06-19 12:48:22,462 /home/lanlokun/Desktop/portal/school_app/settings.p
 INFO 2023-06-19 12:48:22,634 Watching for file changes with StatReloader
 INFO 2023-06-19 12:48:35,817 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
 INFO 2023-06-19 12:48:35,988 Watching for file changes with StatReloader
+INFO 2023-06-20 11:46:41,172 Watching for file changes with StatReloader
+INFO 2023-06-20 11:46:48,018 "GET / HTTP/1.1" 302 0
+INFO 2023-06-20 11:46:48,476 "GET /accounts/login/?next=/ HTTP/1.1" 200 3981
+INFO 2023-06-20 11:46:48,567 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,569 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,569 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,570 "GET /static/dist/css/login-page.css HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,571 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-06-20 11:46:48,594 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,596 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,596 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,596 "GET /static/dist/js/adminlte.js HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,597 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-06-20 11:46:48,597 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-06-20 11:46:48,600 "GET /static/dist/js/demo.js HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:48,600 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-06-20 11:46:48,619 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-06-20 11:46:50,345 Not Found: /favicon.ico
+WARNING 2023-06-20 11:46:50,346 "GET /favicon.ico HTTP/1.1" 404 6202
+INFO 2023-06-20 11:46:58,870 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-06-20 11:46:59,855 "GET / HTTP/1.1" 200 9290
+INFO 2023-06-20 11:46:59,928 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 304 0
+INFO 2023-06-20 11:46:59,934 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-06-20 11:47:00,071 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2023-06-20 11:47:05,486 "GET /student/list HTTP/1.1" 200 9946
+INFO 2023-06-20 11:47:09,472 "GET /student/create/ HTTP/1.1" 200 13612
+INFO 2023-06-20 11:47:26,906 "POST /student/create/ HTTP/1.1" 302 0
+INFO 2023-06-20 11:47:27,996 "GET /student/1/ HTTP/1.1" 200 11330
+INFO 2023-06-20 11:47:28,586 "GET /media/students/passports/flag-uk.png HTTP/1.1" 200 5154
