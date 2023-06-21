@@ -27,7 +27,7 @@
       <tr>
         <th><input type="checkbox" id="selecter"></th>
         <th>Name</th>
-        <th>Current Class</th>
+        <th>Current Cohort</th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@
         <tr>
           <td><input type="checkbox" id="{{ student.id }}" name="students" value="{{ student.id}}"></td>
           <td>{{student}} </td>
-          <td>{{student.current_class}}</td>
+          <td>{{student.current_cohort}}</td>
         </tr>
       {% endfor %}
     </tbody>

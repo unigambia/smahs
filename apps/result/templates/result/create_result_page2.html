@@ -1,15 +1,11 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
-
 {% block title %}
   Select all the subjects you want to create
 {% endblock title %}
 
-
 {% block content %}
-
-
   <p>You selected <b>{{ count }} students</b> from the previous page.</p>
 
   <form method="POST">
@@ -24,14 +20,19 @@
     </div>
 
     <div class="form-group row">
-      {{ form.term.errors }}
-      <label class="col-2" for="{{ form.term.id_for_label }}">{{ form.term.label_tag}}</label>
-      <div class="col">{{ form.term | add_class:"form-control" }}</div>
+      {{ form.semester.errors }}
+      <label class="col-2" for="{{ form.semester.id_for_label }}">{{ form.semester.label_tag}}</label>
+      <div class="col">{{ form.semester | add_class:"form-control" }}</div>
     </div>
+
     <div class="form-group row">
       {{ form.subjects.errors }}
-      <label class="col-2" for="{{ form.subjects.id_for_label }}">{{ form.subjects.label_tag}}</label>
-      <div class="col">{{ form.subjects | add_class:"form-check-input" }}</div>
+      <label class="col-2" for="{{ form.courses.id_for_label }}">{{ form.courses.label_tag}}</label>
+      <div class="col">
+        <div class="form-check">
+          {{ form.courses | add_class:"form-check-input" }}
+        </div>
+      </div>
     </div>
 
     <input type="hidden" name="finish" value="True">
@@ -39,5 +40,4 @@
 
     <input type="submit" class="btn btn-success" value="Create">
   </form>
-
 {% endblock content %}

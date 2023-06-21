@@ -8,7 +8,7 @@ from apps.corecode.models import (
 )
 from apps.students.models import Student
 
-from .utils import score_grade
+from .utils import score_grade, grade_point
 
 
 # Create your models here.
@@ -32,3 +32,6 @@ class Result(models.Model):
 
     def grade(self):
         return score_grade(self.total_score())
+    
+    def gpa(self):
+        return grade_point(self.grade())

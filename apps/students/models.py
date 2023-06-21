@@ -20,7 +20,7 @@ class Student(models.Model):
     other_name = models.CharField(max_length=200, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default="male")
     date_of_birth = models.DateField(default=timezone.now)
-    current_class = models.ForeignKey(
+    current_cohort = models.ForeignKey(
         StudentCohort, on_delete=models.SET_NULL, blank=True, null=True
     )
     date_of_admission = models.DateField(default=timezone.now)

@@ -14,7 +14,6 @@ from .models import Result
 def create_result(request):
     students = Student.objects.all()
     if request.method == "POST":
-
         # after visiting the second page
         if "finish" in request.POST:
             form = CreateResults(request.POST)
@@ -22,11 +21,11 @@ def create_result(request):
                 courses = form.cleaned_data["courses"]
                 session = form.cleaned_data["session"]
                 semester = form.cleaned_data["semester"]
-                students = request.POST["students"]
+                selected_students = request.POST.getlist("students")  # Get the selected students from checkboxes
                 results = []
-                for student in students.split(","):
-                    stu = Student.objects.get(pk=student)
-                    if stu.current_class:
+                for student_id in selected_students:
+                    stu = Student.objects.get(pk=student_id)
+                    if stu.current_cohort:
                         for course in courses:
                             check = Result.objects.filter(
                                 session=session,
@@ -40,12 +39,11 @@ def create_result(request):
                                     Result(
                                         session=session,
                                         semester=semester,
-                                        current_class=stu.current_class,
+                                        current_cohort=stu.current_cohort,
                                         course=course,
                                         student=stu,
                                     )
                                 )
-
                 Result.objects.bulk_create(results)
                 return redirect("edit-results")
 
@@ -65,7 +63,7 @@ def create_result(request):
                 {"students": studentlist, "form": form, "count": len(id_list)},
             )
         else:
-            messages.warning(request, "You didnt select any student.")
+            messages.warning(request, "You didn't select any student.")
     return render(request, "result/create_result.html", {"students": students})
 
 
@@ -79,7 +77,7 @@ def edit_results(request):
             return redirect("edit-results")
     else:
         results = Result.objects.filter(
-            session=request.current_session, term=request.current_term
+            session=request.current_session, semester=request.current_semester
         )
         form = EditResults(queryset=results)
     return render(request, "result/edit_results.html", {"formset": form})
@@ -88,27 +86,33 @@ def edit_results(request):
 class ResultListView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         results = Result.objects.filter(
-            session=request.current_session, term=request.current_term
+            session=request.current_session, semester=request.current_semester
         )
         bulk = {}
 
         for result in results:
             test_total = 0
             exam_total = 0
+            total = test_total + exam_total
+            gpa = 0
             courses = []
             for course in results:
                 if course.student == result.student:
-                    course.append(course)
+                    courses.append(course)
                     test_total += course.test_score
                     exam_total += course.exam_score
+                    gpa += course.gpa() / len(courses)
+                
 
             bulk[result.student.id] = {
                 "student": result.student,
-                "courses": course,
+                "courses": courses,
                 "test_total": test_total,
                 "exam_total": exam_total,
                 "total_total": test_total + exam_total,
+                "gpa": gpa,
             }
 
         context = {"results": bulk}
+       
         return render(request, "result/all_results.html", context)

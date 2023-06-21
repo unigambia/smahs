@@ -16,8 +16,8 @@
         <tr>
           <th>S/N</th>
           <th>Fullname</th>
-          <th>Registration Number</th>
-          <th>Current Class</th>
+          <th>Mat Number</th>
+          <th>Current Cohort</th>
           <th>Gender</th>
           <th>Mobile Phone Number</th>
           <th>Status</th>
@@ -30,7 +30,7 @@
             <td>{{ forloop.counter}}</td>
             <td>{{ student.surname}} {{student.firstname }} {{student.other_name }}</td>
             <td>{{ student.registration_number}}</td>
-            <td>{{ student.current_class}}</td>
+            <td>{{ student.current_cohort}}</td>
             <td>{{ student.get_gender_display}}</td>
             <td>{{ student.parent_mobile_number}}</td>
             <td>{{ student.get_current_status_display}}</td>

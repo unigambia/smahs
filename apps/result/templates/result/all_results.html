@@ -12,7 +12,7 @@
           <thead class="thead-light">
             <tr>
               <th></th>
-              <th>Subject</th>
+              <th>Course</th>
               <th>Test Score</th>
               <th>Exam Score</th>
               <th>Total Score</th>
@@ -20,26 +20,31 @@
             </tr>
           </thead>
           <tbody>
-            {% for subject in result.subjects %}
+            {% for course in result.courses %}
               <tr>
                 <td>{{ forloop.counter }}</td>
-                <td>{{ subject.subject }}</td>
-                <td>{{ subject.test_score }}</td>
-                <td>{{ subject.exam_score }}</td>
-                <td>{{ subject.total_score }}</td>
-                <td>{{ subject.grade }}</td>
+                <td>{{ course.course }}</td>
+                <td>{{ course.test_score }}</td>
+                <td>{{ course.exam_score }}</td>
+                <td>{{ course.total_score }}</td>
+                <td>{{ course.grade }}</td>
               </tr>
             {% endfor %}
           </tbody>
           <tfoot>
             <tr>
               <td colspan="2"></td>
-              <td>{{ result.test_total }}</td>
-              <td>{{ result.exam_total }}</td>
-              <td>{{ result.total_total }}</td>
               <td></td>
-            </tr>
+              <td></td>
+              <td></td>
+              <td style="font-weight: bold; color: {% if result.gpa >= 3.5 %}green{% else %}red{% endif %};">
+                GPA: {{ result.gpa }}
+            </td>
+            
+              </td>
+                          </tr>
           </tfoot>
+          
         </table>
 
 
