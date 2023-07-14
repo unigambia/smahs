@@ -3,20 +3,27 @@ from django.db import models
 from django.urls import reverse
 from django.utils import timezone
 
+import pycountry
+
 
 class Staff(models.Model):
+
     STATUS = [("active", "Active"), ("inactive", "Inactive")]
 
     GENDER = [("male", "Male"), ("female", "Female")]
+    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, null=True)
 
+    ROLE = [ ("admin", "Admin"), ("academic", "Academic")]
     current_status = models.CharField(max_length=10, choices=STATUS, default="active")
     surname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
     other_name = models.CharField(max_length=200, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER, default="male")
     date_of_birth = models.DateField(default=timezone.now)
-    date_of_admission = models.DateField(default=timezone.now)
-
+    date_of_employment = models.DateField(default=timezone.now)
+    role = models.CharField(max_length=10, choices=ROLE, default="academic")
+    country = models.CharField( max_length=200, choices=[(country.name, country.name) for country in pycountry.countries], default="Gambia")
+    image = models.ImageField(upload_to="staffs/images/", blank=True)
     mobile_num_regex = RegexValidator(
         regex="^[0-9]{10,15}$", message="Entered mobile number isn't in a right format!"
     )
@@ -32,3 +39,5 @@ class Staff(models.Model):
 
     def get_absolute_url(self):
         return reverse("staff-detail", kwargs={"pk": self.pk})
+    
+    

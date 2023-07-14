@@ -29,7 +29,7 @@
           <tr class='clickable-row' data-href="{% url 'student-detail' student.id %}">
             <td>{{ forloop.counter}}</td>
             <td>{{ student.surname}} {{student.firstname }} {{student.other_name }}</td>
-            <td>{{ student.registration_number}}</td>
+            <td>{{ student.mat_number}}</td>
             <td>{{ student.current_cohort}}</td>
             <td>{{ student.get_gender_display}}</td>
             <td>{{ student.parent_mobile_number}}</td>

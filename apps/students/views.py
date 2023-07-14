@@ -40,6 +40,7 @@ class StudentCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         form.fields["date_of_admission"].widget = widgets.DateInput(attrs={"type": "date"})
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
+        form.fields.pop("courses")
         return form
 
 
@@ -57,6 +58,7 @@ class StudentUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         )
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
+        form.fields.pop("courses")
         # form.fields['passport'].widget = widgets.FileInput()
         return form
 
@@ -82,15 +84,18 @@ class DownloadCSVViewdownloadcsv(LoginRequiredMixin, View):
         writer = csv.writer(response)
         writer.writerow(
             [
-                "registration_number",
+                "mat_number",
                 "surname",
                 "firstname",
                 "other_names",
                 "gender",
                 "parent_number",
                 "address",
-                "current_class",
+                "current_cohort",
             ]
         )
 
         return response
+
+# define a userView class that makes use of the django user model
+

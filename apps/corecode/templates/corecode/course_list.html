@@ -10,7 +10,7 @@ Courses
 {% block breadcrumb %}
   <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
     <i class="fa fa-plus"></i>
-    Add new course
+    Add new Course
   </a>
 {% endblock breadcrumb %}
   
@@ -42,7 +42,7 @@ Courses
       <div class="modal-content">
         <form action="{% url 'course-create' %}" method="POST">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add new course</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add new Course</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -68,4 +68,3 @@ Courses
   </div>
 
 {% endblock content %}
-

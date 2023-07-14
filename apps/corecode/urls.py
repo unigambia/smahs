@@ -20,6 +20,11 @@ from .views import (
     SemesterDeleteView,
     SemesterListView,
     SemesterUpdateView,
+    CourseRegisterView, 
+    UserCreateView,
+    UserDeleteView,
+    UserListView,
+    UserUpdateView,
 )
 
 urlpatterns = [
@@ -50,14 +55,15 @@ urlpatterns = [
     path("cohort/<int:pk>/delete/", CohortDeleteView.as_view(), name="cohorts-delete"),
     path("course/list/", CourseListView.as_view(), name="courses"),
     path("course/create/", CourseCreateView.as_view(), name="course-create"),
-    path(
-        "course/<int:pk>/update/",
-        CourseUpdateView.as_view(),
-        name="course-update",
-    ),
-    path(
-        "course/<int:pk>/delete/",
-        CourseDeleteView.as_view(),
-        name="course-delete",
-    ),
+    path('course/register/', CourseRegisterView.as_view(), name='course-registration'),
+    path("course/<int:pk>/update/", CourseUpdateView.as_view(),name="course-update"),
+    path("course/<int:pk>/delete/", CourseDeleteView.as_view(), name="course-delete"),
+
+
+    path("users/", UserListView.as_view(), name="users"),
+    path("users/add/", UserCreateView.as_view(), name="user_add"),
+    path("users/<int:pk>/edit/", UserUpdateView.as_view(), name="user_change"),
+    path("users/<int:pk>/delete/", UserDeleteView.as_view(), name="user_delete"),
+    
+    
 ]

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content-header %}
@@ -18,6 +19,16 @@
 {% block content %}
     <div class="row">
       <div class="col-sm-4">
+
+        {% if object.country %}
+        <img
+          src="{{ object.country.url }}"
+          class="float-left rounded-circle mr-3" style="width: 120px; height: 120px;">
+      {% else %}
+        <img
+          src="{% static 'dist/img/avatar.png' %}"
+          class="float-left rounded-circle mr-3" style="width: 120px; height: 120px;">
+      {% endif %}
         <div>
           <h3>{{ object }} </h3>
           <h5>{{ object.current_class }} </h5>
@@ -27,6 +38,24 @@
       </div>
       <div class="col-sm-8">
         <div>
+          <div class="form-group border-bottom row">
+            <label class="col">
+              Role
+            </label>
+            <div class="col">
+              {{ object.role }}
+            </div>
+          </div>
+
+          <div class="form-group border-bottom row">
+            <label class="col">
+              Country
+            </label>
+            <div class="col">
+              {{ object.country }}
+            </div>
+          </div>
+
           <div class="form-group border-bottom row">
             <label class="col">
               Date of Birth

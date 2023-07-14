@@ -4,17 +4,21 @@ from django.urls import reverse
 from django.utils import timezone
 
 from apps.corecode.models import StudentCohort
+from apps.corecode.models import Course
 
 
 class Student(models.Model):
-    STATUS_CHOICES = [("active", "Active"), ("inactive", "Inactive")]
+
+    STATUS_CHOICES = [("active", "Active"), ("graduate", "Graduate ")]
 
     GENDER_CHOICES = [("male", "Male"), ("female", "Female")]
+    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, null=True)
 
     current_status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="active"
     )
-    registration_number = models.CharField(max_length=200, unique=True)
+    courses = models.ManyToManyField(Course, related_name='students')
+    mat_number = models.CharField(max_length=200, unique=True)
     surname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
     other_name = models.CharField(max_length=200, blank=True)
@@ -40,7 +44,7 @@ class Student(models.Model):
         ordering = ["surname", "firstname", "other_name"]
 
     def __str__(self):
-        return f"{self.surname} {self.firstname} {self.other_name} ({self.registration_number})"
+        return f"{self.surname} {self.firstname} {self.other_name} ({self.mat_number})"
 
     def get_absolute_url(self):
         return reverse("student-detail", kwargs={"pk": self.pk})

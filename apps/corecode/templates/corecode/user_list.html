@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+
+{% block title %}
+Users
+{% endblock title %}
+
+
+{% block breadcrumb %}
+  <a class="btn btn-primary" href="{% url 'user_add' %}">
+    <i class="fa fa-plus"></i>
+    Add new User
+  </a>
+{% endblock breadcrumb %}
+  
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-12">
+
+        <table class="table table-bordered">
+          <tbody>
+            {% for object in object_list %}
+            <tr>
+              <td>{{ object }}</td>
+              <td><a href="{% url 'user_change' object.id %}"><i
+                    class="fa fa-edit"></i></a> <a
+                  href="{% url 'user_delete' object.id %}"><i
+                    class="fa fa-trash-alt"></i></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+
+
+{% endblock content %}

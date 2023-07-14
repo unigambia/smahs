@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, View
 
 from apps.students.models import Student
+from apps.corecode.models import Course
 
 from .forms import CreateResults, EditResults
 from .models import Result
@@ -14,17 +15,18 @@ from .models import Result
 def create_result(request):
     students = Student.objects.all()
     if request.method == "POST":
-        # after visiting the second page
         if "finish" in request.POST:
             form = CreateResults(request.POST)
             if form.is_valid():
                 courses = form.cleaned_data["courses"]
                 session = form.cleaned_data["session"]
                 semester = form.cleaned_data["semester"]
-                selected_students = request.POST.getlist("students")  # Get the selected students from checkboxes
+                selected_students = request.POST.getlist("students")  
+                print(selected_students)
                 results = []
                 for student_id in selected_students:
                     stu = Student.objects.get(pk=student_id)
+                    print(stu)
                     if stu.current_cohort:
                         for course in courses:
                             check = Result.objects.filter(
@@ -57,6 +59,7 @@ def create_result(request):
                 }
             )
             studentlist = ",".join(id_list)
+            print(studentlist)
             return render(
                 request,
                 "result/create_result_page2.html",
@@ -65,7 +68,6 @@ def create_result(request):
         else:
             messages.warning(request, "You didn't select any student.")
     return render(request, "result/create_result.html", {"students": students})
-
 
 @login_required
 def edit_results(request):
@@ -101,7 +103,8 @@ class ResultListView(LoginRequiredMixin, View):
                     courses.append(course)
                     test_total += course.test_score
                     exam_total += course.exam_score
-                    gpa += course.gpa() / len(courses)
+                    gpa += round(course.gpa() / len(courses), 3)
+
                 
 
             bulk[result.student.id] = {

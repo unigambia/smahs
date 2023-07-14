@@ -9,6 +9,8 @@ from .models import (
     Course,
 )
 
+from django.contrib.auth.models import User
+
 SiteConfigForm = modelformset_factory(
     SiteConfig,
     fields=(
@@ -40,8 +42,17 @@ class CourseForm(ModelForm):
 
     class Meta:
         model = Course
-        fields = ["name"]
+        fields = ["name", "code", "credit_unit", "level", "lecturer"]
 
+
+class UserForm(ModelForm):
+    prefix = "User"
+
+    class Meta:
+        model = User
+        fields = ["username", "password", "email", "first_name", "last_name"]
+
+  
 
 class StudentCohortForm(ModelForm):
     prefix = "Cohort"
