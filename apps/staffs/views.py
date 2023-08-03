@@ -31,6 +31,7 @@ class StaffCreateView(SuccessMessageMixin, CreateView):
         )
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 1})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 1})
+        form.fields.pop("user")
         return form
 
 

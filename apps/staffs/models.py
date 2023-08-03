@@ -2,7 +2,10 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from django.contrib.auth.models import User
 
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 import pycountry
 
 
@@ -11,9 +14,10 @@ class Staff(models.Model):
     STATUS = [("active", "Active"), ("inactive", "Inactive")]
 
     GENDER = [("male", "Male"), ("female", "Female")]
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, null=True)
 
     ROLE = [ ("admin", "Admin"), ("academic", "Academic")]
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     current_status = models.CharField(max_length=10, choices=STATUS, default="active")
     surname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
@@ -40,4 +44,16 @@ class Staff(models.Model):
     def get_absolute_url(self):
         return reverse("staff-detail", kwargs={"pk": self.pk})
     
+
+@receiver(post_save, sender=Staff)
+def create_user_for_staff(sender, instance, created, **kwargs):
+    if created and not instance.user:
+        username = instance.firstname + instance.surname  # You can use the mat_number as the username
+        password = "staff@utg"  # Generate a random password
+
+        user = User.objects.create_user(username=username, password=password, is_staff=True)
+        instance.user = user
+        instance.save()
+
+
     

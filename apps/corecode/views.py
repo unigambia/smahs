@@ -8,7 +8,8 @@ from django.views.generic import ListView, TemplateView, View, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
-
+from apps.corecode.forms import RegistrationForm, UserUpdateForm
+from django.contrib.auth.decorators import user_passes_test
 
 
 from .forms import (
@@ -313,55 +314,4 @@ class CourseRegisterView(LoginRequiredMixin, View):
         registered_courses = Student.objects.filter(id=request.user.id).values_list('courses', flat=True)
         return render(request, self.template_name, {"form": form, "courses": courses, "registered_courses": registered_courses})
      
-
-class UserListView(LoginRequiredMixin, ListView):
-    model = User
-    template_name = "corecode/user_list.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["form"] = UserForm()
-        return context
-    
-    def get_queryset(self):
-        return User.objects.filter(is_staff=True)
-
-class UserCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
-    model = User
-    fields = ["username", "first_name", "last_name", "email", "password"]
-    template_name = "corecode/mgt_form.html"
-    success_url = reverse_lazy("users")
-    success_message = "New User successfully added"
-    
-    def form_valid(self, form):
-        obj = form.save(commit=False)
-        obj.set_password(obj.password)
-        obj.is_staff = True
-        obj.save()
-        return super().form_valid(form)
-    
-class UserUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
-    model = User
-    fields = ["username", "first_name", "last_name", "email", "password"]
-    template_name = "corecode/mgt_form.html"
-    success_url = reverse_lazy("users")
-    success_message = "User successfully updated."
-    
-    def form_valid(self, form):
-        obj = form.save(commit=False)
-        obj.set_password(obj.password)
-        obj.is_staff = True
-        obj.save()
-        return super().form_valid(form)
-    
-class UserDeleteView(LoginRequiredMixin, DeleteView):
-    model = User
-    success_url = reverse_lazy("users")
-    template_name = "corecode/core_confirm_delete.html"
-    success_message = "The User {} has been deleted with all its attached content"
-
-    def delete(self, request, *args, **kwargs):
-        obj = self.get_object()
-        messages.success(self.request, self.success_message.format(obj.username))
-        return super(UserDeleteView, self).delete(request, *args, **kwargs)
-    
+   

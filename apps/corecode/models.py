@@ -1,5 +1,7 @@
 from django.db import models
 from ..staffs.models import Staff
+from django.contrib.auth.models import AbstractUser
+ 
 # Create your models here.
 
 
@@ -68,3 +70,4 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+

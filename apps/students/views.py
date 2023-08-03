@@ -41,7 +41,10 @@ class StudentCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields.pop("courses")
+        form.fields.pop("user")
         return form
+    
+
 
 
 class StudentUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):

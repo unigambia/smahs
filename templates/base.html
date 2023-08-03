@@ -56,7 +56,7 @@
             <i class="far fa-user"></i>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" class="dropdown-item">
+            <a href="" class="dropdown-item">
               <i class="fas fa-user mr-2"></i> Profile
             </a>
             <div class="dropdown-divider"></div>
@@ -85,6 +85,7 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column"
             data-widget="treeview" role="menu" data-accordion="false">
+            {% if request.user.is_superuser %}
             <li class="nav-item">
               <a href="{% url 'student-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
@@ -101,6 +102,8 @@
                 </p>
               </a>
             </li>
+            {% endif %}
+            {% if request.user.is_superuser %}
 
             <li class="nav-header">Finance</li>
             <li class="nav-item">
@@ -111,6 +114,9 @@
                 </p>
               </a>
             </li>
+            {% endif %}
+            {% if request.user.is_superuser or request.user.is_staff %}
+
             <li class="nav-header">Results</li>
             <li class="nav-item">
               <a href="{% url 'create-result' %}" class="nav-link">
@@ -128,6 +134,7 @@
                 </p>
               </a>
             </li>
+            {% endif %}
             <li class="nav-item">
               <a href="{% url 'view-results' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
@@ -136,8 +143,8 @@
                 </p>
               </a>
             </li>
+            {% if not request.user.is_staff %}
 
-            
             <li class="nav-item">
               <a href="{% url 'course-registration' %}" class="nav-link">
                 <i class="nav-icon fas fa-clipboard"></i>
@@ -147,10 +154,15 @@
               </a>
             </li>
 
+            {% endif %}
+            {% if request.user.is_superuser %}
+
             <li class="nav-header">Others</li>
+          
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
+              
                 <p>
                   Management
                   <i class="fas fa-angle-left right"></i>
@@ -202,6 +214,8 @@
 
               </ul>
             </li>
+            {% endif %} 
+
             <li class="nav-item">
               <a href="{% url 'configs' %}" class="nav-link">
                 <i class="nav-icon fas fa-cog"></i>

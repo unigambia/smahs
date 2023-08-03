@@ -1,0 +1,517 @@
+INFO 2023-07-17 08:13:59,106 Watching for file changes with StatReloader
+INFO 2023-07-17 08:15:30,631 "GET / HTTP/1.1" 302 0
+INFO 2023-07-17 08:15:31,202 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-17 08:15:31,263 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-07-17 08:15:31,266 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 304 0
+INFO 2023-07-17 08:15:31,266 "GET /static/dist/css/login-page.css HTTP/1.1" 304 0
+INFO 2023-07-17 08:15:31,266 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
+INFO 2023-07-17 08:15:31,268 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-07-17 08:15:31,298 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 304 0
+INFO 2023-07-17 08:15:31,298 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 304 0
+INFO 2023-07-17 08:15:31,299 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-07-17 08:15:31,299 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-07-17 08:15:31,303 "GET /static/dist/js/demo.js HTTP/1.1" 304 0
+INFO 2023-07-17 08:15:31,304 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-07-17 08:15:31,304 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-07-17 08:15:31,304 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-07-17 08:15:31,346 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-07-17 08:15:33,427 Not Found: /favicon.ico
+WARNING 2023-07-17 08:15:33,427 "GET /favicon.ico HTTP/1.1" 404 7157
+INFO 2023-07-17 08:15:40,753 "POST /accounts/login/ HTTP/1.1" 200 4104
+INFO 2023-07-17 08:15:48,674 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-17 08:15:51,527 "GET / HTTP/1.1" 200 9853
+INFO 2023-07-17 08:15:51,587 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+INFO 2023-07-17 08:15:51,591 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-07-17 08:15:51,717 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2023-07-17 08:15:59,087 "GET /users/ HTTP/1.1" 200 10610
+INFO 2023-07-17 08:16:04,407 "GET /users/add/ HTTP/1.1" 200 11488
+INFO 2023-07-17 08:16:15,762 "GET /users/4/edit/ HTTP/1.1" 200 11651
+INFO 2023-07-17 08:16:37,686 "GET /users/add/ HTTP/1.1" 200 11488
+INFO 2023-07-17 08:46:52,769 "GET /student/list HTTP/1.1" 200 11100
+INFO 2023-07-17 08:49:11,174 "GET /student/create/ HTTP/1.1" 200 14626
+INFO 2023-07-17 08:49:27,434 "GET /site-config HTTP/1.1" 200 11425
+INFO 2023-07-17 08:49:31,670 "GET /users/ HTTP/1.1" 200 10610
+INFO 2023-07-17 08:53:57,732 "GET /users/ HTTP/1.1" 200 10610
+INFO 2023-07-17 08:54:05,876 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-07-17 08:54:06,217 "GET / HTTP/1.1" 302 0
+INFO 2023-07-17 08:54:07,125 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-17 08:54:25,492 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-17 08:54:27,138 "GET / HTTP/1.1" 200 9853
+INFO 2023-07-17 08:55:51,132 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-07-17 08:55:51,349 Watching for file changes with StatReloader
+ERROR 2023-07-17 08:57:42,169 Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'user_profule' not found. 'user_profule' is not a valid view function or pattern name.
+ERROR 2023-07-17 08:57:42,169 "GET / HTTP/1.1" 500 147535
+INFO 2023-07-17 08:57:51,321 "GET / HTTP/1.1" 200 9867
+ERROR 2023-07-17 08:57:55,599 Internal Server Error: /users/profile/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 203, in get
+    self.object = self.get_object()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 46, in get_object
+    raise AttributeError(
+AttributeError: Generic detail view UserUpdateView must be called with either an object pk or a slug in the URLconf.
+ERROR 2023-07-17 08:57:55,599 "GET /users/profile/ HTTP/1.1" 500 87828
+INFO 2023-07-17 08:58:46,951 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-07-17 08:58:47,178 Watching for file changes with StatReloader
+INFO 2023-07-17 08:59:32,576 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 08:59:32,782 Watching for file changes with StatReloader
+INFO 2023-07-17 08:59:52,961 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-07-17 08:59:53,186 Watching for file changes with StatReloader
+WARNING 2023-07-17 09:07:16,551 Not Found: /users/profile/
+WARNING 2023-07-17 09:07:16,552 "GET /users/profile/ HTTP/1.1" 404 7337
+WARNING 2023-07-17 09:07:25,763 Not Found: /users/profile/
+WARNING 2023-07-17 09:07:25,764 "GET /users/profile/ HTTP/1.1" 404 7337
+INFO 2023-07-17 09:07:48,178 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-07-17 09:07:48,384 Watching for file changes with StatReloader
+WARNING 2023-07-17 09:07:54,346 Not Found: /users/profile/
+INFO 2023-07-17 09:07:57,815 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-17 09:08:03,333 "GET /profile/ HTTP/1.1" 200 10242
+INFO 2023-07-17 09:18:24,545 "GET /profile/ HTTP/1.1" 200 11362
+INFO 2023-07-17 09:19:26,533 "GET /profile/ HTTP/1.1" 200 10242
+INFO 2023-07-17 09:19:35,092 "GET /profile/ HTTP/1.1" 200 11362
+INFO 2023-07-17 09:19:50,813 "POST /profile/ HTTP/1.1" 200 11507
+INFO 2023-07-17 09:19:58,434 "GET /users/ HTTP/1.1" 200 10618
+INFO 2023-07-17 09:20:03,347 "GET /users/ HTTP/1.1" 200 10618
+INFO 2023-07-17 09:20:12,815 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:20:13,199 "GET / HTTP/1.1" 302 0
+INFO 2023-07-17 09:20:14,628 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-17 09:20:25,166 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:20:26,698 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-17 09:20:34,685 "GET /profile/ HTTP/1.1" 200 11338
+INFO 2023-07-17 09:20:46,669 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:20:47,074 "GET / HTTP/1.1" 302 0
+INFO 2023-07-17 09:20:47,787 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-17 09:20:59,040 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:21:00,817 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-17 09:21:07,351 "GET /profile/ HTTP/1.1" 200 11338
+INFO 2023-07-17 09:21:13,642 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:21:14,008 "GET / HTTP/1.1" 302 0
+INFO 2023-07-17 09:21:14,931 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-17 09:21:25,272 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:21:26,842 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-17 09:21:31,818 "GET /profile/ HTTP/1.1" 200 11363
+INFO 2023-07-17 09:21:37,961 "POST /profile/ HTTP/1.1" 200 11508
+INFO 2023-07-17 09:21:45,548 "GET /users/ HTTP/1.1" 200 10619
+INFO 2023-07-17 09:21:51,692 "GET /users/4/edit/ HTTP/1.1" 200 11661
+INFO 2023-07-17 09:25:13,810 "GET /profile/ HTTP/1.1" 200 11364
+INFO 2023-07-17 09:30:54,125 "GET /student/list HTTP/1.1" 200 11108
+INFO 2023-07-17 09:31:04,132 "GET /student/3/ HTTP/1.1" 200 12224
+WARNING 2023-07-17 09:31:05,109 Not Found: /media/students/passports/flag-kenya.png
+WARNING 2023-07-17 09:31:05,109 "GET /media/students/passports/flag-kenya.png HTTP/1.1" 404 7631
+INFO 2023-07-17 09:31:13,342 "GET /student/3/update/ HTTP/1.1" 200 14967
+INFO 2023-07-17 09:31:21,741 "POST /student/3/update/ HTTP/1.1" 302 0
+INFO 2023-07-17 09:31:24,757 "GET /student/3/ HTTP/1.1" 200 12367
+WARNING 2023-07-17 09:31:25,581 Not Found: /media/students/passports/flag-kenya.png
+WARNING 2023-07-17 09:31:25,581 "GET /media/students/passports/flag-kenya.png HTTP/1.1" 404 7631
+INFO 2023-07-17 09:31:33,106 "GET /profile/ HTTP/1.1" 200 11364
+INFO 2023-07-17 09:33:53,105 /home/lanlokun/Desktop/portal/apps/students/models.py changed, reloading.
+INFO 2023-07-17 09:33:53,386 Watching for file changes with StatReloader
+INFO 2023-07-17 09:33:56,528 /home/lanlokun/Desktop/portal/apps/students/models.py changed, reloading.
+INFO 2023-07-17 09:33:56,741 Watching for file changes with StatReloader
+INFO 2023-07-17 10:03:33,704 "GET /users/add/ HTTP/1.1" 200 11496
+INFO 2023-07-17 13:54:02,961 Watching for file changes with StatReloader
+INFO 2023-07-17 13:54:08,240 "GET /users/add/ HTTP/1.1" 302 0
+INFO 2023-07-17 13:54:08,751 "GET /accounts/login/?next=/users/add/ HTTP/1.1" 200 3989
+INFO 2023-07-17 13:54:08,818 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-07-17 13:54:08,824 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-07-17 13:54:08,878 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-07-17 13:54:08,881 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-07-17 13:54:08,882 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-07-17 13:54:08,886 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-07-17 13:54:08,922 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-07-17 13:54:11,890 Not Found: /favicon.ico
+WARNING 2023-07-17 13:54:11,890 "GET /favicon.ico HTTP/1.1" 404 7328
+INFO 2023-07-17 13:54:16,035 "POST /accounts/login/ HTTP/1.1" 302 0
+ERROR 2023-07-17 13:54:16,441 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 38, in get_form
+    form_class = self.get_form_class()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 110, in get_form_class
+    return model_forms.modelform_factory(model, fields=self.fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/models.py", line 642, in modelform_factory
+    return type(form)(class_name, (form,), form_class_attrs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/models.py", line 321, in __new__
+    raise FieldError(message)
+django.core.exceptions.FieldError: Unknown field(s) (confirm_password) specified for User
+ERROR 2023-07-17 13:54:16,441 "GET /users/add/ HTTP/1.1" 500 113733
+INFO 2023-07-17 13:57:18,519 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 13:57:18,741 Watching for file changes with StatReloader
+INFO 2023-07-17 13:57:36,162 Watching for file changes with StatReloader
+INFO 2023-07-17 13:58:21,636 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 13:58:21,859 Watching for file changes with StatReloader
+INFO 2023-07-17 13:58:40,115 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 13:58:40,323 Watching for file changes with StatReloader
+INFO 2023-07-17 13:59:49,855 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 13:59:50,083 Watching for file changes with StatReloader
+INFO 2023-07-17 14:00:17,534 "GET /users/add/ HTTP/1.1" 200 11771
+INFO 2023-07-17 14:00:17,555 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-07-17 14:00:30,049 "GET /users/ HTTP/1.1" 200 10619
+INFO 2023-07-17 14:00:32,896 "GET /users/add/ HTTP/1.1" 200 11771
+INFO 2023-07-17 14:01:23,268 "POST /users/add/ HTTP/1.1" 302 0
+INFO 2023-07-17 14:01:24,295 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 14:01:30,451 "GET /users/5/edit/ HTTP/1.1" 200 11667
+INFO 2023-07-17 14:01:44,942 "GET /users/add/ HTTP/1.1" 200 11771
+INFO 2023-07-17 14:01:56,361 "POST /users/add/ HTTP/1.1" 200 12004
+INFO 2023-07-17 14:02:30,341 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 14:02:30,581 Watching for file changes with StatReloader
+INFO 2023-07-17 14:02:34,722 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 14:02:34,940 Watching for file changes with StatReloader
+INFO 2023-07-17 14:02:43,325 "POST /users/add/ HTTP/1.1" 200 12004
+INFO 2023-07-17 14:03:58,727 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 14:03:58,959 Watching for file changes with StatReloader
+INFO 2023-07-17 14:04:25,117 "POST /users/add/ HTTP/1.1" 200 12004
+INFO 2023-07-17 14:04:30,177 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 14:04:34,001 "GET /users/5/edit/ HTTP/1.1" 200 11942
+INFO 2023-07-17 14:09:41,013 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 14:09:41,227 Watching for file changes with StatReloader
+INFO 2023-07-17 14:09:59,451 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 14:09:59,668 Watching for file changes with StatReloader
+INFO 2023-07-17 14:10:08,845 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 14:10:09,077 Watching for file changes with StatReloader
+INFO 2023-07-17 14:10:16,474 "GET /users/5/edit/ HTTP/1.1" 200 11942
+INFO 2023-07-17 14:10:42,513 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 14:10:42,729 Watching for file changes with StatReloader
+INFO 2023-07-17 14:11:32,058 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 14:11:35,815 "GET /users/5/edit/ HTTP/1.1" 200 11942
+INFO 2023-07-17 14:18:28,030 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 14:18:28,253 Watching for file changes with StatReloader
+INFO 2023-07-17 14:18:50,848 "GET /users/5/edit/ HTTP/1.1" 200 11590
+INFO 2023-07-17 14:24:36,388 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-07-17 14:24:36,611 Watching for file changes with StatReloader
+INFO 2023-07-17 14:25:44,145 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 14:25:44,365 Watching for file changes with StatReloader
+INFO 2023-07-17 14:29:21,361 "GET /users/5/edit/ HTTP/1.1" 200 11748
+WARNING 2023-07-17 14:29:31,764 Not Found: /reset-password/lanlokun/
+WARNING 2023-07-17 14:29:31,764 "GET /reset-password/lanlokun/ HTTP/1.1" 404 7367
+INFO 2023-07-17 14:30:16,049 "GET /users/5/edit/ HTTP/1.1" 200 11756
+WARNING 2023-07-17 14:39:53,717 Not Found: /reset-password/lanlokun/
+WARNING 2023-07-17 14:39:53,717 "GET /reset-password/lanlokun/ HTTP/1.1" 404 7367
+WARNING 2023-07-17 14:39:56,509 Not Found: /reset-password/lanlokun/
+WARNING 2023-07-17 14:39:56,509 "GET /reset-password/lanlokun/ HTTP/1.1" 404 7367
+INFO 2023-07-17 14:40:01,677 "GET /users/5/edit/ HTTP/1.1" 200 11738
+WARNING 2023-07-17 14:40:06,998 Not Found: /password_reset
+WARNING 2023-07-17 14:40:06,999 "GET /password_reset HTTP/1.1" 404 7337
+INFO 2023-07-17 14:40:49,730 "GET /users/add/ HTTP/1.1" 200 11784
+INFO 2023-07-17 14:40:58,731 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 14:41:16,968 "GET /users/1/edit/ HTTP/1.1" 200 11706
+INFO 2023-07-17 14:41:49,724 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 14:48:04,423 "GET /users/4/edit/ HTTP/1.1" 200 11732
+INFO 2023-07-17 15:31:13,797 "GET /users/4/edit/ HTTP/1.1" 200 11732
+WARNING 2023-07-17 15:35:31,718 Not Found: /password_reset
+WARNING 2023-07-17 15:35:31,719 "GET /password_reset HTTP/1.1" 404 7337
+INFO 2023-07-17 15:35:48,481 "GET /users/4/edit/ HTTP/1.1" 200 11740
+WARNING 2023-07-17 15:35:50,560 Not Found: /users/4/edit/accounts/password_reset
+WARNING 2023-07-17 15:35:50,560 "GET /users/4/edit/accounts/password_reset HTTP/1.1" 404 7403
+INFO 2023-07-17 15:36:18,995 "GET /users/4/edit/ HTTP/1.1" 200 11732
+WARNING 2023-07-17 15:36:21,492 Not Found: /password_reset
+WARNING 2023-07-17 15:36:21,492 "GET /password_reset HTTP/1.1" 404 7337
+INFO 2023-07-17 15:36:34,650 "GET /users/4/edit/ HTTP/1.1" 200 11741
+INFO 2023-07-17 15:36:37,022 "GET /accounts/password_reset HTTP/1.1" 301 0
+ERROR 2023-07-17 15:36:38,650 Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/password_reset_form.html
+ERROR 2023-07-17 15:36:38,651 "GET /accounts/password_reset/ HTTP/1.1" 500 84946
+INFO 2023-07-17 15:44:56,024 "GET /users/4/edit/ HTTP/1.1" 200 12211
+INFO 2023-07-17 15:50:08,468 "GET /users/4/edit/ HTTP/1.1" 200 12747
+INFO 2023-07-17 15:50:29,435 "POST /users/4/edit/ HTTP/1.1" 302 0
+INFO 2023-07-17 15:50:30,441 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 15:50:40,777 "GET /users/4/edit/ HTTP/1.1" 200 12747
+INFO 2023-07-17 15:55:18,734 "GET /users/4/edit/ HTTP/1.1" 200 11741
+INFO 2023-07-17 15:55:32,688 "POST /users/4/edit/ HTTP/1.1" 302 0
+INFO 2023-07-17 15:55:33,596 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 15:55:42,433 "GET /users/4/edit/ HTTP/1.1" 200 11741
+INFO 2023-07-17 15:56:46,126 "GET /users/4/edit/ HTTP/1.1" 200 11309
+INFO 2023-07-17 15:56:55,253 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 15:56:55,475 Watching for file changes with StatReloader
+INFO 2023-07-17 15:57:00,323 "GET /users/4/edit/ HTTP/1.1" 200 11661
+INFO 2023-07-17 16:00:52,442 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-07-17 16:00:52,657 Watching for file changes with StatReloader
+INFO 2023-07-17 16:00:58,268 "GET /users/4/edit/ HTTP/1.1" 200 11309
+INFO 2023-07-17 16:01:15,461 "GET /users/4/edit/ HTTP/1.1" 200 11399
+INFO 2023-07-17 16:01:26,583 "GET /users/4/edit/ HTTP/1.1" 200 11750
+WARNING 2023-07-17 16:01:32,001 Not Found: /reset-password/test2/
+WARNING 2023-07-17 16:01:32,001 "GET /reset-password/test2/ HTTP/1.1" 404 7358
+WARNING 2023-07-17 16:01:55,691 Not Found: /reset-password/test2/
+WARNING 2023-07-17 16:01:55,691 "GET /reset-password/test2/ HTTP/1.1" 404 7358
+INFO 2023-07-17 16:01:59,535 "GET /users/4/edit/ HTTP/1.1" 200 11741
+INFO 2023-07-17 16:02:11,541 "GET /users/4/edit/ HTTP/1.1" 200 11741
+ERROR 2023-07-17 16:02:16,015 Internal Server Error: /accounts/password_reset/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: registration/password_reset_form.html
+ERROR 2023-07-17 16:02:16,015 "GET /accounts/password_reset/ HTTP/1.1" 500 84946
+INFO 2023-07-17 16:02:48,733 "POST /users/4/edit/ HTTP/1.1" 302 0
+INFO 2023-07-17 16:02:49,849 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 16:05:28,087 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 16:05:33,207 "GET /users/4/edit/ HTTP/1.1" 200 11747
+INFO 2023-07-17 16:05:44,815 "POST /users/4/edit/ HTTP/1.1" 302 0
+INFO 2023-07-17 16:05:45,902 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 16:07:07,357 "GET /finance/list/ HTTP/1.1" 200 10934
+INFO 2023-07-17 16:07:13,409 "GET /finance/create/ HTTP/1.1" 200 14218
+INFO 2023-07-17 16:08:20,320 "GET /student/list HTTP/1.1" 200 11108
+INFO 2023-07-17 16:08:22,975 "GET /student/3/ HTTP/1.1" 200 12224
+WARNING 2023-07-17 16:08:23,799 Not Found: /media/students/passports/flag-kenya.png
+WARNING 2023-07-17 16:08:23,800 "GET /media/students/passports/flag-kenya.png HTTP/1.1" 404 7631
+INFO 2023-07-17 16:09:28,729 "GET /student/list HTTP/1.1" 200 11108
+INFO 2023-07-17 16:09:32,113 "GET /student/create/ HTTP/1.1" 200 14674
+INFO 2023-07-17 16:09:44,086 "GET /student/list HTTP/1.1" 200 11108
+INFO 2023-07-17 16:11:49,912 "GET /finance/list/ HTTP/1.1" 200 10934
+INFO 2023-07-17 16:11:51,711 "GET /finance/bulk-invoice/ HTTP/1.1" 200 9862
+INFO 2023-07-17 16:19:57,899 "GET /result/view/all HTTP/1.1" 200 14452
+INFO 2023-07-17 16:20:08,040 "GET /result/create/ HTTP/1.1" 200 11354
+INFO 2023-07-17 16:55:50,653 "GET /course/register/ HTTP/1.1" 200 16967
+INFO 2023-07-17 16:57:38,373 "GET /result/create/ HTTP/1.1" 200 11354
+INFO 2023-07-17 16:59:08,337 "GET /users/ HTTP/1.1" 200 10899
+INFO 2023-07-17 16:59:16,938 "GET /users/5/delete/ HTTP/1.1" 200 10558
+INFO 2023-07-17 16:59:28,390 "GET /users/4/delete/ HTTP/1.1" 200 10552
+INFO 2023-07-17 16:59:32,015 "POST /users/4/delete/ HTTP/1.1" 302 0
+INFO 2023-07-17 16:59:32,935 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-17 17:54:39,882 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-18 08:38:50,879 Watching for file changes with StatReloader
+INFO 2023-07-18 09:01:02,232 "GET / HTTP/1.1" 302 0
+INFO 2023-07-18 09:01:02,674 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-18 09:01:02,744 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-07-18 09:01:02,772 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-07-18 09:01:02,777 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+WARNING 2023-07-18 09:01:03,413 Not Found: /favicon.ico
+WARNING 2023-07-18 09:01:03,414 "GET /favicon.ico HTTP/1.1" 404 7328
+INFO 2023-07-18 09:01:11,880 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:01:12,728 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-18 09:01:12,790 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-07-18 09:01:47,510 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-18 09:01:53,592 "GET /users/1/edit/ HTTP/1.1" 200 11715
+INFO 2023-07-18 09:01:58,972 "GET /users/5/edit/ HTTP/1.1" 200 11747
+INFO 2023-07-18 09:02:09,821 "POST /users/5/edit/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:02:10,770 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-18 09:13:15,171 "GET /course/register/ HTTP/1.1" 200 16967
+INFO 2023-07-18 09:19:39,309 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-07-18 09:19:39,539 Watching for file changes with StatReloader
+INFO 2023-07-18 09:28:11,662 "GET /result/view/all HTTP/1.1" 200 11477
+INFO 2023-07-18 09:28:28,109 "GET /student/list HTTP/1.1" 200 10811
+INFO 2023-07-18 09:28:35,726 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:28:35,904 "GET / HTTP/1.1" 302 0
+INFO 2023-07-18 09:28:36,387 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-18 09:28:45,146 "POST /accounts/login/ HTTP/1.1" 200 4104
+INFO 2023-07-18 09:28:52,847 "POST /accounts/login/ HTTP/1.1" 200 4104
+INFO 2023-07-18 09:29:01,059 "POST /accounts/login/ HTTP/1.1" 200 4104
+INFO 2023-07-18 09:29:17,301 "POST /accounts/login/ HTTP/1.1" 200 4104
+INFO 2023-07-18 09:29:26,011 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:29:26,913 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-18 09:29:32,661 "GET /staff/list/ HTTP/1.1" 200 10941
+INFO 2023-07-18 09:30:26,245 "GET /staff/create/ HTTP/1.1" 200 27477
+INFO 2023-07-18 09:30:39,461 "GET /student/list HTTP/1.1" 200 10811
+INFO 2023-07-18 09:30:43,545 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-18 09:30:49,894 "GET /accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:30:50,081 "GET / HTTP/1.1" 302 0
+INFO 2023-07-18 09:30:50,562 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-18 09:30:57,957 "POST /accounts/login/ HTTP/1.1" 200 4104
+INFO 2023-07-18 09:31:06,087 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:31:06,967 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-18 09:31:10,091 "GET /student/list HTTP/1.1" 200 10811
+INFO 2023-07-18 09:31:36,026 "GET /course/register/ HTTP/1.1" 200 16967
+INFO 2023-07-18 09:31:40,825 "GET /student/list HTTP/1.1" 200 10811
+INFO 2023-07-18 09:31:52,530 "GET /profile/ HTTP/1.1" 200 11371
+INFO 2023-07-18 09:32:31,876 "GET /student/list HTTP/1.1" 200 10811
+INFO 2023-07-18 09:33:13,929 "GET /staff/list/ HTTP/1.1" 200 10941
+INFO 2023-07-18 09:33:19,684 "GET /student/list HTTP/1.1" 200 10811
+INFO 2023-07-18 09:33:28,484 "GET /student/4/ HTTP/1.1" 200 11753
+INFO 2023-07-18 09:33:29,134 "GET /media/students/passports/flag-germany.png HTTP/1.1" 200 932
+INFO 2023-07-18 09:33:32,307 "GET /student/4/update/ HTTP/1.1" 200 14984
+INFO 2023-07-18 09:33:44,744 "POST /student/4/update/ HTTP/1.1" 302 0
+INFO 2023-07-18 09:33:45,740 "GET /student/4/ HTTP/1.1" 200 11899
+INFO 2023-07-18 09:33:58,061 "GET /student/list HTTP/1.1" 200 10814
+INFO 2023-07-18 09:47:19,136 /home/lanlokun/Desktop/portal/apps/students/models.py changed, reloading.
+INFO 2023-07-18 09:47:19,362 Watching for file changes with StatReloader
+INFO 2023-07-18 09:47:30,534 /home/lanlokun/Desktop/portal/apps/staffs/models.py changed, reloading.
+INFO 2023-07-18 09:47:30,739 Watching for file changes with StatReloader
+INFO 2023-07-18 09:47:42,934 /home/lanlokun/Desktop/portal/apps/students/models.py changed, reloading.
+INFO 2023-07-18 09:47:43,137 Watching for file changes with StatReloader
+INFO 2023-07-19 10:58:41,602 Watching for file changes with StatReloader
+INFO 2023-07-19 10:59:04,885 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 10:59:05,124 Watching for file changes with StatReloader
+INFO 2023-07-19 11:00:01,335 Watching for file changes with StatReloader
+INFO 2023-07-19 11:01:55,968 Watching for file changes with StatReloader
+INFO 2023-07-19 11:27:38,552 "GET / HTTP/1.1" 302 0
+INFO 2023-07-19 11:27:38,968 "GET /accounts/login/?next=/ HTTP/1.1" 200 3979
+INFO 2023-07-19 11:27:39,030 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-07-19 11:27:39,037 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-07-19 11:27:39,067 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-07-19 11:27:39,067 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-07-19 11:27:39,072 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-07-19 11:27:39,072 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-07-19 11:27:39,074 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-07-19 11:27:39,109 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-07-19 11:27:41,028 Not Found: /favicon.ico
+WARNING 2023-07-19 11:27:41,028 "GET /favicon.ico HTTP/1.1" 404 7328
+INFO 2023-07-19 11:28:10,591 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-19 11:28:11,420 "GET / HTTP/1.1" 200 9861
+INFO 2023-07-19 11:28:11,491 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-07-19 11:28:25,747 "GET /course/register/ HTTP/1.1" 200 16967
+INFO 2023-07-19 11:28:58,840 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-19 11:30:49,842 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-19 11:30:54,656 "GET /session/list/ HTTP/1.1" 200 12169
+INFO 2023-07-19 11:45:50,546 Watching for file changes with StatReloader
+INFO 2023-07-19 11:45:57,733 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 11:45:57,881 Watching for file changes with StatReloader
+INFO 2023-07-19 11:46:21,121 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 11:46:21,307 Watching for file changes with StatReloader
+INFO 2023-07-19 11:46:27,484 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 11:46:27,678 Watching for file changes with StatReloader
+INFO 2023-07-19 11:47:47,168 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 11:47:47,319 Watching for file changes with StatReloader
+INFO 2023-07-19 11:58:27,813 Watching for file changes with StatReloader
+INFO 2023-07-19 11:59:04,825 Watching for file changes with StatReloader
+INFO 2023-07-19 12:30:15,395 Watching for file changes with StatReloader
+INFO 2023-07-19 12:30:41,995 Watching for file changes with StatReloader
+INFO 2023-07-19 12:33:41,904 Watching for file changes with StatReloader
+INFO 2023-07-19 12:35:09,988 Watching for file changes with StatReloader
+INFO 2023-07-19 12:35:22,552 Watching for file changes with StatReloader
+INFO 2023-07-19 12:36:51,753 Watching for file changes with StatReloader
+INFO 2023-07-19 12:37:55,976 Watching for file changes with StatReloader
+INFO 2023-07-19 12:38:58,396 /home/lanlokun/Desktop/portal/apps/users/__init__.py changed, reloading.
+INFO 2023-07-19 12:38:58,543 Watching for file changes with StatReloader
+INFO 2023-07-19 12:39:01,009 Watching for file changes with StatReloader
+INFO 2023-07-19 12:40:49,499 Watching for file changes with StatReloader
+INFO 2023-07-19 12:41:09,548 Watching for file changes with StatReloader
+INFO 2023-07-19 12:41:49,875 /home/lanlokun/Desktop/portal/apps/users/__init__.py changed, reloading.
+INFO 2023-07-19 12:41:50,023 Watching for file changes with StatReloader
+INFO 2023-07-19 12:48:02,272 /home/lanlokun/Desktop/portal/apps/users/__init__.py changed, reloading.
+INFO 2023-07-19 12:48:02,428 Watching for file changes with StatReloader
+INFO 2023-07-19 12:48:03,581 /home/lanlokun/Desktop/portal/apps/users/__init__.py changed, reloading.
+INFO 2023-07-19 12:48:03,746 Watching for file changes with StatReloader
+INFO 2023-07-19 12:48:59,105 /home/lanlokun/Desktop/portal/apps/users/__init__.py changed, reloading.
+INFO 2023-07-19 12:48:59,258 Watching for file changes with StatReloader
+INFO 2023-07-19 12:49:08,434 /home/lanlokun/Desktop/portal/apps/users/apps.py changed, reloading.
+INFO 2023-07-19 12:49:08,574 Watching for file changes with StatReloader
+INFO 2023-07-19 12:49:11,556 Watching for file changes with StatReloader
+INFO 2023-07-19 12:54:02,002 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 12:54:02,210 Watching for file changes with StatReloader
+INFO 2023-07-19 12:54:09,388 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 12:54:09,582 Watching for file changes with StatReloader
+INFO 2023-07-19 13:45:15,558 Watching for file changes with StatReloader
+INFO 2023-07-19 13:45:20,515 "GET /cohort/list/ HTTP/1.1" 302 0
+INFO 2023-07-19 13:45:20,955 "GET /accounts/login/?next=/cohort/list/ HTTP/1.1" 200 3991
+INFO 2023-07-19 13:45:21,020 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-07-19 13:45:23,947 "POST /accounts/login/ HTTP/1.1" 200 4116
+INFO 2023-07-19 13:45:31,557 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2023-07-19 13:45:32,499 "GET /cohort/list/ HTTP/1.1" 200 12572
+INFO 2023-07-19 13:45:32,567 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-07-19 13:47:19,200 "GET /site-config HTTP/1.1" 200 11433
+INFO 2023-07-19 13:47:23,516 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-19 13:51:23,915 "GET /users/ HTTP/1.1" 200 10622
+INFO 2023-07-19 13:53:10,248 Watching for file changes with StatReloader
+INFO 2023-07-19 13:56:57,613 Watching for file changes with StatReloader
+INFO 2023-07-19 13:57:10,814 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 13:57:10,964 Watching for file changes with StatReloader
+INFO 2023-07-19 13:58:08,376 /home/lanlokun/Desktop/portal/apps/users/apps.py changed, reloading.
+INFO 2023-07-19 13:58:08,529 Watching for file changes with StatReloader
+INFO 2023-07-19 13:58:15,361 Watching for file changes with StatReloader
+INFO 2023-07-19 14:05:07,005 Watching for file changes with StatReloader
+INFO 2023-07-19 14:18:06,795 Watching for file changes with StatReloader
+INFO 2023-07-19 14:19:12,630 Watching for file changes with StatReloader
+INFO 2023-07-19 14:35:04,035 Watching for file changes with StatReloader
+INFO 2023-07-19 14:35:24,273 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 14:35:24,416 Watching for file changes with StatReloader
+INFO 2023-07-19 14:35:33,599 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 14:35:33,748 Watching for file changes with StatReloader
+INFO 2023-07-19 14:38:01,409 Watching for file changes with StatReloader
+INFO 2023-07-19 14:39:26,870 Watching for file changes with StatReloader
+INFO 2023-07-19 15:43:48,643 Watching for file changes with StatReloader
+INFO 2023-07-19 15:43:53,810 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 15:43:54,007 Watching for file changes with StatReloader
+INFO 2023-07-19 15:43:57,109 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
+INFO 2023-07-19 15:43:57,322 Watching for file changes with StatReloader
+INFO 2023-07-19 15:45:19,931 /home/lanlokun/Desktop/portal/users/urls.py changed, reloading.
+INFO 2023-07-19 15:45:20,160 Watching for file changes with StatReloader
+INFO 2023-07-19 15:45:33,301 /home/lanlokun/Desktop/portal/users/urls.py changed, reloading.
+INFO 2023-07-19 15:45:33,512 Watching for file changes with StatReloader
+INFO 2023-07-19 15:50:36,679 /home/lanlokun/Desktop/portal/users/models.py changed, reloading.
+INFO 2023-07-19 15:50:36,923 Watching for file changes with StatReloader
+INFO 2023-07-19 15:51:35,839 Watching for file changes with StatReloader
+INFO 2023-07-19 23:35:08,718 Watching for file changes with StatReloader

@@ -2,9 +2,13 @@ from django.core.validators import RegexValidator
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
-
+from django.contrib.auth.models import AbstractUser
 from apps.corecode.models import StudentCohort
 from apps.corecode.models import Course
+from django.contrib.auth.models import User
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+
 
 
 class Student(models.Model):
@@ -12,11 +16,11 @@ class Student(models.Model):
     STATUS_CHOICES = [("active", "Active"), ("graduate", "Graduate ")]
 
     GENDER_CHOICES = [("male", "Male"), ("female", "Female")]
-    user = models.OneToOneField("auth.User", on_delete=models.CASCADE, null=True)
-
     current_status = models.CharField(
         max_length=10, choices=STATUS_CHOICES, default="active"
     )
+
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     courses = models.ManyToManyField(Course, related_name='students')
     mat_number = models.CharField(max_length=200, unique=True)
     surname = models.CharField(max_length=200)
@@ -48,6 +52,15 @@ class Student(models.Model):
 
     def get_absolute_url(self):
         return reverse("student-detail", kwargs={"pk": self.pk})
+    
+@receiver(post_save, sender=Student)
+def create_user_for_student(sender, instance, created, **kwargs):
+    if created and not instance.user:
+        username = instance.firstname + instance.mat_number  # You can use the mat_number as the username
+        password = "student@utg"  # Generate a random password
+        user = User.objects.create_user(username=username, password=password)
+        instance.user = user
+        instance.save()
 
 
 class StudentBulkUpload(models.Model):
