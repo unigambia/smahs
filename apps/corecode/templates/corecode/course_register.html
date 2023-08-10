@@ -25,19 +25,19 @@
             <td>{{ course.level }}</td>
             <td>{{ course.lecturer }}</td>
             <td>
-              {% if course.id in registered_courses %}
-                <form class="register-form" action="{% url 'unregister-course' %}" method="post">
-                  {% csrf_token %}
-                  <input type="hidden" name="course_id" value="{{ course.id }}">
-                  <button type="submit" class="btn btn-danger btn-action" data-action="unregister" data-course-id="{{ course.id }}">Unregister</button>
-                </form>
-              {% else %}
-                <form class="register-form" action="{% url 'course-registration' %}" method="post">
-                  {% csrf_token %}
-                  <input type="hidden" name="course_id" value="{{ course.id }}">
-                  <button type="submit" class="btn btn-primary btn-action" data-action="register" data-course-id="{{ course.id }}" onclick="return confirm('Are you sure you want to register for this course?')">Register</button>
-                </form>
-              {% endif %}
+              {% if course.id in registered_courses_ids %}
+              <form class="register-form" action="{% url 'course-unregistration'%}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ course.id }}">  
+                <button type="submit" class="btn btn-danger btn-action" data-action="unregister" data-course-id="{{ course.id }}" onclick="return confirm('Are you sure you want to unregister this course?')" style="width: 120px;">Unregister</button>
+              </form>
+            {% else %}
+              <form class="register-form" action="{% url 'course-registration' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="course_id" value="{{ course.id }}">
+                <button type="submit" class="btn btn-primary btn-action" data-action="register" data-course-id="{{ course.id }}" onclick="return confirm('Are you sure you want to register for this course?')" style="width: 120px;">Register</button>
+              </form>
+            {% endif %}
             </td>
           </tr>
         {% endfor %}
@@ -46,43 +46,7 @@
     </table>
   </div>
 
-  {% if messages %}
-    <div class="messages">
-      {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-          {{ message }}
-        </div>
-      {% endfor %}
-    </div>
-  {% endif %}
-
-  <script>
-    // Handle form submission using JavaScript
-    document.querySelectorAll('.register-form').forEach(function(form) {
-      form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        var formData = new FormData(form);
-        var url = form.action;
-        var method = form.method;
-        var xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.setRequestHeader('X-CSRFToken', '{{ csrf_token }}');
-        xhr.onload = function() {
-          if (xhr.status === 200) {
-            // Handle successful registration
-            // For example, display a success message or update the UI
-            alert('Course registration successful.');
-            location.reload(); // Refresh the page to reflect the updated registration status
-          } else {
-            // Handle registration error
-            // For example, display an error message or update the UI
-            alert('Course registration failed. Please try again.');
-          }
-        };
-        xhr.send(formData);
-      });
-    });
-  </script>
+  
 
 {% endblock content %}
 
