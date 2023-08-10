@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Registered Courses{% endblock title %}
+
+
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="studenttable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Course</th>
+          <th>Course Code</th>
+          <th>Lecturer</th>
+          <th>Session</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for registered_course in student_courses.all %}
+        <tr class='clickable-row' data-href="#">
+            <td>{{ forloop.counter}}</td>
+            <td>{{ registered_course.course.name }} </td>
+            <td>{{ registered_course.course.code }}</td>
+            <td>{{ registered_course.course.lecturer }}</td>
+            <td>{{ registered_course.academic_session }}</td>
+            <td>{{ registered_course.academic_semester }}</td>
+           
+          </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#studenttable').DataTable({
+  });
+</script>
+{% endblock morejs %}

@@ -9,6 +9,7 @@ from django.views.generic import DetailView, ListView, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from apps.finance.models import Invoice
+from apps.corecode.models import Course, StudentCourse
 
 from .models import Student, StudentBulkUpload
 
@@ -100,5 +101,20 @@ class DownloadCSVViewdownloadcsv(LoginRequiredMixin, View):
 
         return response
 
-# define a userView class that makes use of the django user model
+# student registered courses
 
+class RegisteredCourseListView(LoginRequiredMixin, ListView):
+    model = StudentCourse
+    template_name = "students/registered_courses.html"
+    context_object_name = "student_courses"
+
+    def get_queryset(self):
+        student = Student.objects.get(user=self.request.user)
+        return StudentCourse.objects.filter(student=student)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["student"] = Student.objects.get(user=self.request.user)
+        return context
+
+    

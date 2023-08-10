@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import HttpResponseRedirect, redirect, render
+from django.shortcuts import HttpResponseRedirect, redirect, render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, View, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
@@ -10,6 +10,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from apps.corecode.forms import RegistrationForm, UserUpdateForm
 from django.contrib.auth.decorators import user_passes_test
+
 
 
 from .forms import (
@@ -27,9 +28,11 @@ from .models import (
     SiteConfig,
     StudentCohort,
     Course,
+    StudentCourse
 
 )
 from apps.students.models import Student
+
 
 
 class IndexView(LoginRequiredMixin, TemplateView):
@@ -278,40 +281,62 @@ class CurrentSessionAndSemesterView(LoginRequiredMixin, View):
 
         return render(request, self.template_name, {"form": form})
 
-
 class CourseRegisterView(LoginRequiredMixin, View):
     """Course Register View"""
 
-    form_class = CourseForm
     template_name = "corecode/course_register.html"
+    form_class = CourseForm
 
     def get(self, request, *args, **kwargs):
         form = self.form_class()
         courses = Course.objects.all()
-        registered_courses = Student.objects.filter(id=request.user.id).values_list('courses', flat=True)
-        return render(request, self.template_name, {"form": form, "courses": courses, "registered_courses": registered_courses})
+        user = request.user
+        student = Student.objects.get(user=user)
+        registered_courses = StudentCourse.objects.filter(student=student).values_list('course_id', flat=True)
+        
+        return render(request, self.template_name, {"form": form, "courses": courses, "registered_courses_ids": registered_courses})
 
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST)
-        if form.is_valid():
-            course_id = form.cleaned_data["course_id"]
-            id = request.user.id
-
-            # Check if the student is already registered for the course
-            if Student.objects.filter(courses=course_id, id=id).exists():
-                # Student is already registered, display an error message
-                messages.error(request, "You are already registered for this course.")
+        course_id = request.POST.get("course_id")
+        session = request.current_session
+        semester = request.current_semester
+        student = Student.objects.get(user=request.user)
+        
+        if course_id:
+            course = Course.objects.get(id=course_id)
+            
+            # Create or update StudentCourse instance with session and semester
+            student_course, created = StudentCourse.objects.get_or_create(
+                student=student,
+                course=course,
+                academic_session=session,
+                academic_semester=semester
+            )
+            
+            if not created:
+                student_course.delete()  # Remove the relationship
+                messages.success(request, "Course unregistration successful.")
             else:
-                # Create a new registration entry for the student and course
-                registration = Student(courses=course_id, id=id)
-                registration.save()
-
-                # Display a success message
                 messages.success(request, "Course registration successful.")
 
-        # If the form is not valid or registration fails, render the template with the form, courses, and registered courses again
-        courses = Course.objects.all()
-        registered_courses = Student.objects.filter(id=request.user.id).values_list('courses', flat=True)
-        return render(request, self.template_name, {"form": form, "courses": courses, "registered_courses": registered_courses})
-     
-   
+        return redirect("course-registration")
+
+
+class UnregisterCourseView(LoginRequiredMixin, View):
+    """Unregister Course View"""
+
+    def post(self, request, *args, **kwargs):
+        course_id = request.POST.get("course_id")
+        
+        if course_id:
+            student = request.user.student
+            course = get_object_or_404(Course, id=course_id)
+            
+            try:
+                student_course = StudentCourse.objects.get(student=student, course=course)
+                student_course.delete()  # Remove the relationship
+                messages.success(request, "Course unregistration successful.")
+            except StudentCourse.DoesNotExist:
+                messages.error(request, "You are not registered for this course.")
+                
+        return redirect("course-registration")

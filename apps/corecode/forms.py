@@ -38,7 +38,7 @@ class AcademicSemesterForm(ModelForm):
 
 
 class CourseForm(ModelForm):
-    prefix = "Course"
+    # prefix = "Course"
 
     class Meta:
         model = Course
