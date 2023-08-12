@@ -90,8 +90,11 @@ def edit_results(request):
 class ResultListView(LoginRequiredMixin, View):
         
     def get(self, request, *args, **kwargs):
+        user = request.user
         results = Result.objects.filter(
-            session=request.current_session, semester=request.current_semester
+            student__user=user,
+            session=request.current_session,  # Assuming you have the current_session available in your context
+            semester=request.current_semester  # Assuming you have the current_semester available in your context
         )
         bulk = {}
 
@@ -108,10 +111,10 @@ class ResultListView(LoginRequiredMixin, View):
                     exam_total += course.exam_score
                     gpa += round(course.gpa() / len(courses), 3)
 
-                
-
             bulk[result.student.id] = {
                 "student": result.student,
+                "session": result.session,
+                "semester": result.semester,
                 "courses": courses,
                 "test_total": test_total,
                 "exam_total": exam_total,

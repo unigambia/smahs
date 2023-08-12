@@ -430,3 +430,4 @@ class CourseRegisteredStudentsView(UserPassesTestMixin, LoginRequiredMixin, List
 
     def get_queryset(self):
         return StudentCourse.objects.filter(course=self.kwargs["pk"])
+    

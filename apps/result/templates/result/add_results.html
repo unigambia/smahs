@@ -43,3 +43,12 @@ Add Results
   <input type="submit" class="btn btn-success" value="Save">
 </form>
 {% endblock content %}
+
+
+{% block morejs %}
+<script>
+  $('#studenttable').DataTable({
+  });
+</script>
+
+{% endblock morejs %}

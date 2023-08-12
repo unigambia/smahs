@@ -23,8 +23,8 @@ from .views import (
     CourseRegisterView,
     UnregisterCourseView,
     StaffCourseListView,
-    CourseRegisteredStudentsView,
-)
+    CourseRegisteredStudentsView
+    )
 
 urlpatterns = [
     path("", IndexView.as_view(), name="home"),

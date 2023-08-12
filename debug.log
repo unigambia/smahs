@@ -3431,3 +3431,132 @@ INFO 2023-08-12 13:02:00,759 "POST /result/create/ HTTP/1.1" 302 0
 INFO 2023-08-12 13:02:05,078 "GET /result/edit-results/ HTTP/1.1" 200 14692
 INFO 2023-08-12 13:07:15,742 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
 INFO 2023-08-12 13:07:16,043 Watching for file changes with StatReloader
+INFO 2023-08-12 13:19:33,809 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 13:19:34,144 Watching for file changes with StatReloader
+INFO 2023-08-12 13:20:32,669 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 13:20:32,956 Watching for file changes with StatReloader
+INFO 2023-08-12 13:20:38,039 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 13:20:38,318 Watching for file changes with StatReloader
+INFO 2023-08-12 13:21:07,740 "GET /result/edit-results/ HTTP/1.1" 200 14692
+INFO 2023-08-12 13:21:07,762 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-12 13:21:15,538 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:21:15,821 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 13:21:16,641 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 13:21:28,673 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:21:30,045 "GET / HTTP/1.1" 200 7288
+INFO 2023-08-12 13:21:36,811 "GET /student/transcript/ HTTP/1.1" 200 0
+INFO 2023-08-12 13:29:06,735 "GET /student/transcript/ HTTP/1.1" 200 0
+INFO 2023-08-12 13:29:52,486 "GET /student/transcript/ HTTP/1.1" 200 7963
+INFO 2023-08-12 13:33:19,684 "GET /result/view/all HTTP/1.1" 200 10954
+INFO 2023-08-12 13:33:42,584 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 13:33:42,837 Watching for file changes with StatReloader
+INFO 2023-08-12 13:33:45,915 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 13:33:46,137 Watching for file changes with StatReloader
+INFO 2023-08-12 13:33:54,249 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 13:33:54,465 Watching for file changes with StatReloader
+INFO 2023-08-12 13:36:54,817 /home/lanlokun/Desktop/portal/apps/result/views.py changed, reloading.
+INFO 2023-08-12 13:36:55,030 Watching for file changes with StatReloader
+ERROR 2023-08-12 13:37:10,516 Internal Server Error: /result/view/all
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/portal/apps/result/views.py", line 125, in get
+    return render(request, "result/all_results.html", context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 321, in render
+    return nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'student-transcript' not found. 'student-transcript' is not a valid view function or pattern name.
+ERROR 2023-08-12 13:37:10,517 "GET /result/view/all HTTP/1.1" 500 189936
+INFO 2023-08-12 13:37:30,579 "GET /result/view/all HTTP/1.1" 200 7713
+INFO 2023-08-12 13:41:30,734 "GET /student/registered-courses/ HTTP/1.1" 200 8583
+INFO 2023-08-12 13:41:50,393 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:41:50,618 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 13:41:51,827 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 13:42:35,856 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:42:37,037 "GET / HTTP/1.1" 200 9816
+INFO 2023-08-12 13:42:41,593 "GET /result/create/ HTTP/1.1" 200 11894
+INFO 2023-08-12 13:42:48,333 "POST /result/create/ HTTP/1.1" 200 12415
+INFO 2023-08-12 13:42:55,362 "POST /result/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:43:01,102 "GET /result/edit-results/ HTTP/1.1" 200 15358
+INFO 2023-08-12 13:43:31,315 "POST /result/edit-results/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:43:37,833 "GET /result/edit-results/ HTTP/1.1" 200 15507
+INFO 2023-08-12 13:45:34,914 "POST /result/edit-results/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:45:40,361 "GET /result/edit-results/ HTTP/1.1" 200 15507
+INFO 2023-08-12 13:45:48,082 "GET /result/create/ HTTP/1.1" 200 11894
+INFO 2023-08-12 13:45:59,707 "POST /result/create/ HTTP/1.1" 200 12415
+INFO 2023-08-12 13:46:09,186 "POST /result/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:46:14,632 "GET /result/edit-results/ HTTP/1.1" 200 16044
+INFO 2023-08-12 13:46:29,206 "POST /result/edit-results/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:46:34,822 "GET /result/edit-results/ HTTP/1.1" 200 16190
+INFO 2023-08-12 13:47:27,639 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:47:28,001 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 13:47:28,880 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 13:48:48,162 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:48:50,250 "GET / HTTP/1.1" 200 7026
+INFO 2023-08-12 13:48:55,458 "GET /result/view/all HTTP/1.1" 200 8178
+INFO 2023-08-12 13:57:03,554 "GET /result/view/all HTTP/1.1" 200 8223
+INFO 2023-08-12 13:57:36,432 "GET /result/view/all HTTP/1.1" 200 8142
+INFO 2023-08-12 13:57:42,862 "GET /result/view/all HTTP/1.1" 200 8223
+INFO 2023-08-12 13:58:07,254 "GET /result/view/all HTTP/1.1" 200 8187
+INFO 2023-08-12 13:58:40,535 "GET /result/view/all HTTP/1.1" 200 8232
+INFO 2023-08-12 13:59:24,045 /home/lanlokun/Desktop/portal/apps/result/views.py changed, reloading.
+INFO 2023-08-12 13:59:24,302 Watching for file changes with StatReloader
+INFO 2023-08-12 13:59:52,462 "GET /result/view/all HTTP/1.1" 200 8217
+INFO 2023-08-12 14:00:33,277 "GET /result/view/all HTTP/1.1" 200 8259
+INFO 2023-08-12 14:01:41,682 "GET /result/view/all HTTP/1.1" 200 8259
+INFO 2023-08-12 14:02:22,438 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 14:02:23,302 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 14:02:24,281 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 14:02:34,216 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 14:02:36,671 "GET / HTTP/1.1" 200 9816
+INFO 2023-08-12 14:02:47,707 "GET /result/create/ HTTP/1.1" 200 11894
+INFO 2023-08-12 14:02:58,483 "POST /result/create/ HTTP/1.1" 200 12415
+INFO 2023-08-12 14:03:07,363 "POST /result/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 14:03:13,740 "GET /result/edit-results/ HTTP/1.1" 200 16047
+INFO 2023-08-12 20:45:32,543 /home/lanlokun/Desktop/portal/apps/result/models.py changed, reloading.
+INFO 2023-08-12 20:45:32,907 Watching for file changes with StatReloader
