@@ -35,3 +35,4 @@ class Result(models.Model):
     
     def gpa(self):
         return grade_point(self.grade())
+
