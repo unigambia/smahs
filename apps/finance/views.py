@@ -1,5 +1,6 @@
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView
@@ -15,10 +16,13 @@ class InvoiceListView(LoginRequiredMixin, ListView):
     model = Invoice
 
 
-class InvoiceCreateView(LoginRequiredMixin, CreateView):
+class InvoiceCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
     model = Invoice
     fields = "__all__"
     success_url = "/finance/list"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def get_context_data(self, **kwargs):
         context = super(InvoiceCreateView, self).get_context_data(**kwargs)
@@ -41,9 +45,12 @@ class InvoiceCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class InvoiceDetailView(LoginRequiredMixin, DetailView):
+class InvoiceDetailView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
     model = Invoice
     fields = "__all__"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def get_context_data(self, **kwargs):
         context = super(InvoiceDetailView, self).get_context_data(**kwargs)
@@ -52,9 +59,12 @@ class InvoiceDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
-class InvoiceUpdateView(LoginRequiredMixin, UpdateView):
+class InvoiceUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = Invoice
     fields = ["student", "session", "term", "class_for", "balance_from_previous_term"]
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def get_context_data(self, **kwargs):
         context = super(InvoiceUpdateView, self).get_context_data(**kwargs)
@@ -81,15 +91,20 @@ class InvoiceUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-class InvoiceDeleteView(LoginRequiredMixin, DeleteView):
+class InvoiceDeleteView(UserPassesTestMixin, SuccessMessageMixin ,LoginRequiredMixin, DeleteView):
     model = Invoice
     success_url = reverse_lazy("invoice-list")
+    success_message = "Invoice was deleted successfully"
 
 
-class ReceiptCreateView(LoginRequiredMixin, CreateView):
+class ReceiptCreateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixin, CreateView):
     model = Receipt
     fields = ["amount_paid", "date_paid", "comment"]
     success_url = reverse_lazy("invoice-list")
+    success_message = "Receipt was created successfully"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def form_valid(self, form):
         obj = form.save(commit=False)
@@ -105,17 +120,25 @@ class ReceiptCreateView(LoginRequiredMixin, CreateView):
         return context
 
 
-class ReceiptUpdateView(LoginRequiredMixin, UpdateView):
+class ReceiptUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     model = Receipt
     fields = ["amount_paid", "date_paid", "comment"]
     success_url = reverse_lazy("invoice-list")
+    success_message = "Receipt was updated successfully"
 
+    def test_func(self):
+        return self.request.user.is_superuser
 
-class ReceiptDeleteView(LoginRequiredMixin, DeleteView):
+class ReceiptDeleteView(UserPassesTestMixin, SuccessMessageMixin ,LoginRequiredMixin, DeleteView):
     model = Receipt
     success_url = reverse_lazy("invoice-list")
+    success_message = "Receipt was deleted successfully"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 
 @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def bulk_invoice(request):
     return render(request, "finance/bulk_invoice.html")

@@ -145,7 +145,20 @@
                 </p>
               </a>
             </li>
-            {% if not request.user.is_staff %}
+            {% if request.user.is_staff %}
+
+            <li class="nav-header">Class</li>
+            <li class="nav-item">
+              <a href="{% url 'staff-courses' %}" class="nav-link">
+                <i class="nav-icon fas fa-money-bill-alt"></i>
+                <p>
+                  Class
+                </p>
+              </a>
+            </li>
+            {% endif %}
+    
+            {% if not request.user.is_staff and not request.user.is_superuser %}
 
             <li class="nav-item">
               <a href="{% url 'course-registration' %}" class="nav-link">
@@ -161,6 +174,14 @@
                 <i class="nav-icon fas fa-clipboard"></i>
                 <p>
                   Registered Courses
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{% url 'registered-courses' %}" class="nav-link">
+                <i class="nav-icon fas fa-clipboard"></i>
+                <p>
+                  Transcript
                 </p>
               </a>
             </li>

@@ -1665,3 +1665,1769 @@ INFO 2023-08-10 03:36:40,667 "GET /student/registered-courses/ HTTP/1.1" 200 826
 INFO 2023-08-10 03:36:50,088 "GET /course/register/ HTTP/1.1" 200 13028
 INFO 2023-08-10 03:37:28,630 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
 INFO 2023-08-10 03:37:28,847 Watching for file changes with StatReloader
+INFO 2023-08-11 09:43:54,751 Watching for file changes with StatReloader
+INFO 2023-08-11 10:21:27,806 "GET / HTTP/1.1" 302 0
+INFO 2023-08-11 10:21:28,671 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-11 10:21:28,736 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-08-11 10:21:28,738 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-08-11 10:21:28,780 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-08-11 10:21:28,781 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-08-11 10:21:28,782 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-08-11 10:21:28,782 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-08-11 10:21:28,788 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-08-11 10:21:28,827 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-08-11 10:21:31,017 Not Found: /favicon.ico
+WARNING 2023-08-11 10:21:31,018 "GET /favicon.ico HTTP/1.1" 404 6729
+INFO 2023-08-11 10:21:34,575 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-11 10:21:35,992 "GET / HTTP/1.1" 200 9798
+INFO 2023-08-11 10:21:36,062 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+INFO 2023-08-11 10:21:36,088 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-11 10:23:55,069 "GET /student/list HTTP/1.1" 200 11976
+INFO 2023-08-11 10:28:06,291 "GET /staff/list/ HTTP/1.1" 200 11101
+INFO 2023-08-11 10:28:15,578 "GET /users/list/ HTTP/1.1" 200 12248
+INFO 2023-08-11 10:28:26,962 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-11 10:28:27,355 "GET / HTTP/1.1" 302 0
+INFO 2023-08-11 10:28:28,202 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-11 10:28:48,040 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-11 10:28:49,785 "GET / HTTP/1.1" 200 7046
+INFO 2023-08-11 10:31:20,722 "GET / HTTP/1.1" 302 0
+INFO 2023-08-11 10:31:22,504 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+WARNING 2023-08-11 10:31:23,821 Not Found: /favicon.ico
+WARNING 2023-08-11 10:31:23,822 "GET /favicon.ico HTTP/1.1" 404 6729
+INFO 2023-08-11 10:35:45,479 "GET / HTTP/1.1" 302 0
+INFO 2023-08-11 10:35:46,143 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-11 10:35:53,926 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-11 10:35:57,328 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-11 10:35:58,679 "GET / HTTP/1.1" 200 9798
+INFO 2023-08-11 10:36:06,622 "GET /users/list/ HTTP/1.1" 200 12248
+INFO 2023-08-11 10:36:14,419 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-11 10:36:14,918 "GET / HTTP/1.1" 302 0
+INFO 2023-08-11 10:36:15,980 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-11 10:36:22,875 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-08-11 10:36:44,486 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-11 10:36:46,208 "GET / HTTP/1.1" 200 7046
+INFO 2023-08-11 10:39:29,690 "GET / HTTP/1.1" 200 7376
+INFO 2023-08-11 10:39:50,168 "GET / HTTP/1.1" 200 7381
+INFO 2023-08-11 10:41:08,195 "GET /result/create/ HTTP/1.1" 200 9458
+INFO 2023-08-11 12:18:32,772 Watching for file changes with StatReloader
+INFO 2023-08-11 12:18:40,067 "GET / HTTP/1.1" 302 0
+INFO 2023-08-11 12:18:40,979 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-11 12:18:41,035 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+WARNING 2023-08-11 12:18:41,821 Not Found: /favicon.ico
+WARNING 2023-08-11 12:18:41,822 "GET /favicon.ico HTTP/1.1" 404 6729
+INFO 2023-08-11 12:18:51,746 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-11 12:18:53,088 "GET / HTTP/1.1" 200 10133
+INFO 2023-08-11 12:18:53,145 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-12 09:22:56,851 Watching for file changes with StatReloader
+INFO 2023-08-12 09:45:48,760 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 09:45:49,668 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 09:45:49,740 "GET /static/dist/css/login-page.css HTTP/1.1" 304 0
+INFO 2023-08-12 09:45:49,740 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-08-12 09:45:49,741 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-08-12 09:45:49,771 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-08-12 09:45:49,772 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-08-12 09:45:49,776 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-08-12 09:45:49,779 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-08-12 09:45:49,779 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-08-12 09:45:49,805 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-08-12 09:45:51,777 Not Found: /favicon.ico
+WARNING 2023-08-12 09:45:51,777 "GET /favicon.ico HTTP/1.1" 404 6729
+INFO 2023-08-12 09:45:54,990 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:45:56,855 "GET / HTTP/1.1" 200 10133
+INFO 2023-08-12 09:45:56,914 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+INFO 2023-08-12 09:45:56,918 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-12 09:46:15,862 "GET /users/list/ HTTP/1.1" 200 12583
+INFO 2023-08-12 09:46:22,991 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:46:23,253 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 09:46:24,035 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 09:46:33,199 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:46:35,026 "GET / HTTP/1.1" 200 7381
+INFO 2023-08-12 09:46:44,446 "GET /result/create/ HTTP/1.1" 200 9458
+INFO 2023-08-12 09:50:29,138 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 09:50:29,355 Watching for file changes with StatReloader
+INFO 2023-08-12 09:51:58,214 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 09:51:58,426 Watching for file changes with StatReloader
+INFO 2023-08-12 09:52:53,919 "GET /result/create/ HTTP/1.1" 200 9455
+INFO 2023-08-12 09:52:59,728 "GET /class/list/ HTTP/1.1" 200 0
+INFO 2023-08-12 09:55:11,617 "GET /class/list/ HTTP/1.1" 200 7334
+INFO 2023-08-12 09:55:26,363 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:55:26,670 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 09:55:27,543 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 09:55:31,278 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 09:55:32,931 "GET / HTTP/1.1" 200 10130
+INFO 2023-08-12 09:56:28,825 "GET /staff/list/ HTTP/1.1" 200 11433
+INFO 2023-08-12 09:56:37,939 "GET /staff/5/ HTTP/1.1" 200 12131
+INFO 2023-08-12 09:56:45,541 "GET /staff/5/ HTTP/1.1" 200 12131
+INFO 2023-08-12 09:56:50,023 "GET /staff/5/update/ HTTP/1.1" 200 28046
+INFO 2023-08-12 09:57:04,619 "GET /course/list/ HTTP/1.1" 200 14856
+INFO 2023-08-12 09:57:11,628 "GET /course/6/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 09:57:29,343 "GET /course/7/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 09:58:21,655 "GET /course/6/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 09:58:44,299 "GET /cohort/list/ HTTP/1.1" 200 12841
+INFO 2023-08-12 09:58:49,692 "GET /cohort/3/update/ HTTP/1.1" 200 10635
+INFO 2023-08-12 09:59:01,400 "GET /student/list HTTP/1.1" 200 12308
+INFO 2023-08-12 09:59:06,110 "GET /student/11/ HTTP/1.1" 200 12006
+INFO 2023-08-12 09:59:06,151 "GET /static/dist/img/avatar.png HTTP/1.1" 200 8543
+ERROR 2023-08-12 09:59:09,109 Internal Server Error: /student/11/update/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 204, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 65, in get_form
+    form.fields.pop("courses")
+KeyError: 'courses'
+ERROR 2023-08-12 09:59:09,110 "GET /student/11/update/ HTTP/1.1" 500 96247
+INFO 2023-08-12 09:59:53,989 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 09:59:54,225 Watching for file changes with StatReloader
+INFO 2023-08-12 10:00:16,451 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 10:00:16,658 Watching for file changes with StatReloader
+INFO 2023-08-12 10:00:24,242 "GET /student/11/update/ HTTP/1.1" 200 15214
+INFO 2023-08-12 10:00:59,877 "GET /staff/list/ HTTP/1.1" 200 11433
+INFO 2023-08-12 10:01:03,665 "GET /staff/2/ HTTP/1.1" 200 12125
+INFO 2023-08-12 10:01:08,150 "GET /staff/2/update/ HTTP/1.1" 200 28017
+INFO 2023-08-12 10:02:47,806 "GET /staff/list/ HTTP/1.1" 200 11433
+INFO 2023-08-12 10:02:51,390 "GET /staff/5/ HTTP/1.1" 200 12131
+INFO 2023-08-12 10:02:56,715 "GET /staff/5/update/ HTTP/1.1" 200 28046
+INFO 2023-08-12 10:03:08,389 "GET /staff/list/ HTTP/1.1" 200 11433
+INFO 2023-08-12 10:03:11,973 "GET /staff/create/ HTTP/1.1" 200 27352
+INFO 2023-08-12 10:03:22,930 "GET /student/list HTTP/1.1" 200 12308
+INFO 2023-08-12 10:05:17,822 "GET /course/list/ HTTP/1.1" 200 14856
+INFO 2023-08-12 10:05:23,484 "GET /course/7/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 10:05:56,222 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 10:05:56,438 Watching for file changes with StatReloader
+INFO 2023-08-12 10:07:09,023 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-08-12 10:07:09,236 Watching for file changes with StatReloader
+INFO 2023-08-12 10:07:19,679 "GET /course/7/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 10:07:24,185 "GET /course/7/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 10:07:26,527 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
+INFO 2023-08-12 10:07:26,762 Watching for file changes with StatReloader
+INFO 2023-08-12 10:08:29,823 "GET /course/list/ HTTP/1.1" 200 14856
+INFO 2023-08-12 10:08:42,077 "GET /course/7/update/ HTTP/1.1" 200 11521
+INFO 2023-08-12 10:09:01,021 "GET /session/list/ HTTP/1.1" 200 12438
+INFO 2023-08-12 10:09:05,459 "GET /session/1/update/ HTTP/1.1" 200 10919
+INFO 2023-08-12 10:13:48,726 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 10:13:48,949 Watching for file changes with StatReloader
+INFO 2023-08-12 10:15:07,241 "GET /session/list/ HTTP/1.1" 200 12438
+INFO 2023-08-12 10:15:11,155 "GET /session/1/update/ HTTP/1.1" 200 11030
+INFO 2023-08-12 10:15:18,537 "GET /cohort/list/ HTTP/1.1" 200 12841
+INFO 2023-08-12 10:15:26,288 "GET /cohort/3/update/ HTTP/1.1" 200 10682
+INFO 2023-08-12 10:15:33,763 "GET /course/list/ HTTP/1.1" 200 14856
+INFO 2023-08-12 10:15:38,883 "GET /course/6/update/ HTTP/1.1" 200 11833
+INFO 2023-08-12 10:18:12,946 /home/lanlokun/Desktop/portal/apps/staffs/models.py changed, reloading.
+INFO 2023-08-12 10:18:13,170 Watching for file changes with StatReloader
+INFO 2023-08-12 10:18:59,627 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-12 10:18:59,832 Watching for file changes with StatReloader
+INFO 2023-08-12 10:19:38,622 Watching for file changes with StatReloader
+INFO 2023-08-12 10:19:46,489 "GET /course/6/update/ HTTP/1.1" 200 11955
+INFO 2023-08-12 10:19:57,087 "POST /course/6/update/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:19:59,288 "GET /course/list/ HTTP/1.1" 200 15112
+INFO 2023-08-12 10:20:08,710 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:20:09,120 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 10:20:10,145 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 10:20:36,358 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:20:38,304 "GET / HTTP/1.1" 200 7378
+INFO 2023-08-12 10:20:43,731 "GET /class/list/ HTTP/1.1" 200 7355
+INFO 2023-08-12 10:20:57,043 "GET /class/list/ HTTP/1.1" 200 7362
+INFO 2023-08-12 10:25:35,936 "GET /class/list/ HTTP/1.1" 200 7726
+ERROR 2023-08-12 10:29:29,847 Internal Server Error: /class/list/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_course' not found. 'view_course' is not a valid view function or pattern name.
+ERROR 2023-08-12 10:29:29,848 "GET /class/list/ HTTP/1.1" 500 194158
+ERROR 2023-08-12 10:31:03,239 Internal Server Error: /class/list/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'view_course' not found. 'view_course' is not a valid view function or pattern name.
+ERROR 2023-08-12 10:31:03,240 "GET /class/list/ HTTP/1.1" 500 202823
+INFO 2023-08-12 10:31:09,576 "GET /class/list/ HTTP/1.1" 200 7715
+INFO 2023-08-12 10:32:09,975 "GET /class/list/ HTTP/1.1" 200 7722
+INFO 2023-08-12 10:39:13,818 "GET /class/list/ HTTP/1.1" 200 7722
+INFO 2023-08-12 10:39:21,699 "GET /class/list/ HTTP/1.1" 200 7722
+INFO 2023-08-12 10:40:01,807 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:40:02,446 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 10:40:04,095 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 10:40:10,690 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:40:12,695 "GET / HTTP/1.1" 200 10130
+INFO 2023-08-12 10:40:25,218 "GET /course/list/ HTTP/1.1" 200 14969
+INFO 2023-08-12 10:40:37,303 "GET /course/7/update/ HTTP/1.1" 200 11958
+INFO 2023-08-12 10:40:46,765 "POST /course/7/update/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:40:52,010 "GET /course/list/ HTTP/1.1" 200 15112
+INFO 2023-08-12 10:41:01,336 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:41:01,719 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 10:41:03,883 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 10:41:29,181 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 10:41:33,708 "GET / HTTP/1.1" 200 7378
+INFO 2023-08-12 10:41:42,490 "GET /class/list/ HTTP/1.1" 200 8050
+INFO 2023-08-12 10:55:10,954 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 10:55:11,188 Watching for file changes with StatReloader
+INFO 2023-08-12 10:55:13,269 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 10:55:13,478 Watching for file changes with StatReloader
+INFO 2023-08-12 10:55:44,714 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 10:55:44,933 Watching for file changes with StatReloader
+INFO 2023-08-12 10:57:00,653 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 10:57:00,879 Watching for file changes with StatReloader
+INFO 2023-08-12 10:57:11,086 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 10:57:11,317 Watching for file changes with StatReloader
+WARNING 2023-08-12 10:59:44,165 Not Found: /class/list/
+WARNING 2023-08-12 10:59:44,166 "GET /class/list/ HTTP/1.1" 404 7113
+WARNING 2023-08-12 10:59:52,295 Not Found: /class/list/
+WARNING 2023-08-12 10:59:52,295 "GET /class/list/ HTTP/1.1" 404 7113
+INFO 2023-08-12 11:00:19,360 "GET / HTTP/1.1" 200 7379
+INFO 2023-08-12 11:00:19,380 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2023-08-12 11:00:19,381 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+INFO 2023-08-12 11:00:19,381 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-08-12 11:00:19,381 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
+INFO 2023-08-12 11:00:19,381 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-08-12 11:00:19,382 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-08-12 11:00:19,392 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2023-08-12 11:00:19,393 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 200 13632
+INFO 2023-08-12 11:00:19,394 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-08-12 11:00:19,394 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-08-12 11:00:19,394 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-08-12 11:00:19,395 "GET /static/dist/js/demo.js HTTP/1.1" 200 12616
+INFO 2023-08-12 11:00:19,431 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-12 11:00:20,352 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+INFO 2023-08-12 11:00:20,352 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-08-12 11:00:25,901 Not Found: /favicon.ico
+WARNING 2023-08-12 11:00:25,902 "GET /favicon.ico HTTP/1.1" 404 7113
+ERROR 2023-08-12 11:00:27,416 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'staff-course-students' with arguments '('',)' not found. 1 pattern(s) tried: ['staff/class/(?P<pk>[0-9]+)\\Z']
+ERROR 2023-08-12 11:00:27,417 "GET /staff/class/ HTTP/1.1" 500 207290
+ERROR 2023-08-12 11:00:49,806 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 1372, in url
+    viewname = parser.compile_filter(bits[1])
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from ''staff-course-students','
+ERROR 2023-08-12 11:00:49,807 "GET /staff/class/ HTTP/1.1" 500 195881
+ERROR 2023-08-12 11:01:09,278 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/engine.py", line 175, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 293, in do_extends
+    nodelist = parser.parse()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 232, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 853, in do_for
+    nodelist_loop = parser.parse(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 513, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 1372, in url
+    viewname = parser.compile_filter(bits[1])
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 703, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ',' from ''staff-course-students','
+ERROR 2023-08-12 11:01:09,279 "GET /staff/class/ HTTP/1.1" 500 195816
+INFO 2023-08-12 11:01:19,755 "GET /staff/class/ HTTP/1.1" 200 8077
+INFO 2023-08-12 11:01:28,215 "GET /staff/class/6 HTTP/1.1" 200 7784
+INFO 2023-08-12 11:06:09,248 "GET /staff/class/6 HTTP/1.1" 200 7849
+INFO 2023-08-12 11:06:32,744 "GET /staff/class/ HTTP/1.1" 200 8077
+INFO 2023-08-12 11:06:36,356 "GET /staff/class/7 HTTP/1.1" 200 7849
+INFO 2023-08-12 11:06:57,145 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:06:57,828 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 11:07:04,119 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 11:07:19,552 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:07:22,041 "GET / HTTP/1.1" 200 7296
+INFO 2023-08-12 11:07:32,461 "GET /student/registered-courses/ HTTP/1.1" 200 8560
+INFO 2023-08-12 11:10:18,727 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:10:18,945 Watching for file changes with StatReloader
+INFO 2023-08-12 11:10:32,878 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:10:33,319 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 11:10:36,446 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 11:12:47,093 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 11:13:07,274 "GET / HTTP/1.1" 200 7379
+INFO 2023-08-12 11:14:05,908 "GET /staff/class/ HTTP/1.1" 200 8077
+INFO 2023-08-12 11:14:38,821 "GET /staff/class/6 HTTP/1.1" 200 7849
+INFO 2023-08-12 11:17:49,774 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:17:50,011 Watching for file changes with StatReloader
+INFO 2023-08-12 11:17:52,088 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:17:52,310 Watching for file changes with StatReloader
+INFO 2023-08-12 11:18:06,632 "GET /staff/class/6 HTTP/1.1" 200 7849
+INFO 2023-08-12 11:20:09,491 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:20:09,709 Watching for file changes with StatReloader
+INFO 2023-08-12 11:20:11,821 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:20:12,034 Watching for file changes with StatReloader
+INFO 2023-08-12 11:20:37,284 "GET /staff/class/6 HTTP/1.1" 200 8048
+INFO 2023-08-12 11:22:38,312 "GET /staff/class/6 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:23:09,834 "GET /staff/class/ HTTP/1.1" 200 8111
+INFO 2023-08-12 11:23:16,716 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:23:16,943 Watching for file changes with StatReloader
+INFO 2023-08-12 11:23:29,830 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:24:42,770 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:25:40,374 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:25:40,591 Watching for file changes with StatReloader
+INFO 2023-08-12 11:25:57,389 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:26:10,970 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:26:11,189 Watching for file changes with StatReloader
+INFO 2023-08-12 11:26:19,267 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:28:14,254 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 318045
+INFO 2023-08-12 11:28:14,261 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2023-08-12 11:28:14,263 "GET /static/dist/js/adminlte.js.map HTTP/1.1" 200 113276
+WARNING 2023-08-12 11:28:14,266 "GET /static/plugins/Datatables/pdfmake.min.js.map HTTP/1.1" 404 1870
+INFO 2023-08-12 11:28:14,332 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 2149167
+INFO 2023-08-12 11:28:26,663 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:28:26,690 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2023-08-12 11:28:26,691 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-08-12 11:28:26,692 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+INFO 2023-08-12 11:28:26,692 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
+INFO 2023-08-12 11:28:26,693 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-08-12 11:28:26,693 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-08-12 11:28:26,697 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 200 13632
+INFO 2023-08-12 11:28:26,702 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2023-08-12 11:28:26,704 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-08-12 11:28:26,704 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-08-12 11:28:26,706 "GET /static/dist/js/demo.js HTTP/1.1" 200 12616
+INFO 2023-08-12 11:28:26,706 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-08-12 11:28:26,739 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-12 11:28:27,554 "GET /static/plugins/toastr/toastr.js.map HTTP/1.1" 200 25633
+INFO 2023-08-12 11:28:27,554 "GET /static/dist/js/adminlte.js.map HTTP/1.1" 200 113276
+INFO 2023-08-12 11:28:27,554 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js.map HTTP/1.1" 200 318045
+INFO 2023-08-12 11:28:27,558 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+INFO 2023-08-12 11:28:27,558 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+INFO 2023-08-12 11:28:27,584 "GET /static/dist/css/adminlte.min.css.map HTTP/1.1" 200 2149167
+WARNING 2023-08-12 11:28:27,703 "GET /static/plugins/Datatables/pdfmake.min.js.map HTTP/1.1" 404 1870
+INFO 2023-08-12 11:32:31,500 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:32:31,730 Watching for file changes with StatReloader
+INFO 2023-08-12 11:35:52,262 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:36:24,209 "GET /staff/class/7 HTTP/1.1" 200 8083
+INFO 2023-08-12 11:36:51,160 "GET /staff/class/7 HTTP/1.1" 200 8105
+INFO 2023-08-12 11:37:13,098 "GET /staff/class/ HTTP/1.1" 200 8111
+INFO 2023-08-12 11:37:32,829 "GET /staff/class/6 HTTP/1.1" 200 8102
+INFO 2023-08-12 11:37:49,502 "GET /course/list/ HTTP/1.1" 200 12218
+INFO 2023-08-12 11:40:11,092 "GET /staff/class/ HTTP/1.1" 200 8111
+INFO 2023-08-12 11:40:20,637 "GET /staff/class/6 HTTP/1.1" 200 8102
+INFO 2023-08-12 11:43:15,490 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:43:15,739 Watching for file changes with StatReloader
+INFO 2023-08-12 11:44:02,133 /home/lanlokun/Desktop/portal/apps/corecode/urls.py changed, reloading.
+INFO 2023-08-12 11:44:02,345 Watching for file changes with StatReloader
+INFO 2023-08-12 11:44:18,482 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:44:18,690 Watching for file changes with StatReloader
+INFO 2023-08-12 11:45:40,276 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:45:40,493 Watching for file changes with StatReloader
+INFO 2023-08-12 11:46:21,823 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:46:22,077 Watching for file changes with StatReloader
+INFO 2023-08-12 11:46:31,225 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:46:31,438 Watching for file changes with StatReloader
+INFO 2023-08-12 11:46:56,687 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:46:56,907 Watching for file changes with StatReloader
+INFO 2023-08-12 11:46:58,971 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:46:59,187 Watching for file changes with StatReloader
+INFO 2023-08-12 11:47:03,293 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:47:03,509 Watching for file changes with StatReloader
+INFO 2023-08-12 11:47:47,867 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:47:48,079 Watching for file changes with StatReloader
+INFO 2023-08-12 11:48:51,540 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:48:51,769 Watching for file changes with StatReloader
+INFO 2023-08-12 11:49:09,992 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:49:10,222 Watching for file changes with StatReloader
+INFO 2023-08-12 11:49:23,176 "GET /staff/class/6 HTTP/1.1" 200 8102
+ERROR 2023-08-12 11:49:28,576 Internal Server Error: /course/list/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 132, in dispatch
+    user_test_result = self.get_test_func()()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 119, in test_func
+    raise NotImplementedError(
+NotImplementedError: CourseListView is missing the implementation of the test_func() method.
+ERROR 2023-08-12 11:49:28,576 "GET /course/list/ HTTP/1.1" 500 77607
+INFO 2023-08-12 11:50:14,914 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:50:15,135 Watching for file changes with StatReloader
+WARNING 2023-08-12 11:50:28,527 Forbidden (Permission denied): /course/list/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2023-08-12 11:50:30,014 "GET /course/list/ HTTP/1.1" 403 135
+INFO 2023-08-12 11:51:42,929 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:51:43,147 Watching for file changes with StatReloader
+INFO 2023-08-12 11:54:49,758 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:54:49,968 Watching for file changes with StatReloader
+INFO 2023-08-12 11:55:07,238 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:55:07,484 Watching for file changes with StatReloader
+INFO 2023-08-12 11:55:42,835 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:55:43,074 Watching for file changes with StatReloader
+INFO 2023-08-12 11:55:55,294 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:55:55,514 Watching for file changes with StatReloader
+INFO 2023-08-12 11:57:49,558 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:57:49,796 Watching for file changes with StatReloader
+INFO 2023-08-12 11:58:04,032 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:58:04,272 Watching for file changes with StatReloader
+INFO 2023-08-12 11:58:14,467 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:58:14,699 Watching for file changes with StatReloader
+INFO 2023-08-12 11:58:29,919 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:58:30,134 Watching for file changes with StatReloader
+INFO 2023-08-12 11:58:44,353 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-12 11:58:44,567 Watching for file changes with StatReloader
+INFO 2023-08-12 12:00:24,424 "GET /staff/class/6 HTTP/1.1" 200 8934
+INFO 2023-08-12 12:00:28,964 "GET /staff/class/ HTTP/1.1" 200 8943
+INFO 2023-08-12 12:01:48,417 "GET /staff/create/ HTTP/1.1" 200 25112
+INFO 2023-08-12 12:01:56,553 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:01:56,800 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 12:01:57,586 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 12:02:10,988 "GET /staff/create/ HTTP/1.1" 200 24197
+INFO 2023-08-12 12:04:25,535 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-08-12 12:04:25,749 Watching for file changes with StatReloader
+INFO 2023-08-12 12:04:35,971 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-08-12 12:04:36,185 Watching for file changes with StatReloader
+INFO 2023-08-12 12:04:51,883 "GET /staff/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:04:52,462 "GET /accounts/login/?next=/staff/create/ HTTP/1.1" 200 3998
+INFO 2023-08-12 12:05:17,737 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-08-12 12:05:17,960 Watching for file changes with StatReloader
+INFO 2023-08-12 12:05:41,266 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-08-12 12:05:41,491 Watching for file changes with StatReloader
+INFO 2023-08-12 12:05:47,646 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-08-12 12:05:47,862 Watching for file changes with StatReloader
+INFO 2023-08-12 12:05:55,054 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-08-12 12:05:55,271 Watching for file changes with StatReloader
+INFO 2023-08-12 12:06:20,551 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:06:20,778 Watching for file changes with StatReloader
+INFO 2023-08-12 12:06:37,005 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:06:37,223 Watching for file changes with StatReloader
+INFO 2023-08-12 12:06:44,407 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:06:44,621 Watching for file changes with StatReloader
+INFO 2023-08-12 12:06:54,836 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:06:55,059 Watching for file changes with StatReloader
+INFO 2023-08-12 12:07:05,244 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:07:05,456 Watching for file changes with StatReloader
+INFO 2023-08-12 12:07:10,606 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:07:10,850 Watching for file changes with StatReloader
+INFO 2023-08-12 12:07:20,055 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:07:20,282 Watching for file changes with StatReloader
+INFO 2023-08-12 12:07:32,472 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:07:32,705 Watching for file changes with StatReloader
+INFO 2023-08-12 12:07:42,896 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:07:43,123 Watching for file changes with StatReloader
+INFO 2023-08-12 12:07:47,279 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:07:47,505 Watching for file changes with StatReloader
+INFO 2023-08-12 12:08:05,774 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:08:06,004 Watching for file changes with StatReloader
+INFO 2023-08-12 12:08:23,239 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:08:23,448 Watching for file changes with StatReloader
+INFO 2023-08-12 12:08:25,594 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:08:25,819 Watching for file changes with StatReloader
+INFO 2023-08-12 12:08:51,181 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:08:51,402 Watching for file changes with StatReloader
+INFO 2023-08-12 12:09:34,865 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:09:35,099 Watching for file changes with StatReloader
+INFO 2023-08-12 12:10:30,622 /home/lanlokun/Desktop/portal/apps/result/views.py changed, reloading.
+INFO 2023-08-12 12:10:30,837 Watching for file changes with StatReloader
+INFO 2023-08-12 12:11:29,511 /home/lanlokun/Desktop/portal/apps/result/views.py changed, reloading.
+INFO 2023-08-12 12:11:29,749 Watching for file changes with StatReloader
+INFO 2023-08-12 12:11:44,966 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:11:45,179 Watching for file changes with StatReloader
+INFO 2023-08-12 12:12:12,547 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:12:12,778 Watching for file changes with StatReloader
+INFO 2023-08-12 12:12:20,939 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:12:21,150 Watching for file changes with StatReloader
+INFO 2023-08-12 12:12:32,348 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:12:32,572 Watching for file changes with StatReloader
+INFO 2023-08-12 12:12:39,754 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:12:39,985 Watching for file changes with StatReloader
+INFO 2023-08-12 12:13:06,317 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:13:06,562 Watching for file changes with StatReloader
+INFO 2023-08-12 12:13:23,707 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:13:23,923 Watching for file changes with StatReloader
+INFO 2023-08-12 12:13:40,172 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:13:40,402 Watching for file changes with StatReloader
+INFO 2023-08-12 12:14:03,747 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:14:03,962 Watching for file changes with StatReloader
+INFO 2023-08-12 12:14:26,274 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:14:26,512 Watching for file changes with StatReloader
+INFO 2023-08-12 12:14:30,639 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:14:30,853 Watching for file changes with StatReloader
+INFO 2023-08-12 12:15:25,479 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:15:25,701 Watching for file changes with StatReloader
+INFO 2023-08-12 12:15:31,895 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:15:32,120 Watching for file changes with StatReloader
+INFO 2023-08-12 12:15:34,239 /home/lanlokun/Desktop/portal/apps/finance/views.py changed, reloading.
+INFO 2023-08-12 12:15:34,448 Watching for file changes with StatReloader
+INFO 2023-08-12 12:15:53,681 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:15:53,914 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:15,260 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:15,517 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:21,693 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:21,960 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:33,174 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:33,398 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:44,606 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:44,846 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:50,008 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:50,240 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:57,424 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:57,674 Watching for file changes with StatReloader
+INFO 2023-08-12 12:16:58,823 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:16:59,039 Watching for file changes with StatReloader
+INFO 2023-08-12 12:17:07,244 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:17:07,466 Watching for file changes with StatReloader
+INFO 2023-08-12 12:17:23,942 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:17:25,887 "GET /staff/create/ HTTP/1.1" 200 27032
+INFO 2023-08-12 12:17:37,356 "GET /users/list/ HTTP/1.1" 200 12581
+INFO 2023-08-12 12:17:43,909 "GET /users/1/delete/ HTTP/1.1" 200 10822
+INFO 2023-08-12 12:17:53,926 "GET /users/list/ HTTP/1.1" 200 12581
+INFO 2023-08-12 12:17:59,791 "GET /users/add/ HTTP/1.1" 200 12042
+INFO 2023-08-12 12:18:12,786 "GET /users/list/ HTTP/1.1" 200 12581
+INFO 2023-08-12 12:18:20,364 "GET /users/5/delete/ HTTP/1.1" 200 10828
+INFO 2023-08-12 12:18:24,488 "POST /users/5/delete/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:18:26,187 "GET /users/list/ HTTP/1.1" 200 12474
+INFO 2023-08-12 12:19:51,889 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:19:52,112 Watching for file changes with StatReloader
+INFO 2023-08-12 12:20:07,362 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:20:07,617 Watching for file changes with StatReloader
+INFO 2023-08-12 12:20:23,982 "GET /users/3/delete/ HTTP/1.1" 200 10822
+WARNING 2023-08-12 12:20:29,580 Not Found: /users/3/delete/
+WARNING 2023-08-12 12:20:29,581 "POST /users/3/delete/ HTTP/1.1" 404 7952
+INFO 2023-08-12 12:21:10,305 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:21:10,560 Watching for file changes with StatReloader
+INFO 2023-08-12 12:21:37,993 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:21:38,256 Watching for file changes with StatReloader
+INFO 2023-08-12 12:21:48,465 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:21:48,682 Watching for file changes with StatReloader
+WARNING 2023-08-12 12:21:57,806 Not Found: /users/3/delete/
+WARNING 2023-08-12 12:21:57,807 "POST /users/3/delete/ HTTP/1.1" 404 7952
+INFO 2023-08-12 12:22:11,451 "GET /users/list/ HTTP/1.1" 200 12024
+INFO 2023-08-12 12:22:22,798 "GET /users/19/delete/ HTTP/1.1" 200 10830
+WARNING 2023-08-12 12:22:28,450 Not Found: /users/19/delete/
+WARNING 2023-08-12 12:22:28,451 "POST /users/19/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:23:18,488 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:23:18,706 Watching for file changes with StatReloader
+WARNING 2023-08-12 12:23:27,510 Not Found: /users/19/delete/
+WARNING 2023-08-12 12:23:27,511 "POST /users/19/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:24:03,249 "GET /users/list/ HTTP/1.1" 200 11741
+INFO 2023-08-12 12:24:09,322 "GET /users/24/delete/ HTTP/1.1" 200 10824
+WARNING 2023-08-12 12:24:18,813 Not Found: /users/24/delete/
+WARNING 2023-08-12 12:24:18,813 "POST /users/24/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:25:13,669 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:25:13,894 Watching for file changes with StatReloader
+WARNING 2023-08-12 12:25:21,893 Not Found: /users/24/delete/
+WARNING 2023-08-12 12:25:21,894 "POST /users/24/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:25:31,621 "GET /users/list/ HTTP/1.1" 200 11461
+INFO 2023-08-12 12:25:38,700 "GET /users/20/delete/ HTTP/1.1" 200 10818
+INFO 2023-08-12 12:25:44,655 "POST /users/20/delete/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:25:46,674 "GET /users/list/ HTTP/1.1" 200 11357
+INFO 2023-08-12 12:26:52,777 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:26:52,993 Watching for file changes with StatReloader
+INFO 2023-08-12 12:27:01,121 "GET /users/add/ HTTP/1.1" 200 12042
+INFO 2023-08-12 12:27:09,722 "POST /users/add/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:27:11,771 "GET /users/list/ HTTP/1.1" 200 11607
+INFO 2023-08-12 12:27:23,594 "GET /users/25/delete/ HTTP/1.1" 200 10826
+ERROR 2023-08-12 12:27:27,774 Internal Server Error: /users/25/delete/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 278, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/messages/views.py", line 13, in form_valid
+    success_message = self.get_success_message(form.cleaned_data)
+  File "/home/lanlokun/Desktop/portal/users/views.py", line 94, in get_success_message
+    return self.success_message.format(obj.username)
+AttributeError: 'dict' object has no attribute 'username'
+ERROR 2023-08-12 12:27:27,774 "POST /users/25/delete/ HTTP/1.1" 500 94891
+INFO 2023-08-12 12:28:09,762 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:28:09,983 Watching for file changes with StatReloader
+WARNING 2023-08-12 12:28:19,907 Not Found: /users/25/delete/
+WARNING 2023-08-12 12:28:19,908 "POST /users/25/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:29:00,513 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:29:00,726 Watching for file changes with StatReloader
+WARNING 2023-08-12 12:29:10,784 Not Found: /users/25/delete/
+WARNING 2023-08-12 12:29:10,785 "POST /users/25/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:29:20,284 "GET /users/list/ HTTP/1.1" 200 11184
+INFO 2023-08-12 12:29:23,648 "GET /users/add/ HTTP/1.1" 200 12042
+INFO 2023-08-12 12:29:30,935 "POST /users/add/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:29:32,964 "GET /users/list/ HTTP/1.1" 200 11609
+INFO 2023-08-12 12:29:40,663 "GET /users/26/delete/ HTTP/1.1" 200 10830
+ERROR 2023-08-12 12:29:44,981 Internal Server Error: /users/26/delete/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 278, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/messages/views.py", line 13, in form_valid
+    success_message = self.get_success_message(form.cleaned_data)
+  File "/home/lanlokun/Desktop/portal/users/views.py", line 94, in get_success_message
+    return self.success_message.format(username=obj.username)
+AttributeError: 'dict' object has no attribute 'username'
+ERROR 2023-08-12 12:29:44,981 "POST /users/26/delete/ HTTP/1.1" 500 94909
+INFO 2023-08-12 12:29:55,310 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:29:55,553 Watching for file changes with StatReloader
+INFO 2023-08-12 12:30:03,768 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 12:30:03,993 Watching for file changes with StatReloader
+WARNING 2023-08-12 12:30:14,752 Not Found: /users/26/delete/
+WARNING 2023-08-12 12:30:14,753 "POST /users/26/delete/ HTTP/1.1" 404 7955
+INFO 2023-08-12 12:30:23,570 "GET /users/list/ HTTP/1.1" 200 11184
+INFO 2023-08-12 12:30:28,382 "GET /users/add/ HTTP/1.1" 200 12042
+INFO 2023-08-12 12:30:33,400 "POST /users/add/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:30:35,490 "GET /users/list/ HTTP/1.1" 200 11608
+INFO 2023-08-12 12:30:40,887 "GET /users/27/delete/ HTTP/1.1" 200 10828
+INFO 2023-08-12 12:30:47,406 "POST /users/27/delete/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:30:50,706 "GET /users/list/ HTTP/1.1" 200 11350
+ERROR 2023-08-12 12:31:12,857 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/portal/apps/corecode/middleware.py", line 9, in __call__
+    current_session = AcademicSession.objects.get(current=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:12,882 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 285, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 68, in get
+    return self._session.get(key, default)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:12,883 "GET /users/add/ HTTP/1.1" 500 199396
+ERROR 2023-08-12 12:31:17,646 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/portal/apps/corecode/middleware.py", line 9, in __call__
+    current_session = AcademicSession.objects.get(current=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:17,669 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 285, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 68, in get
+    return self._session.get(key, default)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:17,670 "GET /users/add/ HTTP/1.1" 500 199533
+ERROR 2023-08-12 12:31:19,161 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/portal/apps/corecode/middleware.py", line 9, in __call__
+    current_session = AcademicSession.objects.get(current=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:19,187 Internal Server Error: /users/add/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 285, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 68, in get
+    return self._session.get(key, default)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:19,188 "GET /users/add/ HTTP/1.1" 500 199533
+ERROR 2023-08-12 12:31:26,680 Internal Server Error: /users/list/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/portal/apps/corecode/middleware.py", line 9, in __call__
+    current_session = AcademicSession.objects.get(current=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:26,703 Internal Server Error: /users/list/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 285, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 68, in get
+    return self._session.get(key, default)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:26,704 "GET /users/list/ HTTP/1.1" 500 199278
+ERROR 2023-08-12 12:31:27,787 Internal Server Error: /users/27/delete/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/portal/apps/corecode/middleware.py", line 9, in __call__
+    current_session = AcademicSession.objects.get(current=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:27,822 Internal Server Error: /users/27/delete/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 285, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 68, in get
+    return self._session.get(key, default)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 275, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "dpg-ci86jbp8g3nfuceantb0-a.frankfurt-postgres.render.com" to address: Temporary failure in name resolution
+
+ERROR 2023-08-12 12:31:27,823 "GET /users/27/delete/ HTTP/1.1" 500 199325
+INFO 2023-08-12 12:35:40,870 "GET /users/list/ HTTP/1.1" 200 11184
+INFO 2023-08-12 12:35:56,360 "GET /users/add/ HTTP/1.1" 200 12042
+INFO 2023-08-12 12:36:22,089 "POST /users/add/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:36:24,193 "GET /users/list/ HTTP/1.1" 200 11608
+INFO 2023-08-12 12:36:30,945 "GET /users/1/delete/ HTTP/1.1" 200 10822
+INFO 2023-08-12 12:36:33,983 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:36:34,331 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 12:36:35,266 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 12:36:45,540 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:36:47,026 "GET / HTTP/1.1" 200 10648
+INFO 2023-08-12 12:36:53,743 "GET /users/list/ HTTP/1.1" 200 11983
+INFO 2023-08-12 12:37:04,944 "GET /users/1/delete/ HTTP/1.1" 200 11339
+INFO 2023-08-12 12:37:11,831 "POST /users/1/delete/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:37:15,491 "GET /users/list/ HTTP/1.1" 200 11872
+INFO 2023-08-12 12:37:25,042 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:37:25,339 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 12:37:26,450 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 12:37:33,377 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-08-12 12:37:47,031 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:37:48,567 "GET / HTTP/1.1" 200 10648
+ERROR 2023-08-12 12:37:58,485 Internal Server Error: /student/registered-courses/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 138, in get_queryset
+    student = Student.objects.get(user=self.request.user)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.students.models.Student.DoesNotExist: Student matching query does not exist.
+ERROR 2023-08-12 12:37:58,486 "GET /student/registered-courses/ HTTP/1.1" 500 99684
+ERROR 2023-08-12 12:38:56,165 Internal Server Error: /student/registered-courses/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 138, in get_queryset
+    student = Student.objects.get(user=self.request.user)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 637, in get
+    raise self.model.DoesNotExist(
+apps.students.models.Student.DoesNotExist: Student matching query does not exist.
+ERROR 2023-08-12 12:38:56,165 "GET /student/registered-courses/ HTTP/1.1" 500 99821
+INFO 2023-08-12 12:39:03,564 "GET / HTTP/1.1" 200 9816
+INFO 2023-08-12 12:39:09,262 "GET /users/list/ HTTP/1.1" 200 10874
+INFO 2023-08-12 12:42:52,024 "GET /student/list HTTP/1.1" 200 11685
+ERROR 2023-08-12 12:42:59,588 Internal Server Error: /student/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 180, in get
+    return super().get(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 144, in get
+    return self.render_to_response(self.get_context_data())
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 74, in get_context_data
+    kwargs["form"] = self.get_form()
+  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 53, in get_form
+    form.fields.pop("courses")
+KeyError: 'courses'
+ERROR 2023-08-12 12:42:59,588 "GET /student/create/ HTTP/1.1" 500 99669
+INFO 2023-08-12 12:44:23,584 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-12 12:44:23,855 Watching for file changes with StatReloader
+INFO 2023-08-12 12:44:31,400 "GET /student/create/ HTTP/1.1" 200 14199
+INFO 2023-08-12 12:44:43,575 "POST /student/create/ HTTP/1.1" 200 14442
+INFO 2023-08-12 12:44:54,877 "POST /student/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:44:56,500 "GET /student/12/ HTTP/1.1" 200 11897
+INFO 2023-08-12 12:44:57,369 "GET /media/students/passports/WhatsApp_Image_2023-07-11_at_1.37.31_PM_xPWmCQk.jpeg HTTP/1.1" 200 34299
+INFO 2023-08-12 12:45:01,669 "GET /users/list/ HTTP/1.1" 200 11157
+INFO 2023-08-12 12:45:08,184 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:45:08,560 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 12:45:09,209 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 12:45:24,892 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-08-12 12:45:39,005 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:45:40,272 "GET / HTTP/1.1" 200 7296
+INFO 2023-08-12 12:45:45,947 "GET /course/register/ HTTP/1.1" 200 13315
+INFO 2023-08-12 12:45:51,278 "POST /course/register/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:45:55,355 "GET /course/register/ HTTP/1.1" 200 13466
+INFO 2023-08-12 12:46:02,881 "POST /course/register/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:46:06,536 "GET /course/register/ HTTP/1.1" 200 13471
+INFO 2023-08-12 12:46:12,389 "GET /student/registered-courses/ HTTP/1.1" 200 8288
+INFO 2023-08-12 12:46:22,173 "GET /course/register/ HTTP/1.1" 200 13325
+INFO 2023-08-12 12:46:27,852 "POST /course/register/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:46:31,230 "GET /course/register/ HTTP/1.1" 200 13476
+INFO 2023-08-12 12:46:37,410 "POST /course/register/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:46:41,060 "GET /course/register/ HTTP/1.1" 200 13481
+INFO 2023-08-12 12:47:45,266 "GET /student/registered-courses/ HTTP/1.1" 200 8851
+INFO 2023-08-12 12:47:51,797 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:47:52,129 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 12:47:52,865 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 12:48:08,617 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:48:10,048 "GET / HTTP/1.1" 200 9816
+INFO 2023-08-12 12:48:18,782 "GET /course/list/ HTTP/1.1" 200 14655
+INFO 2023-08-12 12:48:32,706 "GET /course/8/update/ HTTP/1.1" 200 11652
+INFO 2023-08-12 12:48:39,031 "POST /course/8/update/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:48:41,215 "GET /course/list/ HTTP/1.1" 200 14798
+INFO 2023-08-12 12:48:55,721 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:48:56,045 "GET / HTTP/1.1" 302 0
+INFO 2023-08-12 12:48:56,776 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-12 12:49:06,903 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 12:49:08,519 "GET / HTTP/1.1" 200 7379
+INFO 2023-08-12 12:49:12,821 "GET /staff/class/ HTTP/1.1" 200 8479
+INFO 2023-08-12 12:49:27,113 "GET /staff/class/8 HTTP/1.1" 200 8118
+INFO 2023-08-12 12:54:55,988 "GET /staff/class/ HTTP/1.1" 200 8479
+INFO 2023-08-12 12:58:43,217 "GET /staff/class/7 HTTP/1.1" 200 8342
+INFO 2023-08-12 12:59:14,880 "GET /staff/class/8 HTTP/1.1" 200 8118
+INFO 2023-08-12 12:59:20,269 "GET /staff/class/ HTTP/1.1" 200 8479
+INFO 2023-08-12 13:00:33,181 "GET /staff/class/ HTTP/1.1" 200 8503
+INFO 2023-08-12 13:01:02,158 "GET /result/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:01:03,877 "GET /accounts/login/?next=/result/create/ HTTP/1.1" 200 4086
+INFO 2023-08-12 13:01:28,520 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:01:30,721 "GET /result/create/ HTTP/1.1" 200 11894
+INFO 2023-08-12 13:01:49,980 "POST /result/create/ HTTP/1.1" 200 12415
+INFO 2023-08-12 13:02:00,759 "POST /result/create/ HTTP/1.1" 302 0
+INFO 2023-08-12 13:02:05,078 "GET /result/edit-results/ HTTP/1.1" 200 14692
+INFO 2023-08-12 13:07:15,742 /home/lanlokun/Desktop/portal/users/views.py changed, reloading.
+INFO 2023-08-12 13:07:16,043 Watching for file changes with StatReloader

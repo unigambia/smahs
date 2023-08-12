@@ -1,4 +1,5 @@
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.forms import widgets
 from django.shortcuts import render
 from django.urls import reverse_lazy
@@ -17,10 +18,13 @@ class StaffDetailView(DetailView):
     template_name = "staffs/staff_detail.html"
 
 
-class StaffCreateView(SuccessMessageMixin, CreateView):
+class StaffCreateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixin, CreateView):
     model = Staff
     fields = "__all__"
     success_message = "New staff successfully added"
+
+    def test_func(self):
+        return self.request.user.is_superuser   
 
     def get_form(self):
         """add date picker in forms"""
@@ -35,10 +39,13 @@ class StaffCreateView(SuccessMessageMixin, CreateView):
         return form
 
 
-class StaffUpdateView(SuccessMessageMixin, UpdateView):
+class StaffUpdateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixin, UpdateView):
     model = Staff
     fields = "__all__"
     success_message = "Record successfully updated."
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def get_form(self):
         """add date picker in forms"""
@@ -52,6 +59,11 @@ class StaffUpdateView(SuccessMessageMixin, UpdateView):
         return form
 
 
-class StaffDeleteView(DeleteView):
+class StaffDeleteView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin,DeleteView):
     model = Staff
     success_url = reverse_lazy("staff-list")
+    success_message = "Record successfully deleted."
+
+    def test_func(self):
+        return self.request.user.is_superuser
+

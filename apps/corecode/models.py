@@ -63,7 +63,8 @@ class Course(models.Model):
         Staff,
         on_delete=models.SET_NULL,
         null=True,
-        limit_choices_to={'role': 'academic'}
+        blank=True,
+        related_name="lecturer",
     )
     class Meta:
         ordering = ["name"]

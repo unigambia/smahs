@@ -1,6 +1,6 @@
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.shortcuts import redirect, render
 from django.views.generic import DetailView, ListView, View
 
@@ -12,6 +12,7 @@ from .models import Result
 
 
 @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def create_result(request):
     students = Student.objects.all()
     if request.method == "POST":
@@ -70,6 +71,7 @@ def create_result(request):
     return render(request, "result/create_result.html", {"students": students})
 
 @login_required
+@user_passes_test(lambda u: u.is_superuser)
 def edit_results(request):
     if request.method == "POST":
         form = EditResults(request.POST)
@@ -86,6 +88,7 @@ def edit_results(request):
 
 
 class ResultListView(LoginRequiredMixin, View):
+        
     def get(self, request, *args, **kwargs):
         results = Result.objects.filter(
             session=request.current_session, semester=request.current_semester

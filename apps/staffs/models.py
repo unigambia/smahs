@@ -25,7 +25,6 @@ class Staff(models.Model):
     gender = models.CharField(max_length=10, choices=GENDER, default="male")
     date_of_birth = models.DateField(default=timezone.now)
     date_of_employment = models.DateField(default=timezone.now)
-    role = models.CharField(max_length=10, choices=ROLE, default="academic")
     country = models.CharField( max_length=200, choices=[(country.name, country.name) for country in pycountry.countries], default="Gambia")
     image = models.ImageField(upload_to="staffs/images/", blank=True)
     mobile_num_regex = RegexValidator(

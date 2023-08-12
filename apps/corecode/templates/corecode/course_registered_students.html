@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Registered Students for {{course_name}} class {% endblock title %}
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="studenttable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Fullname</th>
+          <th>Mat Number</th>
+          <th>Current Cohort</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for student in object_list %}
+          <tr class='clickable-row' data-href="{% url 'student-detail' student.id %}">
+            <td>{{ forloop.counter}}</td>
+            <td>{{ student.studentsurname}} {{student.student.firstname }} {{student.student.other_name }}</td>
+            <td>{{ student.student.mat_number}}</td>
+            <td>{{ student.student.current_cohort}}</td>
+            <td>{{ student.student.get_gender_display}}</td>
+          </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+
+    <a href="{% url 'staff-courses' %}" class="btn btn-secondary mt-3">Back to Courses</a>
+
+  </div>
+{% endblock content %}
+
+
+{% block morejs %}
+<script>
+  $('#studenttable').DataTable({
+  });
+</script>
+
+{% endblock morejs %}

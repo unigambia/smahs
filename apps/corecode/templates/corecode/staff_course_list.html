@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <h1>Your Courses</h1>
+    
+    <div class="row">
+      {% for course in object_list %}
+        <div class="col-md-4 mb-4">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">{{ course.name }}</h5>
+              <p class="card-text">{{ course.code }}</p>
+              <a href="{% url 'staff-course-students' course.id %}" name="course_id" class="btn btn-primary">Registered Students</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
