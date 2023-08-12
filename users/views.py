@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import HttpResponseRedirect, redirect, render
 from django.urls import reverse_lazy
@@ -21,21 +21,18 @@ class UserListView(LoginRequiredMixin, ListView):
         context = super().get_context_data(**kwargs)
         context["form"] = UserForm()
         
-        print(self.request.user)
-        print(self.request.user.is_superuser)
-        print(self.request.user.is_staff)   
-        print(self.request.user.is_authenticated)
-
         return context
 
 
-# @user_passes_test(lambda u: u.is_superuser)
-class UserCreateView(LoginRequiredMixin, CreateView):
+class UserCreateView(UserPassesTestMixin, SuccessMessageMixin ,LoginRequiredMixin, CreateView):
     model = User
     form_class = RegistrationForm
     template_name = "corecode/mgt_form.html"
     success_url = reverse_lazy("users")
     success_message = "New User successfully added"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def form_valid(self, form):
         # Ensure that the password and confirm_password fields match
@@ -46,8 +43,6 @@ class UserCreateView(LoginRequiredMixin, CreateView):
             messages.error(self.request, "Passwords do not match.")
             return self.form_invalid(form)
         
-        print("Form Data:", form.cleaned_data)
-
         obj = form.save(commit=False)
         obj.set_password(password)
         obj.is_superuser = True
@@ -56,13 +51,15 @@ class UserCreateView(LoginRequiredMixin, CreateView):
 
 
 
-# @user_passes_test(lambda u: u.is_superuser)
-class UserUpdateView(LoginRequiredMixin, UpdateView):
+class UserUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     model = User
     form_class = UserUpdateForm 
     template_name = "corecode/mgt_form.html"
     success_url = reverse_lazy("users")
     success_message = "User successfully updated."
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def form_valid(self, form):
         password = form.cleaned_data.get('password', None)
@@ -78,15 +75,18 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
         return super().form_valid(form)
 
 
-# @user_passes_test(lambda u: u.is_superuser)
-class UserDeleteView(LoginRequiredMixin, DeleteView):
+class UserDeleteView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     model = User
     success_url = reverse_lazy("users")
     template_name = "corecode/core_confirm_delete.html"
-    success_message = "The User {} has been deleted with all its attached content"
+    success_message = "User  has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
+        print(obj)
         messages.success(self.request, self.success_message.format(obj.username))
         return super(UserDeleteView, self).delete(request, *args, **kwargs)
  
