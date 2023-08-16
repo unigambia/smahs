@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+
+{% block title %}
+Course Material for {{course_name}}
+{% endblock title %}
+
+
+{% block breadcrumb %}
+<a class="btn btn-primary" href="{% url 'staff-course-assignments-create' course_id=course_id %}"><i
+    class="fas fa-upload"></i> Upload Material</a>
+{% endblock breadcrumb %}
+  
+
+{% block content %}
+<div class="d-flex flex-row flex-wrap">
+  {% if object_list %}
+<div class="table-responsive" >
+    <table id="assignmenttable" class="table table-bordered table-hover" data-page-length='10'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Type </th>
+          <th>Due Date</th>
+          <th>Total Mark</th>
+          <th>Files</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for assignment in object_list %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ assignment.title }}</td>
+          <td>{{ assignment.description }}</td>
+          <td>{{ assignment.type }}</td> 
+          <td>{{ assignment.due_date }}</td>
+          <td>{{ assignment.total_marks }}</td>
+          <td>
+            {% if assignment.file %}
+            <a href="{{ assignment.file.url }}" class="btn btn-primary" target="_blank">View File</a>
+            {% else %}
+            <a href="#" class="btn btn-primary disabled" target="_blank">View File</a>
+            {% endif %}
+          </td>
+          <td>
+            <a href="{% url 'staff-course-assignments-update' course_id=course_id pk=assignment.pk %}" class="btn btn-link">
+              <i class="fas fa-edit text-primary"></i>
+            </a>
+            <a href="{% url 'staff-course-assignments-delete' course_id=course_id pk=assignment.pk %}" class="btn btn-link">
+              <i class="fas fa-trash text-danger"></i>
+            </a>
+          </td>
+          
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="alert alert-info" role="alert">
+    No Course Material Found
+  </div>
+  {% endif %}
+</div>
+
+<div class="mt-4">
+  <a href="{% url 'staff-courses' %}" class="btn btn-secondary">
+    back
+    <i class="fa fa-left"></i>
+  </a>
+</div>
+
+
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#assignmenttable').DataTable({
+    autoWidth: true, // Enable automatic column width adjustment
+  });
+</script>
+{% endblock morejs %}

@@ -12,6 +12,9 @@
               <h5 class="card-title">{{ course.name }}</h5>
               <p class="card-text">{{ course.code }}</p>
               <a href="{% url 'staff-course-students' course.id %}" name="course_id" class="btn btn-primary">Registered Students</a>
+              <a href="{% url 'staff-course-assignments' course.id %}" name="course_id" class="btn btn-secondary">Course Material</a>
+
+
             </div>
           </div>
         </div>

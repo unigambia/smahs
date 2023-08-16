@@ -22,10 +22,20 @@
               Confirm Delete
               <i class="fa fa-trash-alt"></i>
             </button>
+            <a href="#" class="btn btn-secondary" onclick="goBack()">
+              Cancel
+              <i class="fa fa-ban"></i>
+            </a>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 
 {% endblock content %}

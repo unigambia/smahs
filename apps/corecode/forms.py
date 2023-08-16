@@ -7,6 +7,7 @@ from .models import (
     SiteConfig,
     StudentCohort,
     Course,
+    CourseMaterial
 )
 
 from django.contrib.auth.models import User
@@ -44,6 +45,14 @@ class CourseForm(ModelForm):
         model = Course
         fields = ["name", "code", "credit_unit", "level", "lecturer"]
 
+class AssignmentForm(ModelForm):
+    class Meta:
+        model = CourseMaterial
+        fields = ["title", "due_date", "description", "file", "total_marks"]
+
+    def __init__(self, *args, **kwargs):
+        super(AssignmentForm, self).__init__(*args, **kwargs)
+        self.fields['due_date'].widget = forms.DateInput(attrs={'type': 'date'})
 
 class UserForm(ModelForm):
     prefix = "User"

@@ -1,7 +1,10 @@
+from typing import Any
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.forms.forms import BaseForm
+from django.http.response import HttpResponse
 from django.shortcuts import HttpResponseRedirect, redirect, render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView, View, DetailView
@@ -10,6 +13,9 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from apps.corecode.forms import RegistrationForm, UserUpdateForm
 from django.contrib.auth.decorators import user_passes_test
+from django.core.files.uploadedfile import InMemoryUploadedFile
+from django.forms import widgets
+
 
 
 
@@ -21,6 +27,7 @@ from .forms import (
     StudentCohortForm,
     CourseForm,
     UserForm,
+    AssignmentForm
 )
 from .models import (
     AcademicSession,
@@ -28,7 +35,8 @@ from .models import (
     SiteConfig,
     StudentCohort,
     Course,
-    StudentCourse
+    StudentCourse,
+    CourseMaterial
 
 )
 from apps.students.models import Student
@@ -431,3 +439,103 @@ class CourseRegisteredStudentsView(UserPassesTestMixin, LoginRequiredMixin, List
     def get_queryset(self):
         return StudentCourse.objects.filter(course=self.kwargs["pk"])
     
+    
+class AssignmentsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    template_name = "corecode/mgt_form.html"
+    model = CourseMaterial
+    fields = "__all__"
+    success_message = "New Assignment successfully added."
+
+    def test_func(self):
+        return self.request.user.is_staff   
+
+    def get_form(self):
+        """add date picker in forms"""
+        form = super(AssignmentsCreateView, self).get_form()
+        form.fields["due_date"].widget = widgets.DateInput(attrs={"type": "date"})
+        form.fields.pop("course")
+        form.fields.pop("academic_session")
+        form.fields.pop("academic_semester")
+        form.fields.pop("date_created")
+        form.fields.pop("lecturer")
+        return form
+    
+    def form_valid(self, form: BaseForm) -> HttpResponse:
+        form.instance.lecturer = self.request.user.staff
+        form.instance.course = Course.objects.get(id=self.kwargs["course_id"])
+        form.instance.academic_session = AcademicSession.objects.get(current=True)
+        form.instance.academic_semester = AcademicSemester.objects.get(current=True)
+        form.instance.file = self.request.FILES.get("file")
+        print(form.instance.file)
+
+        return super().form_valid(form)
+    
+    def get_success_url(self):
+        from django.urls import reverse
+        return reverse("staff-course-assignments", kwargs={"pk": self.kwargs["course_id"]})
+
+
+class AssignmentsListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = CourseMaterial
+    template_name = "corecode/assignments.html"
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["course_id"] = self.kwargs["pk"]
+        context["course_name"] = Course.objects.get(pk=self.kwargs["pk"]).name
+        return context
+
+    def get_queryset(self):
+        return CourseMaterial.objects.filter(course=self.kwargs["pk"])
+
+class AssignmentUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    model = CourseMaterial
+    form_class = AssignmentForm
+    template_name = "corecode/mgt_form.html"
+    success_message = "The Assignment for course '{}' has been updated"
+
+    def get_success_url(self):
+        return reverse_lazy("staff-course-assignments", kwargs={'pk': self.kwargs['course_id']})
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def form_valid(self, form):
+        form.instance.staff = self.request.user.staff
+        course = get_object_or_404(Course, id=self.kwargs["course_id"])
+        form.instance.course = course
+        form.instance.academic_session = AcademicSession.objects.get(current=True)
+        form.instance.academic_semester = AcademicSemester.objects.get(current=True)
+        form.instance.lecturer = self.request.user.staff  # Set the lecturer
+
+        uploaded_file: InMemoryUploadedFile = form.cleaned_data['file']
+        
+        if uploaded_file:
+            # Set the file field of the Assignment instance
+            form.instance.file = uploaded_file
+
+
+        return super().form_valid(form)
+
+    def get_success_message(self, cleaned_data):
+        course = Course.objects.get(id=self.kwargs["course_id"])
+        return self.success_message.format(course.name)
+    
+
+class AssignmentDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = CourseMaterial
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Assignment for course '{}' has been deleted"
+
+    def get_success_url(self):
+        return reverse_lazy("staff-course-assignments", kwargs={'pk': self.kwargs['course_id']})
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get_success_message(self, cleaned_data):
+        course = Course.objects.get(id=self.kwargs["course_id"])
+        return self.success_message.format(course.name)

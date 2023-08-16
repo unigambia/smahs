@@ -23,7 +23,11 @@ from .views import (
     CourseRegisterView,
     UnregisterCourseView,
     StaffCourseListView,
-    CourseRegisteredStudentsView
+    CourseRegisteredStudentsView,
+    AssignmentsCreateView,
+    AssignmentsListView,
+    AssignmentUpdateView,
+    AssignmentDeleteView,
     )
 
 urlpatterns = [
@@ -61,5 +65,9 @@ urlpatterns = [
     path('course/unregister/', UnregisterCourseView.as_view(), name='course-unregistration'),
     path('staff/class/', StaffCourseListView.as_view(), name='staff-courses'),
     path('staff/class/<int:pk>', CourseRegisteredStudentsView.as_view(), name='staff-course-students'),
+    path('staff/class/<int:pk>/assignment', AssignmentsListView.as_view(), name='staff-course-assignments'),
+    path('staff/class/<int:course_id>/assignment/create', AssignmentsCreateView.as_view(), name='staff-course-assignments-create'),
+    path('staff/class/<int:course_id>/assignment/<int:pk>/update', AssignmentUpdateView.as_view(), name='staff-course-assignments-update'),
+    path('staff/class/<int:course_id>/assignment/<int:pk>/delete', AssignmentDeleteView.as_view(), name='staff-course-assignments-delete'),
     
 ]

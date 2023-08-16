@@ -2,36 +2,37 @@
 {% load widget_tweaks %}
 
 {% block title %}
-  {{title}}
+  {{ title }}
 {% endblock title %}
-
-
 
 {% block title-side %}{% endblock title-side %}
 
 {% block content %}
   <div class="row">
     <div class="col-sm-12">
-      <form method="POST">
+      <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
 
         <div class="mb-3">
           {% for field in form %}
           <div class="form-group">
-            {{ field.label_tag}}
-            {{ field | add_class:"form-control" |add_error_class:"is-invalid" | attr:"required"}}
-            {{field.help_text}}
-            {{field.errors}}
+            {{ field.label_tag }}
+            {% if field.required and not field.is_nullable %}
+              {{ field | add_class:"form-control" | add_error_class:"is-invalid" | attr:"required"}}
+            {% else %}
+              {{ field | add_class:"form-control" | add_error_class:"is-invalid"}}
+            {% endif %}
+            {{ field.help_text }}
+            {{ field.errors }}
           </div>
           {% endfor %}
         </div>
 
         {% if request.resolver_match.view_name == 'user_change' %}
         <input type="button" value="Reset Password" onclick="resetPassword()"><br><br>
-      {% endif %}
+        {% endif %}
 
         <input type="submit" value="Save" class="w-25 btn btn-primary">
-
       </form>
     </div>
   </div>
@@ -47,8 +48,5 @@
       }
     }
   </script>
-{% endif %}
-
+  {% endif %}
 {% endblock content %}
-
-
