@@ -1,0 +1,21 @@
+<div class="container mt-4">
+  
+    {% if past_questions %}
+      <h3>Past Questions</h3>
+      <ol class="mb-4">
+        {% for past_question in past_questions %}
+          <li>
+            <a href="{% if past_question.file %}{{ past_question.file.url }}{% endif %}" target="_blank">
+              {{ past_question.title }} {{ past_question.description }} 
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+    
+    {% if not past_questions %}
+      <p class="alert alert-danger">No {{ material_type }} material found matching the query.</p>
+    {% endif %}
+    
+  </div>
+  

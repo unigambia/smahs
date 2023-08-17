@@ -412,7 +412,7 @@ class StaffCourseListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     template_name = "corecode/staff_course_list.html"
 
     def test_func(self):
-        return self.request.user.is_staff
+        return  self.request.user.is_staff
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

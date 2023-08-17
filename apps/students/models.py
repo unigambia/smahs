@@ -25,6 +25,7 @@ class Student(models.Model):
     surname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
     other_name = models.CharField(max_length=200, blank=True)
+    email = models.EmailField(blank=True)
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES, default="male")
     date_of_birth = models.DateField(default=timezone.now)
     current_cohort = models.ForeignKey(
@@ -55,7 +56,7 @@ class Student(models.Model):
 @receiver(post_save, sender=Student)
 def create_user_for_student(sender, instance, created, **kwargs):
     if created and not instance.user:
-        username = instance.firstname + instance.mat_number  # You can use the mat_number as the username
+        username = instance.email # You can use the mat_number as the username
         password = "student@utg"  # Generate a random password
         user = User.objects.create_user(username=username, password=password)
         instance.user = user

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Course Material{% endblock title %}
+
+{% block content %}
+  <div class="container mt-4">
+    
+    <ul class="nav nav-tabs" id="materialTabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="lecture-tab" data-toggle="tab" href="#lecture" role="tab" aria-controls="lecture" aria-selected="true">Lecture Material</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="assignment-tab" data-toggle="tab" href="#assignment" role="tab" aria-controls="assignment" aria-selected="false">Assignment Material</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="past-question-tab" data-toggle="tab" href="#past-question" role="tab" aria-controls="'past-question'" aria-selected="false">Past Question Material</a>
+      </li>  
+      <li class="nav-item">
+        <a class="nav-link" id="other-tab" data-toggle="tab" href="#other" role="tab" aria-controls="other" aria-selected="false">Other Material</a>
+      </li>
+      </ul>
+    
+    <div class="tab-content" id="materialTabsContent">
+      <div class="tab-pane fade show active" id="lecture" role="tabpanel" aria-labelledby="lecture-tab">
+        {% include 'students/lecture_materials.html' %}
+      </div>
+      <div class="tab-pane fade" id="assignment" role="tabpanel" aria-labelledby="assignment-tab">
+        {% include 'students/assignment.html' %}
+      </div>
+      <div class="tab-pane fade" id="past-question" role="tabpanel" aria-labelledby="past-question-tab">
+        {% include 'students/past_papers.html' %}
+      </div>
+      <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+        {% include 'students/others.html' %}
+      </div>
+      <!-- Add more tab content sections for other material types as needed -->
+    </div>
+  </div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+<div class="container mt-4">
+
+    {% if other_materials %}
+      <h3>Other Materials</h3>
+      <ol>
+        {% for other_material in other_materials %}
+        
+          <li>
+            <a href="{% if other_material.file %}{{ other_material.file.url }}{% endif %}" target="_blank">
+              {{ other_material.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+    
+    {% if not other_materials %}
+      <p class="alert alert-danger">No {{ material_type }} material found matching the query.</p>
+    {% endif %}
+  </div>
+  

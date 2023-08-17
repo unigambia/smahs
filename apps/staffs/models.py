@@ -22,6 +22,7 @@ class Staff(models.Model):
     surname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)
     other_name = models.CharField(max_length=200, blank=True)
+    email = models.EmailField(max_length=200, blank=True)
     gender = models.CharField(max_length=10, choices=GENDER, default="male")
     date_of_birth = models.DateField(default=timezone.now)
     date_of_employment = models.DateField(default=timezone.now)
@@ -43,11 +44,14 @@ class Staff(models.Model):
     def get_absolute_url(self):
         return reverse("staff-detail", kwargs={"pk": self.pk})
     
+    def get_full_name(self):
+        return f"{self.surname} {self.firstname} {self.other_name}"
+    
 
 @receiver(post_save, sender=Staff)
 def create_user_for_staff(sender, instance, created, **kwargs):
     if created and not instance.user:
-        username = instance.firstname + instance.surname  # You can use the mat_number as the username
+        username = instance.email   # You can use the mat_number as the username
         password = "staff@utg"  # Generate a random password
 
         user = User.objects.create_user(username=username, password=password, is_staff=True)

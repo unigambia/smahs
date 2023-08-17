@@ -3030,3 +3030,786 @@ INFO 2023-08-16 12:05:23,923 "GET /staff/class/ HTTP/1.1" 200 8009
 INFO 2023-08-16 12:05:28,436 "GET /staff/class/6/assignment HTTP/1.1" 200 10697
 INFO 2023-08-16 12:06:16,230 "GET /staff/class/ HTTP/1.1" 200 8009
 INFO 2023-08-16 12:06:18,885 "GET /staff/class/6/assignment HTTP/1.1" 200 10697
+INFO 2023-08-16 12:09:03,228 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-16 12:09:03,398 "GET / HTTP/1.1" 302 0
+INFO 2023-08-16 12:09:03,854 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-16 12:09:48,017 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-16 12:09:48,845 "GET / HTTP/1.1" 200 7052
+INFO 2023-08-16 12:09:55,150 "GET /result/view/all HTTP/1.1" 200 8285
+INFO 2023-08-16 12:10:03,351 "GET /student/registered-courses/ HTTP/1.1" 200 8609
+INFO 2023-08-16 12:10:14,582 "GET /course/register/ HTTP/1.1" 200 13093
+INFO 2023-08-16 12:10:23,887 "GET /result/view/all HTTP/1.1" 200 8285
+INFO 2023-08-16 12:11:18,870 "GET /result/view/all HTTP/1.1" 200 8613
+WARNING 2023-08-16 12:11:22,705 Forbidden (Permission denied): /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2023-08-16 12:11:22,949 "GET /staff/class/ HTTP/1.1" 403 135
+INFO 2023-08-16 12:13:15,532 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:13:15,864 Watching for file changes with StatReloader
+ERROR 2023-08-16 12:13:23,376 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/corecode/views.py", line 423, in get_queryset
+    return Course.objects.filter(lecturer=self.request.user.staff)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/functional.py", line 268, in inner
+    return func(_wrapped, *args)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.staff.RelatedObjectDoesNotExist: User has no staff.
+ERROR 2023-08-16 12:13:23,377 "GET /staff/class/ HTTP/1.1" 500 99361
+INFO 2023-08-16 12:13:56,395 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:13:56,616 Watching for file changes with StatReloader
+INFO 2023-08-16 12:18:31,780 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:18:32,024 Watching for file changes with StatReloader
+INFO 2023-08-16 12:18:33,125 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:18:33,343 Watching for file changes with StatReloader
+ERROR 2023-08-16 12:18:41,390 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/corecode/views.py", line 430, in get_queryset
+    queryset = StudentCourse.objects.filter(students=user)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1415, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1225, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1713, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'students' into field. Choices are: academic_semester, academic_semester_id, academic_session, academic_session_id, course, course_id, id, registration_date, student, student_id
+ERROR 2023-08-16 12:18:41,392 "GET /staff/class/ HTTP/1.1" 500 136946
+INFO 2023-08-16 12:19:03,769 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:19:04,030 Watching for file changes with StatReloader
+ERROR 2023-08-16 12:20:26,840 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/corecode/views.py", line 430, in get_queryset
+    queryset = StudentCourse.objects.filter(student=user)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1534, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1453, in build_filter
+    self.check_related_objects(join_info.final_field, value, join_info.opts)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1264, in check_related_objects
+    self.check_query_object_type(value, opts, field)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1241, in check_query_object_type
+    raise ValueError(
+ValueError: Cannot query "Arthur519": Must be "Student" instance.
+ERROR 2023-08-16 12:20:26,841 "GET /staff/class/ HTTP/1.1" 500 136986
+INFO 2023-08-16 12:21:29,223 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:21:29,456 Watching for file changes with StatReloader
+INFO 2023-08-16 12:21:59,807 "GET /staff/class/ HTTP/1.1" 200 9271
+WARNING 2023-08-16 12:22:08,110 Forbidden (Permission denied): /staff/class/6
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2023-08-16 12:22:08,368 "GET /staff/class/6 HTTP/1.1" 403 135
+INFO 2023-08-16 12:26:20,857 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:26:21,112 Watching for file changes with StatReloader
+ERROR 2023-08-16 12:26:42,908 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/corecode/views.py", line 423, in get_queryset
+    return Course.objects.filter(lecturer=self.request.user.staff)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/functional.py", line 268, in inner
+    return func(_wrapped, *args)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.staff.RelatedObjectDoesNotExist: User has no staff.
+ERROR 2023-08-16 12:26:42,909 "GET /staff/class/ HTTP/1.1" 500 99361
+INFO 2023-08-16 12:26:53,863 "GET /result/view/all HTTP/1.1" 200 8613
+INFO 2023-08-16 12:27:03,677 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 12:27:03,902 Watching for file changes with StatReloader
+INFO 2023-08-16 12:27:23,304 "GET /result/view/all HTTP/1.1" 200 8285
+INFO 2023-08-16 12:27:34,108 "GET /student/registered-courses/ HTTP/1.1" 200 8609
+ERROR 2023-08-16 12:31:23,146 Internal Server Error: /student/registered-courses/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'student-course-material' not found. 'student-course-material' is not a valid view function or pattern name.
+ERROR 2023-08-16 12:31:23,147 "GET /student/registered-courses/ HTTP/1.1" 500 211767
+INFO 2023-08-16 12:34:39,935 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-16 12:34:40,198 Watching for file changes with StatReloader
+INFO 2023-08-16 12:35:47,765 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-16 12:35:48,008 Watching for file changes with StatReloader
+INFO 2023-08-16 12:36:07,273 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-16 12:36:07,520 Watching for file changes with StatReloader
+ERROR 2023-08-16 12:36:22,181 Internal Server Error: /student/registered-courses/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'student-course-material' not found. 'student-course-material' is not a valid view function or pattern name.
+ERROR 2023-08-16 12:36:22,182 "GET /student/registered-courses/ HTTP/1.1" 500 211767
+INFO 2023-08-16 12:37:41,526 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-16 12:37:41,775 Watching for file changes with StatReloader
+ERROR 2023-08-16 12:37:57,543 Internal Server Error: /student/registered-courses/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'student-course-material' not found. 'student-course-material' is not a valid view function or pattern name.
+ERROR 2023-08-16 12:37:57,544 "GET /student/registered-courses/ HTTP/1.1" 500 211751
+ERROR 2023-08-16 12:38:43,373 Internal Server Error: /student/registered-courses/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'course-material' not found. 'course-material' is not a valid view function or pattern name.
+ERROR 2023-08-16 12:38:43,374 "GET /student/registered-courses/ HTTP/1.1" 500 211559
+INFO 2023-08-16 12:39:10,589 /home/lanlokun/Desktop/portal/apps/students/urls.py changed, reloading.
+INFO 2023-08-16 12:39:10,812 Watching for file changes with StatReloader
+INFO 2023-08-16 12:39:51,085 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+ERROR 2023-08-16 12:40:13,547 Internal Server Error: /student/course-material/6/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: students/student_course_material.html
+ERROR 2023-08-16 12:40:13,548 "GET /student/course-material/6/ HTTP/1.1" 500 84911
+INFO 2023-08-16 12:40:50,260 "GET /student/course-material/6/ HTTP/1.1" 200 0
+INFO 2023-08-16 12:42:05,929 "GET /student/course-material/6/ HTTP/1.1" 200 7567
+INFO 2023-08-16 12:42:17,102 "GET /media/assignments/Thomas_Sankara_the_Upright_Man_YouTube_online-video-cutter.com.mp4 HTTP/1.1" 304 0
+INFO 2023-08-16 12:44:27,461 "GET /student/course-material/6/ HTTP/1.1" 200 7803
+INFO 2023-08-16 12:47:41,255 "GET /student/course-material/6/ HTTP/1.1" 200 7853
+INFO 2023-08-16 12:48:21,209 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+WARNING 2023-08-16 12:48:37,256 Not Found: /student/course-material/9/
+WARNING 2023-08-16 12:48:37,257 "GET /student/course-material/9/ HTTP/1.1" 404 9393
+WARNING 2023-08-16 12:50:25,976 Not Found: /student/course-material/9/
+WARNING 2023-08-16 12:50:25,977 "GET /student/course-material/9/ HTTP/1.1" 404 9393
+INFO 2023-08-16 12:50:41,426 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 12:50:46,080 "GET /student/course-material/6/ HTTP/1.1" 200 7910
+WARNING 2023-08-16 12:50:51,394 Not Found: /student/course-material/7/
+WARNING 2023-08-16 12:50:51,395 "GET /student/course-material/7/ HTTP/1.1" 404 9393
+INFO 2023-08-16 12:53:24,694 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-16 12:53:24,930 Watching for file changes with StatReloader
+INFO 2023-08-16 12:53:37,178 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-16 12:53:37,413 Watching for file changes with StatReloader
+INFO 2023-08-16 12:53:52,084 "GET /student/course-material/7/ HTTP/1.1" 200 7126
+INFO 2023-08-16 12:54:06,909 "GET /course/register/ HTTP/1.1" 200 13093
+INFO 2023-08-16 12:54:11,506 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 12:54:22,544 "GET /student/course-material/9/ HTTP/1.1" 200 7126
+ERROR 2023-08-16 12:56:19,133 Internal Server Error: /student/course-material/9/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: students/course_material_tab_content.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: students/course_material_tab_content.html
+ERROR 2023-08-16 12:56:19,133 "GET /student/course-material/9/ HTTP/1.1" 500 191673
+INFO 2023-08-16 12:56:35,980 "GET /student/course-material/9/ HTTP/1.1" 200 7997
+INFO 2023-08-16 12:57:00,539 "GET /student/course-material/9/ HTTP/1.1" 200 7968
+INFO 2023-08-16 12:57:17,157 "GET /student/course-material/9/ HTTP/1.1" 200 8326
+INFO 2023-08-16 12:59:41,916 "GET /student/course-material/9/ HTTP/1.1" 200 8320
+INFO 2023-08-16 13:00:46,314 "GET /student/course-material/9/ HTTP/1.1" 200 8320
+INFO 2023-08-16 13:00:59,359 "GET /student/course-material/9/ HTTP/1.1" 200 8668
+INFO 2023-08-16 13:01:46,856 "GET /student/course-material/6/ HTTP/1.1" 200 10195
+INFO 2023-08-16 13:03:35,732 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 13:03:38,743 "GET /student/course-material/6/ HTTP/1.1" 200 10195
+INFO 2023-08-16 13:03:42,508 "GET /student/course-material/7/ HTTP/1.1" 200 8668
+INFO 2023-08-16 13:04:22,346 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 13:04:41,776 "GET /student/course-material/9/ HTTP/1.1" 200 8668
+INFO 2023-08-16 13:07:06,656 "GET /student/course-material/9/ HTTP/1.1" 200 9256
+INFO 2023-08-16 13:12:13,568 "GET /student/course-material/9/ HTTP/1.1" 200 9256
+INFO 2023-08-16 13:12:25,136 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 13:12:28,759 "GET /student/course-material/6/ HTTP/1.1" 200 9256
+INFO 2023-08-16 13:12:42,068 "GET /student/course-material/6/ HTTP/1.1" 200 12313
+INFO 2023-08-16 13:13:24,946 "GET /result/view/all HTTP/1.1" 200 8285
+INFO 2023-08-16 13:13:51,943 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 13:14:02,153 "GET /course/register/ HTTP/1.1" 200 13093
+INFO 2023-08-16 13:14:11,816 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 13:14:16,902 "GET /student/course-material/6/ HTTP/1.1" 200 12313
+INFO 2023-08-16 13:28:09,612 "GET /course/register/ HTTP/1.1" 200 13093
+INFO 2023-08-16 13:51:25,635 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 13:51:34,140 "GET /student/course-material/9/ HTTP/1.1" 200 9256
+INFO 2023-08-16 13:52:02,573 "GET /result/view/all HTTP/1.1" 200 8285
+INFO 2023-08-16 14:01:26,612 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-16 14:01:26,777 "GET / HTTP/1.1" 302 0
+INFO 2023-08-16 14:01:27,243 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-16 15:27:40,924 "GET / HTTP/1.1" 302 0
+INFO 2023-08-16 15:27:41,366 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-16 15:28:24,523 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-16 15:28:25,437 "GET / HTTP/1.1" 200 9842
+INFO 2023-08-16 15:28:25,503 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-16 15:29:14,041 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-16 15:29:14,228 "GET / HTTP/1.1" 302 0
+INFO 2023-08-16 15:29:14,716 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-16 15:30:25,247 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-16 15:30:26,259 "GET / HTTP/1.1" 200 6540
+WARNING 2023-08-16 15:30:28,942 Forbidden (Permission denied): /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2023-08-16 15:30:29,184 "GET /staff/class/ HTTP/1.1" 403 135
+WARNING 2023-08-16 15:30:59,686 Forbidden (Permission denied): /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 134, in dispatch
+    return self.handle_no_permission()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 48, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+WARNING 2023-08-16 15:30:59,928 "GET /staff/class/ HTTP/1.1" 403 135
+INFO 2023-08-16 15:31:10,194 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 15:31:10,559 Watching for file changes with StatReloader
+INFO 2023-08-16 15:31:12,690 /home/lanlokun/Desktop/portal/apps/corecode/views.py changed, reloading.
+INFO 2023-08-16 15:31:12,910 Watching for file changes with StatReloader
+INFO 2023-08-16 15:31:18,892 "GET /staff/class/ HTTP/1.1" 200 8010
+INFO 2023-08-16 15:31:29,592 "GET /staff/class/6 HTTP/1.1" 200 7500
+INFO 2023-08-16 15:31:37,211 "GET /staff/class/ HTTP/1.1" 200 8010
+INFO 2023-08-16 15:31:40,608 "GET /staff/class/6/assignment HTTP/1.1" 200 10697
+INFO 2023-08-16 15:32:15,941 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-16 15:32:16,269 "GET / HTTP/1.1" 302 0
+INFO 2023-08-16 15:32:17,364 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-16 15:32:50,033 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-16 15:32:51,672 "GET / HTTP/1.1" 200 7052
+INFO 2023-08-16 15:33:00,484 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 15:33:23,507 "GET /student/course-material/7/ HTTP/1.1" 200 9256
+INFO 2023-08-16 15:34:27,216 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-16 15:34:36,593 "GET /student/course-material/6/ HTTP/1.1" 200 12313
+INFO 2023-08-16 15:36:14,610 /home/lanlokun/Desktop/portal/apps/staffs/models.py changed, reloading.
+INFO 2023-08-16 15:36:14,847 Watching for file changes with StatReloader
+INFO 2023-08-16 15:40:42,435 Watching for file changes with StatReloader
+INFO 2023-08-16 15:41:37,570 "GET /student/course-material/6/ HTTP/1.1" 200 12313
+INFO 2023-08-16 15:43:45,818 "GET /student/course-material/6/ HTTP/1.1" 200 12429
+INFO 2023-08-16 15:44:16,957 "GET /student/course-material/6/ HTTP/1.1" 200 12429
+INFO 2023-08-17 10:32:46,401 Watching for file changes with StatReloader
+INFO 2023-08-17 10:34:29,954 "GET / HTTP/1.1" 302 0
+INFO 2023-08-17 10:34:30,381 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-17 10:34:30,441 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-08-17 10:34:30,472 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-08-17 10:34:30,474 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-08-17 10:34:30,480 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+WARNING 2023-08-17 10:34:32,308 Not Found: /favicon.ico
+WARNING 2023-08-17 10:34:32,309 "GET /favicon.ico HTTP/1.1" 404 8074
+INFO 2023-08-17 10:34:45,988 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-08-17 10:35:00,765 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-17 10:35:01,611 "GET / HTTP/1.1" 200 9842
+INFO 2023-08-17 10:35:01,678 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-08-17 10:35:07,372 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-17 10:35:07,541 "GET / HTTP/1.1" 302 0
+INFO 2023-08-17 10:35:08,010 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-17 10:36:12,315 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-08-17 10:36:36,203 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-17 10:36:37,093 "GET / HTTP/1.1" 200 6540
+INFO 2023-08-17 10:36:42,806 "GET /staff/class/ HTTP/1.1" 200 8010
+INFO 2023-08-17 10:36:46,450 "GET /staff/class/6/assignment HTTP/1.1" 200 10697
+INFO 2023-08-17 10:37:02,353 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-08-17 10:37:02,521 "GET / HTTP/1.1" 302 0
+INFO 2023-08-17 10:37:03,001 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-08-17 10:37:32,460 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-08-17 10:37:56,195 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-08-17 10:37:57,039 "GET / HTTP/1.1" 200 7052
+INFO 2023-08-17 10:38:05,055 "GET /student/registered-courses/ HTTP/1.1" 200 9356
+INFO 2023-08-17 10:38:09,130 "GET /student/course-material/6/ HTTP/1.1" 200 12429
+INFO 2023-08-17 10:42:27,071 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-17 10:42:27,333 Watching for file changes with StatReloader
+INFO 2023-08-17 10:42:44,553 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-17 10:42:44,784 Watching for file changes with StatReloader
+INFO 2023-08-17 10:43:39,189 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-17 10:43:39,410 Watching for file changes with StatReloader
+INFO 2023-08-17 10:43:40,487 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-17 10:43:40,712 Watching for file changes with StatReloader
+INFO 2023-08-17 10:43:57,896 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-17 10:43:58,111 Watching for file changes with StatReloader
+INFO 2023-08-17 10:49:43,090 Watching for file changes with StatReloader
+INFO 2023-08-17 10:51:37,791 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-17 10:51:38,000 Watching for file changes with StatReloader
+INFO 2023-08-17 10:52:16,326 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
+INFO 2023-08-17 10:52:16,540 Watching for file changes with StatReloader
+INFO 2023-08-17 10:53:07,953 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-17 10:53:08,184 Watching for file changes with StatReloader
+INFO 2023-08-17 10:55:51,667 "GET /student/course-material/6/ HTTP/1.1" 200 13697
+INFO 2023-08-17 10:56:23,544 "GET /media/assignments/Youth_Climate_Opportunities_Round-Up_14.pdf HTTP/1.1" 200 45364
+INFO 2023-08-17 11:08:48,186 "GET /student/course-material/6/ HTTP/1.1" 200 11163
+INFO 2023-08-17 11:10:28,640 "GET /student/course-material/6/ HTTP/1.1" 200 10225
+INFO 2023-08-17 11:13:15,645 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-08-17 11:13:15,889 Watching for file changes with StatReloader
+INFO 2023-08-17 11:19:51,475 "GET /student/course-material/6/ HTTP/1.1" 200 10122
+INFO 2023-08-17 11:30:42,399 "GET /student/course-material/6/ HTTP/1.1" 200 12383
+INFO 2023-08-17 11:32:02,703 "GET /student/course-material/6/ HTTP/1.1" 200 10122
+INFO 2023-08-17 11:34:39,193 "GET /student/course-material/6/ HTTP/1.1" 200 10360
+INFO 2023-08-17 11:36:43,283 "GET /student/course-material/6/ HTTP/1.1" 200 10629
+INFO 2023-08-17 11:40:21,910 "GET /student/course-material/6/ HTTP/1.1" 200 10692
+ERROR 2023-08-17 11:42:12,303 Internal Server Error: /student/course-material/6/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 175, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 208, in render
+    return template.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 177, in render
+    return self._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/base.py", line 966, in render_annotated
+    return self.render(context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/template/defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/urls/resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'staff-course-assignments-create' with keyword arguments '{'course_id': ''}' not found. 1 pattern(s) tried: ['staff/class/(?P<course_id>[0-9]+)/assignment/create\\Z']
+ERROR 2023-08-17 11:42:12,304 "GET /student/course-material/6/ HTTP/1.1" 500 307817
+INFO 2023-08-17 11:42:43,228 "GET /student/course-material/6/ HTTP/1.1" 200 17176
+INFO 2023-08-17 11:45:45,049 "GET /student/course-material/6/ HTTP/1.1" 200 10403
+INFO 2023-08-17 11:46:46,479 "GET /student/course-material/6/ HTTP/1.1" 200 10629
+INFO 2023-08-17 11:48:30,030 "GET /student/course-material/6/ HTTP/1.1" 200 10629
+INFO 2023-08-17 11:48:34,775 "GET /media/assignments/WBG_MMv1CTL.pdf HTTP/1.1" 200 45002
+INFO 2023-08-17 11:50:11,328 "GET /student/course-material/6/ HTTP/1.1" 200 10764
+INFO 2023-08-17 11:50:35,367 "GET /student/course-material/6/ HTTP/1.1" 200 11005
+INFO 2023-08-17 11:50:42,713 "GET /student/course-material/6/?page= HTTP/1.1" 200 11005
+INFO 2023-08-17 11:50:47,771 "GET /student/course-material/6/?page= HTTP/1.1" 200 11005
+INFO 2023-08-17 11:50:54,536 "GET /student/course-material/6/ HTTP/1.1" 200 11005
+INFO 2023-08-17 11:51:13,918 "GET /student/course-material/6/ HTTP/1.1" 200 11005
+INFO 2023-08-17 11:51:34,060 "GET /student/course-material/6/ HTTP/1.1" 200 11005
+INFO 2023-08-17 11:52:36,854 "GET /student/course-material/6/ HTTP/1.1" 200 11024
+INFO 2023-08-17 11:54:06,431 "GET /student/course-material/6/ HTTP/1.1" 200 11067
+INFO 2023-08-17 11:55:16,337 "GET /student/course-material/6/ HTTP/1.1" 200 10683

@@ -1,0 +1,23 @@
+<div class="container mt-4">
+
+    
+    {% if lecture_notes %}
+      <h3>Lecture Notes</h3>
+      <ol>
+        {% for lecture_note in lecture_notes %}
+          <li>
+            <a href="{% if lecture_note.file %}{{ lecture_note.file.url }}{% endif %}" target="_blank">
+              {{ lecture_note.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ol>
+    {% endif %}    
+  
+
+    
+    {% if not lecture_notes %}
+      <p class="alert alert-danger">No {{ material_type }} material found matching the query.</p>
+    {% endif %}
+  </div>
+  

@@ -8,7 +8,8 @@ from .views import (
     StudentDetailView,
     StudentListView,
     StudentUpdateView,
-    RegisteredCourseListView
+    RegisteredCourseListView,
+    StudentCourseMaterialView
 )
 
 urlpatterns = [
@@ -20,5 +21,7 @@ urlpatterns = [
     path("upload/", StudentBulkUploadView.as_view(), name="student-upload"),
     path("download-csv/", DownloadCSVViewdownloadcsv.as_view(), name="download-csv"),
     path("registered-courses/", RegisteredCourseListView.as_view(), name="registered-courses"),
+    path("course-material/<int:pk>/", StudentCourseMaterialView.as_view(), name="course-material"),
+
 
 ]

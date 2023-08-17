@@ -86,6 +86,22 @@ class StudentCourse(models.Model):
     # def __str__(self):
     #     return f"{self.student.surname} registered for {self.course.name} on {self.registration_date} in {self.academic_session}"
 
+class CourseMaterialQuerySet(models.QuerySet):
+    def get_assignments(self):
+        return self.filter(type="assignment")
+
+    def get_lecture_notes(self):
+        return self.filter(type="lecture_note")
+
+    def get_past_questions(self):
+        return self.filter(type="past_question")
+
+    def get_other_materials(self):
+        return self.filter(type="others")
+
+class CourseMaterialManager(models.Manager):
+    def get_queryset(self):
+        return CourseMaterialQuerySet(self.model, using=self._db)
 
 class CourseMaterial(models.Model):
     """Assignments"""
@@ -113,9 +129,12 @@ class CourseMaterial(models.Model):
         blank=True,
         related_name="lecturer_assignment",
     )
+    def __str__(self):
+        return self.title
 
+    objects = CourseMaterialManager()
+   
     class Meta:
         ordering = ["-date_created"]
 
-    def __str__(self):
-        return self.title
+  

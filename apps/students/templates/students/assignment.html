@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <form method="GET" class="mb-3">
+    <div class="input-group">
+      <input type="text" name="search_date" class="form-control" placeholder="Search by date (YYYY-MM-DD)">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+  </form>
+  
+  {% if assignments %}
+    <h3>Assignments</h3>
+    <ol>
+      {% for assignment in assignments %}
+        <li>
+          <h4>{{ assignment.title }}</h4>
+          <p>{{ assignment.description }}</p>
+          {% if assignment.due_date %}
+            <p><strong>Due Date:</strong> {{ assignment.due_date }}</p>
+          {% endif %}
+          {% if assignment.total_marks %}
+            <p><strong>Total Marks:</strong> {{ assignment.total_marks }}</p>
+          {% endif %}
+          <a href="{% if assignment.file %}{{ assignment.file.url }}{% endif %}" target="_blank">
+            Download Material
+          </a>
+        </li>
+      {% endfor %}
+    </ol>    
+
+  {% else %}
+    <p class="alert alert-danger">No {{ material_type }} material found matching the query.</p>
+  {% endif %}
+</div>
+
+

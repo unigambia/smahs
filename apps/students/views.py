@@ -3,16 +3,15 @@ import csv
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms import widgets
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from apps.finance.models import Invoice
-from apps.corecode.models import Course, StudentCourse
+from apps.corecode.models import Course, StudentCourse, CourseMaterial
 
 from .models import Student, StudentBulkUpload
-
 
 class StudentListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     model = Student
@@ -52,10 +51,44 @@ class StudentCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageM
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields.pop("user")
         return form
+
+
+class StudentCourseMaterialView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
+    model = CourseMaterial
+    template_name = "students/student_course_material.html"
+
+    course_materials = CourseMaterial.objects.all()
+
+    assignments = course_materials.get_assignments()
+    lecture_notes = course_materials.get_lecture_notes()
+    past_questions = course_materials.get_past_questions()
+    other_materials = course_materials.get_other_materials()
+
+
+    def test_func(self):
+        return not self.request.user.is_superuser or self.request.user.is_staff
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        try:
+            context["student"] = Student.objects.get(user=self.request.user)
+        except Student.DoesNotExist:
+            context["student"] = None
+
+        course_materials = CourseMaterial.objects.filter(course=self.object.course)
+        context["assignments"] = course_materials.get_assignments()
+        context["lecture_notes"] = course_materials.get_lecture_notes()
+        context["past_questions"] = course_materials.get_past_questions()
+        context["other_materials"] = course_materials.get_other_materials()
+        return context
+
+    def get_object(self, queryset=None):
+        try:
+            return super().get_object(queryset)
+        except Http404:
+            return None
     
-
-
-
+    
 class StudentUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Student
     fields = "__all__"

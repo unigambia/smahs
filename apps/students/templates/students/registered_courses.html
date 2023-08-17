@@ -2,8 +2,6 @@
 
 {% block title %}Registered Courses{% endblock title %}
 
-
-
 {% block content %}
   <div class="table-responsive">
     <table id="studenttable" class="table table-bordered table-hover" data-page-length='100'>
@@ -15,19 +13,24 @@
           <th>Lecturer</th>
           <th>Session</th>
           <th>Semester</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
 
         {% for registered_course in student_courses.all %}
-        <tr class='clickable-row' data-href="#">
+        <tr class='clickable-row' data-href="{% url 'course-material' registered_course.id %}">
             <td>{{ forloop.counter}}</td>
             <td>{{ registered_course.course.name }} </td>
             <td>{{ registered_course.course.code }}</td>
             <td>{{ registered_course.course.lecturer }}</td>
             <td>{{ registered_course.academic_session }}</td>
             <td>{{ registered_course.academic_semester }}</td>
-           
+            <td>
+              <a href="{% url 'course-material' registered_course.id %}" class="btn btn-secondary">
+                Course Materials
+              </a>
+            </td>
           </tr>
         {% endfor %}
 
