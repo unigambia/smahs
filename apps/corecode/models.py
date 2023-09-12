@@ -32,6 +32,7 @@ class AcademicSemester(models.Model):
     """Academic Semester"""
 
     name = models.CharField(max_length=20, unique=True)
+    session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE, default=1)
     current = models.BooleanField(default=True)
 
     class Meta:

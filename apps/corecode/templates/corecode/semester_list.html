@@ -24,6 +24,7 @@ Academic semester
             {% for object in object_list %}
             <tr>
               <td>{{ object }}</td>
+              <td>{{ object.session }}</td>
               <td>
                 {% if object.current == True %}
                   Current <i class="fa fa-check"></i>

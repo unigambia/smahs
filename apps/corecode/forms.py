@@ -35,7 +35,7 @@ class AcademicSemesterForm(ModelForm):
 
     class Meta:
         model = AcademicSemester
-        fields = ["name", "current"]
+        fields = ["name", "current", "session"]
 
 
 class CourseForm(ModelForm):
