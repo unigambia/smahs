@@ -58,7 +58,6 @@ class StudentCourseMaterialView(UserPassesTestMixin, LoginRequiredMixin, DetailV
     template_name = "students/student_course_material.html"
 
     course_materials = CourseMaterial.objects.all()
-
     assignments = course_materials.get_assignments()
     lecture_notes = course_materials.get_lecture_notes()
     past_questions = course_materials.get_past_questions()
@@ -75,12 +74,24 @@ class StudentCourseMaterialView(UserPassesTestMixin, LoginRequiredMixin, DetailV
         except Student.DoesNotExist:
             context["student"] = None
 
-        course_materials = CourseMaterial.objects.filter(course=self.object.course)
-        context["assignments"] = course_materials.get_assignments()
-        context["lecture_notes"] = course_materials.get_lecture_notes()
-        context["past_questions"] = course_materials.get_past_questions()
-        context["other_materials"] = course_materials.get_other_materials()
+        if self.object is not None:
+            # Check if self.object is not None before accessing its attributes
+            course_materials = CourseMaterial.objects.filter(course=self.object.course)
+            print(course_materials)
+            context["assignments"] = course_materials.get_assignments()
+            context["lecture_notes"] = course_materials.get_lecture_notes()
+            context["past_questions"] = course_materials.get_past_questions()
+            context["other_materials"] = course_materials.get_other_materials()
+        else:
+            # Handle the case where self.object is None
+            context["assignments"] = []
+            context["lecture_notes"] = []
+            context["past_questions"] = []
+            context["other_materials"] = []
+
         return context
+
+
 
     def get_object(self, queryset=None):
         try:

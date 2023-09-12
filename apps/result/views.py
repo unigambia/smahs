@@ -1,127 +1,144 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, reverse
 from django.views.generic import DetailView, ListView, View
 
 from apps.students.models import Student
-from apps.corecode.models import Course
+from apps.corecode.models import Course, StudentCourse, AcademicSemester, AcademicSession
 
 from .forms import CreateResults, EditResults
 from .models import Result
 
 
-@login_required
-@user_passes_test(lambda u: u.is_superuser)
-def create_result(request):
-    students = Student.objects.all()
-    if request.method == "POST":
-        if "finish" in request.POST:
-            form = CreateResults(request.POST)
-            if form.is_valid():
-                courses = form.cleaned_data["courses"]
-                session = form.cleaned_data["session"]
-                semester = form.cleaned_data["semester"]
-                selected_students = request.POST.getlist("students")  
-                print(selected_students)
-                results = []
-                for student_id in selected_students:
-                    stu = Student.objects.get(pk=student_id)
-                    print(stu)
-                    if stu.current_cohort:
-                        for course in courses:
-                            check = Result.objects.filter(
-                                session=session,
-                                semester=semester,
-                                current_cohort=stu.current_cohort,
-                                course=course,
-                                student=stu,
-                            ).first()
-                            if not check:
-                                results.append(
-                                    Result(
-                                        session=session,
-                                        semester=semester,
-                                        current_cohort=stu.current_cohort,
-                                        course=course,
-                                        student=stu,
-                                    )
-                                )
-                Result.objects.bulk_create(results)
-                return redirect("edit-results")
+class ResultListView(LoginRequiredMixin, ListView):
+    model = Result
+    template_name = "result/result_list.html"
 
-        # after choosing students
-        id_list = request.POST.getlist("students")
-        if id_list:
-            form = CreateResults(
-                initial={
-                    "session": request.current_session,
-                    "semester": request.current_semester,
-                }
-            )
-            studentlist = ",".join(id_list)
-            print(studentlist)
-            return render(
-                request,
-                "result/create_result_page2.html",
-                {"students": studentlist, "form": form, "count": len(id_list)},
-            )
-        else:
-            messages.warning(request, "You didn't select any student.")
-    return render(request, "result/create_result.html", {"students": students})
+    def get_queryset(self):
+        return Result.objects.filter(
+            session=self.request.current_session,
+            semester=self.request.current_semester,
+        )
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["courses"] = Course.objects.filter(
+            session=self.request.current_session,
+            semester=self.request.current_semester,
+        )
+        return context
+    
 
-@login_required
-@user_passes_test(lambda u: u.is_superuser)
-def edit_results(request):
-    if request.method == "POST":
-        form = EditResults(request.POST)
+class ResultDetailView(LoginRequiredMixin, DetailView):
+    model = Result
+    template_name = "result/create_result2.html"
+
+class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get(self, request, *args, **kwargs):
+        form = CreateResults()
+        students = Student.objects.all()  # Get the list of all students
+        return render(request, "result/create_result.html", {"form": form, "students": students})
+
+    def post(self, request, *args, **kwargs):
+        form = CreateResults(request.POST)
+        selected_student_ids = [int(id) for id in request.POST.getlist("students")]
+        students = Student.objects.filter(id__in=selected_student_ids)
+
+        if not students:
+            messages.warning(request, "No students selected.")
+            return redirect("create-result")
+
+        # ... (get registered courses for each student)
+
+        # Redirect to the new view for displaying registered courses
+        query_string = "&".join([f"students={id}" for id in selected_student_ids])
+        redirect_url = reverse("display-registered-courses") + "?" + query_string
+        return redirect(redirect_url)
+    
+
+class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get(self, request, *args, **kwargs):
+        result = Result.objects.get(id=kwargs["pk"])
+        form = CreateResults(instance=result)
+        return render(request, "result/create_result.html", {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        result = Result.objects.get(id=kwargs["pk"])
+        form = CreateResults(request.POST, instance=result)
         if form.is_valid():
             form.save()
             messages.success(request, "Results successfully updated")
-            return redirect("edit-results")
-    else:
-        results = Result.objects.filter(
-            session=request.current_session, semester=request.current_semester
-        )
-        form = EditResults(queryset=results)
-    return render(request, "result/edit_results.html", {"formset": form})
+            return redirect("result-detail", kwargs["pk"])
+        return render(request, "result/create_result.html", {"form": form})
 
+class DisplayRegisteredCoursesView(LoginRequiredMixin, UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
 
-class ResultListView(LoginRequiredMixin, View):
-        
     def get(self, request, *args, **kwargs):
-        user = request.user
-        results = Result.objects.filter(
-            student__user=user,
-            session=request.current_session,  # Assuming you have the current_session available in your context
-            semester=request.current_semester  # Assuming you have the current_semester available in your context
+        student_ids = self.request.GET.getlist("students")
+        students = Student.objects.filter(id__in=student_ids)
+
+        students_registered_courses = {}  # Dictionary to store registered courses
+        for student in students:
+            student_courses = StudentCourse.objects.filter(student=student)
+            registered_courses = [student_course.course for student_course in student_courses]
+            students_registered_courses[student.id] = registered_courses
+
+        form = CreateResults()  # Create an instance of the form
+        available_sessions = AcademicSession.objects.all()
+        available_semesters = AcademicSemester.objects.all()
+
+
+        return render(
+            request,
+            "result/display_registered_courses.html",
+            {
+                "students": students,
+                "registered_courses": students_registered_courses,
+                "form": form,
+                "count": len(students),
+                "session": available_sessions,
+                "semester": available_semesters,
+            },
         )
-        bulk = {}
 
-        for result in results:
-            test_total = 0
-            exam_total = 0
-            total = test_total + exam_total
-            gpa = 0
-            courses = []
-            for course in results:
-                if course.student == result.student:
-                    courses.append(course)
-                    test_total += course.test_score
-                    exam_total += course.exam_score
-                    gpa += round(course.gpa() / len(courses), 3)
 
-            bulk[result.student.id] = {
-                "student": result.student,
-                "session": result.session,
-                "semester": result.semester,
-                "courses": courses,
-                "test_total": test_total,
-                "exam_total": exam_total,
-                "total_total": test_total + exam_total,
-                "gpa": gpa,
-            }
+    
 
-        context = {"results": bulk}
-       
-        return render(request, "result/all_results.html", context)
+class ResultEditView(LoginRequiredMixin, UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get(self, request, *args, **kwargs):
+        result = Result.objects.get(id=kwargs["pk"])
+        form = EditResults(instance=result)
+        return render(request, "result/edit_results.html", {"form": form})
+
+    def post(self, request, *args, **kwargs):
+        result = Result.objects.get(id=kwargs["pk"])
+        form = EditResults(request.POST, instance=result)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Results successfully updated")
+            return redirect("result-detail", kwargs["pk"])
+        return render(request, "result/edit_results.html", {"form": form})
+    
+
+
+class ResultDeleteView(LoginRequiredMixin, UserPassesTestMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get(self, request, *args, **kwargs):
+        result = Result.objects.get(id=kwargs["pk"])
+        result.delete()
+        messages.success(request, "Results successfully deleted")
+        return redirect("result-list")
