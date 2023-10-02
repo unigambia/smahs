@@ -1,8 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
-from django.shortcuts import redirect, render, reverse
-from django.views.generic import DetailView, ListView, View
+from django.contrib.messages.views import SuccessMessageMixin
+from django.shortcuts import redirect, render
+from django.views.generic import DetailView, ListView, View, CreateView, UpdateView
+from django.urls import reverse_lazy
 
 from apps.students.models import Student
 from apps.corecode.models import Course, StudentCourse, AcademicSemester, AcademicSession
@@ -10,108 +12,136 @@ from apps.corecode.models import Course, StudentCourse, AcademicSemester, Academ
 from .forms import CreateResults, EditResults
 from .models import Result
 
+    
+# class ResultDetailView(LoginRequiredMixin, DetailView):
+#     model = Result
+#     template_name = "result/create_result2.html"
 
-class ResultListView(LoginRequiredMixin, ListView):
+class ResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     model = Result
     template_name = "result/result_list.html"
 
-    def get_queryset(self):
-        return Result.objects.filter(
-            session=self.request.current_session,
-            semester=self.request.current_semester,
-        )
+    def test_func(self):
+        return self.request.user.is_superuser
     
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["courses"] = Course.objects.filter(
-            session=self.request.current_session,
-            semester=self.request.current_semester,
-        )
+        context = super(ResultListView, self).get_context_data(**kwargs)
+        context["results"] = Result.objects.all()
         return context
-    
 
 class ResultDetailView(LoginRequiredMixin, DetailView):
     model = Result
-    template_name = "result/create_result2.html"
+    template_name = "result/result_detail.html"
+    context_object_name = "result"
 
-class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, View):
-    def test_func(self):
-        return self.request.user.is_superuser
+    def get_context_data(self, **kwargs):
+        context = super(ResultDetailView, self).get_context_data(**kwargs)
+        result = context["result"]
 
-    def get(self, request, *args, **kwargs):
-        form = CreateResults()
-        students = Student.objects.all()  # Get the list of all students
-        return render(request, "result/create_result.html", {"form": form, "students": students})
+        # Retrieve the associated student based on the id
+        student_id = result.student.id  # Assuming result.student is the Student object
+        student = Student.objects.get(pk=student_id)
 
-    def post(self, request, *args, **kwargs):
-        form = CreateResults(request.POST)
-        selected_student_ids = [int(id) for id in request.POST.getlist("students")]
-        students = Student.objects.filter(id__in=selected_student_ids)
+        # Fetch all results for the same student
+        student_results = Result.objects.filter(student=student).order_by("session", "semester")
 
-        if not students:
-            messages.warning(request, "No students selected.")
-            return redirect("create-result")
+        # Organize results into a structured format
+        structured_results = {}
+        current_session = None
 
-        # ... (get registered courses for each student)
+        if not student_results:
+            context["no_results_message"] = "No results found for this student."
 
-        # Redirect to the new view for displaying registered courses
-        query_string = "&".join([f"students={id}" for id in selected_student_ids])
-        redirect_url = reverse("display-registered-courses") + "?" + query_string
-        return redirect(redirect_url)
+
+        for student_result in student_results:
+            if student_result.session != current_session:
+                structured_results[student_result.session] = {}
+                current_session = student_result.session
+
+            session_dict = structured_results[student_result.session]
+            if student_result.semester not in session_dict:
+                session_dict[student_result.semester] = []
+
+            session_dict[student_result.semester].append(student_result)
+
+        context["structured_results"] = structured_results
+        context["student"] = student  # Add the student to the context
+        return context
     
 
-class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, View):
+class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin ,CreateView):
+    model = Result
+    template_name = 'result/create_result.html'  
+    fields = "__all__"
+    success_url = reverse_lazy("create-result")
+    success_message = "Added Result Successfully"
+
     def test_func(self):
         return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        # Check if a result with the same session and semester already exists
+        session = form.cleaned_data['session']
+        semester = form.cleaned_data['semester']
+        student = form.cleaned_data['student']
 
-    def get(self, request, *args, **kwargs):
-        result = Result.objects.get(id=kwargs["pk"])
-        form = CreateResults(instance=result)
-        return render(request, "result/create_result.html", {"form": form})
-
-    def post(self, request, *args, **kwargs):
-        result = Result.objects.get(id=kwargs["pk"])
-        form = CreateResults(request.POST, instance=result)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Results successfully updated")
-            return redirect("result-detail", kwargs["pk"])
-        return render(request, "result/create_result.html", {"form": form})
-
-class DisplayRegisteredCoursesView(LoginRequiredMixin, UserPassesTestMixin, View):
-    def test_func(self):
-        return self.request.user.is_superuser
-
-    def get(self, request, *args, **kwargs):
-        student_ids = self.request.GET.getlist("students")
-        students = Student.objects.filter(id__in=student_ids)
-
-        students_registered_courses = {}  # Dictionary to store registered courses
-        for student in students:
-            student_courses = StudentCourse.objects.filter(student=student)
-            registered_courses = [student_course.course for student_course in student_courses]
-            students_registered_courses[student.id] = registered_courses
-
-        form = CreateResults()  # Create an instance of the form
-        available_sessions = AcademicSession.objects.all()
-        available_semesters = AcademicSemester.objects.all()
-
-
-        return render(
-            request,
-            "result/display_registered_courses.html",
-            {
-                "students": students,
-                "registered_courses": students_registered_courses,
-                "form": form,
-                "count": len(students),
-                "session": available_sessions,
-                "semester": available_semesters,
-            },
-        )
+        existing_result = Result.objects.filter(session=session, semester=semester, student=student).exists()
+        
+        if existing_result:
+            # Return an error message if a duplicate result exists
+            form.add_error(None, "A result for this session and semester already exists for the student.")
+            return self.form_invalid(form)
+        
+        return super().form_valid(form)
 
 
     
+
+class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Result
+    template_name = 'result/edit_results.html'  
+    fields = "__all__"
+    success_url = reverse_lazy("create-result")
+    success_message = "Updated Result Successfully"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+# class DisplayRegisteredCoursesView(LoginRequiredMixin, UserPassesTestMixin, View):
+#     def test_func(self):
+#         return self.request.user.is_superuser
+
+#     def get(self, request, *args, **kwargs):
+#         student_ids = self.request.GET.getlist("students")
+#         students = Student.objects.filter(id__in=student_ids)
+
+#         students_registered_courses = {}  # Dictionary to store registered courses
+#         for student in students:
+#             student_courses = StudentCourse.objects.filter(student=student)
+#             print(student_courses)
+#             registered_courses = [student_course.course for student_course in student_courses]
+#             print(registered_courses)
+#             students_registered_courses[student.id] = registered_courses
+#             print(students_registered_courses[student.id]   )
+
+#         form = CreateResults()  # Create an instance of the form
+#         available_sessions = AcademicSession.objects.all()
+#         available_semesters = AcademicSemester.objects.all()
+
+
+#         return render(
+#             request,
+#             "result/display_registered_courses.html",
+#             {
+#                 "students": students,
+#                 "form": form,
+#                 "students_registered_courses": students_registered_courses,
+#                 "count": len(students),
+#                 "session": available_sessions,
+#                 "semester": available_semesters,
+#             },
+#         )
+
 
 class ResultEditView(LoginRequiredMixin, UserPassesTestMixin, View):
     def test_func(self):
