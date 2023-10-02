@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Results{% endblock title %}
+
+{% block breadcrumb %}
+<a class="btn btn-primary" href="{% url 'create-result' %}"><i
+    class="fas fa-plus"></i> New Results</a>
+<a class="btn btn-primary" href="{% url 'student-upload' %}"><i
+    class="fas fa-upload"></i> Upload Results</a>
+{% endblock breadcrumb %}
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="resulttable" class="table table-bordered table-hover" data-page-length='10'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Student</th>
+          <th>Course</th>
+          <th>Session</th>
+          <th>Semester</th>
+          <th>Test Score</th>
+          <th>Exam Score</th>
+          <th>Total Score</th>
+          <th>Grade</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ result.student }}</td>
+            <td>{{ result.course }}</td>    
+            <td>{{ result.session }}</td>
+            <td>{{ result.semester }}</td>
+            <td>{{ result.test_score }}</td>
+            <td>{{ result.exam_score }}</td>
+            <td>{{ result.total_score }}</td>
+            <td>{{ result.grade }}</td>
+            <td>
+              <!-- Add actions here, e.g., a link to view more details -->
+              <a href="{% url 'result-detail' result.student.id %}" class="btn btn-primary">View Results</a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#resulttable').DataTable({
+  });
+</script>
+{% endblock morejs %}

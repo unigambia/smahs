@@ -16,7 +16,6 @@ class Result(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
     semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
-    current_cohort = models.ForeignKey(StudentCohort, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     test_score = models.IntegerField(default=0)
     exam_score = models.IntegerField(default=0)

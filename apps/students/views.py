@@ -51,6 +51,13 @@ class StudentCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageM
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields.pop("user")
         return form
+    
+    def form_valid(self, form):
+        email = form.cleaned_data.get("email")
+        if Student.objects.filter(email=email).exists():
+            form.add_error("email", "Email already exists.")
+            return self.form_invalid(form)
+        return super(StudentCreateView, self).form_valid(form)
 
 
 class StudentCourseMaterialView(UserPassesTestMixin, LoginRequiredMixin, DetailView):
@@ -77,7 +84,6 @@ class StudentCourseMaterialView(UserPassesTestMixin, LoginRequiredMixin, DetailV
         if self.object is not None:
             # Check if self.object is not None before accessing its attributes
             course_materials = CourseMaterial.objects.filter(course=self.object.course)
-            print(course_materials)
             context["assignments"] = course_materials.get_assignments()
             context["lecture_notes"] = course_materials.get_lecture_notes()
             context["past_questions"] = course_materials.get_past_questions()

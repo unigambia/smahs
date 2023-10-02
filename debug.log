@@ -1,37 +1,156 @@
-INFO 2023-09-12 08:12:12,158 Watching for file changes with StatReloader
-INFO 2023-09-12 08:12:18,909 "GET / HTTP/1.1" 302 0
-INFO 2023-09-12 08:12:19,426 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
-INFO 2023-09-12 08:12:19,492 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
-INFO 2023-09-12 08:12:19,492 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
-INFO 2023-09-12 08:12:19,493 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
-INFO 2023-09-12 08:12:19,495 "GET /static/dist/css/login-page.css HTTP/1.1" 200 8610
-INFO 2023-09-12 08:12:19,496 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
-INFO 2023-09-12 08:12:19,530 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
-INFO 2023-09-12 08:12:19,531 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 200 13632
-INFO 2023-09-12 08:12:19,531 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
-INFO 2023-09-12 08:12:19,531 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
-INFO 2023-09-12 08:12:19,532 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
-INFO 2023-09-12 08:12:19,535 "GET /static/dist/js/demo.js HTTP/1.1" 200 12616
-INFO 2023-09-12 08:12:19,536 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
-INFO 2023-09-12 08:12:19,537 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
-INFO 2023-09-12 08:12:19,863 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
-WARNING 2023-09-12 08:12:21,781 Not Found: /favicon.ico
-WARNING 2023-09-12 08:12:21,781 "GET /favicon.ico HTTP/1.1" 404 8074
-INFO 2023-09-12 08:12:37,045 "POST /users/accounts/login/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:12:38,015 "GET / HTTP/1.1" 200 9842
-INFO 2023-09-12 08:12:38,076 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
-INFO 2023-09-12 08:12:38,080 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
-INFO 2023-09-12 08:12:38,822 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
-INFO 2023-09-12 08:12:46,556 "GET /session/list/ HTTP/1.1" 200 12150
-INFO 2023-09-12 08:12:53,143 "GET /session/list/ HTTP/1.1" 200 12150
-INFO 2023-09-12 08:12:55,630 "GET /session/list/ HTTP/1.1" 200 12150
-INFO 2023-09-12 08:13:08,372 "GET /semester/list/ HTTP/1.1" 200 12859
-INFO 2023-09-12 08:13:29,268 "GET /cohort/list/ HTTP/1.1" 200 12553
-INFO 2023-09-12 08:13:37,328 "GET /users/list/ HTTP/1.1" 200 11183
-INFO 2023-09-12 08:13:45,146 "GET /student/list HTTP/1.1" 200 12017
-INFO 2023-09-12 08:13:48,374 "GET /staff/list/ HTTP/1.1" 200 11320
-INFO 2023-09-12 08:14:46,737 "GET /staff/list/ HTTP/1.1" 200 11320
-ERROR 2023-09-12 08:15:09,515 Internal Server Error: /result/view/all
+INFO 2023-10-02 10:40:53,012 Watching for file changes with StatReloader
+INFO 2023-10-02 10:41:02,073 "GET / HTTP/1.1" 302 0
+INFO 2023-10-02 10:41:04,733 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-10-02 10:41:04,812 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2023-10-02 10:41:04,812 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-10-02 10:41:04,812 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
+INFO 2023-10-02 10:41:04,813 "GET /static/dist/css/login-page.css HTTP/1.1" 200 8610
+INFO 2023-10-02 10:41:04,814 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-10-02 10:41:04,846 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 200 13632
+INFO 2023-10-02 10:41:04,847 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2023-10-02 10:41:04,847 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-10-02 10:41:04,847 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-10-02 10:41:04,848 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-10-02 10:41:04,850 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-10-02 10:41:04,861 "GET /static/dist/js/demo.js HTTP/1.1" 200 12616
+INFO 2023-10-02 10:41:04,890 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-10-02 10:41:05,354 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-10-02 10:41:06,577 Not Found: /favicon.ico
+WARNING 2023-10-02 10:41:06,577 "GET /favicon.ico HTTP/1.1" 404 8074
+INFO 2023-10-02 10:41:42,888 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-10-02 10:41:48,292 "GET / HTTP/1.1" 200 9888
+INFO 2023-10-02 10:41:48,364 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+INFO 2023-10-02 10:41:48,368 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+INFO 2023-10-02 10:41:51,196 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+INFO 2023-10-02 10:42:31,762 "GET /student/list HTTP/1.1" 200 10536
+INFO 2023-10-02 10:42:38,826 "GET /student/create/ HTTP/1.1" 200 14427
+INFO 2023-10-02 10:42:54,598 "POST /student/create/ HTTP/1.1" 200 14692
+INFO 2023-10-02 10:43:08,066 "POST /student/create/ HTTP/1.1" 302 0
+INFO 2023-10-02 10:43:12,311 "GET /student/1/ HTTP/1.1" 200 11909
+INFO 2023-10-02 10:43:12,391 "GET /static/dist/img/avatar.png HTTP/1.1" 200 8543
+INFO 2023-10-02 10:43:20,742 "GET /student/list HTTP/1.1" 200 10833
+INFO 2023-10-02 10:43:27,567 "GET /student/create/ HTTP/1.1" 200 14427
+INFO 2023-10-02 10:43:43,747 "POST /student/create/ HTTP/1.1" 200 14702
+INFO 2023-10-02 10:43:53,988 "POST /student/create/ HTTP/1.1" 302 0
+INFO 2023-10-02 10:43:57,776 "GET /student/2/ HTTP/1.1" 200 11917
+INFO 2023-10-02 10:44:04,199 "GET /student/list HTTP/1.1" 200 11134
+INFO 2023-10-02 10:44:11,502 "GET /staff/list/ HTTP/1.1" 200 10320
+INFO 2023-10-02 10:44:16,825 "GET /staff/create/ HTTP/1.1" 200 27037
+ERROR 2023-10-02 10:44:26,209 Internal Server Error: /staff/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.OperationalError: SSL connection has been closed unexpectedly
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/portal/apps/corecode/middleware.py", line 9, in __call__
+    current_session = AcademicSession.objects.get(current=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.OperationalError: SSL connection has been closed unexpectedly
+
+ERROR 2023-10-02 10:44:26,229 Internal Server Error: /staff/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 308, in _cursor
+    return self._prepare_cursor(self.create_cursor(name))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 330, in create_cursor
+    cursor = self.connection.cursor()
+psycopg2.InterfaceError: connection already closed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/middleware.py", line 48, in process_response
+    if request.session.get_expire_at_browser_close():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 285, in get_expire_at_browser_close
+    if (expiry := self.get("_session_expiry")) is None:
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 68, in get
+    return self._session.get(key, default)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/sessions/backends/db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1560, in execute_sql
+    cursor = self.connection.cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 308, in _cursor
+    return self._prepare_cursor(self.create_cursor(name))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/base/base.py", line 308, in _cursor
+    return self._prepare_cursor(self.create_cursor(name))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 330, in create_cursor
+    cursor = self.connection.cursor()
+django.db.utils.InterfaceError: connection already closed
+ERROR 2023-10-02 10:44:26,230 "POST /staff/create/ HTTP/1.1" 500 163739
+INFO 2023-10-02 10:44:37,001 "POST /staff/create/ HTTP/1.1" 200 27291
+ERROR 2023-10-02 10:44:55,560 Internal Server Error: /staff/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(pupemi@mailinator.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -39,14 +158,179 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
     return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
     return super().dispatch(request, *args, **kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
     return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
-    context = self.get_context_data()
-  File "/home/lanlokun/Desktop/portal/apps/result/views.py", line 26, in get_context_data
-    context["courses"] = Course.objects.filter(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/messages/views.py", line 12, in form_valid
+    response = super().form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/models.py", line 542, in save
+    self.instance.save()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 892, in save_base
+    post_save.send(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/lanlokun/Desktop/portal/apps/staffs/models.py", line 57, in create_user_for_staff
+    user = User.objects.create_user(username=username, password=password, is_staff=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(pupemi@mailinator.com) already exists.
+
+ERROR 2023-10-02 10:44:55,561 "POST /staff/create/ HTTP/1.1" 500 221319
+INFO 2023-10-02 10:46:13,051 "GET /student/list HTTP/1.1" 200 11134
+INFO 2023-10-02 10:46:19,909 "GET /staff/list/ HTTP/1.1" 200 10848
+INFO 2023-10-02 10:46:29,227 "GET /staff/2/ HTTP/1.1" 200 11882
+INFO 2023-10-02 10:46:40,120 "GET /staff/list/ HTTP/1.1" 200 10848
+INFO 2023-10-02 10:46:48,414 "GET /staff/create/ HTTP/1.1" 200 27037
+INFO 2023-10-02 10:47:10,187 "POST /staff/create/ HTTP/1.1" 200 27289
+ERROR 2023-10-02 10:47:20,447 Internal Server Error: /staff/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(pupemi@mailinator.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/messages/views.py", line 12, in form_valid
+    response = super().form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/models.py", line 542, in save
+    self.instance.save()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 892, in save_base
+    post_save.send(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/lanlokun/Desktop/portal/apps/staffs/models.py", line 57, in create_user_for_staff
+    user = User.objects.create_user(username=username, password=password, is_staff=True)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(pupemi@mailinator.com) already exists.
+
+ERROR 2023-10-02 10:47:20,447 "POST /staff/create/ HTTP/1.1" 500 221304
+INFO 2023-10-02 10:58:12,011 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-10-02 10:58:12,268 Watching for file changes with StatReloader
+INFO 2023-10-02 10:58:15,401 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-10-02 10:58:15,636 Watching for file changes with StatReloader
+INFO 2023-10-02 10:58:34,274 "POST /staff/create/ HTTP/1.1" 200 27289
+INFO 2023-10-02 11:22:26,492 "POST /staff/create/ HTTP/1.1" 200 27289
+ERROR 2023-10-02 11:22:41,982 Internal Server Error: /staff/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/portal/apps/staffs/views.py", line 44, in form_valid
+    if Staff.objects.filter(username=username).exists():
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1436, in filter
@@ -65,23 +349,13 @@ Traceback (most recent call last):
     _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1713, in names_to_path
     raise FieldError(
-django.core.exceptions.FieldError: Cannot resolve keyword 'semester' into field. Choices are: code, coursematerial, credit_unit, id, lecturer, lecturer_id, level, name, result, studentcourse
-ERROR 2023-09-12 08:15:09,517 "GET /result/view/all HTTP/1.1" 500 135562
-INFO 2023-09-12 08:15:20,580 "GET /users/accounts/logout/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:15:20,781 "GET / HTTP/1.1" 302 0
-INFO 2023-09-12 08:15:21,303 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
-INFO 2023-09-12 08:15:43,331 "POST /users/accounts/login/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:15:44,299 "GET / HTTP/1.1" 200 6540
-INFO 2023-09-12 08:15:47,511 "GET /staff/class/ HTTP/1.1" 200 8010
-INFO 2023-09-12 08:15:50,457 "GET /staff/class/6/assignment HTTP/1.1" 200 10697
-INFO 2023-09-12 08:15:59,436 "GET /staff/class/ HTTP/1.1" 200 8010
-INFO 2023-09-12 08:16:02,946 "GET /users/accounts/logout/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:16:03,145 "GET / HTTP/1.1" 302 0
-INFO 2023-09-12 08:16:03,673 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
-INFO 2023-09-12 08:16:44,416 "POST /users/accounts/login/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:16:45,469 "GET / HTTP/1.1" 200 7052
-INFO 2023-09-12 08:16:50,860 "GET /student/registered-courses/ HTTP/1.1" 200 9819
-ERROR 2023-09-12 08:16:53,529 Internal Server Error: /student/course-material/7/
+django.core.exceptions.FieldError: Cannot resolve keyword 'username' into field. Choices are: address, country, current_status, date_of_birth, date_of_employment, email, firstname, gender, id, image, lecturer, lecturer_assignment, mobile_number, other_name, others, surname, user, user_id
+ERROR 2023-10-02 11:22:41,983 "POST /staff/create/ HTTP/1.1" 500 144395
+INFO 2023-10-02 11:23:32,391 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-10-02 11:23:32,701 Watching for file changes with StatReloader
+INFO 2023-10-02 11:23:44,978 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-10-02 11:23:45,190 Watching for file changes with StatReloader
+ERROR 2023-10-02 11:25:29,365 Internal Server Error: /staff/create/
 Traceback (most recent call last):
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -95,14 +369,23 @@ Traceback (most recent call last):
     return super().dispatch(request, *args, **kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
     return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 78, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:16:53,530 "GET /student/course-material/7/ HTTP/1.1" 500 91749
-INFO 2023-09-12 08:16:59,961 "GET /student/course-material/6/ HTTP/1.1" 200 10683
-ERROR 2023-09-12 08:17:13,928 Internal Server Error: /student/course-material/7/
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/portal/apps/staffs/views.py", line 45, in form_valid
+    form.add_error("username", "Email already exists.")
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/forms.py", line 400, in add_error
+    raise ValueError(
+ValueError: 'StaffForm' has no field named 'username'.
+ERROR 2023-10-02 11:25:29,366 "POST /staff/create/ HTTP/1.1" 500 103709
+INFO 2023-10-02 11:25:50,645 /home/lanlokun/Desktop/portal/apps/staffs/views.py changed, reloading.
+INFO 2023-10-02 11:25:50,860 Watching for file changes with StatReloader
+INFO 2023-10-02 11:27:27,074 "POST /staff/create/ HTTP/1.1" 200 27289
+INFO 2023-10-02 11:40:55,306 "GET /student/list HTTP/1.1" 200 11134
+INFO 2023-10-02 11:41:05,444 "GET /staff/list/ HTTP/1.1" 200 11111
+INFO 2023-10-02 11:41:18,134 "GET /finance/list/ HTTP/1.1" 200 10523
+ERROR 2023-10-02 11:41:30,553 Internal Server Error: /staff/class/
 Traceback (most recent call last):
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -116,13 +399,48 @@ Traceback (most recent call last):
     return super().dispatch(request, *args, **kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
     return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 78, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:17:13,928 "GET /student/course-material/7/ HTTP/1.1" 500 91749
-ERROR 2023-09-12 08:18:37,909 Internal Server Error: /student/course-material/8/
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/portal/apps/corecode/views.py", line 423, in get_queryset
+    return Course.objects.filter(lecturer=self.request.user.staff)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/utils/functional.py", line 268, in inner
+    return func(_wrapped, *args)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/fields/related_descriptors.py", line 492, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.staff.RelatedObjectDoesNotExist: User has no staff.
+ERROR 2023-10-02 11:41:30,554 "GET /staff/class/ HTTP/1.1" 500 99419
+INFO 2023-10-02 13:17:21,878 "GET /staff/list/ HTTP/1.1" 200 11111
+INFO 2023-10-02 13:47:39,105 "GET /staff/create/ HTTP/1.1" 200 27037
+INFO 2023-10-02 13:48:01,259 "POST /staff/create/ HTTP/1.1" 200 27293
+INFO 2023-10-02 13:48:10,648 "POST /staff/create/ HTTP/1.1" 302 0
+INFO 2023-10-02 13:48:14,543 "GET /staff/4/ HTTP/1.1" 200 12026
+INFO 2023-10-02 13:48:25,731 "GET /staff/list/ HTTP/1.1" 200 11377
+INFO 2023-10-02 13:48:31,435 "GET /staff/create/ HTTP/1.1" 200 27037
+INFO 2023-10-02 13:48:51,814 "POST /staff/create/ HTTP/1.1" 200 27291
+INFO 2023-10-02 13:49:00,707 "POST /staff/create/ HTTP/1.1" 200 27263
+INFO 2023-10-02 13:50:08,131 "GET /student/list HTTP/1.1" 200 11134
+INFO 2023-10-02 13:50:13,902 "GET /student/1/ HTTP/1.1" 200 11763
+INFO 2023-10-02 13:50:22,253 "GET /student/list HTTP/1.1" 200 11134
+INFO 2023-10-02 13:50:29,956 "GET /student/create/ HTTP/1.1" 200 14427
+INFO 2023-10-02 13:50:45,804 "POST /student/create/ HTTP/1.1" 302 0
+INFO 2023-10-02 13:50:49,579 "GET /student/3/ HTTP/1.1" 200 11913
+INFO 2023-10-02 13:51:02,382 "GET /student/list HTTP/1.1" 200 11434
+INFO 2023-10-02 13:51:08,629 "GET /student/create/ HTTP/1.1" 200 14427
+INFO 2023-10-02 13:51:46,008 "POST /student/create/ HTTP/1.1" 302 0
+INFO 2023-10-02 13:51:49,820 "GET /student/4/ HTTP/1.1" 200 11910
+INFO 2023-10-02 13:51:58,501 "GET /student/list HTTP/1.1" 200 11732
+INFO 2023-10-02 13:52:04,547 "GET /student/create/ HTTP/1.1" 200 14427
+INFO 2023-10-02 13:52:39,161 "POST /student/create/ HTTP/1.1" 200 14701
+ERROR 2023-10-02 13:52:48,901 Internal Server Error: /student/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(hihequxyru@mailinator.com) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
 Traceback (most recent call last):
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
     response = get_response(request)
@@ -136,232 +454,129 @@ Traceback (most recent call last):
     return super().dispatch(request, *args, **kwargs)
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
     return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 78, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:18:37,909 "GET /student/course-material/8/ HTTP/1.1" 500 91749
-INFO 2023-09-12 08:19:38,131 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:19:38,372 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:19:42,695 Internal Server Error: /student/course-material/8/
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 78, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:19:42,695 "GET /student/course-material/8/ HTTP/1.1" 500 92048
-INFO 2023-09-12 08:20:01,757 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:20:01,992 Watching for file changes with StatReloader
-INFO 2023-09-12 08:20:53,510 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:20:53,747 Watching for file changes with StatReloader
-INFO 2023-09-12 08:26:15,289 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:26:15,518 Watching for file changes with StatReloader
-INFO 2023-09-12 08:28:03,505 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:28:03,734 Watching for file changes with StatReloader
-INFO 2023-09-12 08:28:23,965 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:28:24,181 Watching for file changes with StatReloader
-INFO 2023-09-12 08:28:39,423 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:28:39,635 Watching for file changes with StatReloader
-INFO 2023-09-12 08:28:54,890 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:28:55,117 Watching for file changes with StatReloader
-INFO 2023-09-12 08:29:04,315 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:29:04,555 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:29:09,321 Internal Server Error: /student/course-material/8/
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 87, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:29:09,321 "GET /student/course-material/8/ HTTP/1.1" 500 92025
-INFO 2023-09-12 08:29:24,906 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:29:25,127 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:29:29,524 Internal Server Error: /student/course-material/8/
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 87, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:29:29,525 "GET /student/course-material/8/ HTTP/1.1" 500 92027
-INFO 2023-09-12 08:29:57,542 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:29:57,763 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:30:02,848 Internal Server Error: /student/course-material/8/
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 78, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:30:02,849 "GET /student/course-material/8/ HTTP/1.1" 500 92048
-INFO 2023-09-12 08:31:14,353 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:31:14,576 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:31:19,354 Internal Server Error: /student/course-material/8/
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 76, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:31:19,355 "GET /student/course-material/8/ HTTP/1.1" 500 92048
-INFO 2023-09-12 08:31:27,852 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:31:28,078 Watching for file changes with StatReloader
-INFO 2023-09-12 08:31:43,362 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:31:43,580 Watching for file changes with StatReloader
-INFO 2023-09-12 08:33:42,964 "GET /student/course-material/6/ HTTP/1.1" 200 10603
-INFO 2023-09-12 08:33:54,832 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:33:55,053 Watching for file changes with StatReloader
-INFO 2023-09-12 08:34:05,262 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:34:05,482 Watching for file changes with StatReloader
-INFO 2023-09-12 08:34:14,075 "GET /student/course-material/6/ HTTP/1.1" 200 10603
-INFO 2023-09-12 08:34:15,073 "GET /student/course-material/6/ HTTP/1.1" 200 10603
-INFO 2023-09-12 08:36:01,653 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:36:01,921 Watching for file changes with StatReloader
-INFO 2023-09-12 08:36:14,098 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:36:14,349 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:37:24,934 Internal Server Error: /student/course-material/7/
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/detail.py", line 109, in get
-    context = self.get_context_data(object=self.object)
-  File "/home/lanlokun/Desktop/portal/apps/students/views.py", line 78, in get_context_data
-    course_materials = CourseMaterial.objects.filter(course=self.object.course)
-AttributeError: 'NoneType' object has no attribute 'course'
-ERROR 2023-09-12 08:37:24,935 "GET /student/course-material/7/ HTTP/1.1" 500 91799
-INFO 2023-09-12 08:39:43,001 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:39:43,244 Watching for file changes with StatReloader
-INFO 2023-09-12 08:39:52,260 "GET /student/course-material/7/ HTTP/1.1" 200 9304
-INFO 2023-09-12 08:40:02,219 "GET /student/course-material/8/ HTTP/1.1" 200 9304
-INFO 2023-09-12 08:40:07,616 "GET /student/course-material/9/ HTTP/1.1" 200 9304
-INFO 2023-09-12 08:40:13,074 "GET /student/course-material/10/ HTTP/1.1" 200 9304
-INFO 2023-09-12 08:40:26,766 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:40:27,020 Watching for file changes with StatReloader
-INFO 2023-09-12 08:40:50,356 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
-INFO 2023-09-12 08:40:50,613 Watching for file changes with StatReloader
-ERROR 2023-09-12 08:47:02,024 Internal Server Error: /result/view/all
-Traceback (most recent call last):
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
-    response = get_response(request)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
-    return self.dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
-    return super().dispatch(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
-    return handler(request, *args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/list.py", line 174, in get
-    context = self.get_context_data()
-  File "/home/lanlokun/Desktop/portal/apps/result/views.py", line 26, in get_context_data
-    context["courses"] = Course.objects.filter(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 153, in post
+    return self.form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/messages/views.py", line 12, in form_valid
+    response = super().form_valid(form)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 135, in form_valid
+    self.object = form.save()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/models.py", line 542, in save
+    self.instance.save()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 892, in save_base
+    post_save.send(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 176, in send
+    return [
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/dispatch/dispatcher.py", line 177, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/home/lanlokun/Desktop/portal/apps/students/models.py", line 61, in create_user_for_student
+    user = User.objects.create_user(username=username, password=password)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 161, in create_user
+    return self._create_user(username, email, password, **extra_fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/models.py", line 155, in _create_user
+    user.save(using=self._db)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/base_user.py", line 76, in save
+    super().save(*args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
   File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1436, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1454, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1461, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1534, in add_q
-    clause, _ = self._add_q(q_object, self.used_aliases)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1565, in _add_q
-    child_clause, needed_inner = self.build_filter(
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1415, in build_filter
-    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1225, in solve_lookup_type
-    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
-  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/query.py", line 1713, in names_to_path
-    raise FieldError(
-django.core.exceptions.FieldError: Cannot resolve keyword 'semester' into field. Choices are: code, coursematerial, credit_unit, id, lecturer, lecturer_id, level, name, result, studentcourse
-ERROR 2023-09-12 08:47:02,025 "GET /result/view/all HTTP/1.1" 500 135579
-INFO 2023-09-12 08:50:21,924 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
-INFO 2023-09-12 08:50:22,154 Watching for file changes with StatReloader
-INFO 2023-09-12 08:51:48,967 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
-INFO 2023-09-12 08:51:49,185 Watching for file changes with StatReloader
-INFO 2023-09-12 08:53:04,953 /home/lanlokun/Desktop/portal/apps/corecode/models.py changed, reloading.
-INFO 2023-09-12 08:53:05,178 Watching for file changes with StatReloader
-INFO 2023-09-12 08:53:37,893 "GET /users/accounts/logout/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:53:38,074 "GET / HTTP/1.1" 302 0
-INFO 2023-09-12 08:53:38,577 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
-INFO 2023-09-12 08:54:02,031 "POST /users/accounts/login/ HTTP/1.1" 302 0
-INFO 2023-09-12 08:54:02,951 "GET / HTTP/1.1" 200 9842
-INFO 2023-09-12 08:54:16,817 "GET /student/list HTTP/1.1" 200 12017
-INFO 2023-09-12 08:54:26,547 "GET /session/list/ HTTP/1.1" 200 12150
-INFO 2023-09-12 08:54:30,438 "GET /semester/list/ HTTP/1.1" 200 12859
-INFO 2023-09-12 08:55:23,446 /home/lanlokun/Desktop/portal/apps/corecode/forms.py changed, reloading.
-INFO 2023-09-12 08:55:23,669 Watching for file changes with StatReloader
-INFO 2023-09-12 08:55:31,337 "GET /semester/list/ HTTP/1.1" 200 13197
-INFO 2023-09-12 08:56:22,965 "GET /semester/list/ HTTP/1.1" 200 13296
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(hihequxyru@mailinator.com) already exists.
+
+ERROR 2023-10-02 13:52:48,903 "POST /student/create/ HTTP/1.1" 500 222262
+INFO 2023-10-02 13:53:48,516 /home/lanlokun/Desktop/portal/apps/students/views.py changed, reloading.
+INFO 2023-10-02 13:53:48,853 Watching for file changes with StatReloader
+ERROR 2023-10-02 13:54:02,345 Internal Server Error: /student/create/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.OperationalError: SSL connection has been closed unexpectedly
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 135, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/contrib/auth/mixins.py", line 73, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 184, in post
+    return super().post(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/views/generic/edit.py", line 152, in post
+    if form.is_valid():
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/forms.py", line 201, in is_valid
+    return self.is_bound and not self.errors
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/forms.py", line 196, in errors
+    self.full_clean()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/forms.py", line 433, in full_clean
+    self._clean_fields()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/forms.py", line 445, in _clean_fields
+    value = field.clean(value)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/fields.py", line 198, in clean
+    value = self.to_python(value)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/forms/models.py", line 1538, in to_python
+    value = self.queryset.get(**{key: value})
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/Django-School-Management-System/venv/lib/python3.8/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.OperationalError: SSL connection has been closed unexpectedly
+
+ERROR 2023-10-02 13:54:02,347 "POST /student/create/ HTTP/1.1" 500 174742
+INFO 2023-10-02 13:54:15,937 "POST /student/create/ HTTP/1.1" 200 14811
+INFO 2023-10-02 13:54:51,669 "POST /student/create/ HTTP/1.1" 200 14708
+INFO 2023-10-02 13:55:06,785 "POST /student/create/ HTTP/1.1" 200 14668
+INFO 2023-10-02 13:55:43,026 /home/lanlokun/Desktop/portal/apps/result/views.py changed, reloading.
+INFO 2023-10-02 13:55:43,264 Watching for file changes with StatReloader

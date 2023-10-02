@@ -25,6 +25,7 @@ class StaffCreateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixi
 
     def test_func(self):
         return self.request.user.is_superuser   
+    
 
     def get_form(self):
         """add date picker in forms"""
@@ -37,6 +38,13 @@ class StaffCreateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixi
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 1})
         form.fields.pop("user")
         return form
+    
+    def form_valid(self, form):
+        email = form.cleaned_data.get("email")
+        if Staff.objects.filter(email=email).exists():
+            form.add_error("email", "Email already exists.")
+            return self.form_invalid(form)
+        return super(StaffCreateView, self).form_valid(form)
 
 
 class StaffUpdateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixin, UpdateView):

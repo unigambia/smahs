@@ -25,18 +25,39 @@
       <div class="col">{{ form.semester | add_class:"form-control" }}</div>
     </div>
 
-    <div class="form-group row">
-      {{ form.courses.errors }}
-      <label class="col-2" for="{{ form.courses.id_for_label }}">{{ form.courses.label_tag}}</label>
-      <div class="col">
-        <div class="form-check">
-          {{ form.courses | add_class:"form-check-input" }}
-        </div>
-      </div>
-    </div>
+    <table id="studenttable" class="table table-sm table-bordered" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th><input type="checkbox" id="selecter"></th>
+          <th>Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for student_id, courses in students_registered_courses.items %}
+          <tr>
+            <td>
+              <label for="{{ student_id }}">
+                <input type="checkbox" id="{{ student_id }}" name="students" value="{{ student_id }}">
+              </label>
+            </td>
+            <td>{{ student_id }}</td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <ul>
+                {% for course in courses %}
+                  <li>{{ course }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    
 
     <input type="hidden" name="finish" value="True">
-    <input type="hidden" name="students" value="{{ students }}">
+    <input type="hidden" name="courses" value="{{ courses }}">
 
     <div class="row">
       <div class="col">
@@ -45,5 +66,18 @@
     </div>
   </form>
 {% endblock content %}
+{% block morejs %}
+<script>
+  $('#studenttable').DataTable({
+    "ordering": false
+  });
 
-
+  $("#selecter").change(function () {
+    if (this.checked) {
+      $('input[name="courses"]').prop('checked', true);
+    } else {
+      $('input[name="courses"]').prop('checked', false);
+    }
+  });
+</script>
+{% endblock morejs %}
