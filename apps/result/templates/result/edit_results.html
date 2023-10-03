@@ -14,30 +14,27 @@ Update Results
   <table id="studenttable" class="table table-sm">
     <thead>
       <tr>
-        <th></th>
         <th>Name</th>
         <th>Subject</th>
+        <th> Session</th>
+        <th>Semester</th>
         <th>Test Score</th>
         <th>Exam Score</th>
         <th>Total</th>
         <th>Delete</th>
-        <th>Class</th>
       </tr>
     </thead>
     <tbody>
-      {% for form in formset %}
-      {{ form.id}}
         <tr>
-          <td>{{forloop.counter }}</td>
-          <td>{{form.student }}</td>
-          <td>{{form.course}}</td>
-          <td style="width: 10%;">{{form.test_score | add_class:"form-control form-control-sm"}}</td>
-          <td style="width: 10%;">{{form.exam_score | add_class:"form-control form-control-sm"}}</td>
-          <td>{{form.total_score}}</td>
-          <td>{{form.DELETE}}</td>
-
+          <td>{{ form.student }}</td>
+          <td>{{ form.course }}</td>
+          <td>{{ form.session }}</td>
+          <td>{{ form.semester }}</td>
+          <td style="width: 10%;">{{ form.test_score|add_class:"form-control form-control-sm" }}</td>
+          <td style="width: 10%;">{{ form.exam_score|add_class:"form-control form-control-sm" }}</td>
+          <td>{{ form.instance.total_score }}</td>  
+          <td><input type="checkbox" name="delete" id="delete"> Delete</td>
         </tr>
-      {% endfor %}
     </tbody>
   </table>
 

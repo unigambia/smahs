@@ -17,3 +17,8 @@ class CreateResults(forms.Form):
 EditResults = modelformset_factory(
     Result, fields=("test_score", "exam_score"), extra=0, can_delete=True
 )
+
+class ResultForm(forms.ModelForm):
+    class Meta:
+        model = Result
+        fields = ["student", "session", "semester", "course", "test_score", "exam_score"]

@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 from apps.students.models import Student
 from apps.corecode.models import Course, StudentCourse, AcademicSemester, AcademicSession
 
-from .forms import CreateResults, EditResults
+from .forms import CreateResults, EditResults, ResultForm
 from .models import Result
 
     
@@ -180,23 +180,25 @@ class ResultEditView(LoginRequiredMixin, UserPassesTestMixin, View):
     
     def get(self, request, *args, **kwargs):
         result = Result.objects.get(id=kwargs["pk"])
-        print(result)
-        form = EditResults(queryset=Result.objects.filter(id=kwargs["pk"]))
-        print(form)
+        form = ResultForm(instance=result)
+        return render(request, self.template_name, {"form": form})
 
-        return render(request, self.template_name, {"form": form, "result": result})
-    
     def post(self, request, *args, **kwargs):
-        form = EditResults(request.POST)
+        result = Result.objects.get(id=kwargs["pk"])
+        if "delete" in request.POST:
+            result.delete()
+            messages.success(request, "Result deleted successfully.")
+            return redirect(self.success_url)
+
+        form = ResultForm(request.POST, instance=result)
 
         if form.is_valid():
             form.save()
             messages.success(request, self.success_message)
             return redirect(self.success_url)
-        else:
+        else:    
             return render(request, self.template_name, {"form": form})
 
-    
 
 class ResultDeleteView(LoginRequiredMixin, UserPassesTestMixin, View):
     def test_func(self):
