@@ -29,6 +29,31 @@ class ResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
         context["results"] = Result.objects.all()
         return context
 
+    
+# student result list view
+
+class StudentResultListView(LoginRequiredMixin, ListView):
+    model = Result
+    template_name = "result/student_result_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(StudentResultListView, self).get_context_data(**kwargs)
+        student = Student.objects.get(id=self.kwargs["pk"])
+        context["results"] = Result.objects.filter(student=student)
+        context["student"] = student
+        return context
+
+# student list view
+
+class StudentListView(LoginRequiredMixin, ListView):
+    model = Student
+    template_name = "result/student_list.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(StudentListView, self).get_context_data(**kwargs)
+        context["students"] = Student.objects.all()
+        return context
+
 class ResultDetailView(LoginRequiredMixin, DetailView):
     model = Result
     template_name = "result/result_detail.html"
@@ -144,24 +169,34 @@ class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 
 class ResultEditView(LoginRequiredMixin, UserPassesTestMixin, View):
+    model = Result
+    template_name = "result/edit_results.html"
+    form_class = EditResults
+    success_url = reverse_lazy("create-result")
+    success_message = "Updated Result Successfully"
+
     def test_func(self):
         return self.request.user.is_superuser
-
+    
     def get(self, request, *args, **kwargs):
         result = Result.objects.get(id=kwargs["pk"])
-        form = EditResults(instance=result)
-        return render(request, "result/edit_results.html", {"form": form})
+        print(result)
+        form = EditResults(queryset=Result.objects.filter(id=kwargs["pk"]))
+        print(form)
 
+        return render(request, self.template_name, {"form": form, "result": result})
+    
     def post(self, request, *args, **kwargs):
-        result = Result.objects.get(id=kwargs["pk"])
-        form = EditResults(request.POST, instance=result)
+        form = EditResults(request.POST)
+
         if form.is_valid():
             form.save()
-            messages.success(request, "Results successfully updated")
-            return redirect("result-detail", kwargs["pk"])
-        return render(request, "result/edit_results.html", {"form": form})
-    
+            messages.success(request, self.success_message)
+            return redirect(self.success_url)
+        else:
+            return render(request, self.template_name, {"form": form})
 
+    
 
 class ResultDeleteView(LoginRequiredMixin, UserPassesTestMixin, View):
     def test_func(self):

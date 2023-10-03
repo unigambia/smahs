@@ -29,11 +29,11 @@ Update Results
       {{ form.id}}
         <tr>
           <td>{{forloop.counter }}</td>
-          <td>{{form.instance.student }}</td>
-          <td>{{form.instance.course}}</td>
+          <td>{{form.student }}</td>
+          <td>{{form.course}}</td>
           <td style="width: 10%;">{{form.test_score | add_class:"form-control form-control-sm"}}</td>
           <td style="width: 10%;">{{form.exam_score | add_class:"form-control form-control-sm"}}</td>
-          <td>{{form.instance.total_score}}</td>
+          <td>{{form.total_score}}</td>
           <td>{{form.DELETE}}</td>
 
         </tr>

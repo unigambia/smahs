@@ -1,13 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Students{% endblock title %}
-
-{% block breadcrumb %}
-<a class="btn btn-primary" href="{% url 'student-create' %}"><i
-    class="fas fa-plus"></i> New student</a>
-<a class="btn btn-primary" href="{% url 'student-upload' %}"><i
-    class="fas fa-upload"></i> Upload students</a>
-{% endblock breadcrumb %}
+{% block title %}All Students{% endblock title %}
 
 {% block content %}
   <div class="table-responsive">
@@ -21,12 +14,13 @@
           <th>Gender</th>
           <th>Mobile Phone Number</th>
           <th>Status</th>
+          <th>Action</th> <!-- Added this for the "View Results" button -->
         </tr>
       </thead>
       <tbody>
 
         {% for student in object_list %}
-          <tr class='clickable-row' data-href="{% url 'student-detail' student.id %}">
+          <tr>
             <td>{{ forloop.counter}}</td>
             <td>{{ student.surname}} {{student.firstname }} {{student.other_name }}</td>
             <td>{{ student.mat_number}}</td>
@@ -34,7 +28,10 @@
             <td>{{ student.get_gender_display}}</td>
             <td>{{ student.parent_mobile_number}}</td>
             <td>{{ student.get_current_status_display}}</td>
-            
+            <td>
+                <!-- Button to view results for the student -->
+                <a href="{% url 'student-result-list' student.id %}" class="btn btn-primary">View Results</a>
+            </td> <!-- Added this for the "View Results" button -->
           </tr>
         {% endfor %}
 

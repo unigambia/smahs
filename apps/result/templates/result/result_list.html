@@ -40,7 +40,7 @@
             <td>{{ result.grade }}</td>
             <td>
               <!-- Add actions here, e.g., a link to view more details -->
-              <a href="{% url 'result-detail' result.student.id %}" class="btn btn-primary">View Results</a>
+              <a href="{% url 'edit-result' result.id %}" class="btn btn-primary">Update Results</a>
             </td>
           </tr>
         {% endfor %}
