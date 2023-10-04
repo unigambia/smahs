@@ -17,6 +17,12 @@
 <form action="" method="POST">
   {% csrf_token %}
 
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger">
+        {{ form.non_field_errors }}
+    </div>  
+  {% endif %}
+
   {% include 'corecode/form_snippet.html' %}
 
   {% if object %}

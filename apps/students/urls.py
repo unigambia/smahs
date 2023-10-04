@@ -23,5 +23,4 @@ urlpatterns = [
     path("registered-courses/", RegisteredCourseListView.as_view(), name="registered-courses"),
     path("course-material/<int:pk>/", StudentCourseMaterialView.as_view(), name="course-material"),
 
-
 ]
