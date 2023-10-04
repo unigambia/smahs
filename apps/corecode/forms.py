@@ -7,7 +7,8 @@ from .models import (
     SiteConfig,
     StudentCohort,
     Course,
-    CourseMaterial
+    CourseMaterial, 
+    Exam
 )
 
 from django.contrib.auth.models import User
@@ -106,3 +107,14 @@ class CurrentSessionForm(forms.Form):
         queryset=AcademicSemester.objects.all(),
         help_text='Click <a href="/semester/create/?next=current-session/">here</a> to add new semester',
     )
+
+
+class ExamForm(ModelForm):
+    class Meta:
+        model = Exam
+        fields = ["title", "due_date", "description", "file", "total_marks", "cohort", "courses", "lecturer", "academic_session", "academic_semester", "date_created" ]
+
+    def __init__(self, *args, **kwargs):
+        super(ExamForm, self).__init__(*args, **kwargs)
+        self.fields['due_date'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})
+        self.fields['date_created'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})

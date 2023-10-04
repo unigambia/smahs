@@ -2,13 +2,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.views.generic import DetailView, ListView, View, CreateView, UpdateView
 from django.urls import reverse_lazy
-
+from django.db import IntegrityError
 from apps.students.models import Student
 from apps.corecode.models import Course, StudentCourse, AcademicSemester, AcademicSession
-
+from django.core.exceptions import ObjectDoesNotExist
 from .forms import CreateResults, EditResults, ResultForm
 from .models import Result
 
@@ -17,120 +17,106 @@ from .models import Result
 #     model = Result
 #     template_name = "result/create_result2.html"
 
-class ResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
-    model = Result
-    template_name = "result/result_list.html"
+# class ResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+#     model = Result
+#     template_name = "result/result_list.html"
 
-    def test_func(self):
-        return self.request.user.is_superuser
+#     def test_func(self):
+#         return self.request.user.is_superuser
     
-    def get_context_data(self, **kwargs):
-        context = super(ResultListView, self).get_context_data(**kwargs)
-        context["results"] = Result.objects.all()
-        return context
+#     def get_queryset(self):
+#         # Filter the results by the student ID passed in the URL
+#         student_id = self.kwargs['student_id']
+#         return Result.objects.filter(student__id=student_id)
+    
+#     def get_context_data(self, **kwargs):
+#         context = super(ResultListView, self).get_context_data(**kwargs)
+#         context["student"] = get_object_or_404(Student, id=self.kwargs['student_id'])
+#         return context
+
 
     
 # student result list view
 
-class StudentResultListView(LoginRequiredMixin, ListView):
+class StudentResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     model = Result
     template_name = "result/student_result_list.html"
 
+    def test_func(self):
+        return self.request.user.is_superuser
+
     def get_context_data(self, **kwargs):
         context = super(StudentResultListView, self).get_context_data(**kwargs)
-        student = Student.objects.get(id=self.kwargs["pk"])
+        student = get_object_or_404(Student, id=self.kwargs["pk"])
+        print(self.kwargs["pk"])
+        print(student)
         context["results"] = Result.objects.filter(student=student)
         context["student"] = student
         return context
 
 # student list view
 
-class StudentListView(LoginRequiredMixin, ListView):
+class ResultStudentListView(LoginRequiredMixin, ListView, UserPassesTestMixin):
     model = Student
     template_name = "result/student_list.html"
 
     def get_context_data(self, **kwargs):
-        context = super(StudentListView, self).get_context_data(**kwargs)
+        context = super(ResultStudentListView, self).get_context_data(**kwargs)
         context["students"] = Student.objects.all()
         return context
-
-class ResultDetailView(LoginRequiredMixin, DetailView):
+    
+class StudentResultsListView(LoginRequiredMixin, ListView):
     model = Result
-    template_name = "result/result_detail.html"
-    context_object_name = "result"
+    template_name = "result/student_results_list.html"
+    context_object_name = "results"
+
+    def get_queryset(self):
+        # Filter results based on the logged-in student
+        return Result.objects.filter(student__user=self.request.user).order_by("session", "semester")
 
     def get_context_data(self, **kwargs):
-        context = super(ResultDetailView, self).get_context_data(**kwargs)
-        result = context["result"]
-
-        # Retrieve the associated student based on the id
-        student_id = result.student.id  # Assuming result.student is the Student object
-        student = Student.objects.get(pk=student_id)
-
-        # Fetch all results for the same student
-        student_results = Result.objects.filter(student=student).order_by("session", "semester")
-
-        # Organize results into a structured format
-        structured_results = {}
-        current_session = None
-
-        if not student_results:
-            context["no_results_message"] = "No results found for this student."
-
-
-        for student_result in student_results:
-            if student_result.session != current_session:
-                structured_results[student_result.session] = {}
-                current_session = student_result.session
-
-            session_dict = structured_results[student_result.session]
-            if student_result.semester not in session_dict:
-                session_dict[student_result.semester] = []
-
-            session_dict[student_result.semester].append(student_result)
-
-        context["structured_results"] = structured_results
+        context = super().get_context_data(**kwargs)
+        student = Student.objects.get(user=self.request.user)
         context["student"] = student  # Add the student to the context
         return context
-    
 
-class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin ,CreateView):
+
+class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
     model = Result
-    template_name = 'result/create_result.html'  
-    fields = "__all__"
-    success_url = reverse_lazy("create-result")
-    success_message = "Added Result Successfully"
-
+    template_name = 'result/create_result.html'
+    form_class = ResultForm
+    
     def test_func(self):
         return self.request.user.is_superuser
-    
+
+    def get_success_url(self):
+        return reverse_lazy("student-result-list", kwargs={"pk": self.object.student.id})
+
     def form_valid(self, form):
-        # Check if a result with the same session and semester already exists
-        session = form.cleaned_data['session']
-        semester = form.cleaned_data['semester']
-        student = form.cleaned_data['student']
-
-        existing_result = Result.objects.filter(session=session, semester=semester, student=student).exists()
-        
-        if existing_result:
-            # Return an error message if a duplicate result exists
-            form.add_error(None, "A result for this session and semester already exists for the student.")
+        try:
+            response = super().form_valid(form)
+            messages.success(self.request, "Result added successfully!")
+            return response
+        except IntegrityError:
+            form.add_error(None, "A result for this combination of student, session, semester, and course already exists!")
             return self.form_invalid(form)
-        
-        return super().form_valid(form)
 
-
+    def form_invalid(self, form):
+        messages.error(self.request, "There was an error in the form.")
+        return render(self.request, self.template_name, {'form': form})
     
 
-class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-    model = Result
-    template_name = 'result/edit_results.html'  
-    fields = "__all__"
-    success_url = reverse_lazy("create-result")
-    success_message = "Updated Result Successfully"
+# class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+#     model = Result
+#     template_name = 'result/edit_results.html'  
+#     fields = "__all__"
+#     success_message = "Updated Result Successfully"
 
-    def test_func(self):
-        return self.request.user.is_superuser
+#     def test_func(self):
+#         return self.request.user.is_superuser
+    
+#     def get_success_url(self):
+#         return reverse_lazy("student-result-list", kwargs={"pk": self.object.student.id})
 
 # class DisplayRegisteredCoursesView(LoginRequiredMixin, UserPassesTestMixin, View):
 #     def test_func(self):
@@ -172,30 +158,33 @@ class ResultEditView(LoginRequiredMixin, UserPassesTestMixin, View):
     model = Result
     template_name = "result/edit_results.html"
     form_class = EditResults
-    success_url = reverse_lazy("create-result")
     success_message = "Updated Result Successfully"
 
     def test_func(self):
         return self.request.user.is_superuser
     
+    def get_success_url(self):
+        return reverse_lazy("edit-result", kwargs={"pk": self.kwargs["pk"]})
+
+    
     def get(self, request, *args, **kwargs):
         result = Result.objects.get(id=kwargs["pk"])
         form = ResultForm(instance=result)
-        return render(request, self.template_name, {"form": form})
+        return render(request, self.template_name, {"form": form, "student": result.student})
 
     def post(self, request, *args, **kwargs):
         result = Result.objects.get(id=kwargs["pk"])
         if "delete" in request.POST:
             result.delete()
             messages.success(request, "Result deleted successfully.")
-            return redirect(self.success_url)
+            return redirect(self.get_success_url())
 
         form = ResultForm(request.POST, instance=result)
 
         if form.is_valid():
             form.save()
             messages.success(request, self.success_message)
-            return redirect(self.success_url)
+            return redirect(self.get_success_url())
         else:    
             return render(request, self.template_name, {"form": form})
 
@@ -209,3 +198,4 @@ class ResultDeleteView(LoginRequiredMixin, UserPassesTestMixin, View):
         result.delete()
         messages.success(request, "Results successfully deleted")
         return redirect("result-list")
+

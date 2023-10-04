@@ -139,3 +139,29 @@ class CourseMaterial(models.Model):
         ordering = ["-date_created"]
 
   
+class Exam(models.Model):
+    """Exams"""
+    courses = models.ManyToManyField(Course)
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    file = models.FileField(upload_to="exams", null=True, blank=True)
+    date_created = models.DateTimeField(default=timezone.now)
+    due_date = models.DateTimeField(null=True, blank=True)
+    total_marks = models.IntegerField(default=0, null=True, blank=True)
+    academic_session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
+    academic_semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
+    cohort = models.ForeignKey(StudentCohort, on_delete=models.CASCADE)
+    lecturer = models.ForeignKey(
+        Staff,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="lecturer_exam",
+    )
+    def __str__(self):
+        return self.title
+
+    objects = CourseMaterialManager()
+   
+    class Meta:
+        ordering = ["-date_created"]

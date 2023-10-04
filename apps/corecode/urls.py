@@ -28,6 +28,10 @@ from .views import (
     AssignmentsListView,
     AssignmentUpdateView,
     AssignmentDeleteView,
+    ExamsCreateView,
+    ExamsListView,
+    ExamUpdateView,
+    ExamDeleteView,
     )
 
 urlpatterns = [
@@ -69,5 +73,13 @@ urlpatterns = [
     path('staff/class/<int:course_id>/assignment/create', AssignmentsCreateView.as_view(), name='staff-course-assignments-create'),
     path('staff/class/<int:course_id>/assignment/<int:pk>/update', AssignmentUpdateView.as_view(), name='staff-course-assignments-update'),
     path('staff/class/<int:course_id>/assignment/<int:pk>/delete', AssignmentDeleteView.as_view(), name='staff-course-assignments-delete'),
+
+    #exam
+    path('exam/list', ExamsListView.as_view(), name='exams-list'),
+    path('exam/create', ExamsCreateView.as_view(), name='exams-create'),
+    path('exam/<int:pk>/update', ExamUpdateView.as_view(), name='exams-update'),
+    path('exam/<int:pk>/delete', ExamDeleteView.as_view(), name='exams-delete'),
+    
+
     
 ]

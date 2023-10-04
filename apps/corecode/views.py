@@ -6,7 +6,7 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.forms.forms import BaseForm
 from django.http.response import HttpResponse
 from django.shortcuts import HttpResponseRedirect, redirect, render, get_object_or_404
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, TemplateView, View, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.core.exceptions import ObjectDoesNotExist
@@ -26,8 +26,9 @@ from .forms import (
     SiteConfigForm,
     StudentCohortForm,
     CourseForm,
-    UserForm,
-    AssignmentForm
+    AssignmentForm,
+    ExamForm
+
 )
 from .models import (
     AcademicSession,
@@ -36,7 +37,8 @@ from .models import (
     StudentCohort,
     Course,
     StudentCourse,
-    CourseMaterial
+    CourseMaterial,
+    Exam
 
 )
 from apps.students.models import Student
@@ -539,3 +541,75 @@ class AssignmentDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     def get_success_message(self, cleaned_data):
         course = Course.objects.get(id=self.kwargs["course_id"])
         return self.success_message.format(course.name)
+
+
+#Exam View
+
+class ExamsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    template_name = "corecode/mgt_form.html"
+    model = Exam
+    form_class = ExamForm  # Using the form class directly
+    success_message = "New Exam successfully added."
+
+    def test_func(self):
+        return self.request.user.is_superuser   
+    
+    def get_success_url(self):
+        return reverse("exams-list")
+
+class ExamsListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Exam
+    template_name = "corecode/exams_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+
+    def get_queryset(self):
+        return Exam.objects.all()
+
+class ExamUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    model = Exam
+    form_class = ExamForm
+    template_name = "corecode/mgt_form.html"
+    success_message = "The Exam for course '{}' has been updated"
+
+    def get_success_url(self):
+        return reverse_lazy("exams-list")
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        uploaded_file: InMemoryUploadedFile = form.cleaned_data['file']
+        if uploaded_file:
+            # Set the file field of the Assignment instance
+            form.instance.file = uploaded_file
+
+        return super().form_valid(form)
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message.format(self.object.name)
+
+class ExamDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Exam
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Exam for course '{}' has been deleted"
+
+    def get_success_url(self):
+        return reverse_lazy("exams-list")
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message.format(self.object.name)
+
+    
+
+
+    
+

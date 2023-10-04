@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+
+{% block title %}
+Exams
+{% endblock title %}
+
+
+{% block breadcrumb %}
+  <a class="btn btn-primary" href="{% url 'exams-create' %}">
+    <i class="fa fa-plus"></i>
+    Add new Exam
+  </a>
+{% endblock breadcrumb %}
+  
+
+{% block content %}
+  <div class="row">
+    <div class="col-sm-12">
+
+        <table class="table table-bordered">
+          <tbody>
+            {% for object in object_list %}
+            <tr>
+              <td>{{ object }}</td>
+              <td><a href="{% url 'exams-update' object.id %}"><i
+                    class="fa fa-edit"></i></a> <a
+                  href="{% url 'exams-delete' object.id %}"><i
+                    class="fa fa-trash-alt"></i></a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+    </div>
+  </div>
+
+
+{% endblock content %}

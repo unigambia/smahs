@@ -192,4 +192,3 @@ class RegisteredCourseListView(UserPassesTestMixin, LoginRequiredMixin, ListView
         context["student"] = Student.objects.get(user=self.request.user)
         return context
 
-    

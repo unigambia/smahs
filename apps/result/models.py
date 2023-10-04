@@ -22,6 +22,8 @@ class Result(models.Model):
 
     class Meta:
         ordering = ["course"]
+        unique_together = ['student', 'session', 'semester', 'course']
+
 
     def __str__(self):
         return f"{self.student} {self.session} {self.semester} {self.course}"

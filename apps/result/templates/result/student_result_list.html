@@ -10,6 +10,8 @@
 {% endblock breadcrumb %}
 
 {% block content %}
+<h3>Results for {{ student }}</h3>
+
   <div class="table-responsive">
     <table id="resulttable" class="table table-bordered table-hover" data-page-length='10'>
       <thead class="thead-light">
@@ -27,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for result in object_list %}
+        {% for result in results %}
           <tr>
             <td>{{ forloop.counter }}</td>
             <td>{{ result.student }}</td>
