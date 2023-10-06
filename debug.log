@@ -16035,3 +16035,6 @@ WARNING 2023-10-06 11:18:12,443 Not Found: /staff/class/js/main.js
 WARNING 2023-10-06 11:18:12,444 "GET /staff/class/js/main.js HTTP/1.1" 404 10225
 INFO 2023-10-06 11:18:57,112 /home/lanlokun/Desktop/portal/school_app/settings.py changed, reloading.
 INFO 2023-10-06 11:18:57,488 Watching for file changes with StatReloader
+INFO 2023-10-06 11:28:46,985 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-10-06 11:28:47,894 "GET / HTTP/1.1" 302 0
+INFO 2023-10-06 11:28:50,256 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
