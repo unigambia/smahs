@@ -47,6 +47,10 @@
         window.location.href = '/accounts/password_reset';
       }
     }
+
+    $(document).ready(function() {
+      $('.django-select2').djangoSelect2();
+  });
   </script>
   {% endif %}
 {% endblock content %}

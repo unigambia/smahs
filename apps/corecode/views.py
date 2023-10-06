@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.forms.forms import BaseForm
+from django.forms.models import BaseModelForm
 from django.http.response import HttpResponse
 from django.shortcuts import HttpResponseRedirect, redirect, render, get_object_or_404
 from django.urls import reverse_lazy, reverse
@@ -14,8 +15,7 @@ from django.contrib.auth.models import User
 from apps.corecode.forms import RegistrationForm, UserUpdateForm
 from django.contrib.auth.decorators import user_passes_test
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.forms import widgets
-
+from django.forms import widgets, SelectMultiple
 
 
 
@@ -38,15 +38,79 @@ from .models import (
     Course,
     StudentCourse,
     CourseMaterial,
-    Exam
+    Exam,
+    Staff
+
 
 )
 from apps.students.models import Student
 
 
+class DashboardView(LoginRequiredMixin, TemplateView):
+   
+   def get_template_names(self):
+        user = self.request.user
+        if user.is_superuser:
+            return "admin_dashboard.html"
+        elif user.is_staff:
+            return "lecturer_dashboard.html"
+        else:
+            return "student_dashboard.html"
+    
 
-class IndexView(LoginRequiredMixin, TemplateView):
-    template_name = "index.html"
+
+class AdminDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
+    template_name = "admin_dashboard.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        graduates = Student.objects.filter(current_status="graduate").count()
+        context["graduates"] = graduates
+        active_students = Student.objects.filter(current_status="active").count()
+        context["active_students"] = active_students
+        context["courses"] = Course.objects.all().count()
+        context["sessions"] = AcademicSession.objects.all().count()
+        context["semesters"] = AcademicSemester.objects.all().count()
+        context["staffs"] = Staff.objects.all().count()
+        context["users"] = User.objects.all().count()
+        context["cohorts"] = StudentCohort.objects.all().count()
+        context["assignments"] = CourseMaterial.objects.all().count()
+        
+        return context
+
+class LecturerDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
+    template_name = "lecturer_dashboard.html"
+
+    def test_func(self):
+        return self.request.user.is_staff
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["courses"] = Course.objects.filter(lecturer=self.request.user.staff).count()
+        context["students"] = StudentCourse.objects.filter(course__lecturer=self.request.user.staff).count()
+        context["sessions"] = AcademicSession.objects.all().count()
+        context["semesters"] = AcademicSemester.objects.all().count()
+        return context
+
+class StudentDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
+    template_name = "student_dashboard.html"
+
+    def test_func(self):
+        return not self.request.user.is_staff or self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        student = Student.objects.get(user=self.request.user)
+        context["courses"] = StudentCourse.objects.filter(student=student).count()        
+        context["sessions"] = AcademicSession.objects.all().count()
+        context["semesters"] = AcademicSemester.objects.all().count()
+        context["assignments"] = CourseMaterial.objects.filter(type="assignment").count()
+        context["cohort_students"] = Student.objects.filter(cohort=self.request.user.student.cohort).count()
+
+        return context    
 
 
 class SiteConfigView(LoginRequiredMixin, View):
@@ -96,6 +160,7 @@ class SessionCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageM
         context = super().get_context_data(**kwargs)
         context["title"] = "Add new session"
         return context
+
 
 class SessionUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = AcademicSession
@@ -556,6 +621,16 @@ class ExamsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMix
     
     def get_success_url(self):
         return reverse("exams-list")
+    
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.fields.pop("date_created")
+        return form
+    
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        form.save_m2m() 
+        return response
 
 class ExamsListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     model = Exam

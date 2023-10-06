@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    'django_select2',
     "widget_tweaks",
     "apps.corecode",
     "apps.students",
@@ -63,6 +64,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "apps.corecode.middleware.SiteWideConfigs",
+    "apps.corecode.middleware.CurrentUserMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
 ]
