@@ -6,7 +6,7 @@ Brotli==1.0.9
 click==8.0.1
 colorama==0.4.4
 dj-database-url==2.0.0
-Django==4.1.12
+Django==3.2.22
 django-appconf==1.0.5
 django-select2==8.1.2
 django-widget-tweaks==1.4.8
