@@ -8,7 +8,6 @@ colorama==0.4.4
 dj-database-url==2.0.0
 Django==3.2.22
 django-appconf==1.0.5
-django-select2==8.1.2
 django-widget-tweaks==1.4.8
 flake8==3.9.2
 gunicorn==20.1.0
