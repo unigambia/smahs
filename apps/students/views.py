@@ -50,6 +50,8 @@ class StudentCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageM
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields.pop("user")
+        form.fields.pop("created_by")
+        form.fields.pop("updated_by")
         return form
     
     def form_valid(self, form):
@@ -123,7 +125,8 @@ class StudentUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageM
         )
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 2})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 2})
-        # form.fields['passport'].widget = widgets.FileInput()
+        form.fields.pop("created_by")
+        form.fields.pop("updated_by")        
         return form
 
 

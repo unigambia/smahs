@@ -16,6 +16,8 @@
         <th> Date of Employment</th>
         <th> Mobile Number </th>
         <th> Country</th>
+        <th> Created by</th>
+        <th> Updated by</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -28,6 +30,8 @@
           <td>{{ staff.date_of_employment}}</td>
           <td>{{ staff.mobile_number}}</td>
           <td>{{ staff.country}}</td>
+          <td>{{ staff.created_by}}</td>
+          <td>{{ staff.updated_by}}</td>
           <td>{{ staff.get_current_status_display}}</td>
         </tr>
       {% endfor %}

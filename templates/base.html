@@ -12,17 +12,28 @@
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+  <link href="{% static 'select2/css/select2.min.css' %}" rel="stylesheet">
   <!-- overlayScrollbars -->
   <link rel="stylesheet"
     href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/Datatables/datatables.min.css' %}" />
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
-  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="{% static 'dist/css/admin-dashboard.css' %}">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+
   <link
     href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
     rel="stylesheet">
+  <script src="{% static 'dist/js/admin-dashboard.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="{% static 'select2/js/select2.min.js' %}"></script>
+
 
 </head>
 
@@ -38,7 +49,7 @@
               class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="{% url 'home' %} " class="nav-link"><i class="fa fa-home"></i></a>
+          <a href="{% url 'admin' %} " class="nav-link"><i class="fa fa-home"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="{% url 'current-session' %}" class="nav-link">Session: {{ current_session }}</a>
@@ -83,7 +94,15 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="{% url 'home' %}" class="brand-link">SMAHS</a>
+      {% if request.user.is_superuser %}
+      <a href="{% url 'admin' %}" class="brand-link">SMAHS</a>
+      {% endif %}
+      {% if request.user.is_staff %}
+      <a href="{% url 'lecturer' %}" class="brand-link">SMAHS</a>
+      {% endif %}
+      {% if not request.user.is_staff and not request.user.is_superuser %}
+      <a href="{% url 'student' %}" class="brand-link">SMAHS</a>
+      {% endif %}
 
       <!-- Sidebar -->
       <div class="sidebar">
@@ -92,20 +111,31 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column"
             data-widget="treeview" role="menu" data-accordion="false">
-            {% if not request.user.is_superuser %}
+            {% if request.user.is_staff %}
 
             <li class="nav-item">
-              <a href="{% url 'home' %}" class="nav-link">
+              <a href="{% url 'lecturer' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
                 <p>
-                  Dashboard
+                 Dashboard
+                </p>
+              </a>
+            </li>
+            {% endif %}
+            {% if not request.user.is_superuser and not request.user.is_staff %}
+
+            <li class="nav-item">
+              <a href="{% url 'student' %}" class="nav-link">
+                <i class="nav-icon fas fa-graduation-cap"></i>
+                <p>
+                 Dashboard
                 </p>
               </a>
             </li>
             {% endif %}
             {% if request.user.is_superuser %}
             <li class="nav-item">
-              <a href="{% url 'home' %}" class="nav-link">
+              <a href="{% url 'admin' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
                 <p>
                   Dashboard
@@ -371,6 +401,28 @@
 
   <!-- OPTIONAL SCRIPTS -->
   <script src="{% static 'dist/js/demo.js' %}"></script>
+  <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="vendor/slick/slick.min.js">
+    </script>
+    <script src="vendor/wow/wow.min.js"></script>
+    <script src="vendor/animsition/animsition.min.js"></script>
+    <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    </script>
+    <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="vendor/counter-up/jquery.counterup.min.js">
+    </script>
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="vendor/select2/select2.min.js">
+    </script>
+    <script src="vendor/vector-map/jquery.vmap.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.min.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>
+    <script src="vendor/vector-map/jquery.vmap.world.js"></script>
+    <script src="js/main.js"></script>
 
   {% if messages %}
   {% for message in messages %}

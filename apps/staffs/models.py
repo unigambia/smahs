@@ -37,6 +37,22 @@ class Staff(models.Model):
 
     address = models.TextField(blank=True)
     others = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(
+        User,
+        related_name="staff_created_by",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    updated_by = models.ForeignKey(
+        User,
+        related_name="staff_updated_by",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
 
     def __str__(self):
         return f"{self.surname} {self.firstname} {self.other_name}"

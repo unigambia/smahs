@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    
+<div class="row">
+
+<div class="four col-md-3">
+  <div class="counter-box">
+    <i class="fa  fa-user"></i>
+    <span class="counter">{{courses}}</span>
+    {% if courses > 1 %}
+    <p>Total Courses Assigned</p>
+    {% else %}
+    <p>Total Course Assigned</p>
+    {% endif %}
+  </div>
+</div>
+<div class="four col-md-3">
+  <div class="counter-box colored">
+    <i class="fa fa-group"></i>
+    <span class="counter">{{students}}</span>
+    {% if students > 1 %}
+    <p>Total Students </p>
+    {% else %}
+    <p>Student</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="four col-md-3">
+  <div class="counter-box">
+    <i class="fa fa-group"></i>
+    <span class="counter">{{users}}</span>
+    {% if users > 1 %}
+    <p>Administrators</p>
+    {% else %}
+    <p>Administrator</p>
+    {% endif %}
+  </div>
+</div>
+<div class="four col-md-3">
+  <div class="counter-box">
+    <i class="fa fa-group"></i>
+    <span class="counter">{{staffs}}</span>
+    {% if staffs > 1 %}
+    <p>Lecturers</p>
+    {% else %}
+    <p>Lecturer</p>
+    {% endif %}
+  </div>
+</div>
+
+
+</div>	
+</div>
+  
+<div class="container">
+    
+  <div class="row">
+  
+  <div class="four col-md-3">
+    <div class="counter-box">
+      <i class="fa  fa-pencil"></i>
+      <span class="counter">{{cohorts}}</span>
+      <p>Cohorts</p>
+    </div>
+  </div>
+  
+  <div class="four col-md-3">
+    <div class="counter-box ">
+      <i class="fa fa-book"></i>
+      <span class="counter">{{sessions}}</span>
+      {% if sessions > 1 %}
+      <p>Sessions</p>
+      {% else %}
+      <p>Session</p>
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="four col-md-3">
+    <div class="counter-box colored">
+      <i class="fa fa-group"></i>
+      <span class="counter">{{semesters}}</span>
+      {% if semesters > 1 %}
+      <p>Semesters</p>
+      {% else %}
+      <p>Semester</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="four col-md-3">
+    <div class="counter-box">
+      <i class="fa fa-book"></i>
+      <span class="counter">{{courses}}</span>
+      {% if courses > 1 %}
+      <p>Courses</p>
+      {% else %}
+      <p>Course</p>
+      {% endif %}
+    </div>
+  </div>
+  
+  </div>	
+  </div>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $(document).ready(function() {
+
+    $('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+    Counter: $(this).text()
+}, {
+    duration: 4000,
+    easing: 'swing',
+    step: function (now) {
+        $(this).text(Math.ceil(now));
+    }
+});
+});
+
+});  
+</script>
+{% endblock morejs %}

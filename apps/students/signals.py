@@ -2,9 +2,9 @@ import csv
 import os
 from io import StringIO
 
-from django.db.models.signals import post_delete, post_save
+from django.db.models.signals import post_delete, post_save, pre_save
 from django.dispatch import receiver
-
+from apps.corecode.current_user import get_current_user
 from apps.corecode.models import StudentCohort
 
 from .models import Student, StudentBulkUpload
@@ -84,3 +84,13 @@ def delete_csv_file(sender, instance, *args, **kwargs):
 def delete_passport_on_delete(sender, instance, *args, **kwargs):
     if instance.passport:
         _delete_file(instance.passport.path)
+
+
+@receiver(pre_save, sender=Student)
+def student_pre_save(sender, instance, **kwargs):
+    # This signal runs before a Student is saved.
+    if not instance.pk:
+        instance.created_by = get_current_user()
+    instance.updated_by = get_current_user()
+
+

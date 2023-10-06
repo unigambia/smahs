@@ -22,7 +22,7 @@ EditResults = modelformset_factory(
 class ResultForm(forms.ModelForm):
     class Meta:
         model = Result
-        fields = ["student", "session", "semester", "course", "test_score", "exam_score"]
+        fields = ["student", "session", "semester", "course","exam", "test_score", "exam_score"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

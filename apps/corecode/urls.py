@@ -6,7 +6,6 @@ from .views import (
     CohortListView,
     CohortUpdateView,
     CurrentSessionAndSemesterView,
-    IndexView,
     SessionCreateView,
     SessionDeleteView,
     SessionListView,
@@ -32,10 +31,19 @@ from .views import (
     ExamsListView,
     ExamUpdateView,
     ExamDeleteView,
+    AdminDashboardView,
+    LecturerDashboardView,
+    StudentDashboardView,
+    DashboardView
     )
 
 urlpatterns = [
-    path("", IndexView.as_view(), name="home"),
+    
+    path("", DashboardView.as_view(), name="dashboard"),
+    path("admin/dashboard", AdminDashboardView.as_view(), name="admin"),
+    path("lecturer/dashboard", LecturerDashboardView.as_view(), name="lecturer"),
+    path("student/dashboard", StudentDashboardView.as_view(), name="student"),
+
     path("site-config", SiteConfigView.as_view(), name="configs"),
     path(
         "current-session/", CurrentSessionAndSemesterView.as_view(), name="current-session"

@@ -43,6 +43,13 @@ class InvoiceCreateView(UserPassesTestMixin, LoginRequiredMixin, CreateView):
                 formset.instance = self.object
                 formset.save()
         return super().form_valid(form)
+    
+    def get_form(self):
+        """add date picker in forms"""
+        form = super(InvoiceCreateView, self).get_form()
+        form.fields.pop("created_by")
+        form.fields.pop("updated_by")
+        return form
 
 
 class InvoiceDetailView(UserPassesTestMixin, LoginRequiredMixin, DetailView):

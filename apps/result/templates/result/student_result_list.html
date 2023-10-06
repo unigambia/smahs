@@ -25,6 +25,8 @@
           <th>Exam Score</th>
           <th>Total Score</th>
           <th>Grade</th>
+          <th>Created by</th>
+          <th>Updated by</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -40,6 +42,8 @@
             <td>{{ result.exam_score }}</td>
             <td>{{ result.total_score }}</td>
             <td>{{ result.grade }}</td>
+            <td>{{ result.created_by }}</td>
+            <td>{{ result.updated_by }}</td>
             <td>
               <!-- Add actions here, e.g., a link to view more details -->
               <a href="{% url 'edit-result' result.id %}" class="btn btn-primary">Update Results</a>

@@ -37,6 +37,8 @@ class StaffCreateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixi
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 1})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 1})
         form.fields.pop("user")
+        form.fields.pop("created_by")
+        form.fields.pop("updated_by")
         return form
     
     def form_valid(self, form):
@@ -64,6 +66,8 @@ class StaffUpdateView(UserPassesTestMixin, LoginRequiredMixin,SuccessMessageMixi
         )
         form.fields["address"].widget = widgets.Textarea(attrs={"rows": 1})
         form.fields["others"].widget = widgets.Textarea(attrs={"rows": 1})
+        form.fields.pop("created_by")
+        form.fields.pop("updated_by")
         return form
 
 

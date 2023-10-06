@@ -28,7 +28,11 @@ class AcademicSessionForm(ModelForm):
 
     class Meta:
         model = AcademicSession
-        fields = ["name", "current"]
+        fields = ["name", "current", "start_date", "end_date"]
+        widgets = {
+            "start_date": forms.DateInput(attrs={"type": "date"}),
+            "end_date": forms.DateInput(attrs={"type": "date"}),
+        }
 
 
 class AcademicSemesterForm(ModelForm):
@@ -36,7 +40,11 @@ class AcademicSemesterForm(ModelForm):
 
     class Meta:
         model = AcademicSemester
-        fields = ["name", "current", "session"]
+        fields = ["name", "current", "start_date", "end_date", "session"]
+        widgets = {
+            "start_date": forms.DateInput(attrs={"type": "date"}),
+            "end_date": forms.DateInput(attrs={"type": "date"}),
+        }
 
 
 class CourseForm(ModelForm):
@@ -111,9 +119,9 @@ class CurrentSessionForm(forms.Form):
 
 class ExamForm(ModelForm):
     class Meta:
-        model = Exam
-        fields = ["title", "due_date", "description", "file", "total_marks", "cohort", "courses", "lecturer", "academic_session", "academic_semester", "date_created" ]
-
+            model = Exam
+            fields = '__all__'
+            
     def __init__(self, *args, **kwargs):
         super(ExamForm, self).__init__(*args, **kwargs)
         self.fields['due_date'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})

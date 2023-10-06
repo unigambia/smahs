@@ -5,8 +5,10 @@ from apps.corecode.models import (
     AcademicSemester,
     StudentCohort,
     Course,
+    Exam
 )
 from apps.students.models import Student
+from django.contrib.auth.models import User
 
 from .utils import score_grade, grade_point
 
@@ -17,8 +19,26 @@ class Result(models.Model):
     session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
     semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    exam = models.ForeignKey(Exam, on_delete=models.CASCADE, null=True)
     test_score = models.IntegerField(default=0)
     exam_score = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(
+        User,
+        related_name="result_created_by",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    updated_by = models.ForeignKey(
+        User,
+        related_name="result_updated_by",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+
 
     class Meta:
         ordering = ["course"]

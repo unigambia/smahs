@@ -43,6 +43,22 @@ class Student(models.Model):
     address = models.TextField(blank=True)
     others = models.TextField(blank=True)
     passport = models.ImageField(blank=True, upload_to="students/passports/")
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(
+        User,
+        related_name="student_created_by",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
+    updated_by = models.ForeignKey(
+        User,
+        related_name="student_updated_by",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
 
     class Meta:
         ordering = ["surname", "firstname", "other_name"]

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    
+<div class="row">
+
+<div class="four col-md-3">
+  <div class="counter-box">
+    <i class="fa  fa-user"></i>
+    <span class="counter">{{courses}}</span>
+    {% if courses > 1 %}
+    <p>Courses Registered</p>
+    {% else %}
+    <p>Course Registered</p>
+    {% endif %}
+  </div>
+</div>
+<div class="four col-md-3">
+  <div class="counter-box colored">
+    <i class="fa fa-group"></i>
+    <span class="counter">{{assignments}}</span>
+    {% if assignments > 1 %}
+    <p>Total Assignments</p>
+    {% else %}
+    <p>Total Assignment</p>
+    {% endif %}
+  </div>
+</div>
+
+<div class="four col-md-3">
+  <div class="counter-box">
+    <i class="fa fa-group"></i>
+    <span class="counter">{{cohort_students}}</span>
+    {% if cohort_students > 1 %}
+    <p>Cohort Mates</p>
+    {% else %}
+    <p>Cohort Mates</p>
+    {% endif %}
+  </div>
+</div>
+</div>	
+</div>
+  
+<div class="container">
+    
+  <div class="row">
+  
+  <div class="four col-md-3">
+    <div class="counter-box">
+      <i class="fa  fa-pencil"></i>
+      <span class="counter">{{cohorts}}</span>
+      <p>Cohorts</p>
+    </div>
+  </div>
+  
+  <div class="four col-md-3">
+    <div class="counter-box ">
+      <i class="fa fa-book"></i>
+      <span class="counter">{{sessions}}</span>
+      {% if sessions > 1 %}
+      <p>Sessions</p>
+      {% else %}
+      <p>Session</p>
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="four col-md-3">
+    <div class="counter-box colored">
+      <i class="fa fa-group"></i>
+      <span class="counter">{{semesters}}</span>
+      {% if semesters > 1 %}
+      <p>Semesters</p>
+      {% else %}
+      <p>Semester</p>
+      {% endif %}
+    </div>
+  </div>
+
+
+  </div>	
+  </div>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $(document).ready(function() {
+
+    $('.counter').each(function () {
+$(this).prop('Counter',0).animate({
+    Counter: $(this).text()
+}, {
+    duration: 4000,
+    easing: 'swing',
+    step: function (now) {
+        $(this).text(Math.ceil(now));
+    }
+});
+});
+
+});  
+</script>
+{% endblock morejs %}
+```
+

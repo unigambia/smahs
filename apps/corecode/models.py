@@ -2,6 +2,7 @@ from django.db import models
 from ..staffs.models import Staff
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
+from django.contrib.auth.models import User
 # Create your models here.
 
 
@@ -19,7 +20,13 @@ class AcademicSession(models.Model):
     """Academic Session"""
 
     name = models.CharField(max_length=200, unique=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
     current = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='session_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='session_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
 
     class Meta:
         ordering = ["-name"]
@@ -32,8 +39,15 @@ class AcademicSemester(models.Model):
     """Academic Semester"""
 
     name = models.CharField(max_length=20, unique=True)
+    start_date = models.DateField()
+    end_date = models.DateField()
     session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE, default=1)
     current = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='semester_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='semester_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
 
     class Meta:
         ordering = ["name"]
@@ -44,6 +58,10 @@ class AcademicSemester(models.Model):
 
 class StudentCohort(models.Model):
     name = models.CharField(max_length=200, unique=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='cohort_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='cohort_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = "Cohort"
@@ -60,6 +78,11 @@ class Course(models.Model):
     code = models.CharField(max_length=20, unique=True , null=True)
     credit_unit = models.IntegerField(default=0)
     level = models.IntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='course_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='course_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
     lecturer = models.ForeignKey(
         Staff,
         on_delete=models.SET_NULL,
@@ -80,9 +103,14 @@ class StudentCourse(models.Model):
     academic_session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
     academic_semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
     registration_date = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='course_registration_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='course_registration_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
 
     class Meta:
-        unique_together = ('student', 'course')  # Ensure a student can't register for the same course twice
+        unique_together = ['student', 'course', 'academic_session', 'academic_semester']
 
     # def __str__(self):
     #     return f"{self.student.surname} registered for {self.course.name} on {self.registration_date} in {self.academic_session}"
@@ -123,6 +151,10 @@ class CourseMaterial(models.Model):
     type = models.CharField(max_length=20, choices=CHOICES, default="assignment")
     academic_session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
     academic_semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='course_material_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='course_material_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
     lecturer = models.ForeignKey(
         Staff,
         on_delete=models.SET_NULL,
@@ -141,7 +173,6 @@ class CourseMaterial(models.Model):
   
 class Exam(models.Model):
     """Exams"""
-    courses = models.ManyToManyField(Course)
     title = models.CharField(max_length=200)
     description = models.TextField()
     file = models.FileField(upload_to="exams", null=True, blank=True)
@@ -151,6 +182,10 @@ class Exam(models.Model):
     academic_session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
     academic_semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
     cohort = models.ForeignKey(StudentCohort, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='exam_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='exam_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
     lecturer = models.ForeignKey(
         Staff,
         on_delete=models.SET_NULL,

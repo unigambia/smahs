@@ -21,6 +21,8 @@
           <th>Total Payable</th>
           <th>Total Paid</th>
           <th>Balance</th>
+          <th> Created by</th>
+          <th> Updated by</th>
           <th></th>
         </tr>
       </thead>
@@ -34,6 +36,8 @@
             <td>{{ invoice.total_amount_payable | intcomma }}</td>
             <td>{{ invoice.total_amount_paid | intcomma }}</td>
             <td>{{ invoice.balance | intcomma }}</td>
+            <td>{{ invoice.created_by }}</td>
+            <td>{{ invoice.updated_by }}</td>
             <td><a class="btn btn-success btn-sm"
                 href="{% url 'receipt-create' %}?invoice={{ invoice.id }}">Add new
                 receipt</a></td>

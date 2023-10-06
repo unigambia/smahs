@@ -20,6 +20,8 @@
           <th>Current Cohort</th>
           <th>Gender</th>
           <th>Mobile Phone Number</th>
+          <th> Created by</th>
+          <th> Updated by</th>
           <th>Status</th>
         </tr>
       </thead>
@@ -33,6 +35,8 @@
             <td>{{ student.current_cohort}}</td>
             <td>{{ student.get_gender_display}}</td>
             <td>{{ student.parent_mobile_number}}</td>
+            <td>{{ student.created_by}}</td>
+            <td>{{ student.updated_by}}</td>
             <td>{{ student.get_current_status_display}}</td>
             
           </tr>
