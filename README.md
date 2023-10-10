@@ -4,8 +4,7 @@ This is the official repository for the Medical School'Portal
 
 Written in Django
 
-##  Compilation
-
+##  Execution
 Enter the following commands into your terminal :
 
  ```
