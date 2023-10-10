@@ -16038,3 +16038,23 @@ INFO 2023-10-06 11:18:57,488 Watching for file changes with StatReloader
 INFO 2023-10-06 11:28:46,985 "GET /users/accounts/logout/ HTTP/1.1" 302 0
 INFO 2023-10-06 11:28:47,894 "GET / HTTP/1.1" 302 0
 INFO 2023-10-06 11:28:50,256 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-10-10 10:30:50,088 Watching for file changes with StatReloader
+INFO 2023-10-10 10:32:17,759 Watching for file changes with StatReloader
+INFO 2023-10-10 10:32:43,851 "GET / HTTP/1.1" 302 0
+INFO 2023-10-10 10:32:45,481 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-10-10 10:32:45,552 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2023-10-10 10:32:45,553 "GET /static/dist/css/login-page.css HTTP/1.1" 200 8610
+INFO 2023-10-10 10:32:45,553 "GET /static/plugins/toastr/toastr.min.css HTTP/1.1" 200 6454
+INFO 2023-10-10 10:32:45,553 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
+INFO 2023-10-10 10:32:45,554 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-10-10 10:32:45,559 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2023-10-10 10:32:45,559 "GET /static/dist/img/login.png HTTP/1.1" 200 144918
+INFO 2023-10-10 10:32:45,570 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 200 13632
+INFO 2023-10-10 10:32:45,931 "GET /static/plugins/toastr/toastr.min.js HTTP/1.1" 200 5251
+INFO 2023-10-10 10:32:45,931 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2023-10-10 10:32:45,934 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2023-10-10 10:32:45,934 "GET /static/dist/js/demo.js HTTP/1.1" 200 12616
+INFO 2023-10-10 10:32:45,934 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2023-10-10 10:32:45,958 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2023-10-10 10:32:48,828 Not Found: /favicon.ico
+WARNING 2023-10-10 10:32:48,828 "GET /favicon.ico HTTP/1.1" 404 9359
