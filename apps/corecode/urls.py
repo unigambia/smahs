@@ -34,12 +34,12 @@ from .views import (
     AdminDashboardView,
     LecturerDashboardView,
     StudentDashboardView,
-    DashboardView
+    # DashboardView
     )
 
 urlpatterns = [
     
-    path("", DashboardView.as_view(), name="dashboard"),
+    path("", AdminDashboardView.as_view(), name="dashboard"),
     path("admin/dashboard", AdminDashboardView.as_view(), name="admin"),
     path("lecturer/dashboard", LecturerDashboardView.as_view(), name="lecturer"),
     path("student/dashboard", StudentDashboardView.as_view(), name="student"),
