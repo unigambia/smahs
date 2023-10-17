@@ -25,10 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG', default='False') == 'True'
+DEBUG = os.environ.get('DEBUG', default='False') == 'True'
 
-# SET DEBUG TO TRUE
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'smahs-portal.onrender.com']
 
@@ -149,10 +148,9 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 10240
 STATIC_URL = "/static/"
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-if not DEBUG:
 
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
