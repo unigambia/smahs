@@ -47,9 +47,10 @@ from apps.students.models import Student
 
 
 class DashboardView(LoginRequiredMixin, TemplateView):
-   
+    
    def get_template_names(self):
         user = self.request.user
+        print(user)
         if user.is_superuser:
             return "admin_dashboard.html"
         elif user.is_staff:
