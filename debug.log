@@ -635,3 +635,204 @@ INFO 2023-10-17 12:27:55,625 /home/lanlokun/Desktop/test_portal/school_app/setti
 INFO 2023-10-17 12:27:55,896 Watching for file changes with StatReloader
 INFO 2023-10-17 12:27:57,028 /home/lanlokun/Desktop/test_portal/school_app/settings.py changed, reloading.
 INFO 2023-10-17 12:27:57,257 Watching for file changes with StatReloader
+INFO 2023-10-17 13:08:06,979 Watching for file changes with StatReloader
+ERROR 2023-10-17 13:08:29,179 Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
+WARNING 2023-10-17 13:08:31,912 Bad Request: /
+WARNING 2023-10-17 13:08:31,912 "GET / HTTP/1.1" 400 77091
+INFO 2023-10-17 13:08:53,591 /home/lanlokun/Desktop/test_portal/school_app/settings.py changed, reloading.
+INFO 2023-10-17 13:08:53,971 Watching for file changes with StatReloader
+INFO 2023-10-17 13:08:59,523 "GET / HTTP/1.1" 302 0
+INFO 2023-10-17 13:09:01,785 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-10-17 13:09:01,852 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2023-10-17 13:09:33,167 "POST /users/accounts/login/ HTTP/1.1" 200 4110
+INFO 2023-10-17 13:11:13,546 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:11:16,006 "GET / HTTP/1.1" 200 10679
+WARNING 2023-10-17 13:11:16,088 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2023-10-17 13:11:16,089 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2023-10-17 13:11:18,805 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2023-10-17 13:11:18,805 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9428
+WARNING 2023-10-17 13:11:19,045 Not Found: /vendor/wow/wow.min.js
+WARNING 2023-10-17 13:11:19,045 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9389
+WARNING 2023-10-17 13:11:19,287 Not Found: /vendor/slick/slick.min.js
+WARNING 2023-10-17 13:11:19,288 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9401
+WARNING 2023-10-17 13:11:19,525 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2023-10-17 13:11:19,535 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9497
+WARNING 2023-10-17 13:11:19,774 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2023-10-17 13:11:19,774 "GET /vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 9437
+WARNING 2023-10-17 13:11:20,015 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2023-10-17 13:11:20,018 "GET /vendor/animsition/animsition.min.js HTTP/1.1" 404 9431
+WARNING 2023-10-17 13:11:20,249 Not Found: /vendor/counter-up/jquery.waypoints.min.js
+WARNING 2023-10-17 13:11:20,249 "GET /vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 9449
+WARNING 2023-10-17 13:11:20,496 Not Found: /vendor/counter-up/jquery.counterup.min.js
+WARNING 2023-10-17 13:11:20,497 "GET /vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 9449
+WARNING 2023-10-17 13:11:20,725 Not Found: /vendor/circle-progress/circle-progress.min.js
+WARNING 2023-10-17 13:11:20,725 "GET /vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 9461
+WARNING 2023-10-17 13:11:21,265 Not Found: /vendor/chartjs/Chart.bundle.min.js
+WARNING 2023-10-17 13:11:21,267 "GET /vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 9428
+WARNING 2023-10-17 13:11:21,563 Not Found: /vendor/select2/select2.min.js
+WARNING 2023-10-17 13:11:21,564 "GET /vendor/select2/select2.min.js HTTP/1.1" 404 9413
+WARNING 2023-10-17 13:11:21,809 Not Found: /vendor/vector-map/jquery.vmap.js
+WARNING 2023-10-17 13:11:21,809 "GET /vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 9422
+INFO 2023-10-17 13:11:21,861 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+WARNING 2023-10-17 13:11:22,069 Not Found: /vendor/vector-map/jquery.vmap.min.js
+WARNING 2023-10-17 13:11:22,069 "GET /vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 9434
+WARNING 2023-10-17 13:11:22,320 Not Found: /vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2023-10-17 13:11:22,320 "GET /vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 9455
+WARNING 2023-10-17 13:11:22,545 Not Found: /vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2023-10-17 13:11:22,546 "GET /vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 9461
+WARNING 2023-10-17 13:11:22,893 Not Found: /vendor/vector-map/jquery.vmap.world.js
+WARNING 2023-10-17 13:11:22,894 "GET /vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 9440
+WARNING 2023-10-17 13:11:23,171 Not Found: /js/main.js
+WARNING 2023-10-17 13:11:23,171 "GET /js/main.js HTTP/1.1" 404 9356
+INFO 2023-10-17 13:12:04,075 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:12:04,551 "GET / HTTP/1.1" 302 0
+INFO 2023-10-17 13:12:05,851 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2023-10-17 13:12:24,244 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2023-10-17 13:12:26,678 "GET / HTTP/1.1" 200 10679
+WARNING 2023-10-17 13:12:26,762 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2023-10-17 13:12:26,762 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2023-10-17 13:12:28,204 Not Found: /vendor/slick/slick.min.js
+WARNING 2023-10-17 13:12:28,205 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9401
+WARNING 2023-10-17 13:12:28,442 Not Found: /vendor/wow/wow.min.js
+WARNING 2023-10-17 13:12:28,443 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9389
+WARNING 2023-10-17 13:12:28,688 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2023-10-17 13:12:28,693 "GET /vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 9437
+WARNING 2023-10-17 13:12:28,933 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2023-10-17 13:12:29,488 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2023-10-17 13:12:29,489 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9497
+WARNING 2023-10-17 13:12:29,724 Not Found: /vendor/counter-up/jquery.waypoints.min.js
+WARNING 2023-10-17 13:12:29,726 "GET /vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 9449
+WARNING 2023-10-17 13:12:29,974 Not Found: /vendor/counter-up/jquery.counterup.min.js
+WARNING 2023-10-17 13:12:29,975 "GET /vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 9449
+WARNING 2023-10-17 13:12:30,207 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2023-10-17 13:12:30,208 "GET /vendor/animsition/animsition.min.js HTTP/1.1" 404 9431
+WARNING 2023-10-17 13:12:30,447 Not Found: /vendor/circle-progress/circle-progress.min.js
+WARNING 2023-10-17 13:12:30,449 "GET /vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 9461
+ERROR 2023-10-17 13:12:30,729 Internal Server Error: /staff/class/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 128, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/views/generic/list.py", line 142, in get
+    self.object_list = self.get_queryset()
+  File "/home/lanlokun/Desktop/test_portal/apps/corecode/views.py", line 491, in get_queryset
+    return Course.objects.filter(lecturer=self.request.user.staff)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/utils/functional.py", line 247, in inner
+    return func(self._wrapped, *args)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/fields/related_descriptors.py", line 421, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.staff.RelatedObjectDoesNotExist: User has no staff.
+ERROR 2023-10-17 13:12:30,730 "GET /staff/class/ HTTP/1.1" 500 103655
+WARNING 2023-10-17 13:12:31,369 Not Found: /vendor/chartjs/Chart.bundle.min.js
+WARNING 2023-10-17 13:12:31,603 Not Found: /vendor/select2/select2.min.js
+WARNING 2023-10-17 13:12:31,874 Not Found: /vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2023-10-17 13:12:32,174 Not Found: /vendor/vector-map/jquery.vmap.js
+WARNING 2023-10-17 13:12:32,409 Not Found: /vendor/vector-map/jquery.vmap.min.js
+WARNING 2023-10-17 13:12:32,653 Not Found: /vendor/vector-map/jquery.vmap.sampledata.js
+INFO 2023-10-17 13:14:28,388 /home/lanlokun/Desktop/test_portal/apps/corecode/views.py changed, reloading.
+INFO 2023-10-17 13:14:28,633 Watching for file changes with StatReloader
+INFO 2023-10-17 13:14:43,211 "GET /staff/class/ HTTP/1.1" 200 9057
+WARNING 2023-10-17 13:14:43,261 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2023-10-17 13:14:43,262 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2023-10-17 13:14:45,972 Not Found: /staff/class/vendor/bootstrap-4.1/popper.min.js
+WARNING 2023-10-17 13:14:45,972 "GET /staff/class/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10297
+WARNING 2023-10-17 13:14:46,202 Not Found: /staff/class/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2023-10-17 13:14:46,203 "GET /staff/class/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10306
+WARNING 2023-10-17 13:14:46,452 Not Found: /staff/class/vendor/animsition/animsition.min.js
+WARNING 2023-10-17 13:14:46,456 "GET /staff/class/vendor/animsition/animsition.min.js HTTP/1.1" 404 10300
+WARNING 2023-10-17 13:14:46,705 Not Found: /staff/class/vendor/wow/wow.min.js
+WARNING 2023-10-17 13:14:46,705 "GET /staff/class/vendor/wow/wow.min.js HTTP/1.1" 404 10258
+WARNING 2023-10-17 13:14:46,941 Not Found: /staff/class/vendor/slick/slick.min.js
+WARNING 2023-10-17 13:14:46,942 "GET /staff/class/vendor/slick/slick.min.js HTTP/1.1" 404 10270
+WARNING 2023-10-17 13:14:47,399 Not Found: /staff/class/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2023-10-17 13:14:47,399 "GET /staff/class/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10318
+WARNING 2023-10-17 13:14:47,669 Not Found: /staff/class/vendor/counter-up/jquery.counterup.min.js
+WARNING 2023-10-17 13:14:47,669 "GET /staff/class/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10318
+WARNING 2023-10-17 13:14:47,912 Not Found: /staff/class/vendor/circle-progress/circle-progress.min.js
+WARNING 2023-10-17 13:14:47,913 "GET /staff/class/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10330
+WARNING 2023-10-17 13:14:48,169 Not Found: /staff/class/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2023-10-17 13:14:48,170 "GET /staff/class/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10330
+WARNING 2023-10-17 13:14:48,400 Not Found: /staff/class/vendor/chartjs/Chart.bundle.min.js
+WARNING 2023-10-17 13:14:48,400 "GET /staff/class/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10297
+WARNING 2023-10-17 13:14:48,486 The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.: /staff/class/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.OperationalError: SSL connection has been closed unexpectedly
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 87, in save
+    obj.save(force_insert=must_create, force_update=not must_create, using=using)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 739, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 776, in save_base
+    updated = self._save_table(
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 858, in _save_table
+    updated = self._do_update(base_qs, using, pk_val, values, update_fields,
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/base.py", line 912, in _do_update
+    return filtered._update(values) > 0
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/query.py", line 802, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1559, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 79, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.OperationalError: SSL connection has been closed unexpectedly
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 61, in process_response
+    request.session.save()
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 94, in save
+    raise UpdateError
+django.contrib.sessions.backends.base.UpdateError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/test_portal/venv/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 63, in process_response
+    raise SessionInterrupted(
+django.contrib.sessions.exceptions.SessionInterrupted: The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+WARNING 2023-10-17 13:14:48,487 "GET /staff/class/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 400 165033
+WARNING 2023-10-17 13:14:48,881 Not Found: /staff/class/vendor/select2/select2.min.js
+WARNING 2023-10-17 13:14:48,881 "GET /staff/class/vendor/select2/select2.min.js HTTP/1.1" 404 10282
+WARNING 2023-10-17 13:14:49,169 Not Found: /staff/class/vendor/vector-map/jquery.vmap.js
+WARNING 2023-10-17 13:14:49,169 "GET /staff/class/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10291
+WARNING 2023-10-17 13:14:49,411 Not Found: /staff/class/vendor/vector-map/jquery.vmap.min.js
+WARNING 2023-10-17 13:14:49,411 "GET /staff/class/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10303
+WARNING 2023-10-17 13:14:49,641 Not Found: /staff/class/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2023-10-17 13:14:49,642 "GET /staff/class/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10324
+WARNING 2023-10-17 13:14:49,896 Not Found: /staff/class/vendor/vector-map/jquery.vmap.world.js
+WARNING 2023-10-17 13:14:49,897 "GET /staff/class/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10309
+WARNING 2023-10-17 13:14:51,361 Not Found: /staff/class/js/main.js
+WARNING 2023-10-17 13:14:51,362 "GET /staff/class/js/main.js HTTP/1.1" 404 10225

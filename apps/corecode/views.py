@@ -488,7 +488,7 @@ class StaffCourseListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
         return context
 
     def get_queryset(self):
-        return Course.objects.filter(lecturer=self.request.user.staff)
+        return Course.objects.filter(lecturer=self.request.user.    is_staff)
     
 # show registered students for the staff course
 

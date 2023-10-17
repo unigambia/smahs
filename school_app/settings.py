@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'smahs-portal.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'smahs-portal.onrender.com']
 
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
