@@ -625,3 +625,4 @@ INFO 2023-10-17 09:19:14,474 Watching for file changes with StatReloader
 INFO 2023-10-17 09:19:35,744 /home/lanlokun/Desktop/test_portal/apps/corecode/urls.py changed, reloading.
 INFO 2023-10-17 09:19:35,963 Watching for file changes with StatReloader
 INFO 2023-10-17 09:30:37,715 /home/lanlokun/Desktop/test_portal/school_app/settings.py changed, reloading.
+INFO 2023-10-17 11:23:38,955 Watching for file changes with StatReloader
