@@ -836,3 +836,5 @@ WARNING 2023-10-17 13:14:49,896 Not Found: /staff/class/vendor/vector-map/jquery
 WARNING 2023-10-17 13:14:49,897 "GET /staff/class/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10309
 WARNING 2023-10-17 13:14:51,361 Not Found: /staff/class/js/main.js
 WARNING 2023-10-17 13:14:51,362 "GET /staff/class/js/main.js HTTP/1.1" 404 10225
+INFO 2023-10-17 13:14:54,212 /home/lanlokun/Desktop/test_portal/apps/corecode/views.py changed, reloading.
+INFO 2023-10-17 13:14:54,529 Watching for file changes with StatReloader
