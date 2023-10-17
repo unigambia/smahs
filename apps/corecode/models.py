@@ -83,12 +83,12 @@ class Course(models.Model):
     created_by = models.ForeignKey(User, related_name='course_created_by', null=True, blank=True, on_delete=models.SET_NULL)
     updated_by = models.ForeignKey(User, related_name='course_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
 
-    lecturer = models.ForeignKey(
+    coordinator  = models.ForeignKey(
         Staff,
         on_delete=models.SET_NULL,
         null=True,
         blank=True,
-        related_name="lecturer",
+        related_name="coordinator",
     )
     class Meta:
         ordering = ["name"]

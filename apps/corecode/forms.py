@@ -36,7 +36,7 @@ class AcademicSessionForm(ModelForm):
 
 
 class AcademicSemesterForm(ModelForm):
-    prefix = "Academic Semester"
+    prefix = "Academic Program"
 
     class Meta:
         model = AcademicSemester
@@ -52,7 +52,7 @@ class CourseForm(ModelForm):
 
     class Meta:
         model = Course
-        fields = ["name", "code", "credit_unit", "level", "lecturer"]
+        fields = ["name", "code", "credit_unit", "level", "coordinator"]
 
 class AssignmentForm(ModelForm):
     class Meta:
