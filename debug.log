@@ -631,3 +631,7 @@ INFO 2023-10-17 11:36:27,017 Watching for file changes with StatReloader
 INFO 2023-10-17 11:36:47,961 Watching for file changes with StatReloader
 INFO 2023-10-17 11:37:25,375 /home/lanlokun/Desktop/test_portal/school_app/settings.py changed, reloading.
 INFO 2023-10-17 11:37:25,655 Watching for file changes with StatReloader
+INFO 2023-10-17 12:27:55,625 /home/lanlokun/Desktop/test_portal/school_app/settings.py changed, reloading.
+INFO 2023-10-17 12:27:55,896 Watching for file changes with StatReloader
+INFO 2023-10-17 12:27:57,028 /home/lanlokun/Desktop/test_portal/school_app/settings.py changed, reloading.
+INFO 2023-10-17 12:27:57,257 Watching for file changes with StatReloader
