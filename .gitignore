@@ -1,1 +1,10 @@
 venv/
+__pycache__/
+users/__pycache__
+school_app/__pycache__
+apps/students/__pycache__
+apps/staffs/__pycache__
+apps/result/__pycache__
+apps/finance/__pycache__
+apps/corecode/__pycache__
+apps/__pycache__
