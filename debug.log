@@ -5441,3 +5441,50 @@ WARNING 2024-06-04 20:14:36,605 Not Found: /staff/class/vendor/vector-map/jquery
 WARNING 2024-06-04 20:14:36,606 "GET /staff/class/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10309
 WARNING 2024-06-04 20:14:36,912 Not Found: /staff/class/js/main.js
 WARNING 2024-06-04 20:14:36,913 "GET /staff/class/js/main.js HTTP/1.1" 404 10225
+INFO 2024-06-04 20:24:25,009 Watching for file changes with StatReloader
+INFO 2024-06-04 20:24:37,322 "GET / HTTP/1.1" 200 10709
+WARNING 2024-06-04 20:24:37,339 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-04 20:24:37,411 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-04 20:24:42,979 Not Found: /vendor/slick/slick.min.js
+WARNING 2024-06-04 20:24:42,980 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9401
+WARNING 2024-06-04 20:24:43,704 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-04 20:24:43,705 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9428
+WARNING 2024-06-04 20:24:44,319 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-04 20:24:44,322 "GET /vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 9437
+WARNING 2024-06-04 20:24:45,859 Not Found: /vendor/wow/wow.min.js
+WARNING 2024-06-04 20:24:45,860 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9389
+WARNING 2024-06-04 20:24:46,262 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2024-06-04 20:24:46,265 "GET /vendor/animsition/animsition.min.js HTTP/1.1" 404 9431
+WARNING 2024-06-04 20:24:46,677 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-04 20:24:46,688 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9497
+WARNING 2024-06-04 20:24:49,196 Not Found: /vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-04 20:24:49,197 "GET /vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 9449
+WARNING 2024-06-04 20:24:49,987 Not Found: /vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-04 20:24:49,988 "GET /vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 9449
+WARNING 2024-06-04 20:24:50,254 Not Found: /vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-04 20:24:50,256 "GET /vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 9461
+WARNING 2024-06-04 20:24:52,230 Not Found: /vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-04 20:24:52,231 "GET /vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 9461
+WARNING 2024-06-04 20:24:52,612 Not Found: /vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-04 20:24:52,613 "GET /vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 9428
+WARNING 2024-06-04 20:24:53,758 Not Found: /vendor/select2/select2.min.js
+WARNING 2024-06-04 20:24:53,759 "GET /vendor/select2/select2.min.js HTTP/1.1" 404 9413
+WARNING 2024-06-04 20:24:54,977 Not Found: /vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-04 20:24:54,978 "GET /vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 9422
+WARNING 2024-06-04 20:24:55,384 Not Found: /vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-04 20:24:55,386 "GET /vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 9434
+WARNING 2024-06-04 20:24:56,224 Not Found: /vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-04 20:24:56,224 "GET /vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 9455
+WARNING 2024-06-04 20:24:57,475 Not Found: /vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-04 20:24:57,476 "GET /vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 9440
+WARNING 2024-06-04 20:24:57,844 Not Found: /js/main.js
+WARNING 2024-06-04 20:24:57,845 "GET /js/main.js HTTP/1.1" 404 9356
+INFO 2024-06-04 20:25:09,152 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+INFO 2024-06-04 20:25:10,117 "GET / HTTP/1.1" 302 0
+INFO 2024-06-04 20:25:13,601 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2024-06-04 20:25:23,443 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2024-06-04 20:25:28,308 "GET / HTTP/1.1" 200 14472
+WARNING 2024-06-04 20:25:28,430 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-04 20:25:28,430 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-04 20:25:30,915 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-04 20:25:30,916 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9428
