@@ -5488,3 +5488,17 @@ WARNING 2024-06-04 20:25:28,430 "GET /static/select2/css/select2.min.css HTTP/1.
 WARNING 2024-06-04 20:25:28,430 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
 WARNING 2024-06-04 20:25:30,915 Not Found: /vendor/bootstrap-4.1/popper.min.js
 WARNING 2024-06-04 20:25:30,916 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9428
+INFO 2024-06-04 20:28:15,832 Watching for file changes with StatReloader
+INFO 2024-06-04 20:28:27,888 "GET / HTTP/1.1" 200 14144
+WARNING 2024-06-04 20:28:27,958 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-04 20:28:27,958 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-04 20:28:31,760 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-04 20:28:31,761 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9497
+WARNING 2024-06-04 20:28:32,029 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-04 20:28:32,031 "GET /vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 9437
+WARNING 2024-06-04 20:28:32,325 Not Found: /vendor/wow/wow.min.js
+WARNING 2024-06-04 20:28:32,337 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9389
+WARNING 2024-06-04 20:28:32,749 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2024-06-04 20:28:32,750 "GET /vendor/animsition/animsition.min.js HTTP/1.1" 404 9431
+WARNING 2024-06-04 20:28:33,401 Not Found: /vendor/slick/slick.min.js
+WARNING 2024-06-04 20:28:33,403 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9401
