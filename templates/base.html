@@ -111,7 +111,7 @@
         <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column"
             data-widget="treeview" role="menu" data-accordion="false">
-            {% if request.user.is_staff %}
+            {% if request.user.is_staff and not request.user.is_superuser %}
 
             <li class="nav-item">
               <a href="{% url 'lecturer' %}" class="nav-link">
@@ -265,7 +265,7 @@
                   <a href="{% url 'semesters' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
                     <p>
-                      Programs
+                      Rotation / Semester  
                       <i class="right"></i>
                     </p>
                   </a>
@@ -307,15 +307,15 @@
               </ul>
             </li>
             {% endif %} 
-
-            <li class="nav-item">
-              <a href="{% url 'configs' %}" class="nav-link">
-                <i class="nav-icon fas fa-cog"></i>
-                <p>
-                  Settings
-                </p>
-              </a>
-            </li>
+  <!-- 
+              <li class="nav-item">
+                <a href="{% url 'configs' %}" class="nav-link">
+                  <i class="nav-icon fas fa-cog"></i>
+                  <p>
+                    Settings
+                  </p>
+                </a>
+              </li> -->
 
 
           </ul>

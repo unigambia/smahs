@@ -90,8 +90,8 @@ class LecturerDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateVie
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["courses"] = Course.objects.filter(lecturer=self.request.user.staff).count()
-        context["students"] = StudentCourse.objects.filter(course__lecturer=self.request.user.staff).count()
+        context["courses"] = Course.objects.filter(coordinator=self.request.user.staff).count()
+        # context["students"] = StudentCourse.objects.filter(course__lecturer=self.request.user.staff).count()
         context["sessions"] = AcademicSession.objects.all().count()
         context["semesters"] = AcademicSemester.objects.all().count()
         return context
@@ -121,9 +121,7 @@ class SiteConfigView(LoginRequiredMixin, View):
     template_name = "corecode/siteconfig.html"
 
     def get(self, request, *args, **kwargs):
-        formset = self.form_class(queryset=SiteConfig.objects.all())
-        context = {"formset": formset}
-        return render(request, self.template_name, context)
+        return render(self.template_name)
 
     def post(self, request, *args, **kwargs):
         formset = self.form_class(request.POST)
@@ -345,7 +343,7 @@ class CourseCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMi
 
 class CourseUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Course
-    fields = ["name", "code", "credit_unit", "level", "lecturer"]
+    fields = ["name", "code", "credit_unit", "level", "coordinator"]
     success_url = reverse_lazy("courses")
     success_message = "Course successfully updated."
     template_name = "corecode/mgt_form.html"
@@ -488,7 +486,7 @@ class StaffCourseListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
         return context
 
     def get_queryset(self):
-        return Course.objects.filter(lecturer=self.request.user.    is_staff)
+        return Course.objects.filter(coordinator=self.request.user.    is_staff)
     
 # show registered students for the staff course
 
@@ -525,11 +523,11 @@ class AssignmentsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMess
         form.fields.pop("academic_session")
         form.fields.pop("academic_semester")
         form.fields.pop("date_created")
-        form.fields.pop("lecturer")
+        form.fields.pop("coordinator")
         return form
     
     def form_valid(self, form: BaseForm) -> HttpResponse:
-        form.instance.lecturer = self.request.user.staff
+        form.instance.coordinator = self.request.user.staff
         form.instance.course = Course.objects.get(id=self.kwargs["course_id"])
         form.instance.academic_session = AcademicSession.objects.get(current=True)
         form.instance.academic_semester = AcademicSemester.objects.get(current=True)
@@ -577,7 +575,7 @@ class AssignmentUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
         form.instance.course = course
         form.instance.academic_session = AcademicSession.objects.get(current=True)
         form.instance.academic_semester = AcademicSemester.objects.get(current=True)
-        form.instance.lecturer = self.request.user.staff  # Set the lecturer
+        form.instance.coordinator = self.request.user.staff  # Set the lecturer
 
         uploaded_file: InMemoryUploadedFile = form.cleaned_data['file']
         
@@ -630,7 +628,7 @@ class ExamsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMix
     
     def form_valid(self, form):
         response = super().form_valid(form)
-        form.save_m2m() 
+        form.save()
         return response
 
 class ExamsListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
