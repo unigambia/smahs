@@ -108,7 +108,7 @@ class StudentDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView
         context["sessions"] = AcademicSession.objects.all().count()
         context["semesters"] = AcademicSemester.objects.all().count()
         context["assignments"] = CourseMaterial.objects.filter(type="assignment").count()
-        context["cohort_students"] = Student.objects.filter(cohort=self.request.user.student.cohort).count()
+        context["cohort_students"] = Student.objects.filter(current_cohort=self.request.user.student.current_cohort).count()
 
         return context    
 
