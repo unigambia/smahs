@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load humanize %}
+
+{% block title %}All Students {% endblock title %}
+
+
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="studenttable" class="table table-bordered table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Mat No</th>
+          <th>Student</th>
+          <th>Cohort</th>
+          <th>Cleared</th>
+          <th> Created by</th>
+          <th> Updated by</th>
+          <th>Action </th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {% for student in object_list %}
+          <tr class='clickable-row' data-href="{% url 'student-detail' student.id %}">
+            <td>{{ forloop.counter}}</td>
+            <td>{{ student.mat_number}}</td>
+            <td>{{ student }}</td>
+            <td>{{ student.current_cohort }}</td>
+            {% if student.is_cleared %}
+            <td><i class="fas fa-check"></i></td>
+            {% else %}
+            <td><i class="fas fa-times"></i></td>
+            {% endif %}
+            <td>{{ student.created_by }}</td>
+            <td>{{ student.updated_by }}</td>
+            <td>
+                <form method="post" action="{% url 'update-clearance' student.id %}">
+                  {% csrf_token %}
+                  <input type="checkbox" name="is_cleared" {% if student.is_cleared %}checked{% endif %} /> Cleared
+                  <button type="submit">Update</button>
+                </form>
+              </td>
+          </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}
+
+
+{% block morejs %}
+<script>
+   $('#studenttable').DataTable({
+    select: false
+    });
+</script>
+
+{% endblock morejs %}

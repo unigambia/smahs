@@ -8224,3 +8224,174 @@ WARNING 2024-06-05 09:20:37,305 Not Found: /student/registered-courses/vendor/ve
 WARNING 2024-06-05 09:20:37,307 "GET /student/registered-courses/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 11156
 WARNING 2024-06-05 09:20:37,522 Not Found: /student/registered-courses/js/main.js
 WARNING 2024-06-05 09:20:37,523 "GET /student/registered-courses/js/main.js HTTP/1.1" 404 11072
+INFO 2024-06-05 09:27:08,746 Watching for file changes with StatReloader
+INFO 2024-06-05 09:27:28,045 "GET / HTTP/1.1" 200 10866
+WARNING 2024-06-05 09:27:28,060 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-05 09:27:28,135 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-05 09:27:30,729 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-05 09:27:30,729 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9428
+WARNING 2024-06-05 09:27:30,998 Not Found: /vendor/slick/slick.min.js
+WARNING 2024-06-05 09:27:30,998 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9401
+WARNING 2024-06-05 09:27:31,684 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-05 09:27:31,685 "GET /vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 9437
+WARNING 2024-06-05 09:27:31,897 Not Found: /vendor/wow/wow.min.js
+WARNING 2024-06-05 09:27:31,898 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9389
+WARNING 2024-06-05 09:27:32,134 Not Found: /vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-05 09:27:32,134 "GET /vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 9449
+WARNING 2024-06-05 09:27:32,347 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2024-06-05 09:27:32,670 Not Found: /vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-05 09:27:32,670 "GET /vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 9449
+WARNING 2024-06-05 09:27:33,228 Not Found: /vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-05 09:27:33,229 "GET /vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 9461
+WARNING 2024-06-05 09:27:33,323 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-05 09:27:33,324 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9497
+WARNING 2024-06-05 09:27:33,460 Not Found: /vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-05 09:27:33,461 "GET /vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 9461
+WARNING 2024-06-05 09:27:33,682 Not Found: /vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-05 09:27:33,682 "GET /vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 9428
+INFO 2024-06-05 09:27:34,195 "GET /users/accounts/logout/ HTTP/1.1" 302 0
+WARNING 2024-06-05 09:27:35,097 The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.: /vendor/vector-map/jquery.vmap.js
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 87, in save
+    obj.save(force_insert=must_create, force_update=not must_create, using=using)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/db/models/base.py", line 739, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/db/models/base.py", line 776, in save_base
+    updated = self._save_table(
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/db/models/base.py", line 861, in _save_table
+    raise DatabaseError("Forced update did not affect any rows.")
+django.db.utils.DatabaseError: Forced update did not affect any rows.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 61, in process_response
+    request.session.save()
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 94, in save
+    raise UpdateError
+django.contrib.sessions.backends.base.UpdateError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 63, in process_response
+    raise SessionInterrupted(
+django.contrib.sessions.exceptions.SessionInterrupted: The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+WARNING 2024-06-05 09:27:35,098 "GET /vendor/vector-map/jquery.vmap.js HTTP/1.1" 400 103641
+WARNING 2024-06-05 09:27:35,174 Not Found: /vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-05 09:27:35,175 "GET /vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 9455
+WARNING 2024-06-05 09:27:35,280 The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.: /vendor/vector-map/jquery.vmap.min.js
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 87, in save
+    obj.save(force_insert=must_create, force_update=not must_create, using=using)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/db/models/base.py", line 739, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/db/models/base.py", line 776, in save_base
+    updated = self._save_table(
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/db/models/base.py", line 861, in _save_table
+    raise DatabaseError("Forced update did not affect any rows.")
+django.db.utils.DatabaseError: Forced update did not affect any rows.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 61, in process_response
+    request.session.save()
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/backends/db.py", line 94, in save
+    raise UpdateError
+django.contrib.sessions.backends.base.UpdateError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/utils/deprecation.py", line 119, in __call__
+    response = self.process_response(request, response)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/sessions/middleware.py", line 63, in process_response
+    raise SessionInterrupted(
+django.contrib.sessions.exceptions.SessionInterrupted: The request's session was deleted before the request completed. The user may have logged out in a concurrent request, for example.
+WARNING 2024-06-05 09:27:35,281 "GET /vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 400 103684
+WARNING 2024-06-05 09:27:35,297 Not Found: /vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-05 09:27:35,298 "GET /vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 9440
+WARNING 2024-06-05 09:27:35,527 Not Found: /vendor/select2/select2.min.js
+WARNING 2024-06-05 09:27:35,528 "GET /vendor/select2/select2.min.js HTTP/1.1" 404 9413
+WARNING 2024-06-05 09:27:36,163 Not Found: /js/main.js
+WARNING 2024-06-05 09:27:36,163 "GET /js/main.js HTTP/1.1" 404 9356
+INFO 2024-06-05 09:27:37,161 "GET / HTTP/1.1" 302 0
+INFO 2024-06-05 09:27:39,517 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2024-06-05 09:27:45,556 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2024-06-05 09:27:48,429 "GET / HTTP/1.1" 200 14413
+WARNING 2024-06-05 09:27:48,530 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-05 09:27:48,531 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-05 09:27:50,081 Not Found: /vendor/slick/slick.min.js
+WARNING 2024-06-05 09:27:50,082 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9401
+WARNING 2024-06-05 09:27:50,340 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-05 09:27:50,341 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9428
+WARNING 2024-06-05 09:27:50,581 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-05 09:27:51,266 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2024-06-05 09:27:51,267 "GET /vendor/animsition/animsition.min.js HTTP/1.1" 404 9431
+WARNING 2024-06-05 09:27:51,517 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-05 09:27:51,517 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9497
+WARNING 2024-06-05 09:27:51,759 Not Found: /vendor/wow/wow.min.js
+WARNING 2024-06-05 09:27:51,761 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9389
+WARNING 2024-06-05 09:27:52,014 Not Found: /vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-05 09:27:52,014 "GET /vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 9449
+WARNING 2024-06-05 09:27:52,230 Not Found: /vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-05 09:27:52,230 "GET /vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 9449
+WARNING 2024-06-05 09:27:52,843 Not Found: /vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-05 09:27:52,844 "GET /vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 9461
+WARNING 2024-06-05 09:27:53,056 Not Found: /vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-05 09:27:53,057 "GET /vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 9461
+WARNING 2024-06-05 09:27:53,317 Not Found: /vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-05 09:27:53,318 "GET /vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 9428
+WARNING 2024-06-05 09:27:53,649 Not Found: /vendor/select2/select2.min.js
+WARNING 2024-06-05 09:27:53,650 "GET /vendor/select2/select2.min.js HTTP/1.1" 404 9413
+WARNING 2024-06-05 09:27:53,872 Not Found: /vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-05 09:27:53,873 "GET /vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 9422
+WARNING 2024-06-05 09:27:54,227 Not Found: /vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-05 09:27:54,228 "GET /vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 9434
+INFO 2024-06-05 09:27:54,440 "GET /finance/clearance/list HTTP/1.1" 200 15284
+WARNING 2024-06-05 09:27:54,553 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-05 09:27:54,556 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-05 09:27:54,656 Not Found: /vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-05 09:27:54,906 Not Found: /vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-05 09:27:55,184 Not Found: /js/main.js
+WARNING 2024-06-05 09:27:56,179 Not Found: /finance/clearance/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-05 09:27:56,180 "GET /finance/clearance/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 11333
+WARNING 2024-06-05 09:27:57,251 Not Found: /finance/clearance/vendor/slick/slick.min.js
+WARNING 2024-06-05 09:27:57,252 "GET /finance/clearance/vendor/slick/slick.min.js HTTP/1.1" 404 11306
+WARNING 2024-06-05 09:27:57,498 Not Found: /finance/clearance/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-05 09:27:57,499 "GET /finance/clearance/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 11342
+WARNING 2024-06-05 09:27:57,750 Not Found: /finance/clearance/vendor/animsition/animsition.min.js
+WARNING 2024-06-05 09:27:57,755 "GET /finance/clearance/vendor/animsition/animsition.min.js HTTP/1.1" 404 11336
+WARNING 2024-06-05 09:27:58,055 Not Found: /finance/clearance/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-05 09:27:58,061 "GET /finance/clearance/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 11354
+WARNING 2024-06-05 09:27:58,370 Not Found: /finance/clearance/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-05 09:27:58,370 "GET /finance/clearance/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 11402
+WARNING 2024-06-05 09:27:58,664 Not Found: /finance/clearance/vendor/wow/wow.min.js
+WARNING 2024-06-05 09:27:58,670 "GET /finance/clearance/vendor/wow/wow.min.js HTTP/1.1" 404 11294
+WARNING 2024-06-05 09:27:58,971 Not Found: /finance/clearance/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-05 09:27:58,979 "GET /finance/clearance/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 11354
+WARNING 2024-06-05 09:27:59,201 Not Found: /finance/clearance/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-05 09:27:59,209 "GET /finance/clearance/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 11366
+WARNING 2024-06-05 09:27:59,446 Not Found: /finance/clearance/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-05 09:27:59,446 "GET /finance/clearance/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 11366
+WARNING 2024-06-05 09:27:59,668 Not Found: /finance/clearance/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-05 09:27:59,669 "GET /finance/clearance/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 11333
+WARNING 2024-06-05 09:27:59,999 Not Found: /finance/clearance/vendor/select2/select2.min.js
+WARNING 2024-06-05 09:28:00,000 "GET /finance/clearance/vendor/select2/select2.min.js HTTP/1.1" 404 11318
+WARNING 2024-06-05 09:28:00,217 Not Found: /finance/clearance/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-05 09:28:00,218 "GET /finance/clearance/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 11327
+WARNING 2024-06-05 09:28:00,431 Not Found: /finance/clearance/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-05 09:28:00,432 "GET /finance/clearance/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 11339
+WARNING 2024-06-05 09:28:00,714 Not Found: /finance/clearance/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-05 09:28:00,714 "GET /finance/clearance/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 11360
+WARNING 2024-06-05 09:28:01,021 Not Found: /finance/clearance/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-05 09:28:01,022 "GET /finance/clearance/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 11345
+WARNING 2024-06-05 09:28:01,400 Not Found: /finance/clearance/js/main.js
+WARNING 2024-06-05 09:28:01,401 "GET /finance/clearance/js/main.js HTTP/1.1" 404 11261
