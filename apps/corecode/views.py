@@ -50,7 +50,6 @@ class DashboardView(LoginRequiredMixin, TemplateView):
     
    def get_template_names(self):
         user = self.request.user
-        print(user)
         if user.is_superuser:
             return "admin_dashboard.html"
         elif user.is_staff:
@@ -309,7 +308,6 @@ class CohortDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
-        print(obj.name)
         messages.success(self.request, self.success_message.format(obj.name))
         return super(CohortDeleteView, self).delete(request, *args, **kwargs)
     
@@ -419,7 +417,7 @@ class CourseRegisterView(UserPassesTestMixin,LoginRequiredMixin, View):
         student = Student.objects.get(user=user)
         registered_courses = StudentCourse.objects.filter(student=student).values_list('course_id', flat=True)
         
-        return render(request, self.template_name, {"form": form, "courses": courses, "registered_courses_ids": registered_courses})
+        return render(request, self.template_name, {"form": form, "courses": courses,"student": student, "registered_courses_ids": registered_courses})
 
     def post(self, request, *args, **kwargs):
         course_id = request.POST.get("course_id")
@@ -532,7 +530,6 @@ class AssignmentsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMess
         form.instance.academic_session = AcademicSession.objects.get(current=True)
         form.instance.academic_semester = AcademicSemester.objects.get(current=True)
         form.instance.file = self.request.FILES.get("file")
-        print(form.instance.file)
 
         return super().form_valid(form)
     

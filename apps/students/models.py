@@ -41,6 +41,7 @@ class Student(models.Model):
     )
 
     address = models.TextField(blank=True)
+    is_cleared = models.BooleanField(default=False)
     others = models.TextField(blank=True)
     passport = models.ImageField(blank=True, upload_to="students/passports/")
     created_at = models.DateTimeField(auto_now_add=True)

@@ -135,6 +135,32 @@ class ReceiptUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredM
 
     def test_func(self):
         return self.request.user.is_superuser
+    
+class ClearanceListView(LoginRequiredMixin, ListView):
+    model = Student
+    template_name = "finance/clearance_list.html"
+    context_object_name = "students"
+    queryset = Student.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super(ClearanceListView, self).get_context_data(**kwargs)
+        context["students"] = Student.objects.filter(is_cleared=False)
+        return context
+    
+class ClearanceUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixin, UpdateView):
+    model = Student
+    fields = ["is_cleared"]
+    success_url = reverse_lazy("clearance-list")
+    success_message = "Student has been cleared successfully"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def get_context_data(self, **kwargs):
+        context = super(ClearanceUpdateView, self).get_context_data(**kwargs)
+        student = Student.objects.get(pk=self.request.GET["student"])
+        context["student"] = student
+        return context
 
 class ReceiptDeleteView(UserPassesTestMixin, SuccessMessageMixin ,LoginRequiredMixin, DeleteView):
     model = Receipt
