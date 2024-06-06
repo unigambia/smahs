@@ -521,7 +521,7 @@ class AssignmentsCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMess
         form.fields.pop("academic_session")
         form.fields.pop("academic_semester")
         form.fields.pop("date_created")
-        form.fields.pop("coordinator")
+        form.fields.pop("lecturer")
         return form
     
     def form_valid(self, form: BaseForm) -> HttpResponse:

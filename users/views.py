@@ -60,6 +60,11 @@ class UserUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixi
 
     def test_func(self):
         return self.request.user.is_superuser
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = UserUpdateForm(instance=self.object)
+        return context
 
     def form_valid(self, form):
         password = form.cleaned_data.get('password', None)
@@ -70,7 +75,9 @@ class UserUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixi
                 messages.error(self.request, "Passwords do not match.")
                 return self.form_invalid(form)
 
-            self.object.set_password(password)
+        obj = form.save(commit=False)
+        obj.set_password(password)
+        obj.save()
 
         return super().form_valid(form)
 

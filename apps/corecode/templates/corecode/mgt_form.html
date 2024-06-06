@@ -26,7 +26,13 @@
             {{ field.errors }}
           </div>
           {% endfor %}
+          <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+            {{ form.confirm_password.errors }}</div>
         </div>
+
+
 
         {% if request.resolver_match.view_name == 'user_change' %}
         <input type="button" value="Reset Password" onclick="resetPassword()"><br><br>

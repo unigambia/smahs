@@ -9,7 +9,7 @@ from django.views.generic import DetailView, ListView, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from apps.finance.models import Invoice
-from apps.corecode.models import Course, StudentCourse, CourseMaterial
+from apps.corecode.models import Course, StudentCourse, CourseMaterial, User
 
 from .models import Student, StudentBulkUpload
 

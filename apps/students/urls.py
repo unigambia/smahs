@@ -9,7 +9,7 @@ from .views import (
     StudentListView,
     StudentUpdateView,
     RegisteredCourseListView,
-    StudentCourseMaterialView
+    StudentCourseMaterialView,
 )
 
 urlpatterns = [
