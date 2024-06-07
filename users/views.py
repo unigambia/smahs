@@ -13,9 +13,12 @@ from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
 
 # @user_passes_test(lambda u: u.is_superuser or u.is_staff)
-class UserListView(LoginRequiredMixin, ListView):
+class UserListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     model = User
     template_name = "corecode/user_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -55,33 +58,23 @@ class UserUpdateView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixi
     model = User
     form_class = UserUpdateForm 
     template_name = "corecode/mgt_form.html"
-    success_url = reverse_lazy("users")
     success_message = "User successfully updated."
 
     def test_func(self):
-        return self.request.user.is_superuser
-    
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["form"] = UserUpdateForm(instance=self.object)
-        return context
+        return self.request.user.is_superuser or self.request.user == self.get_object()
 
     def form_valid(self, form):
-        password = form.cleaned_data.get('password', None)
-        confirm_password = form.cleaned_data.get('confirm_password', None)
-
-        if password and confirm_password:
-            if password != confirm_password:
-                messages.error(self.request, "Passwords do not match.")
-                return self.form_invalid(form)
-
         obj = form.save(commit=False)
-        obj.set_password(password)
+        password = form.cleaned_data.get('password', None)
+        if password:  # Only set password if it's provided
+            obj.set_password(password)
         obj.save()
-
         return super().form_valid(form)
 
-
+    def get_success_url(self):
+        if self.request.user.is_superuser:
+            return reverse_lazy("users")  # Admins go to the users list
+        return reverse_lazy("profile", kwargs={"pk": self.request.user.pk})
 class UserDeleteView(UserPassesTestMixin, SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     model = User
     success_url = reverse_lazy("users")
