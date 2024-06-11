@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
-
 {% block title %}
 Cohort
 {% endblock title %}
-
 
 {% block breadcrumb %}
   <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
@@ -13,29 +11,35 @@ Cohort
     Add new cohort
   </a>
 {% endblock breadcrumb %}
-  
 
 {% block content %}
-  <div class="row">
-    <div class="col-sm-12">
-
-        <table class="table table-bordered">
-          <tbody>
-            {% for object in object_list %}
-            <tr>
-              <td>{{ object }}</td>
-              <td><a href="{% url 'cohorts-update' object.id %}"><i
-                    class="fa fa-edit"></i></a> <a
-                  href="{% url 'cohorts-delete' object.id %}"><i
-                    class="fa fa-trash-alt"></i></a></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-
-    </div>
+  <div class="table-responsive">
+    <table id="cohorttable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>Created By</th>
+          <th>Updated By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cohort in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ cohort.name }}</td>
+            <td>{{ cohort.created_by }}</td>
+            <td>{{ cohort.updated_by }}</td>
+            <td>
+              <a href="{% url 'cohorts-update' cohort.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'cohorts-delete' cohort.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-
 
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -49,17 +53,15 @@ Cohort
           </div>
           <div class="modal-body">
               {% csrf_token %}
-
               {% for field in form %}
                   <div class="form-group">
-                    {{field.label_tag}}
-                    {{ field|add_class:"form-control" }}
-                    {{field.help_text}}
-                    {{field.errors}}
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.help_text }}
+                    {{ field.errors }}
                   </div>
               {% endfor %}
           </div>
-
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save</button>
@@ -68,6 +70,11 @@ Cohort
       </div>
     </div>
   </div>
-
 {% endblock content %}
 
+{% block morejs %}
+<script>
+  $('#cohorttable').DataTable({
+  });
+</script>
+{% endblock morejs %}

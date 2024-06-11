@@ -1,40 +1,96 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
-
 {% block title %}
 Exams
 {% endblock title %}
 
-
 {% block breadcrumb %}
-  <a class="btn btn-primary" href="{% url 'exams-create' %}">
+  <a class="btn btn-primary" href="{% url 'exam-create' %}">
     <i class="fa fa-plus"></i>
     Add new Exam
   </a>
 {% endblock breadcrumb %}
-  
 
 {% block content %}
-  <div class="row">
-    <div class="col-sm-12">
-
-        <table class="table table-bordered">
-          <tbody>
-            {% for object in object_list %}
-            <tr>
-              <td>{{ object }}</td>
-              <td><a href="{% url 'exams-update' object.id %}"><i
-                    class="fa fa-edit"></i></a> <a
-                  href="{% url 'exams-delete' object.id %}"><i
-                    class="fa fa-trash-alt"></i></a></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-
-    </div>
+  <div class="table-responsive">
+    <table id="examtable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Title</th>
+          <th>File</th>
+          <th>Due Date</th>
+          <th>Total Marks</th>
+          <th>Session</th>
+          <th>Semester</th>
+          <th>Cohort</th>
+          <th>Lecturer</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for exam in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ exam.title }}</td>
+            <td>
+              {% if exam.file %}
+                <a href="{{ exam.file.url }}">Download</a>
+              {% else %}
+                N/A
+              {% endif %}
+            </td>
+            <td>{{ exam.due_date }}</td>
+            <td>{{ exam.total_marks }}</td>
+            <td>{{ exam.academic_session }}</td>
+            <td>{{ exam.academic_semester }}</td>
+            <td>{{ exam.cohort }}</td>
+            <td>{{ exam.lecturer }}</td>
+            <td>
+              <a href="{% url 'exam-update' exam.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'exam-delete' exam.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 
-
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="{% url 'exam-create' %}" method="POST">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new Exam</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              {% csrf_token %}
+              {% for field in form %}
+                  <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.help_text }}
+                    {{ field.errors }}
+                  </div>
+              {% endfor %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 {% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#examtable').DataTable({
+  });
+</script>
+{% endblock morejs %}

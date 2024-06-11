@@ -1,11 +1,9 @@
 {% extends 'base.html' %}
 {% load widget_tweaks %}
 
-
 {% block title %}
 Users
 {% endblock title %}
-
 
 {% block breadcrumb %}
   <a class="btn btn-primary" href="{% url 'user_add' %}">
@@ -13,28 +11,42 @@ Users
     Add new User
   </a>
 {% endblock breadcrumb %}
-  
 
 {% block content %}
-  <div class="row">
-    <div class="col-sm-12">
-
-        <table class="table table-bordered">
-          <tbody>
-            {% for object in object_list %}
-            <tr>
-              <td>{{ object }}</td>
-              <td><a href="{% url 'user_change' object.id %}"><i
-                    class="fa fa-edit"></i></a> <a
-                  href="{% url 'user_delete' object.id %}"><i
-                    class="fa fa-trash-alt"></i></a></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-
-    </div>
+  <div class="table-responsive">
+    <table id="usertable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>
+              <a href="{% url 'user_change' user.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'user_delete' user.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-
-
 {% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#usertable').DataTable({
+  });
+</script>
+{% endblock morejs %}

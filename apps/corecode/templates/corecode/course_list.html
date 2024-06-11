@@ -1,41 +1,47 @@
 {% extends 'base.html' %}
-{% load widget_tweaks %}
 
-
-{% block title %}
-Courses
-{% endblock title %}
-
+{% block title %}Courses{% endblock title %}
 
 {% block breadcrumb %}
-  <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
-    <i class="fa fa-plus"></i>
-    Add new Course
-  </a>
+<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1"><i class="fas fa-plus"></i> Add new Course</a>
 {% endblock breadcrumb %}
-  
 
 {% block content %}
-  <div class="row">
-    <div class="col-sm-12">
-
-        <table class="table table-bordered">
-          <tbody>
-            {% for object in object_list %}
-            <tr>
-              <td>{{ object }}</td>
-              <td><a href="{% url 'course-update' object.id %}"><i
-                    class="fa fa-edit"></i></a> <a
-                  href="{% url 'course-delete' object.id %}"><i
-                    class="fa fa-trash-alt"></i></a></td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-
-    </div>
+  <div class="table-responsive">
+    <table id="coursetable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>Code</th>
+          <th>Credit Unit</th>
+          <th>Level</th>
+          <th>Coordinator</th>
+          <th>Created By</th>
+          <th>Updated By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for course in object_list %}
+          <tr class='clickable-row' data-href="#">
+            <td>{{ forloop.counter }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ course.code }}</td>
+            <td>{{ course.credit_unit }}</td>
+            <td>{{ course.level }}</td>
+            <td>{{ course.coordinator }}</td>
+            <td>{{ course.created_by }}</td>
+            <td>{{ course.updated_by }}</td>
+            <td>
+              <a href="{% url 'course-update' course.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'course-delete' course.id %}"class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
-
 
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -49,15 +55,14 @@ Courses
           </div>
           <div class="modal-body">
               {% csrf_token %}
-
               {% for field in form %}
                   <div class="form-group">
-                    {{field.label_tag}}
-                    {{ field|add_class:"form-control" }}
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.errors }}
                   </div>
               {% endfor %}
           </div>
-
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="submit" class="btn btn-primary">Save</button>
@@ -66,5 +71,11 @@ Courses
       </div>
     </div>
   </div>
-
 {% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#coursetable').DataTable({
+  });
+</script>
+{% endblock morejs %}

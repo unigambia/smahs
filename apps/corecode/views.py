@@ -194,10 +194,27 @@ class SessionDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
         return self.request.user.is_superuser
 
     def delete(self, request, *args, **kwargs):
-        obj = self.get_object()
-        if obj.current == True:
-            messages.warning(request, "Cannot delete session as it is set to current")
+        try:
+            obj = self.get_object()
+        except AcademicSession.DoesNotExist:
+            messages.error(request, "The session does not exist.")
             return redirect("sessions")
+
+        # Check if the session is the current session
+        if obj.current:
+            messages.warning(request, "Cannot delete the current session.")
+            return redirect("sessions")
+
+        # Check if the session is linked to the current semester
+        try:
+            current_semester = AcademicSemester.objects.get(current=True)
+            if current_semester.session == obj:
+                messages.warning(request, "Cannot delete the session as it is linked to the current semester.")
+                return redirect("sessions")
+        except AcademicSemester.DoesNotExist:
+            # No current semester found, safe to proceed
+            pass
+
         messages.success(self.request, self.success_message.format(obj.name))
         return super(SessionDeleteView, self).delete(request, *args, **kwargs)
 
@@ -641,8 +658,7 @@ class ExamsListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Exam.objects.all()
-
-class ExamUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+class ExamUpdateView(SuccessMessageMixin, UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     model = Exam
     form_class = ExamForm
     template_name = "corecode/mgt_form.html"
@@ -657,13 +673,13 @@ class ExamUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         uploaded_file: InMemoryUploadedFile = form.cleaned_data['file']
         if uploaded_file:
-            # Set the file field of the Assignment instance
+            # Set the file field of the Exam instance
             form.instance.file = uploaded_file
 
         return super().form_valid(form)
 
     def get_success_message(self, cleaned_data):
-        return self.success_message.format(self.object.name)
+        return self.success_message.format(self.object.title)
 
 class ExamDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     model = Exam
@@ -676,9 +692,10 @@ class ExamDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     def test_func(self):
         return self.request.user.is_superuser
 
-    def get_success_message(self, cleaned_data):
-        return self.success_message.format(self.object.name)
-
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.title))
+        return super().delete(request, *args, **kwargs)
     
 
 

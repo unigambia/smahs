@@ -84,9 +84,9 @@ urlpatterns = [
 
     #exam
     path('exam/list', ExamsListView.as_view(), name='exams-list'),
-    path('exam/create', ExamsCreateView.as_view(), name='exams-create'),
-    path('exam/<int:pk>/update', ExamUpdateView.as_view(), name='exams-update'),
-    path('exam/<int:pk>/delete', ExamDeleteView.as_view(), name='exams-delete'),
+    path('exam/create', ExamsCreateView.as_view(), name='exam-create'),
+    path('exam/<int:pk>/update', ExamUpdateView.as_view(), name='exam-update'),
+    path('exam/<int:pk>/delete', ExamDeleteView.as_view(), name='exam-delete'),
     
 
     
