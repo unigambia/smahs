@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Transcript</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .tfoot-dark {
+            background-color: #343a40;
+            color: rgb(12, 9, 9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="{% static '../../../dist/img/login.png' %}">
+        <h1 class="text-center">University of The Gambia School Of Medicine and Allied Health Sciences</h1>
+        <h1 class="text-center mb-4">Student Transcript</h1>
+        <div class="mb-4">
+            <p><strong>Student Name:</strong> {{ student.name }}</p>
+            <p><strong>Matriculation Number:</strong> {{ student.mat_number }}</p>
+            <p><strong>Year Enrolled:</strong> {{ student.year_enrolled }}</p>
+            <p><strong>Current Cohort:</strong> {{ student.current_cohort }}</p>
+        </div>  
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Session</th>
+                    <th>Semester</th>
+                    <th>Course</th>
+                    <th>Test Score</th>
+                    <th>Exam Score</th>
+                    <th>Total Score</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result.session }}</td>
+                    <td>{{ result.semester }}</td>
+                    <td>{{ result.course }}</td>
+                    <td>{{ result.test_score }}</td>
+                    <td>{{ result.exam_score }}</td>
+                    <td>{{ result.total_score }}</td>
+                    <td>{{ result.grade }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot class="tfoot-dark">
+                <tr>
+                    <td colspan="6" class="text-right">GPA</td>
+                    <td>{{ gpa }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+</html>
