@@ -695,7 +695,7 @@ class ExamDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
         messages.success(self.request, self.success_message.format(obj.title))
-        return super().delete(request, *args, **kwargs)
+        return super().delete(request, *args, **kwargs) 
     
 
 

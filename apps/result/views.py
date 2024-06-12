@@ -3,40 +3,21 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.messages.views import SuccessMessageMixin
 from django.shortcuts import redirect, render, get_object_or_404
-from django.views.generic import DetailView, ListView, View, CreateView, UpdateView
-from django.urls import reverse_lazy
+from django.views.generic import ListView, View, CreateView, UpdateView
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponse
+from django.template.loader import get_template
+from weasyprint import HTML
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+
+
 from django.db import IntegrityError
 from apps.students.models import Student
-from apps.corecode.models import Course, StudentCourse, AcademicSemester, AcademicSession
-from django.core.exceptions import ObjectDoesNotExist
-from .forms import CreateResults, EditResults, ResultForm
+from .forms import EditResults, ResultForm
 from .models import Result
 
     
-# class ResultDetailView(LoginRequiredMixin, DetailView):
-#     model = Result
-#     template_name = "result/create_result2.html"
-
-# class ResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
-#     model = Result
-#     template_name = "result/result_list.html"
-
-#     def test_func(self):
-#         return self.request.user.is_superuser
-    
-#     def get_queryset(self):
-#         # Filter the results by the student ID passed in the URL
-#         student_id = self.kwargs['student_id']
-#         return Result.objects.filter(student__id=student_id)
-    
-#     def get_context_data(self, **kwargs):
-#         context = super(ResultListView, self).get_context_data(**kwargs)
-#         context["student"] = get_object_or_404(Student, id=self.kwargs['student_id'])
-#         return context
-
-
-    
-# student result list view
 
 class StudentResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     model = Result
@@ -152,43 +133,21 @@ class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
 #                 "semester": available_semesters,
 #             },
 #         )
-
-
-class ResultEditView(LoginRequiredMixin, UserPassesTestMixin, View):
+class ResultEditView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Result
-    template_name = "result/edit_results.html"
-    form_class = EditResults
-    success_message = "Updated Result Successfully"
+    fields = ["student", "session", "semester", "course", "exam", "test_score", "exam_score"]
+    success_url = reverse_lazy("student-result-list")
+    success_message = "Result successfully updated."
+    template_name = "corecode/mgt_form.html"
 
     def test_func(self):
         return self.request.user.is_superuser
     
     def get_success_url(self):
-        return reverse_lazy("edit-result", kwargs={"pk": self.kwargs["pk"]})
-
+        # Get the pk of the student from the result object
+        student_pk = self.object.student.pk
+        return reverse("student-result-list", kwargs={"pk": student_pk})
     
-    def get(self, request, *args, **kwargs):
-        result = Result.objects.get(id=kwargs["pk"])
-        form = ResultForm(instance=result)
-        return render(request, self.template_name, {"form": form, "student": result.student})
-
-    def post(self, request, *args, **kwargs):
-        result = Result.objects.get(id=kwargs["pk"])
-        if "delete" in request.POST:
-            result.delete()
-            messages.success(request, "Result deleted successfully.")
-            return redirect(self.get_success_url())
-
-        form = ResultForm(request.POST, instance=result)
-
-        if form.is_valid():
-            form.save()
-            messages.success(request, self.success_message)
-            return redirect(self.get_success_url())
-        else:    
-            return render(request, self.template_name, {"form": form})
-
-
 class ResultDeleteView(LoginRequiredMixin, UserPassesTestMixin, View):
     def test_func(self):
         return self.request.user.is_superuser
@@ -198,4 +157,34 @@ class ResultDeleteView(LoginRequiredMixin, UserPassesTestMixin, View):
         result.delete()
         messages.success(request, "Results successfully deleted")
         return redirect("result-list")
+    
+class DownloadResultView(UserPassesTestMixin, LoginRequiredMixin, View):
+    def test_func(self):
+        return self.request.user.is_superuser
 
+    def get(self, request, *args, **kwargs):
+        student_id = kwargs.get('student_id')
+        results = Result.objects.filter(student_id=student_id)
+        student = Student.objects.get(pk=student_id)
+
+        # Calculate the GPA
+        total_points = sum(result.gpa() for result in results)
+        total_courses = len(results)
+        gpa = round(total_points / total_courses, 2) if total_courses > 0 else "N/A"
+
+        template = get_template('result/student_transcript.html')
+        html = template.render({
+            'results': results,
+            'gpa': gpa,
+            'student': {
+                'name': student.firstname + ' ' + student.surname,
+                'mat_number': student.mat_number,
+                'year_enrolled': student.year_enrolled,
+                'current_cohort': student.current_cohort,
+            }
+        })
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="transcript.pdf"'
+
+        HTML(string=html).write_pdf(response)
+        return response

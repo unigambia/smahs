@@ -55,5 +55,6 @@ class Result(models.Model):
         return score_grade(self.total_score())
     
     def gpa(self):
-        return grade_point(self.grade())
+        grade_point_value = grade_point(self.grade())
+        return grade_point_value if grade_point_value else None
 

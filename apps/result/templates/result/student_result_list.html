@@ -5,8 +5,13 @@
 {% block breadcrumb %}
 <a class="btn btn-primary" href="{% url 'create-result' %}"><i
     class="fas fa-plus"></i> New Results</a>
+    
 <a class="btn btn-primary" href="{% url 'student-upload' %}"><i
     class="fas fa-upload"></i> Upload Results</a>
+
+<a class="btn btn-primary" href="{% url 'download-transcript' student.id %}"><i
+      class="fas fa-download"></i> Download Transcript </a>
+
 {% endblock breadcrumb %}
 
 {% block content %}
@@ -17,7 +22,7 @@
       <thead class="thead-light">
         <tr>
           <th>S/N</th>
-          <th>Student</th>
+          <!-- <th>Student</th> -->
           <th>Course</th>
           <th>Session</th>
           <th>Semester</th>
@@ -34,7 +39,7 @@
         {% for result in results %}
           <tr>
             <td>{{ forloop.counter }}</td>
-            <td>{{ result.student }}</td>
+            <!-- <td>{{ result.student }}</td> -->
             <td>{{ result.course }}</td>    
             <td>{{ result.session }}</td>
             <td>{{ result.semester }}</td>
@@ -45,8 +50,8 @@
             <td>{{ result.created_by }}</td>
             <td>{{ result.updated_by }}</td>
             <td>
-              <!-- Add actions here, e.g., a link to view more details -->
-              <a href="{% url 'edit-result' result.id %}" class="btn btn-primary">Update Results</a>
+              <a href="{% url 'edit-result' result.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'delete-result' result.id %}"class="text-danger"><i class="fa fa-trash"></i></a>
             </td>
           </tr>
         {% endfor %}
