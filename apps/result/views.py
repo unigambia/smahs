@@ -8,8 +8,6 @@ from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse
 from django.template.loader import get_template
 from weasyprint import HTML
-from reportlab.lib.pagesizes import letter
-from reportlab.pdfgen import canvas
 
 
 from django.db import IntegrityError
@@ -183,8 +181,9 @@ class DownloadResultView(UserPassesTestMixin, LoginRequiredMixin, View):
                 'current_cohort': student.current_cohort,
             }
         })
-        response = HttpResponse(content_type='application/pdf')
-        response['Content-Disposition'] = 'attachment; filename="transcript.pdf"'
+        html = HTML(string=html, base_url=request.build_absolute_uri('/static/'))
+        pdf = html.write_pdf()
 
-        HTML(string=html).write_pdf(response)
+        response = HttpResponse(pdf, content_type='application/pdf')
+        response['Content-Disposition'] = 'attachment; filename="transcript.pdf"'
         return response

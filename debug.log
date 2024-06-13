@@ -7997,3 +7997,411 @@ WARNING 2024-06-12 13:51:07,971 "GET /result/student/1/vendor/vector-map/jquery.
 WARNING 2024-06-12 13:51:08,368 Not Found: /result/student/1/js/main.js
 WARNING 2024-06-12 13:51:08,369 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
 INFO 2024-06-12 13:51:14,911 "GET /result/download-transcript/1/ HTTP/1.1" 200 10842
+INFO 2024-06-13 10:58:24,071 Watching for file changes with StatReloader
+INFO 2024-06-13 10:58:32,045 "GET / HTTP/1.1" 302 0
+INFO 2024-06-13 10:58:33,657 "GET /accounts/login/?next=/ HTTP/1.1" 200 3985
+INFO 2024-06-13 10:58:33,720 "GET /static/plugins/fontawesome-free/css/all.min.css HTTP/1.1" 200 58578
+INFO 2024-06-13 10:58:33,726 "GET /static/plugins/overlayScrollbars/css/OverlayScrollbars.min.css HTTP/1.1" 200 19724
+INFO 2024-06-13 10:58:33,765 "GET /static/dist/css/adminlte.min.css HTTP/1.1" 200 686707
+INFO 2024-06-13 10:58:33,767 "GET /static/dist/css/login-page.css HTTP/1.1" 200 8610
+INFO 2024-06-13 10:58:33,771 "GET /static/plugins/jquery/jquery.min.js HTTP/1.1" 200 88145
+INFO 2024-06-13 10:58:33,771 "GET /static/dist/img/login.png HTTP/1.1" 200 137893
+INFO 2024-06-13 10:58:33,793 "GET /static/dist/js/jquery.formset.js HTTP/1.1" 200 13632
+INFO 2024-06-13 10:58:33,821 "GET /static/plugins/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 80698
+INFO 2024-06-13 10:58:33,846 "GET /static/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js HTTP/1.1" 200 42383
+INFO 2024-06-13 10:58:33,871 "GET /static/dist/js/adminlte.js HTTP/1.1" 200 57530
+INFO 2024-06-13 10:58:33,892 "GET /static/dist/js/demo.js HTTP/1.1" 200 12616
+INFO 2024-06-13 10:58:33,970 "GET /static/plugins/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 79444
+WARNING 2024-06-13 10:58:36,418 Not Found: /favicon.ico
+WARNING 2024-06-13 10:58:36,418 "GET /favicon.ico HTTP/1.1" 404 9356
+INFO 2024-06-13 10:58:43,956 "POST /users/accounts/login/ HTTP/1.1" 302 0
+INFO 2024-06-13 10:58:47,182 "GET / HTTP/1.1" 200 14437
+WARNING 2024-06-13 10:58:47,286 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+INFO 2024-06-13 10:58:47,291 "GET /static/plugins/Datatables/datatables.min.css HTTP/1.1" 200 25780
+WARNING 2024-06-13 10:58:47,291 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 10:58:50,867 Not Found: /vendor/slick/slick.min.js
+WARNING 2024-06-13 10:58:50,868 "GET /vendor/slick/slick.min.js HTTP/1.1" 404 9398
+INFO 2024-06-13 10:58:50,875 "GET /static/plugins/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 13584
+WARNING 2024-06-13 10:58:51,172 Not Found: /vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 10:58:51,174 "GET /vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 9425
+WARNING 2024-06-13 10:58:51,440 Not Found: /vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 10:58:51,441 "GET /vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 9434
+WARNING 2024-06-13 10:58:51,767 Not Found: /vendor/animsition/animsition.min.js
+WARNING 2024-06-13 10:58:51,780 "GET /vendor/animsition/animsition.min.js HTTP/1.1" 404 9428
+WARNING 2024-06-13 10:58:52,056 Not Found: /vendor/wow/wow.min.js
+WARNING 2024-06-13 10:58:52,057 "GET /vendor/wow/wow.min.js HTTP/1.1" 404 9386
+WARNING 2024-06-13 10:58:52,414 Not Found: /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 10:58:52,414 "GET /vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 9494
+WARNING 2024-06-13 10:58:52,715 Not Found: /vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 10:58:52,727 "GET /vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 9446
+WARNING 2024-06-13 10:58:52,968 Not Found: /vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 10:58:52,969 "GET /vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 9446
+WARNING 2024-06-13 10:58:53,253 Not Found: /vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 10:58:53,254 "GET /vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 9458
+WARNING 2024-06-13 10:58:53,511 Not Found: /vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 10:58:53,512 "GET /vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 9458
+WARNING 2024-06-13 10:58:53,938 Not Found: /vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 10:58:53,941 "GET /vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 9425
+WARNING 2024-06-13 10:58:54,246 Not Found: /vendor/select2/select2.min.js
+WARNING 2024-06-13 10:58:54,260 "GET /vendor/select2/select2.min.js HTTP/1.1" 404 9410
+INFO 2024-06-13 10:58:54,323 "GET /static/plugins/Datatables/datatables.min.js HTTP/1.1" 200 2042446
+WARNING 2024-06-13 10:58:54,562 Not Found: /vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 10:58:54,564 "GET /vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 9419
+WARNING 2024-06-13 10:58:54,860 Not Found: /vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 10:58:54,864 "GET /vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 9431
+WARNING 2024-06-13 10:58:55,167 Not Found: /vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 10:58:55,168 "GET /vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 9452
+WARNING 2024-06-13 10:58:55,473 Not Found: /vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 10:58:55,475 "GET /vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 9437
+WARNING 2024-06-13 10:58:55,781 Not Found: /js/main.js
+WARNING 2024-06-13 10:58:55,782 "GET /js/main.js HTTP/1.1" 404 9353
+INFO 2024-06-13 10:59:04,999 "GET /result/list/ HTTP/1.1" 200 14578
+WARNING 2024-06-13 10:59:05,062 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 10:59:05,062 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 10:59:06,845 Not Found: /result/list/vendor/wow/wow.min.js
+WARNING 2024-06-13 10:59:06,846 "GET /result/list/vendor/wow/wow.min.js HTTP/1.1" 404 10700
+WARNING 2024-06-13 10:59:07,096 Not Found: /result/list/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 10:59:07,351 Not Found: /result/list/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 10:59:07,352 "GET /result/list/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 10:59:07,660 Not Found: /result/list/vendor/slick/slick.min.js
+WARNING 2024-06-13 10:59:07,663 "GET /result/list/vendor/slick/slick.min.js HTTP/1.1" 404 10712
+WARNING 2024-06-13 10:59:08,287 Not Found: /result/list/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 10:59:08,288 "GET /result/list/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10808
+WARNING 2024-06-13 10:59:08,554 Not Found: /result/list/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 10:59:08,555 "GET /result/list/vendor/animsition/animsition.min.js HTTP/1.1" 404 10742
+WARNING 2024-06-13 10:59:08,901 Not Found: /result/list/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 10:59:08,901 "GET /result/list/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 10:59:09,420 Not Found: /result/list/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 10:59:09,421 "GET /result/list/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10772
+WARNING 2024-06-13 10:59:10,016 Not Found: /result/list/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 10:59:10,017 "GET /result/list/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10772
+WARNING 2024-06-13 10:59:10,290 Not Found: /result/list/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 10:59:10,291 "GET /result/list/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 10:59:10,559 Not Found: /result/list/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 10:59:10,559 "GET /result/list/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 10:59:10,898 Not Found: /result/list/vendor/select2/select2.min.js
+WARNING 2024-06-13 10:59:10,900 "GET /result/list/vendor/select2/select2.min.js HTTP/1.1" 404 10724
+WARNING 2024-06-13 10:59:11,165 Not Found: /result/list/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 10:59:11,166 "GET /result/list/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10733
+WARNING 2024-06-13 10:59:11,847 Not Found: /result/list/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 10:59:11,847 "GET /result/list/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10745
+WARNING 2024-06-13 10:59:12,126 Not Found: /result/list/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 10:59:12,127 "GET /result/list/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 10:59:12,386 Not Found: /result/list/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 10:59:12,387 "GET /result/list/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10751
+WARNING 2024-06-13 10:59:12,676 Not Found: /result/list/js/main.js
+WARNING 2024-06-13 10:59:12,678 "GET /result/list/js/main.js HTTP/1.1" 404 10667
+INFO 2024-06-13 10:59:13,098 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 10:59:13,201 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 10:59:13,201 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 10:59:14,936 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 10:59:14,938 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 10:59:15,249 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 10:59:15,259 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 10:59:15,665 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 10:59:15,666 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 10:59:15,921 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 10:59:15,922 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 10:59:16,472 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 10:59:16,473 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 10:59:16,785 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 10:59:16,786 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 10:59:17,098 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 10:59:17,098 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 10:59:17,350 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 10:59:17,351 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 10:59:17,606 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 10:59:17,607 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 10:59:18,009 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 10:59:18,028 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 10:59:18,283 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 10:59:18,284 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 10:59:18,550 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 10:59:18,551 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 10:59:18,931 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 10:59:18,932 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 10:59:19,237 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 10:59:19,238 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 10:59:19,660 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 10:59:19,661 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 10:59:19,950 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 10:59:19,951 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 10:59:20,263 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 10:59:20,264 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+INFO 2024-06-13 10:59:26,302 "GET /result/download-transcript/1/ HTTP/1.1" 200 10840
+INFO 2024-06-13 11:01:07,058 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 11:01:07,087 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 11:01:07,159 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 11:01:08,912 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 11:01:08,913 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:01:09,208 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 11:01:09,210 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 11:01:09,520 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 11:01:09,527 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 11:01:10,655 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 11:01:10,656 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 11:01:10,939 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 11:01:10,940 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 11:01:11,213 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 11:01:11,224 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 11:01:11,769 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 11:01:11,769 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:01:12,358 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 11:01:12,363 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:01:12,622 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 11:01:12,622 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:01:13,009 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 11:01:13,009 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 11:01:13,285 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 11:01:13,291 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:01:13,568 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 11:01:13,571 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:01:13,848 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 11:01:13,857 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 11:01:14,226 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 11:01:14,230 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 11:01:14,534 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 11:01:14,535 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 11:01:14,840 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 11:01:14,842 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 11:01:15,148 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 11:01:15,149 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+ERROR 2024-06-13 11:01:35,184 Internal Server Error: /result/download-transcript/1/
+Traceback (most recent call last):
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 128, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/contrib/auth/mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/views/generic/base.py", line 98, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/home/lanlokun/Desktop/smahs/apps/result/views.py", line 175, in get
+    template = get_template('result/student_transcript.html')
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/base.py", line 478, in parse
+    raise self.error(token, e)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/base.py", line 476, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/templatetags/static.py", line 159, in do_static
+    return StaticNode.handle_token(parser, token)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/templatetags/static.py", line 133, in handle_token
+    path = parser.compile_filter(bits[1])
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/lanlokun/Desktop/smahs/venv/lib/python3.10/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: ''../../../../../../static/dist/img/login.png' from ''../../../../../../static/dist/img/login.png'
+ERROR 2024-06-13 11:01:35,185 "GET /result/download-transcript/1/ HTTP/1.1" 500 164070
+INFO 2024-06-13 11:04:08,823 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 11:04:08,882 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 11:04:08,882 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 11:04:10,427 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 11:04:10,428 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 11:04:10,772 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 11:04:10,775 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 11:04:11,076 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 11:04:11,096 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:04:11,385 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 11:04:11,389 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 11:04:12,308 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 11:04:12,312 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 11:04:12,614 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 11:04:12,615 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:04:12,875 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 11:04:12,881 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:04:13,229 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 11:04:13,232 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:04:13,503 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 11:04:13,504 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:04:13,857 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 11:04:13,857 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 11:04:14,152 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 11:04:14,161 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:04:14,458 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 11:04:14,459 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 11:04:14,771 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 11:04:14,777 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 11:04:15,071 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 11:04:15,072 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 11:04:15,348 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 11:04:15,350 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 11:04:15,619 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 11:04:15,620 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 11:04:15,890 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 11:04:15,891 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+INFO 2024-06-13 11:04:44,255 "GET /result/download-transcript/1/ HTTP/1.1" 200 10952
+INFO 2024-06-13 11:10:55,161 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 11:10:55,206 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 11:10:55,238 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 11:10:58,377 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 11:10:58,378 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 11:10:58,744 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 11:10:58,745 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:10:59,060 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 11:10:59,061 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 11:10:59,367 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 11:10:59,374 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 11:10:59,669 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 11:10:59,673 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 11:10:59,988 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 11:10:59,989 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 11:11:00,247 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 11:11:00,248 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:11:00,608 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 11:11:00,609 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:11:00,855 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 11:11:00,860 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:11:01,132 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 11:11:01,135 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:11:01,510 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 11:11:01,521 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:11:01,819 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 11:11:01,835 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 11:11:02,225 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 11:11:02,229 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 11:11:02,639 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 11:11:02,640 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 11:11:02,951 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 11:11:02,951 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 11:11:03,211 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 11:11:03,212 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 11:11:03,517 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 11:11:03,518 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+INFO 2024-06-13 11:11:11,545 "GET /result/download-transcript/1/ HTTP/1.1" 200 10953
+INFO 2024-06-13 11:15:21,180 /home/lanlokun/Desktop/smahs/apps/result/views.py changed, reloading.
+INFO 2024-06-13 11:15:21,543 Watching for file changes with StatReloader
+INFO 2024-06-13 11:15:41,035 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 11:15:41,052 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 11:15:41,126 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 11:15:45,135 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 11:15:45,136 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 11:15:45,424 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 11:15:45,424 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:15:45,777 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 11:15:45,778 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 11:15:47,217 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 11:15:47,218 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 11:15:47,486 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 11:15:47,486 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 11:15:47,824 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 11:15:47,828 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 11:15:48,959 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 11:15:48,959 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:15:49,259 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 11:15:49,259 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:15:49,525 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 11:15:49,526 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:15:50,664 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 11:15:50,664 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:15:51,512 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 11:15:51,513 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 11:15:51,515 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 11:15:51,515 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:15:52,436 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 11:15:52,439 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 11:15:53,354 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 11:15:53,355 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 11:15:53,623 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 11:15:53,623 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 11:15:54,216 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 11:15:54,217 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 11:15:55,202 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 11:15:55,203 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+INFO 2024-06-13 11:17:20,389 "GET /static/dist/img/logo.png HTTP/1.1" 200 10380
+INFO 2024-06-13 11:17:21,324 "GET /result/download-transcript/1/ HTTP/1.1" 200 15087
+INFO 2024-06-13 11:17:57,879 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 11:17:57,934 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 11:17:58,016 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 11:17:59,720 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 11:17:59,722 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:18:01,564 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 11:18:01,566 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 11:18:01,846 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 11:18:01,847 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 11:18:02,176 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 11:18:02,185 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 11:18:03,405 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 11:18:03,406 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 11:18:03,726 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 11:18:03,727 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 11:18:04,020 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 11:18:04,020 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:18:05,178 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 11:18:05,180 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:18:05,556 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 11:18:05,559 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:18:05,814 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 11:18:05,815 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:18:07,064 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 11:18:07,065 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:18:07,400 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 11:18:07,401 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 11:18:07,707 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 11:18:07,709 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 11:18:08,859 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 11:18:08,860 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+WARNING 2024-06-13 11:18:09,509 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 11:18:09,510 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 11:18:09,781 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 11:18:09,782 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 11:18:10,060 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 11:18:10,061 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+INFO 2024-06-13 11:18:33,298 "GET /static/dist/img/login.png HTTP/1.1" 200 137893
+INFO 2024-06-13 11:18:34,232 "GET /result/download-transcript/1/ HTTP/1.1" 200 147045
+INFO 2024-06-13 11:19:44,323 "GET /result/student/1/ HTTP/1.1" 200 14736
+WARNING 2024-06-13 11:19:44,355 "GET /static/select2/css/select2.min.css HTTP/1.1" 404 1840
+WARNING 2024-06-13 11:19:44,391 "GET /static/select2/js/select2.min.js HTTP/1.1" 404 1834
+WARNING 2024-06-13 11:19:46,078 Not Found: /result/student/1/vendor/slick/slick.min.js
+WARNING 2024-06-13 11:19:46,079 "GET /result/student/1/vendor/slick/slick.min.js HTTP/1.1" 404 10727
+WARNING 2024-06-13 11:19:46,385 Not Found: /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js
+WARNING 2024-06-13 11:19:46,385 "GET /result/student/1/vendor/bootstrap-4.1/bootstrap.min.js HTTP/1.1" 404 10763
+WARNING 2024-06-13 11:19:46,636 Not Found: /result/student/1/vendor/bootstrap-4.1/popper.min.js
+WARNING 2024-06-13 11:19:46,636 "GET /result/student/1/vendor/bootstrap-4.1/popper.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:19:47,681 Not Found: /result/student/1/vendor/wow/wow.min.js
+WARNING 2024-06-13 11:19:47,682 "GET /result/student/1/vendor/wow/wow.min.js HTTP/1.1" 404 10715
+WARNING 2024-06-13 11:19:47,970 Not Found: /result/student/1/vendor/counter-up/jquery.waypoints.min.js
+WARNING 2024-06-13 11:19:47,971 "GET /result/student/1/vendor/counter-up/jquery.waypoints.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:19:48,266 Not Found: /result/student/1/vendor/counter-up/jquery.counterup.min.js
+WARNING 2024-06-13 11:19:48,276 "GET /result/student/1/vendor/counter-up/jquery.counterup.min.js HTTP/1.1" 404 10775
+WARNING 2024-06-13 11:19:48,572 Not Found: /result/student/1/vendor/circle-progress/circle-progress.min.js
+WARNING 2024-06-13 11:19:48,576 "GET /result/student/1/vendor/circle-progress/circle-progress.min.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:19:49,186 Not Found: /result/student/1/vendor/animsition/animsition.min.js
+WARNING 2024-06-13 11:19:49,195 "GET /result/student/1/vendor/animsition/animsition.min.js HTTP/1.1" 404 10757
+WARNING 2024-06-13 11:19:49,465 Not Found: /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js
+WARNING 2024-06-13 11:19:49,466 "GET /result/student/1/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js HTTP/1.1" 404 10823
+WARNING 2024-06-13 11:19:49,764 Not Found: /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js
+WARNING 2024-06-13 11:19:49,765 "GET /result/student/1/vendor/perfect-scrollbar/perfect-scrollbar.js HTTP/1.1" 404 10787
+WARNING 2024-06-13 11:19:50,129 Not Found: /result/student/1/vendor/chartjs/Chart.bundle.min.js
+WARNING 2024-06-13 11:19:50,130 "GET /result/student/1/vendor/chartjs/Chart.bundle.min.js HTTP/1.1" 404 10754
+WARNING 2024-06-13 11:19:50,424 Not Found: /result/student/1/vendor/select2/select2.min.js
+WARNING 2024-06-13 11:19:50,425 "GET /result/student/1/vendor/select2/select2.min.js HTTP/1.1" 404 10739
+WARNING 2024-06-13 11:19:50,733 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.js
+WARNING 2024-06-13 11:19:50,733 "GET /result/student/1/vendor/vector-map/jquery.vmap.js HTTP/1.1" 404 10748
+WARNING 2024-06-13 11:19:50,983 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.min.js
+WARNING 2024-06-13 11:19:50,983 "GET /result/student/1/vendor/vector-map/jquery.vmap.min.js HTTP/1.1" 404 10760
+WARNING 2024-06-13 11:19:51,251 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js
+WARNING 2024-06-13 11:19:51,252 "GET /result/student/1/vendor/vector-map/jquery.vmap.sampledata.js HTTP/1.1" 404 10781
+WARNING 2024-06-13 11:19:51,519 Not Found: /result/student/1/vendor/vector-map/jquery.vmap.world.js
+WARNING 2024-06-13 11:19:51,519 "GET /result/student/1/vendor/vector-map/jquery.vmap.world.js HTTP/1.1" 404 10766
+WARNING 2024-06-13 11:19:51,957 Not Found: /result/student/1/js/main.js
+WARNING 2024-06-13 11:19:51,958 "GET /result/student/1/js/main.js HTTP/1.1" 404 10682
+INFO 2024-06-13 11:20:01,198 "GET /static/dist/img/login.png HTTP/1.1" 200 137893
+INFO 2024-06-13 11:20:02,089 "GET /result/download-transcript/1/ HTTP/1.1" 200 147041
