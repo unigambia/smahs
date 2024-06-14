@@ -27,11 +27,36 @@ class StudentResultListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super(StudentResultListView, self).get_context_data(**kwargs)
         student = get_object_or_404(Student, id=self.kwargs["pk"])
-        print(self.kwargs["pk"])
-        print(student)
-        context["results"] = Result.objects.filter(student=student)
+        results = Result.objects.filter(student=student).order_by("session", "semester")
+        
+        # Preprocess results to group by session and semester
+        grouped_results = {}
+        total_points = 0
+        total_courses = 0
+
+        for result in results:
+            session = result.session
+            semester = result.semester
+            if session not in grouped_results:
+                grouped_results[session] = {}
+            if semester not in grouped_results[session]:
+                grouped_results[session][semester] = []
+            grouped_results[session][semester].append(result)
+
+            # Calculate total points and courses for GPA
+            gpa_value = result.gpa()
+            if gpa_value is not None:
+                total_points += gpa_value
+                total_courses += 1
+
+        # Calculate the GPA
+        gpa = round(total_points / total_courses, 2) if total_courses > 0 else "N/A"
+
+        context["grouped_results"] = grouped_results
         context["student"] = student
+        context["gpa"] = gpa
         return context
+
 
 # student list view
 
@@ -44,19 +69,34 @@ class ResultStudentListView(LoginRequiredMixin, ListView, UserPassesTestMixin):
         context["students"] = Student.objects.all()
         return context
     
+
 class StudentResultsListView(LoginRequiredMixin, ListView):
     model = Result
     template_name = "result/student_results_list.html"
     context_object_name = "results"
 
     def get_queryset(self):
-        # Filter results based on the logged-in student
+        # Filter results based on the logged-in student and order by session and semester
         return Result.objects.filter(student__user=self.request.user).order_by("session", "semester")
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         student = Student.objects.get(user=self.request.user)
+        results = self.get_queryset()
+
+        # Calculate the GPA
+        total_points = 0
+        total_courses = 0
+        for result in results:
+            gpa_value = result.gpa()
+            if gpa_value is not None:
+                total_points += gpa_value
+                total_courses += 1
+
+        gpa = round(total_points / total_courses, 2) if total_courses > 0 else "N/A"
+
         context["student"] = student  # Add the student to the context
+        context["gpa"] = gpa  # Add the GPA to the context
         return context
 
 
@@ -85,52 +125,6 @@ class ResultCreateView(LoginRequiredMixin, UserPassesTestMixin, CreateView):
         return render(self.request, self.template_name, {'form': form})
     
 
-# class ResultUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-#     model = Result
-#     template_name = 'result/edit_results.html'  
-#     fields = "__all__"
-#     success_message = "Updated Result Successfully"
-
-#     def test_func(self):
-#         return self.request.user.is_superuser
-    
-#     def get_success_url(self):
-#         return reverse_lazy("student-result-list", kwargs={"pk": self.object.student.id})
-
-# class DisplayRegisteredCoursesView(LoginRequiredMixin, UserPassesTestMixin, View):
-#     def test_func(self):
-#         return self.request.user.is_superuser
-
-#     def get(self, request, *args, **kwargs):
-#         student_ids = self.request.GET.getlist("students")
-#         students = Student.objects.filter(id__in=student_ids)
-
-#         students_registered_courses = {}  # Dictionary to store registered courses
-#         for student in students:
-#             student_courses = StudentCourse.objects.filter(student=student)
-#             print(student_courses)
-#             registered_courses = [student_course.course for student_course in student_courses]
-#             print(registered_courses)
-#             students_registered_courses[student.id] = registered_courses
-#             print(students_registered_courses[student.id]   )
-
-#         form = CreateResults()  # Create an instance of the form
-#         available_sessions = AcademicSession.objects.all()
-#         available_semesters = AcademicSemester.objects.all()
-
-
-#         return render(
-#             request,
-#             "result/display_registered_courses.html",
-#             {
-#                 "students": students,
-#                 "form": form,
-#                 "students_registered_courses": students_registered_courses,
-#                 "count": len(students),
-#                 "session": available_sessions,
-#                 "semester": available_semesters,
-#             },
-#         )
 class ResultEditView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Result
     fields = ["student", "session", "semester", "course", "exam", "test_score", "exam_score"]
@@ -166,12 +160,18 @@ class DownloadResultView(UserPassesTestMixin, LoginRequiredMixin, View):
         student = Student.objects.get(pk=student_id)
 
         # Calculate the GPA
-        total_points = sum(result.gpa() for result in results)
-        total_courses = len(results)
+        total_points = 0
+        total_courses = 0
+        for result in results:
+            gpa_value = result.gpa()
+            if gpa_value is not None:
+                total_points += gpa_value
+                total_courses += 1
+
         gpa = round(total_points / total_courses, 2) if total_courses > 0 else "N/A"
 
         template = get_template('result/student_transcript.html')
-        html = template.render({
+        html_content = template.render({
             'results': results,
             'gpa': gpa,
             'student': {
@@ -181,7 +181,7 @@ class DownloadResultView(UserPassesTestMixin, LoginRequiredMixin, View):
                 'current_cohort': student.current_cohort,
             }
         })
-        html = HTML(string=html, base_url=request.build_absolute_uri('/static/'))
+        html = HTML(string=html_content, base_url=request.build_absolute_uri('/static/'))
         pdf = html.write_pdf()
 
         response = HttpResponse(pdf, content_type='application/pdf')

@@ -1,63 +1,64 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Results{% endblock title %}
 
 {% block breadcrumb %}
-<a class="btn btn-primary" href="{% url 'create-result' %}"><i
-    class="fas fa-plus"></i> New Results</a>
-    
-<a class="btn btn-primary" href="{% url 'student-upload' %}"><i
-    class="fas fa-upload"></i> Upload Results</a>
+<a class="btn btn-primary" href="{% url 'create-result' %}"><i class="fas fa-plus"></i> New Results</a>
 
-<a class="btn btn-primary" href="{% url 'download-transcript' student.id %}"><i
-      class="fas fa-download"></i> Download Transcript </a>
+<a class="btn btn-primary" href="{% url 'student-upload' %}"><i class="fas fa-upload"></i> Upload Results</a>
 
+<a class="btn btn-primary" href="{% url 'download-transcript' student.id %}"><i class="fas fa-download"></i> Download Transcript </a>
 {% endblock breadcrumb %}
 
 {% block content %}
 <h3>Results for {{ student }}</h3>
 
-  <div class="table-responsive">
-    <table id="resulttable" class="table table-bordered table-hover" data-page-length='10'>
-      <thead class="thead-light">
-        <tr>
-          <th>S/N</th>
-          <!-- <th>Student</th> -->
-          <th>Course</th>
-          <th>Session</th>
-          <th>Semester</th>
-          <th>Test Score</th>
-          <th>Exam Score</th>
-          <th>Total Score</th>
-          <th>Grade</th>
-          <th>Created by</th>
-          <th>Updated by</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for result in results %}
-          <tr>
-            <td>{{ forloop.counter }}</td>
-            <!-- <td>{{ result.student }}</td> -->
-            <td>{{ result.course }}</td>    
-            <td>{{ result.session }}</td>
-            <td>{{ result.semester }}</td>
-            <td>{{ result.test_score }}</td>
-            <td>{{ result.exam_score }}</td>
-            <td>{{ result.total_score }}</td>
-            <td>{{ result.grade }}</td>
-            <td>{{ result.created_by }}</td>
-            <td>{{ result.updated_by }}</td>
-            <td>
-              <a href="{% url 'edit-result' result.id %}"><i class="fa fa-edit"></i></a>
-              <a href="{% url 'delete-result' result.id %}"class="text-danger"><i class="fa fa-trash"></i></a>
-            </td>
-          </tr>
+<div class="table-responsive">
+    {% for session, semesters in grouped_results.items %}
+        <h4>Session: {{ session }}</h4>
+        {% for semester, results in semesters.items %}
+            <h5>Semester: {{ semester }}</h5>
+            <table class="table table-bordered table-hover" data-page-length='10'>
+                <thead class="thead-light">
+                    <tr>
+                        <th>S/N</th>
+                        <th>Course</th>
+                        <th>Test Score</th>
+                        <th>Exam Score</th>
+                        <th>Total Score</th>
+                        <th>Grade</th>
+                        <th>Created by</th>
+                        <th>Updated by</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ result.course }}</td>
+                        <td>{{ result.test_score }}</td>
+                        <td>{{ result.exam_score }}</td>
+                        <td>{{ result.total_score }}</td>
+                        <td>{{ result.grade }}</td>
+                        <td>{{ result.created_by }}</td>
+                        <td>{{ result.updated_by }}</td>
+                        <td>
+                            <a href="{% url 'edit-result' result.id %}"><i class="fa fa-edit"></i></a>
+                            <a href="{% url 'delete-result' result.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    {% endfor %}
+    <div class="mt-4">
+        <p style="font-weight: bold">GPA: {{ gpa }}</p>
+    </div>
+</div>
 {% endblock content %}
 
 {% block morejs %}

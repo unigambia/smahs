@@ -25,27 +25,34 @@
             <td>{{ course.level }}</td>
             <td>{{ course.coordinator }}</td>
             <td>
-              {% if course.id in registered_courses_ids %}
-              <form class="register-form" action="{% url 'course-unregistration'%}" method="post">
-                {% csrf_token %}
-                <input type="hidden" name="course_id" value="{{ course.id }}">  
-                <button type="submit" class="btn btn-danger btn-action" data-action="unregister" data-course-id="{{ course.id }}" onclick="return confirm('Are you sure you want to unregister this course?')" style="width: 120px;">Unregister</button>
-              </form>
-            {% else %}
-            {% if student.is_cleared %}
-            <form class="register-form" action="{% url 'course-registration' %}" method="post">
-              {% csrf_token %}
-              <input type="hidden" name="course_id" value="{{ course.id }}">
-              <button type="submit" class="btn btn-primary btn-action" data-action="register" data-course-id="{{ course.id }}" onclick="return confirm('Are you sure you want to register for this course?')" style="width: 120px;">Register</button>
-            </form>
-          {% else %}
-            <form class="register-form disabled-form" action="{% url 'course-registration' %}" method="post">
-              {% csrf_token %}
-              <input type="hidden" name="course_id" value="{{ course.id }}">
-              <button type="submit" class="btn btn-primary btn-action disabled" data-action="register" data-course-id="{{ course.id }}" disabled onclick="return confirm('Are you sure you want to register for this course?')" style="width: 120px;">Register</button>
-            </form>
-          {% endif %}
-            {% endif %}
+                {% if course.id in registered_courses_ids %}
+                  <form class="register-form" action="{% url 'course-unregistration' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="course_id" value="{{ course.id }}">
+                    <button type="submit" class="btn btn-danger btn-action" data-action="unregister" data-course-id="{{ course.id }}" {% if not registration_open %}disabled{% endif %} onclick="return confirm('Are you sure you want to unregister this course?')" style="width: 120px;">Unregister</button>
+                  </form>
+                {% else %}
+                  {% if student.is_cleared and registration_open %}
+                    <form class="register-form" action="{% url 'course-registration' %}" method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="course_id" value="{{ course.id }}">
+                      <button type="submit" class="btn btn-primary btn-action" data-action="register" data-course-id="{{ course.id }}" onclick="return confirm('Are you sure you want to register for this course?')" style="width: 120px;">Register</button>
+                    </form>
+                  {% elif student.is_cleared %}
+                    <form class="register-form disabled-form" action="{% url 'course-registration' %}" method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="course_id" value="{{ course.id }}">
+                      <button type="submit" class="btn btn-primary btn-action disabled" data-action="register" data-course-id="{{ course.id }}" disabled style="width: 120px;">Register</button>
+                    </form>
+                  {% else %}
+                    <form class="register-form disabled-form" action="{% url 'course-registration' %}" method="post">
+                      {% csrf_token %}
+                      <input type="hidden" name="course_id" value="{{ course.id }}">
+                      <button type="submit" class="btn btn-primary btn-action disabled" data-action="register" data-course-id="{{ course.id }}" disabled style="width: 120px;">Register</button>
+                    </form>
+                  {% endif %}
+                {% endif %}
+  
             </td>
           </tr>
         {% endfor %}

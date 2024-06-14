@@ -134,6 +134,7 @@
             </li>
             {% endif %}
             {% if request.user.is_superuser %}
+            
             <li class="nav-item">
               <a href="{% url 'admin' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
@@ -142,6 +143,7 @@
                 </p>
               </a>
             </li>
+            <li class="nav-header"> Student and Faculty </li>
             <li class="nav-item">
               <a href="{% url 'student-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
@@ -287,10 +289,34 @@
                   </a>
                 </li>
                 <li class="nav-item">
+                  <a href="{% url 'course-registration-periods' %}" class="nav-link">
+                    <i class="nav-icon fas fa-bars"></i>
+                    <p>
+                      Registration Period
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
                   <a href="{% url 'cohorts' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
                     <p>
                       Cohorts
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'departments' %}" class="nav-link">
+                    <i class="nav-icon fas fa-bars"></i>
+                    <p>
+                      Departments
+                    </p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'programs' %}" class="nav-link">
+                    <i class="nav-icon fas fa-bars"></i>
+                    <p>
+                      Programs
                     </p>
                   </a>
                 </li>

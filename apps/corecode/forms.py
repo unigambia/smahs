@@ -8,7 +8,10 @@ from .models import (
     StudentCohort,
     Course,
     CourseMaterial, 
-    Exam
+    Exam,
+    Department,
+    Program,
+    CourseRegistrationPeriod
 )
 
 from django.contrib.auth.models import User
@@ -52,7 +55,7 @@ class CourseForm(ModelForm):
 
     class Meta:
         model = Course
-        fields = ["name", "code", "credit_unit", "level", "coordinator"]
+        fields = ["name", "code", "credit_unit", "level", "coordinator", "program"]
 
 class AssignmentForm(ModelForm):
     class Meta:
@@ -130,3 +133,62 @@ class ExamForm(ModelForm):
         super(ExamForm, self).__init__(*args, **kwargs)
         self.fields['due_date'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})
         self.fields['date_created'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})
+
+
+class DepartmentForm(ModelForm):
+    class Meta:
+        model = Department
+        fields = ['name', 'description', 'head']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 5}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(DepartmentForm, self).__init__(*args, **kwargs)
+        self.fields['description'].required = False
+        self.fields['description'].widget.attrs['placeholder'] = 'Enter a brief description of the department'
+        self.fields['description'].widget.attrs['rows'] = 5
+        self.fields['description'].widget.attrs['cols'] = 40
+        self.fields['description'].widget.attrs['class'] = 'form-control'
+
+
+class ProgramForm(ModelForm):
+    class Meta:
+        model = Program
+        fields = ['name', 'year_of_study', 'department']
+
+
+class CourseRegistrationPeriodForm(ModelForm):
+
+    class Meta:
+        model = CourseRegistrationPeriod
+        fields = ['start_date', 'end_date', 'status', 'academic_semester', 'academic_session']
+        widgets = {
+            'start_date': forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control'}),
+            'end_date': forms.DateTimeInput(attrs={'type': 'datetime-local', 'class': 'form-control'}),
+        }
+        labels = {
+            'start_date': 'Start Date',
+            'end_date': 'End Date',
+        }
+        help_texts = {
+            'status': 'Select the status of the registration period',
+        }
+        error_messages = {
+            'start_date': {
+                'required': 'Please enter the start date of the registration period',
+            },
+            'end_date': {
+                'required': 'Please enter the end date of the registration period',
+            },
+        }
+
+    def clean(self):
+        cleaned_data = super().clean()
+        start_date = cleaned_data.get('start_date')
+        end_date = cleaned_data.get('end_date')
+
+        if start_date and end_date and start_date > end_date:
+            raise forms.ValidationError('The start date cannot be greater than the end date.')
+
+        return cleaned_data

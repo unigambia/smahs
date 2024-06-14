@@ -27,7 +27,10 @@ from .forms import (
     StudentCohortForm,
     CourseForm,
     AssignmentForm,
-    ExamForm
+    ExamForm,
+    DepartmentForm,
+    ProgramForm,
+    CourseRegistrationPeriodForm
 
 )
 from .models import (
@@ -39,7 +42,10 @@ from .models import (
     StudentCourse,
     CourseMaterial,
     Exam,
-    Staff
+    Staff,
+    Department,
+    Program,
+    CourseRegistrationPeriod
 
 
 )
@@ -358,7 +364,7 @@ class CourseCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMi
 
 class CourseUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = Course
-    fields = ["name", "code", "credit_unit", "level", "coordinator"]
+    fields = ["name", "code", "credit_unit", "level", "coordinator", "program"]
     success_url = reverse_lazy("courses")
     success_message = "Course successfully updated."
     template_name = "corecode/mgt_form.html"
@@ -417,34 +423,49 @@ class CurrentSessionAndSemesterView(UserPassesTestMixin, LoginRequiredMixin, Vie
 
         return render(request, self.template_name, {"form": form})
 
-class CourseRegisterView(UserPassesTestMixin,LoginRequiredMixin, View):
+class CourseRegisterView(UserPassesTestMixin, LoginRequiredMixin, View):
     """Course Register View"""
 
     template_name = "corecode/course_register.html"
     form_class = CourseForm
 
     def test_func(self):
-        #not staff or superuser
+        # not staff or superuser
         return not self.request.user.is_staff or self.request.user.is_superuser
 
+    def get_course_registration_status(self):
+        current_period = CourseRegistrationPeriod.objects.filter(status=True).first()
+        return current_period is not None
+
     def get(self, request, *args, **kwargs):
+        registration_open = self.get_course_registration_status()
         form = self.form_class()
         courses = Course.objects.all()
         user = request.user
-        student = Student.objects.get(user=user)
+        student = get_object_or_404(Student, user=user)
         registered_courses = StudentCourse.objects.filter(student=student).values_list('course_id', flat=True)
-        
-        return render(request, self.template_name, {"form": form, "courses": courses,"student": student, "registered_courses_ids": registered_courses})
+
+        return render(request, self.template_name, {
+            "form": form,
+            "courses": courses,
+            "student": student,
+            "registered_courses_ids": registered_courses,
+            "registration_open": registration_open
+        })
 
     def post(self, request, *args, **kwargs):
+        if not self.get_course_registration_status():
+            messages.error(request, "Course registration is currently closed.")
+            return redirect("home")  # Redirect to home or another appropriate page
+
         course_id = request.POST.get("course_id")
         session = request.current_session
         semester = request.current_semester
-        student = Student.objects.get(user=request.user)
-        
+        student = get_object_or_404(Student, user=request.user)
+
         if course_id:
-            course = Course.objects.get(id=course_id)
-            
+            course = get_object_or_404(Course, id=course_id)
+
             # Create or update StudentCourse instance with session and semester
             student_course, created = StudentCourse.objects.get_or_create(
                 student=student,
@@ -452,7 +473,7 @@ class CourseRegisterView(UserPassesTestMixin,LoginRequiredMixin, View):
                 academic_session=session,
                 academic_semester=semester
             )
-            
+
             if not created:
                 student_course.delete()  # Remove the relationship
                 messages.success(request, "Course unregistration successful.")
@@ -460,7 +481,6 @@ class CourseRegisterView(UserPassesTestMixin,LoginRequiredMixin, View):
                 messages.success(request, "Course registration successful.")
 
         return redirect("course-registration")
-
 
 class UnregisterCourseView(UserPassesTestMixin, LoginRequiredMixin, View):
     """Unregister Course View"""
@@ -698,6 +718,187 @@ class ExamDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
         return super().delete(request, *args, **kwargs) 
     
 
+# Department View
+    
+class DepartmentListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Department
+    template_name = "corecode/department_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = DepartmentForm()
+        return context
 
     
+class DepartmentCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Department
+    form_class = DepartmentForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("departments")
+    success_message = "New Department successfully added"
 
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+class DepartmentUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+
+    model = Department
+    form_class = DepartmentForm
+    success_url = reverse_lazy("departments")
+    success_message = "Department successfully updated."
+    template_name = "corecode/mgt_form.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+class DepartmentDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Department
+    success_url = reverse_lazy("departments")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Department {} has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.name))
+        return super(DepartmentDeleteView, self).delete(request, *args, **kwargs)
+    
+
+# Program View
+    
+class ProgramListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Program
+    template_name = "corecode/program_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = ProgramForm()
+        return context
+    
+
+class ProgramCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Program
+    form_class = ProgramForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("programs")
+    success_message = "New Program successfully added"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class ProgramUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    model = Program
+    form_class = ProgramForm
+
+    success_url = reverse_lazy("programs")
+    success_message = "Program successfully updated."
+    template_name = "corecode/mgt_form.html"
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class ProgramDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Program
+    success_url = reverse_lazy("programs")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Program {} has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.name))
+        return super(ProgramDeleteView, self).delete(request, *args, **kwargs)
+    
+
+
+class CourseRegistrationPeriodListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = CourseRegistrationPeriod
+    template_name = "corecode/course_registration_period_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = CourseRegistrationPeriodForm()
+        return context
+
+    def get_queryset(self):
+        return CourseRegistrationPeriod.objects.all()
+    
+
+class CourseRegistrationPeriodCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = CourseRegistrationPeriod
+    form_class = CourseRegistrationPeriodForm
+    template_name = "corecode/mgt_form.html"
+    success_message = "New course registration period successfully added."
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse_lazy("course-registration-periods")
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+
+class CourseRegistrationPeriodUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = CourseRegistrationPeriod
+    form_class = CourseRegistrationPeriodForm
+    template_name = "corecode/mgt_form.html"
+    success_message = "Course registration period successfully updated."
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse_lazy("course-registration-periods")
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class CourseRegistrationPeriodDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = CourseRegistrationPeriod
+    success_url = reverse_lazy("course-registration-periods")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The course registration period has been deleted"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message)
+        return super(CourseRegistrationPeriodDeleteView, self).delete(request, *args, **kwargs)

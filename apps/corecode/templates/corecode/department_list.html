@@ -1,46 +1,43 @@
 {% extends 'base.html' %}
 
-{% block title %}Courses{% endblock title %}
+
+{% block title %}Departments{% endblock title %}
 
 {% block breadcrumb %}
-<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1"><i class="fas fa-plus"></i> Add new Course</a>
+<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1"><i class="fas fa-plus"></i> Add new Department</a>
 {% endblock breadcrumb %}
 
 {% block content %}
   <div class="table-responsive">
-    <table id="coursetable" class="table table-bordered table-hover" data-page-length='100'>
+    <table id="departmenttable" class="table table-bordered table-hover" data-page-length='100'>
       <thead class="thead-light">
         <tr>
           <th>S/N</th>
           <th>Name</th>
-          <th>Code</th>
-          <th>Credit Unit</th>
-          <th>Level</th>
-          <th>Coordinator</th>
-          <th>Program</th>
+          <th>Description</th>
+          <th>Head of Department</th>
           <th>Created By</th>
           <th>Updated By</th>
-          <th>Actions</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        {% for course in object_list %}
-          <tr class='clickable-row' data-href="#">
-            <td>{{ forloop.counter }}</td>
-            <td>{{ course.name }}</td>
-            <td>{{ course.code }}</td>
-            <td>{{ course.credit_unit }}</td>
-            <td>{{ course.level }}</td>
-            <td>{{ course.coordinator }}</td>
-            <td>{{ course.program }}</td>
-            <td>{{ course.created_by }}</td>
-            <td>{{ course.updated_by }}</td>
+
+        {% for department in object_list %}
+          <tr>
+            <td>{{ forloop.counter}}</td>
+            <td>{{ department.name }}</td>
+            <td>{{ department.description}}</td>
+            <td>{{ department.head}}</td>
+            <td>{{ department.created_by }}</td>
+            <td>{{ department.updated_by }}</td>
+            <!-- edit and delete-->
             <td>
-              <a href="{% url 'course-update' course.id %}"><i class="fa fa-edit"></i></a>
-              <a href="{% url 'course-delete' course.id %}"class="text-danger"><i class="fa fa-trash"></i></a>
-            </td>
+              <a href="{% url 'department-update' department.id %}" class="btn btn-primary">Edit</a>
+              <a href="{% url 'department-delete' department.id %}" class="btn btn-danger">Delete</a>
           </tr>
         {% endfor %}
+
       </tbody>
     </table>
   </div>
@@ -48,9 +45,9 @@
   <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <form action="{% url 'course-create' %}" method="POST">
+        <form action="{% url 'department-create' %}" method="POST">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Add new Course</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Add new Deparment</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -73,11 +70,14 @@
       </div>
     </div>
   </div>
+
 {% endblock content %}
+
 
 {% block morejs %}
 <script>
-  $('#coursetable').DataTable({
+  $('#departmenttable').DataTable({
   });
 </script>
+
 {% endblock morejs %}

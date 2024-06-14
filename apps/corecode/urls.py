@@ -34,7 +34,20 @@ from .views import (
     AdminDashboardView,
     LecturerDashboardView,
     StudentDashboardView,
-    DashboardView
+    DashboardView,
+    DepartmentCreateView,
+    DepartmentListView,
+    DepartmentUpdateView,
+    DepartmentDeleteView,
+    ProgramCreateView,
+    ProgramListView,
+    ProgramUpdateView,
+    ProgramDeleteView,
+    CourseRegistrationPeriodListView,
+    CourseRegistrationPeriodUpdateView,
+    CourseRegistrationPeriodCreateView,
+    CourseRegistrationPeriodDeleteView,
+
     )
 
 urlpatterns = [
@@ -87,6 +100,28 @@ urlpatterns = [
     path('exam/create', ExamsCreateView.as_view(), name='exam-create'),
     path('exam/<int:pk>/update', ExamUpdateView.as_view(), name='exam-update'),
     path('exam/<int:pk>/delete', ExamDeleteView.as_view(), name='exam-delete'),
+
+    #department
+
+    path('department/list', DepartmentListView.as_view(), name='departments'),
+    path('department/create', DepartmentCreateView.as_view(), name='department-create'),
+    path('department/<int:pk>/update', DepartmentUpdateView.as_view(), name='department-update'),
+    path('department/<int:pk>/delete', DepartmentDeleteView.as_view(), name='department-delete'),
+
+    #program
+
+    path('program/list', ProgramListView.as_view(), name='programs'),
+    path('program/create', ProgramCreateView.as_view(), name='program-create'),
+    path('program/<int:pk>/update', ProgramUpdateView.as_view(), name='program-update'),
+    path('program/<int:pk>/delete', ProgramDeleteView.as_view(), name='program-delete'),
+
+    #course registration period
+
+    path('course-registration-period/list', CourseRegistrationPeriodListView.as_view(), name='course-registration-periods'),
+    path('course-registration-period/create', CourseRegistrationPeriodCreateView.as_view(), name='course-registration-period-create'),
+    path('course-registration-period/<int:pk>/update', CourseRegistrationPeriodUpdateView.as_view(), name='course-registration-period-update'),
+    path('course-registration-period/<int:pk>/delete', CourseRegistrationPeriodDeleteView.as_view(), name='course-registration-period-delete'),
+    
     
 
     

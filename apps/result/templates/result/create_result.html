@@ -27,8 +27,10 @@
 
   {% if object %}
     <input type="submit" class="btn btn-primary" value="Update Record">
+    <button type="button" class="btn btn-secondary" onclick="window.history.back()">Back</button>
   {% else %}
     <input type="submit" class="btn btn-primary" value="Add new Result">
+    <button type="button" class="btn btn-secondary" onclick="window.history.back()">Back</button>
   {% endif %}
 </form>
 

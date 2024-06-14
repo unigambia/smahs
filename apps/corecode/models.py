@@ -63,6 +63,7 @@ class StudentCohort(models.Model):
     created_by = models.ForeignKey(User, related_name='cohort_created_by', null=True, blank=True, on_delete=models.SET_NULL)
     updated_by = models.ForeignKey(User, related_name='cohort_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
 
+
     class Meta:
         verbose_name = "Cohort"
         verbose_name_plural = "Cohorts"
@@ -90,6 +91,7 @@ class Course(models.Model):
         blank=True,
         related_name="coordinator",
     )
+    program = models.ForeignKey('Program', on_delete=models.CASCADE, null=True, blank=True)
     class Meta:
         ordering = ["name"]
 
@@ -200,3 +202,68 @@ class Exam(models.Model):
    
     class Meta:
         ordering = ["-date_created"]
+
+
+# department
+        
+class Department(models.Model):
+    """Department"""
+    name = models.CharField(max_length=200, unique=True)
+    description = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='department_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='department_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+    head  = models.ForeignKey(
+        Staff,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="department_coordinator",
+    )
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+    
+
+class Program(models.Model):
+    """Program"""
+    name = models.CharField(max_length=200, unique=True)
+    year_of_study = models.IntegerField(default=0)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='program_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='program_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+    class Meta:
+        ordering = ["name"]
+
+    def __str__(self):
+        return self.name
+    
+
+# course registration period 
+    
+class CourseRegistrationPeriod(models.Model):
+    """Course Registration Period"""
+    STATUS_CHOICES = [
+        (True, 'Open'),
+        (False, 'Close')
+    ]
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    status = models.BooleanField(default=False, choices=STATUS_CHOICES)
+    academic_session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
+    academic_semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='course_registration_period_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='course_registration_period_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    class Meta:
+        ordering = ["-start_date"]
+
+    def __str__(self):
+        return f"{self.academic_session} {self.academic_semester} Course Registration Period"
