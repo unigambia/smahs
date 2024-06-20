@@ -1,0 +1,153 @@
+<!-- templates/calendar/event_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Academic Calendar{% endblock title %}
+
+{% block breadcrumb %}
+  <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
+    <i class="fa fa-plus"></i>
+    Add new Event
+  </a>
+{% endblock breadcrumb %}
+
+{% block content %}
+<div class="container">
+  <div id="calendar"></div>
+</div>
+    <div id='calendar'></div>
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="{% url 'event-create' %}" method="POST">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new Event </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              {% csrf_token %}
+              {% for field in form %}
+                  <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {{ field.help_text }}
+                    {{ field.errors }}
+                  </div>
+              {% endfor %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!-- Edit Event Modal -->
+<div class="modal fade" id="editEventModal" tabindex="-1" role="dialog" aria-labelledby="editEventModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form id="editEventForm" method="post" action="">
+                  {% csrf_token %}
+                  <input type="hidden" id="editEventId" name="id">
+                  <div class="form-group">
+                      <label for="editEventTitle">Title</label>
+                      <input type="text" class="form-control" id="editEventTitle" name="title">
+                  </div>
+                  <div class="form-group">
+                      <label for="editEventDescription">Description</label>
+                      <textarea class="form-control" id="editEventDescription" name="description"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="editEventStart">Start Date</label>
+                      <input type="datetime-local" class="form-control" id="editEventStart" name="start_date">
+                  </div>
+                  <div class="form-group">
+                      <label for="editEventEnd">End Date</label>
+                      <input type="datetime-local" class="form-control" id="editEventEnd" name="end_date">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save changes</button>
+              </form>
+              <form id="deleteEventForm" method="post" action="">
+                  {% csrf_token %}
+                  <input type="hidden" id="deleteEventId" name="id">
+                  <button type="submit" class="btn btn-danger">Delete Event</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.10.1/main.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            events: '/api/calendar-events/',  // URL to fetch events
+            eventClick: function(info) {
+                var eventId = info.event.id;
+                var eventTitle = info.event.title;
+                var eventDescription = info.event.extendedProps.description;
+                var eventStart = info.event.start;
+                var eventEnd = info.event.end;
+
+                document.getElementById('editEventId').value = eventId;
+                document.getElementById('editEventTitle').value = eventTitle;
+                document.getElementById('editEventDescription').value = eventDescription;
+                document.getElementById('editEventStart').value = eventStart.toISOString().slice(0, 16);
+                document.getElementById('editEventEnd').value = eventEnd.toISOString().slice(0, 16);
+
+                document.getElementById('deleteEventId').value = eventId;
+
+                // Set form actions dynamically
+                document.getElementById('editEventForm').action = '/event/' + eventId + '/update/';
+                document.getElementById('deleteEventForm').action = '/event/' + eventId + '/delete/';
+
+                $('#editEventModal').modal('show');
+            }
+        });
+        calendar.render();
+    });
+</script>
+
+
+
+<style>
+    /* Add any custom styles here to match your desired look */
+    .fc-header-toolbar {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .fc-daygrid-event {
+        background-color: #007bff;
+        color: #fff;
+    }
+    .fc .fc-button-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .fc .fc-button-primary:not(:disabled).fc-button-active, .fc .fc-button-primary:not(:disabled):active {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+</style>
+
+{% endblock content %}

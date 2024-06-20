@@ -11,7 +11,9 @@ from .models import (
     Exam,
     Department,
     Program,
-    CourseRegistrationPeriod
+    CourseRegistrationPeriod,
+    Schedule,
+    CalendarEvent
 )
 
 from django.contrib.auth.models import User
@@ -156,6 +158,24 @@ class ProgramForm(ModelForm):
     class Meta:
         model = Program
         fields = ['name', 'year_of_study', 'department']
+
+class ScheduleForm(forms.ModelForm):
+    class Meta:
+        model = Schedule
+        fields = ['staff', 'course', 'day', 'session', 'semester', 'start_time', 'end_time']
+        widgets = {
+            'start_time': forms.TimeInput(attrs={'type': 'time'}),
+            'end_time': forms.TimeInput(attrs={'type': 'time'}),
+        }
+
+class CalendarEventForm(forms.ModelForm):
+    class Meta:
+        model = CalendarEvent
+        fields = ['title', 'description', 'start_date', 'end_date', 'event_type', 'session', 'semester']
+        widgets = {
+            'start_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'end_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
 
 
 class CourseRegistrationPeriodForm(ModelForm):

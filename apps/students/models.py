@@ -22,6 +22,7 @@ class Student(models.Model):
 
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     year_enrolled = models.IntegerField(default=timezone.now().year)
+    year_graduated = models.IntegerField(null=True, blank=True)
     mat_number = models.CharField(max_length=200, unique=True)
     surname = models.CharField(max_length=200)
     firstname = models.CharField(max_length=200)

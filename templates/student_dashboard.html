@@ -2,106 +2,152 @@
 
 
 {% block content %}
-<div class="container">
-    
-<div class="row">
+    <div class="container mt-5">
+        <h1>Dashboard Overview</h1>
 
-<div class="four col-md-3">
-  <div class="counter-box">
-    <i class="fa  fa-user"></i>
-    <span class="counter">{{courses}}</span>
-    {% if courses > 1 %}
-    <p>Courses Registered</p>
-    {% else %}
-    <p>Course Registered</p>
-    {% endif %}
-  </div>
-</div>
-<div class="four col-md-3">
-  <div class="counter-box colored">
-    <i class="fa fa-group"></i>
-    <span class="counter">{{assignments}}</span>
-    {% if assignments > 1 %}
-    <p>Total Assignments</p>
-    {% else %}
-    <p>Total Assignment</p>
-    {% endif %}
-  </div>
-</div>
+        <!-- Profile Overview -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Profile Overview
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="profile_photo_url" alt="Profile Photo" class="img-fluid rounded-circle">
+                            </div>
+                            <div class="col-md-9">
+                                <h5>Name: John Doe</h5>
+                                <p>Student ID: 123456</p>
+                                <p>Current Year: 2nd Year</p>
+                                <p>Major: Medicine</p>
+                                <p>GPA: 3.8</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="four col-md-3">
-  <div class="counter-box">
-    <i class="fa fa-group"></i>
-    <span class="counter">{{cohort_students}}</span>
-    {% if cohort_students > 1 %}
-    <p>Cohort Mates</p>
-    {% else %}
-    <p>Cohort Mates</p>
-    {% endif %}
-  </div>
-</div>
-</div>	
-</div>
-  
-<div class="container">
-    
-  <div class="row">
-  
-  <div class="four col-md-3">
-    <div class="counter-box">
-      <i class="fa  fa-pencil"></i>
-      <span class="counter">{{cohorts}}</span>
-      <p>Cohorts</p>
+        <!-- Course Information -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Course Information
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Current Courses</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Anatomy</li>
+                                    <li class="list-group-item">Physiology</li>
+                                    <li class="list-group-item">Biochemistry</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Resources and Grades</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Course Materials</li>
+                                    <li class="list-group-item">Grades and Performance Tracking</li>
+                                    <li class="list-group-item">Registration for Upcoming Courses</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calendar and Schedule -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Calendar and Schedule
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Academic Calendar</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Important Dates and Holidays</li>
+                                    <li class="list-group-item">Class Schedules</li>
+                                    <li class="list-group-item">Exam Schedules</li>
+                                    <li class="list-group-item">Events and Extracurricular Activities</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Class Schedule</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Monday: Anatomy, Physiology</li>
+                                    <li class="list-group-item">Wednesday: Biochemistry</li>
+                                    <li class="list-group-item">Friday: Clinical Skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Announcements and Notifications -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Announcements and Notifications
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Important Announcements from Administration</li>
+                            <li class="list-group-item">Alerts for Upcoming Deadlines (Assignments, Exams, Registration)</li>
+                            <li class="list-group-item">Messages from Instructors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resources and Tools -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Resources and Tools
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Access to Library and Research Databases</li>
+                            <li class="list-group-item">Clinical Rotation Schedules and Details</li>
+                            <li class="list-group-item">Links to Study Materials and Practice Exams</li>
+                            <li class="list-group-item">Access to Medical Journals and Publications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Student Services -->
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        Student Services
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Contact Information for Academic Advisors and Mentors</li>
+                            <li class="list-group-item">Health and Wellness Resources</li>
+                            <li class="list-group-item">Career Services and Job Placement Information</li>
+                            <li class="list-group-item">Financial Aid and Scholarship Information</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-  
-  <div class="four col-md-3">
-    <div class="counter-box ">
-      <i class="fa fa-book"></i>
-      <span class="counter">{{sessions}}</span>
-      {% if sessions > 1 %}
-      <p>Sessions</p>
-      {% else %}
-      <p>Session</p>
-      {% endif %}
-
-    </div>
-  </div>
-  <div class="four col-md-3">
-    <div class="counter-box colored">
-      <i class="fa fa-group"></i>
-      <span class="counter">{{semesters}}</span>
-      {% if semesters > 1 %}
-      <p>Semesters</p>
-      {% else %}
-      <p>Semester</p>
-      {% endif %}
-    </div>
-  </div>
-
-
-  </div>	
-  </div>
 {% endblock content %}
-
-{% block morejs %}
-<script>
-  $(document).ready(function() {
-
-    $('.counter').each(function () {
-$(this).prop('Counter',0).animate({
-    Counter: $(this).text()
-}, {
-    duration: 4000,
-    easing: 'swing',
-    step: function (now) {
-        $(this).text(Math.ceil(now));
-    }
-});
-});
-
-});  
-</script>
-{% endblock morejs %}
-```
-

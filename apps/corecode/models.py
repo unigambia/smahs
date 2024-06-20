@@ -3,6 +3,9 @@ from ..staffs.models import Staff
 from django.contrib.auth.models import AbstractUser
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+from enum import Enum
+
 # Create your models here.
 
 
@@ -171,7 +174,6 @@ class CourseMaterial(models.Model):
    
     class Meta:
         ordering = ["-date_created"]
-
   
 class Exam(models.Model):
     """Exams"""
@@ -203,6 +205,42 @@ class Exam(models.Model):
     class Meta:
         ordering = ["-date_created"]
 
+# schedule
+class Schedule(models.Model):
+    staff = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    day = models.CharField(max_length=20)
+    semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE, null=True, blank=True)
+    session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE, null=True, blank=True)
+    start_time = models.TimeField()
+    end_time = models.TimeField()
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Created At')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Updated At')
+    created_by = models.ForeignKey(User, related_name='schedule_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='schedule_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def clean(self):
+        # Exclude the current instance if it exists to avoid self-overlap during updates
+        if self.pk:
+            overlapping_schedules = Schedule.objects.filter(
+                staff=self.staff,
+                day=self.day,
+                start_time__lt=self.end_time,
+                end_time__gt=self.start_time
+            ).exclude(pk=self.pk)
+        else:
+            overlapping_schedules = Schedule.objects.filter(
+                staff=self.staff,
+                day=self.day,
+                start_time__lt=self.end_time,
+                end_time__gt=self.start_time
+            )
+
+        if overlapping_schedules.exists():
+            raise ValidationError(f'Schedule conflict for {self.staff} on {self.day} between {self.start_time} and {self.end_time}.')
+
+    def __str__(self):
+        return f"{self.staff}, {self.course} {self.day} {self.start_time} - {self.end_time}"
 
 # department
         
@@ -267,3 +305,28 @@ class CourseRegistrationPeriod(models.Model):
 
     def __str__(self):
         return f"{self.academic_session} {self.academic_semester} Course Registration Period"
+    
+# calendar event
+class CalendarEvent(models.Model):
+    EVENT_TYPES = (
+        ('important_date', 'Important Dates and Deadlines'),
+        ('holiday', 'Holidays and Breaks'),
+        ('academic_event', 'Academic Events'),
+        ('social_event', 'Social Events'),
+        ('other_event', 'Other Events'),
+    )
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+    event_type = models.CharField(max_length=50, choices=EVENT_TYPES)
+
+    session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE, null=True, blank=True)
+    semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE, null=True, blank=True)
+    created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+    

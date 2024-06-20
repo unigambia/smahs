@@ -47,6 +47,18 @@ from .views import (
     CourseRegistrationPeriodUpdateView,
     CourseRegistrationPeriodCreateView,
     CourseRegistrationPeriodDeleteView,
+    ScheduleManagementView,
+    ScheduleCreateView,
+    ScheduleUpdateView,
+    ScheduleDeleteView,
+    CalendarEventListView,
+    CalendarEventCreateView,
+    CalendarEventUpdateView,
+    CalendarEventDeleteView,
+    calendar_events_api,
+    edit_event,
+    delete_event
+    
 
     )
 
@@ -122,6 +134,26 @@ urlpatterns = [
     path('course-registration-period/<int:pk>/update', CourseRegistrationPeriodUpdateView.as_view(), name='course-registration-period-update'),
     path('course-registration-period/<int:pk>/delete', CourseRegistrationPeriodDeleteView.as_view(), name='course-registration-period-delete'),
     
+    #Schedule Management
+
+    path('schedule/', ScheduleManagementView.as_view(), name='schedules'),
+    path('schedule/create/', ScheduleCreateView.as_view(), name='schedule-create'),
+    path('schedule/<int:pk>/update/', ScheduleUpdateView.as_view(), name='schedule-update'),
+    path('schedule/<int:pk>/delete/', ScheduleDeleteView.as_view(), name='schedule-delete'),
+ 
+   #Calendar Event
+
+    path('events/', CalendarEventListView.as_view(), name='event-list'),
+    path('event/create/', CalendarEventCreateView.as_view(), name='event-create'),
+    path('event/<int:pk>/update/', CalendarEventUpdateView.as_view(), name='event-update'),
+    path('api/edit-event/', edit_event, name='edit-event'),
+    path('api/delete-event/', delete_event, name='delete-event'),
+
+    path('event/<int:pk>/delete/', CalendarEventDeleteView.as_view(), name='event-delete'),
+    path('api/calendar-events/', calendar_events_api, name='calendar-events-api'),
+
+    
+
     
 
     

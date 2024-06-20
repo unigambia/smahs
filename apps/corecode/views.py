@@ -10,13 +10,15 @@ from django.shortcuts import HttpResponseRedirect, redirect, render, get_object_
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, TemplateView, View, DetailView
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
-from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 from apps.corecode.forms import RegistrationForm, UserUpdateForm
 from django.contrib.auth.decorators import user_passes_test
 from django.core.files.uploadedfile import InMemoryUploadedFile
-from django.forms import widgets, SelectMultiple
-
+from django.forms import widgets
+from django.db.models import Count
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
+from collections import defaultdict
 
 
 from .forms import (
@@ -30,7 +32,9 @@ from .forms import (
     ExamForm,
     DepartmentForm,
     ProgramForm,
-    CourseRegistrationPeriodForm
+    CourseRegistrationPeriodForm,
+    ScheduleForm,
+    CalendarEventForm
 
 )
 from .models import (
@@ -45,7 +49,9 @@ from .models import (
     Staff,
     Department,
     Program,
-    CourseRegistrationPeriod
+    CourseRegistrationPeriod,
+    Schedule,
+    CalendarEvent
 
 
 )
@@ -62,7 +68,6 @@ class DashboardView(LoginRequiredMixin, TemplateView):
             return "lecturer_dashboard.html"
         else:
             return "student_dashboard.html"
-    
 
 
 class AdminDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
@@ -73,17 +78,12 @@ class AdminDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        graduates = Student.objects.filter(current_status="graduate").count()
-        context["graduates"] = graduates
-        active_students = Student.objects.filter(current_status="active").count()
-        context["active_students"] = active_students
-        context["courses"] = Course.objects.all().count()
-        context["sessions"] = AcademicSession.objects.all().count()
-        context["semesters"] = AcademicSemester.objects.all().count()
         context["staffs"] = Staff.objects.all().count()
         context["users"] = User.objects.all().count()
-        context["cohorts"] = StudentCohort.objects.all().count()
-        context["assignments"] = CourseMaterial.objects.all().count()
+        enrollments = Student.objects.values('year_enrolled').annotate(number_of_students=Count('id')).order_by('year_enrolled')
+        context['enrollments'] = enrollments
+        graduations = Student.objects.filter(current_status="graduate").values('year_graduated').annotate(number_of_graduates=Count('id')).order_by('year_graduated')
+        context['graduations'] = graduations
         
         return context
 
@@ -869,8 +869,65 @@ class CourseRegistrationPeriodCreateView(UserPassesTestMixin, LoginRequiredMixin
     def form_valid(self, form):
         obj = self.object
         return super().form_valid(form)
+
+class ScheduleManagementView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Schedule
+    template_name = 'corecode/schedule_management.html'
+    context_object_name = 'schedules'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = ScheduleForm()
+        return context
+
+class ScheduleCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Schedule
+    form_class = ScheduleForm
+    success_url = reverse_lazy('schedules')
+    success_message = "Schedule was created successfully"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
     
 
+class ScheduleUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Schedule
+    form_class = ScheduleForm
+    template_name = "corecode/mgt_form.html"
+    success_message = "Schedule successfully updated."
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse_lazy("schedules")
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+    
+class ScheduleDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Schedule
+    success_url = '/schedule/'
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The schedule {} has been deleted with all its attached content"
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.staff))
+        return super(ScheduleDeleteView, self).delete(request, *args, **kwargs)
+
+    def test_func(self):
+        return self.request.user.is_superuser
 
 class CourseRegistrationPeriodUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = CourseRegistrationPeriod
@@ -902,3 +959,164 @@ class CourseRegistrationPeriodDeleteView(UserPassesTestMixin, LoginRequiredMixin
         obj = self.get_object()
         messages.success(self.request, self.success_message)
         return super(CourseRegistrationPeriodDeleteView, self).delete(request, *args, **kwargs)
+    
+
+class CalendarEventListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = CalendarEvent
+    template_name = "corecode/event_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = CalendarEventForm()
+        
+        # Group events by type
+        events = CalendarEvent.objects.all()
+        grouped_events = defaultdict(list)
+        for event in events:
+            grouped_events[event.event_type].append(event)
+        print(grouped_events)
+
+        context["grouped_events"] = grouped_events
+        return context
+    
+
+    def get_queryset(self):
+        queryset = CalendarEvent.objects.all()
+
+        start_date = self.request.GET.get("start_date")
+        end_date = self.request.GET.get("end_date")
+        event_type = self.request.GET.get("event_type")
+        semester = self.request.GET.get("semester")
+        session = self.request.GET.get("session")
+
+
+        if start_date:
+            queryset = queryset.filter(start_date=start_date)
+
+        if end_date:
+            queryset = queryset.filter(end_date=end_date)
+
+        if event_type:
+            queryset = queryset.filter(event_type=event_type)
+        
+        if semester:
+            queryset = queryset.filter(semester=semester)
+
+        if session:
+            queryset = queryset.filter(session=session)
+
+        return queryset
+    
+
+    
+
+class CalendarEventCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = CalendarEvent
+    template_name = "corecode/mgt_form.html"
+    form_class = CalendarEventForm  # Use form_class instead of form
+    success_message = "New Calendar Event successfully added."
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse("event-list")
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+def calendar_events_api(request):
+    events = CalendarEvent.objects.all()
+    events_list = []
+
+    for event in events:
+        events_list.append({
+            'id': event.id,
+            'title': event.title,
+            'start': event.start_date.isoformat(),
+            'end': event.end_date.isoformat(),
+            'description': event.description,
+            'event_type': event.event_type,
+            'semester': event.semester.name if event.semester else '',
+            'session': event.session.name if event.session else '',
+        })
+
+    return JsonResponse(events_list, safe=False)
+
+@require_POST
+def edit_event(request):
+    event_id = request.POST.get('id')
+    event_title = request.POST.get('title')
+    event_description = request.POST.get('description')
+    event_type = request.POST.get('event_type')
+    event_start = request.POST.get('start_date')
+    event_end = request.POST.get('end_date')
+    event_semester = request.POST.get('semester')
+    event_session = request.POST.get('session')
+
+    event = get_object_or_404(CalendarEvent, id=event_id)
+    event.title = event_title
+    event.description = event_description
+    event.event_type = event_type
+    event.start_date = event_start
+    event.end_date = event_end
+    event.semester = get_object_or_404(AcademicSemester, name=event_semester)
+    event.session = get_object_or_404(AcademicSession, name=event_session)
+
+    event.save()
+
+    return redirect('event-list')
+
+
+
+@require_POST
+def delete_event(request):
+    event_id = request.POST.get('id')
+    event = get_object_or_404(CalendarEvent, id=event_id)
+    event.delete()
+    return redirect('event-list')
+
+class CalendarEventUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = CalendarEvent
+    form_class = CalendarEventForm 
+    template_name = "corecode/mgt_form.html"
+    success_message = "The Calendar Event '{}' has been updated."
+
+    def get_success_url(self):
+        return reverse_lazy("event-list")
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message.format(self.object.title)
+
+class CalendarEventDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = CalendarEvent
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Calendar Event '{}' has been deleted."
+
+    def get_success_url(self):
+        return reverse("event-list")
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def delete(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        success_message = self.get_success_message(self.object)
+        messages.success(self.request, success_message)
+        return super().delete(request, *args, **kwargs)
+
+    def get_success_message(self, cleaned_data):
+        return self.success_message.format(self.object.title)
+    
+

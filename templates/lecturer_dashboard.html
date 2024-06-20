@@ -1,129 +1,156 @@
 {% extends 'base.html' %}
+{% load static %}
 
 
 {% block content %}
-<div class="container">
-    
-<div class="row">
-
-<div class="four col-md-3">
-  <div class="counter-box">
-    <i class="fa  fa-user"></i>
-    <span class="counter">{{courses}}</span>
-    {% if courses > 1 %}
-    <p>Total Courses Assigned</p>
-    {% else %}
-    <p>Total Course Assigned</p>
-    {% endif %}
-  </div>
-</div>
-<div class="four col-md-3">
-  <div class="counter-box colored">
-    <i class="fa fa-group"></i>
-    <span class="counter">{{students}}</span>
-    {% if students > 1 %}
-    <p>Total Students </p>
-    {% else %}
-    <p>Student</p>
-    {% endif %}
-  </div>
-</div>
-
-<div class="four col-md-3">
-  <div class="counter-box">
-    <i class="fa fa-group"></i>
-    <span class="counter">{{users}}</span>
-    {% if users > 1 %}
-    <p>Administrators</p>
-    {% else %}
-    <p>Administrator</p>
-    {% endif %}
-  </div>
-</div>
-<div class="four col-md-3">
-  <div class="counter-box">
-    <i class="fa fa-group"></i>
-    <span class="counter">{{staffs}}</span>
-    {% if staffs > 1 %}
-    <p>Lecturers</p>
-    {% else %}
-    <p>Lecturer</p>
-    {% endif %}
-  </div>
-</div>
-
-
-</div>	
-</div>
+<div class="container mt-5">
+  <h1>Dashboard Overview</h1>
   
-<div class="container">
-    
-  <div class="row">
-  
-  <div class="four col-md-3">
-    <div class="counter-box">
-      <i class="fa  fa-pencil"></i>
-      <span class="counter">{{cohorts}}</span>
-      <p>Cohorts</p>
-    </div>
-  </div>
-  
-  <div class="four col-md-3">
-    <div class="counter-box ">
-      <i class="fa fa-book"></i>
-      <span class="counter">{{sessions}}</span>
-      {% if sessions > 1 %}
-      <p>Sessions</p>
-      {% else %}
-      <p>Session</p>
-      {% endif %}
-
-    </div>
-  </div>
-  <div class="four col-md-3">
-    <div class="counter-box colored">
-      <i class="fa fa-group"></i>
-      <span class="counter">{{semesters}}</span>
-      {% if semesters > 1 %}
-      <p>Semesters</p>
-      {% else %}
-      <p>Semester</p>
-      {% endif %}
-    </div>
+  <!-- Profile Overview -->
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <i class="fas fa-user-circle"></i> Profile Overview
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-3">
+                        <img src="{% static 'dist/img/avatar.png' %}" alt="Logo" width="100px">
+                      </div>
+                      <div class="col-md-9">
+                          <h5>Name: Dr. Jane Smith</h5>
+                          <p>Department: Cardiology</p>
+                          <p>Current Courses: Anatomy, Physiology</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 
-  <div class="four col-md-3">
-    <div class="counter-box">
-      <i class="fa fa-book"></i>
-      <span class="counter">{{courses}}</span>
-      {% if courses > 1 %}
-      <p>Courses</p>
-      {% else %}
-      <p>Course</p>
-      {% endif %}
-    </div>
+  <!-- Course Management -->
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <i class="fas fa-chalkboard-teacher"></i> Course Management
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h5>Course Schedules and Materials</h5>
+                          <ul class="list-group">
+                              <li class="list-group-item"><i class="fas fa-calendar-alt"></i> Course Schedules</li>
+                              <li class="list-group-item"><i class="fas fa-book"></i> Course Materials</li>
+                          </ul>
+                      </div>
+                      <div class="col-md-6">
+                          <h5>Management Tools</h5>
+                          <ul class="list-group">
+                              <li class="list-group-item"><i class="fas fa-file-alt"></i> Grade Submission and Tracking</li>
+                              <li class="list-group-item"><i class="fas fa-tasks"></i> Assignment Management and Feedback</li>
+                              <li class="list-group-item"><i class="fas fa-user-check"></i> Student Attendance Tracking</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
-  
-  </div>	
+
+  <!-- Calendar and Schedule -->
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <i class="fas fa-calendar"></i> Calendar and Schedule
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h5>Teaching Schedule</h5>
+                          <ul class="list-group">
+                              <li class="list-group-item"><i class="fas fa-clock"></i> Teaching Schedule</li>
+                              <li class="list-group-item"><i class="fas fa-users"></i> Department Meetings</li>
+                              <li class="list-group-item"><i class="fas fa-calendar-day"></i> Important Academic Dates</li>
+                          </ul>
+                      </div>
+                      <div class="col-md-6">
+                          <h5>Events and Meetings</h5>
+                          <ul class="list-group">
+                              <li class="list-group-item"><i class="fas fa-calendar-alt"></i> Department Events</li>
+                              <li class="list-group-item"><i class="fas fa-handshake"></i> University Meetings</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Announcements and Notifications -->
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <i class="fas fa-bullhorn"></i> Announcements and Notifications
+              </div>
+              <div class="card-body">
+                  <ul class="list-group">
+                      <li class="list-group-item"><i class="fas fa-bullhorn"></i> Administrative Announcements</li>
+                      <li class="list-group-item"><i class="fas fa-envelope"></i> Messages from Department Heads</li>
+                      <li class="list-group-item"><i class="fas fa-exclamation-circle"></i> Alerts for Upcoming Deadlines</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Research and Publications -->
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <i class="fas fa-flask"></i> Research and Publications
+              </div>
+              <div class="card-body">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <h5>Research Tools</h5>
+                          <ul class="list-group">
+                              <li class="list-group-item"><i class="fas fa-database"></i> Access to Research Databases</li>
+                              <li class="list-group-item"><i class="fas fa-upload"></i> Tools for Submitting Publications</li>
+                          </ul>
+                      </div>
+                      <div class="col-md-6">
+                          <h5>Collaboration Tools</h5>
+                          <ul class="list-group">
+                              <li class="list-group-item"><i class="fas fa-users"></i> Collaboration on Research Projects</li>
+                              <li class="list-group-item"><i class="fas fa-tasks"></i> Track Research Progress</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Faculty Resources -->
+  <div class="row mt-4">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header">
+                  <i class="fas fa-toolbox"></i> Faculty Resources
+              </div>
+              <div class="card-body">
+                  <ul class="list-group">
+                      <li class="list-group-item"><i class="fas fa-chalkboard"></i> Access to Teaching Aids</li>
+                      <li class="list-group-item"><i class="fas fa-graduation-cap"></i> Information on Grants and Funding</li>
+                      <li class="list-group-item"><i class="fas fa-briefcase"></i> Professional Development Opportunities</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
   </div>
 {% endblock content %}
-
-{% block morejs %}
-<script>
-  $(document).ready(function() {
-
-    $('.counter').each(function () {
-$(this).prop('Counter',0).animate({
-    Counter: $(this).text()
-}, {
-    duration: 4000,
-    easing: 'swing',
-    step: function (now) {
-        $(this).text(Math.ceil(now));
-    }
-});
-});
-
-});  
-</script>
-{% endblock morejs %}

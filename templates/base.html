@@ -7,17 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+
   <title>SMAHS</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
   <link href="{% static 'select2/css/select2.min.css' %}" rel="stylesheet">
+
   <!-- overlayScrollbars -->
   <link rel="stylesheet"
     href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/Datatables/datatables.min.css' %}" />
-  <!-- Theme style -->
+    <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
   <link rel="stylesheet" href="{% static 'dist/css/admin-dashboard.css' %}">
 
@@ -33,6 +36,7 @@
   <script src="{% static 'dist/js/admin-dashboard.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{% static 'select2/js/select2.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </head>
@@ -66,13 +70,16 @@
       </ul>
 
 
-      <!-- Right navbar links -->
+      <!-- Right navbar links -->      
       <ul class="navbar-nav ml-auto">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="fas fa-bell"></i>  </a>
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="far fa-user"></i>
           </a>
+  
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
               <a href="{% url 'profile' user.pk  %}" class="dropdown-item">
                 <i class="fas fa-user mr-2"></i> Profile

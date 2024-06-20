@@ -35,7 +35,7 @@
             <h4>{{ object.surname }} </h4>
             <h4>{{ object.firstname }} </h4>
             <h4>{{ object.other_name }} </h4>
-            <h4>{{ object.registration_number }} </h4>
+            <h4>{{ object.mat_number }} </h4>
           </div>
         </div>
         <h5>{{ object.current_class }} </h5>
@@ -68,6 +68,26 @@
             </label>
             <div class="col">
               {{ object.address }}
+            </div>
+          </div>
+          <div class="form-group border-bottom row">
+            <label class="col">
+              Year Enrolled
+            </label>
+            <div class="col">
+              {{ object.year_enrolled }}
+            </div>
+          </div>
+          <div class="form-group border-bottom row">
+            <label class="col">
+              Year Graduated
+            </label>
+            <div class="col">
+              {% if object.year_graduated %}
+                {{ object.year_graduated }}
+              {% else %}
+                Not Graduated
+              {% endif %}
             </div>
           </div>
           <div class="form-group border-bottom row">
