@@ -13,7 +13,13 @@ from .models import (
     Program,
     CourseRegistrationPeriod,
     Schedule,
-    CalendarEvent
+    CalendarEvent,
+    ClassroomReservation,
+    EquipmentCheckout,
+    Equipment,
+    Classroom,
+    Announcement,
+    AdminAlert,
 )
 
 from django.contrib.auth.models import User
@@ -177,6 +183,24 @@ class CalendarEventForm(forms.ModelForm):
             'end_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
         }
 
+class ClassroomReservationForm(forms.ModelForm):
+    class Meta:
+        model = ClassroomReservation
+        fields = ['classroom', 'start_time', 'end_time', 'description']
+        widgets = {
+            'start_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'end_time': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+
+class ClassroomForm(forms.ModelForm):
+    class Meta:
+        model = Classroom
+        fields = ['name', 'location', 'capacity']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'location': forms.TextInput(attrs={'class': 'form-control'}),
+            'capacity': forms.NumberInput(attrs={'class': 'form-control'}),
+        }
 
 class CourseRegistrationPeriodForm(ModelForm):
 
@@ -212,3 +236,31 @@ class CourseRegistrationPeriodForm(ModelForm):
             raise forms.ValidationError('The start date cannot be greater than the end date.')
 
         return cleaned_data
+    
+class EquipmentCheckoutForm(forms.ModelForm):
+    class Meta:
+        model = EquipmentCheckout
+        fields = ['equipment', 'checkout_date', 'return_date', 'description']
+        widgets = {
+            'checkout_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+            'return_date': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+        }
+
+class EquipmentForm(forms.ModelForm):
+    class Meta:
+        model = Equipment
+        fields = ['name', 'description', 'quantity']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 5}),
+        }
+
+
+class AnnouncementForm(forms.ModelForm):
+    class Meta:
+        model = Announcement
+        fields = ['recipient', 'title', 'message', 'file']
+
+class AdminAlertForm(forms.ModelForm):
+    class Meta:
+        model = AdminAlert
+        fields = ['alert_type', 'title', 'message', 'file']

@@ -6,56 +6,46 @@
         <h1>Dashboard Overview</h1>
 
         <!-- Enrollment Numbers -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <i class="fas fa-user-graduate"></i> Enrollment Numbers
-                        </div>
-                        <div class="table-responsive">
-                            <table id="enrollmenttable" class="table table-bordered table-hover" data-page-length='100'>
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th>Year</th>
-                                        <th>No. of Students</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for enrollment in enrollments %}
-                                    <tr>
-                                        <td>{{ enrollment.year_enrolled }}</td>
-                                        <td>{{ enrollment.number_of_students }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-user-graduate"></i> Enrollment Numbers
+                    </div>
+                    <div class="card-body">
+                        <canvas id="enrollmentChart" width="400" height="200"></canvas>
                     </div>
                 </div>
-
-                <!-- Graduation Rates -->
-                <div class="col-md-6">
+            </div>
+    
+            <!-- Graduation Rates -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-graduation-cap"></i> Graduation Rates
+                    </div>
+                    <div class="card-body">
+                        <canvas id="graduationChart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+            <div class="row mt-4">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <i class="fas fa-graduation-cap"></i> Graduation Rates
+                            <i class="fas fa-user-plus"></i> Admission Management
                         </div>
-                        <div class="table-responsive">
-                            <table id="graduatetable" class="table table-bordered table-hover" data-page-length='100'>
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th>Year</th>
-                                        <th>Number of Graduates</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for graduation in graduations %}
-                                    <tr>
-                                        <td>{{ graduation.year_graduated }}</td>
-                                        <td>{{ graduation.number_of_graduates }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                <a href="#" class="nav-link">
+                                    <li class="list-group-item"><i class="fas fa-list"></i> View Admissions</li>
+                                </a>
+                                <a href="#" class="nav-link">
+                                    <li class="list-group-item"><i class="fas fa-plus-circle"></i> New Admission</li>
+                                </a>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -122,18 +112,58 @@
                                 <h5><i class="fas fa-calendar-alt"></i> Institutional Calendar</h5>
                                 <ul class="list-group">
                                     <a href="{% url 'event-list' %}"><li class="list-group-item"><i class="fas fa-calendar-day"></i> View Academic Calendar</li></a>
-                                    <li class="list-group-item"><i class="fas fa-calendar-check"></i> Important Dates and Deadlines</li>
-                                    <li class="list-group-item"><i class="fas fa-holiday"></i> Holidays and Breaks</li>
+                                    <div class="card">
+                                        <div class="card-header bg-primary text-white">
+                                            <h2 class="card-title"><i class="fas fa-calendar-check"></i> Important Dates and Deadlines</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                                                {% for event in important_dates %}
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        {{ event.title }}
+                                                        <span class="badge badge-primary badge-pill">{{ event.start_date|date:"F j" }}</span>
+                                                        <span class="badge badge-danger badge-pill">{{ event.end_date | date:"F j" }} </span>
+
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>   
+                                    <div class="card">
+                                        <div class="card-header bg-success text-white">
+                                            <h2 class="card-title"><i class="fas fa-holiday"></i> Holidays and Breaks</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group">
+                                                {% for event in holidays %}
+                                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                        {{ event.title }}
+                                                        <span class="badge badge-success badge-pill">{{ event.start_date|date:"F j" }} </span>
+                                                        <span class="badge badge-danger badge-pill">{{ event.end_date | date:"F j" }} </span>
+
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>                            
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <h5><i class="fas fa-calendar-check"></i> Scheduling Tools</h5>
+                                <h5><i class="fas fa-building"></i> Facilities</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><i class="fas fa-calendar-plus"></i> Schedule Events and Meetings</li>
-                                    <li class="list-group-item"><i class="fas fa-door-open"></i> ClassRoom Reservations</li>
-                                    <li class="list-group-item"><i class="fas fa-calendar-alt"></i> View Event Calendar</li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'classroom_reservations' %}">
+                                            <i class="fas fa-door-open"></i> Classroom Reservations
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'equipment-checkout' %}">
+                                            <i class="fas fa-stethoscope"></i> Equipment Checkout
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -152,27 +182,32 @@
                             <div class="col-md-6">
                                 <h5><i class="fas fa-bullhorn"></i> Send Announcements</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><i class="fas fa-envelope"></i> Send to Students</li>
-                                    <li class="list-group-item"><i class="fas fa-envelope-open-text"></i> Send to Faculty</li>
-                                    <li class="list-group-item"><i class="fas fa-bullhorn"></i> Institutional Announcements</li>
+                                    <li class="list-group-item">
+                                        <a href="#" data-toggle="modal" data-target="#sendAnnouncementModal" data-recipient="institution">
+                                            <i class="fas fa-bullhorn"></i> Institutional Announcements
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <h5><i class="fas fa-exclamation-circle"></i> Administrative Alerts</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><i class="fas fa-bell"></i> Important Deadlines</li>
-                                    <li class="list-group-item"><i class="fas fa-info-circle"></i> Policy Updates</li>
-                                    <li class="list-group-item"><i class="fas fa-exclamation-triangle"></i> Emergency Notifications</li>
-                                </ul>
+                                    <li class="list-group-item">
+                                        <a href="#" data-toggle="modal" data-target="#adminAlertModal" data-type="deadlines">
+                                            <i class="fas fa-bell"></i> Important Updates
+                                        </a>
+                                    </li>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 
         <!-- Administrative Tools -->
-        <div class="row mt-4">
+        <!-- <div class="row mt-4">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
@@ -208,7 +243,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Resources and Support -->
         <div class="row mt-4">
@@ -219,20 +254,46 @@
                     </div>
                     <div class="card-body">
                         <div class="row">
+                            <!-- Institutional Policies and Procedures -->
                             <div class="col-md-6">
                                 <h5><i class="fas fa-info-circle"></i> Institutional Policies and Procedures</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><i class="fas fa-book"></i> View Policies</li>
-                                    <li class="list-group-item"><i class="fas fa-file-alt"></i> Access Procedures</li>
-                                    <li class="list-group-item"><i class="fas fa-download"></i> Download Guidelines</li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'view-policies' %}">
+                                            <i class="fas fa-book"></i> View Policies
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'access-procedures' %}">
+                                            <i class="fas fa-file-alt"></i> Access Procedures
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'download-guidelines' %}">
+                                            <i class="fas fa-download"></i> Download Guidelines
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
+                            <!-- Support Services -->
                             <div class="col-md-6">
                                 <h5><i class="fas fa-headset"></i> Support Services</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item"><i class="fas fa-phone"></i> Contact Support</li>
-                                    <li class="list-group-item"><i class="fas fa-laptop-code"></i> IT Help Desk</li>
-                                    <li class="list-group-item"><i class="fas fa-user-graduate"></i> Student Services</li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'contact-support' %}">
+                                            <i class="fas fa-phone"></i> Contact Support
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'it-help-desk' %}">
+                                            <i class="fas fa-laptop-code"></i> IT Help Desk
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="{% url 'student-services' %}">
+                                            <i class="fas fa-user-graduate"></i> Student Services
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -240,19 +301,215 @@
                 </div>
             </div>
         </div>
-
+        
     </div>
+
+    <!-- Send Announcement Modal -->
+    <div class="modal fade" id="sendAnnouncementModal" tabindex="-1" role="dialog" aria-labelledby="sendAnnouncementModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="sendAnnouncementModalLabel">Send Announcement</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="sendAnnouncementForm" method="post" action="{% url 'announcement-create' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="announcementRecipient">Recipient</label>
+                            <select class="form-control" id="announcementRecipient" name="recipient" required>
+                                <option value="students">Students</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="institution">Institution</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementTitle">Title</label>
+                            <input type="text" class="form-control" id="announcementTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementMessage">Message</label>
+                            <textarea class="form-control" id="announcementMessage" name="message" rows="5" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="announcementFile">Attachment</label>
+                            <input type="file" class="form-control-file" id="announcementFile" name="file">
+                        </div>
+    
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+<!-- Admin Alert Modal -->
+<div class="modal fade" id="adminAlertModal" tabindex="-1" role="dialog" aria-labelledby="adminAlertModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="adminAlertModalLabel">Create Administrative Alert</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="adminAlertForm" method="post" action="{% url 'alert-create' %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="alertType">Alert Type</label>
+                        <select class="form-control" id="alertType" name="alert_type" required>
+                                <option value="important_deadlines">Important Deadline</option>
+                            <option value="policy-updates">Policy Updates</option>
+                            <option value="emergency-notifications">Emergency Notifications</option>
+                        </select> 
+                    <div class="form-group">
+                        <label for="alertTitle">Title</label>
+                        <input type="text" class="form-control" id="alertTitle" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="alertMessage">Message</label>
+                        <textarea class="form-control" id="alertMessage" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alertFile">Attachment</label>
+                        <input type="file" class="form-control-file" id="alertFile" name="file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Alert</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock content %}
 
 {% block morejs %}
-<script>
-  $('#enrollmenttable').DataTable({
-  });
 
-  $('#graduatetable').DataTable({
-  });
+<script>
+    // Extract data from Django context
+    const enrollments = JSON.parse('{{ enrollments|escapejs }}');
+    const graduations = JSON.parse('{{ graduations|escapejs }}');
+
+    console.log('Enrollments:', enrollments);
+    console.log('Graduations:', graduations);
+
+    // Prepare data for Enrollment Chart
+    const enrollmentYears = enrollments.map(item => item.year_enrolled);
+    const enrollmentNumbers = enrollments.map(item => item.number_of_students);
+
+    // Prepare data for Graduation Chart
+    const graduationYears = graduations.map(item => item.year_graduated);
+    const graduationNumbers = graduations.map(item => item.number_of_graduates);
+
+    // Determine max values for y-axis
+    const maxEnrollment = Math.max(...enrollmentNumbers);
+    const maxGraduation = Math.max(...graduationNumbers);
+
+    // Data for Enrollment Chart
+    const enrollmentData = {
+        labels: enrollmentYears,
+        datasets: [{
+            label: 'Number of Students',
+            data: enrollmentNumbers,
+            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    // Data for Graduation Chart
+    const graduationData = {
+        labels: graduationYears,
+        datasets: [{
+            label: 'Number of Graduates',
+            data: graduationNumbers,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    };
+
+    // Configurations for Enrollment Chart
+    const configEnrollment = {
+        type: 'bar',
+        data: enrollmentData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: maxEnrollment + 1, // Set max value based on data
+                    ticks: {
+                        stepSize: 1, // Adjust step size as needed
+                        callback: function(value) {
+                            return value.toLocaleString(); // Format large numbers with commas
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Number of Students'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Year'
+                    }
+                }
+            }
+        }
+    };
+
+    // Configurations for Graduation Chart
+    const configGraduation = {
+        type: 'bar',
+        data: graduationData,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: maxGraduation + 1, // Set max value based on data
+                    ticks: {
+                        stepSize: 1, // Adjust step size as needed
+                        callback: function(value) {
+                            return value.toLocaleString(); // Format large numbers with commas
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Number of Graduates'
+                    }
+                },
+                x: {
+                    title: {
+                        display: true,
+                        text: 'Year'
+                    }
+                }
+            }
+        }
+    };
+
+    // Rendering the charts
+    window.onload = function() {
+        const ctxEnrollment = document.getElementById('enrollmentChart').getContext('2d');
+        new Chart(ctxEnrollment, configEnrollment);
+
+        const ctxGraduation = document.getElementById('graduationChart').getContext('2d');
+        new Chart(ctxGraduation, configGraduation);
+    };
 </script>
 
-{% endblock morejs %}
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+{% endblock morejs %}

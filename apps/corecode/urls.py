@@ -56,10 +56,37 @@ from .views import (
     CalendarEventUpdateView,
     CalendarEventDeleteView,
     calendar_events_api,
-    edit_event,
-    delete_event
+    ClassroomReservationCreateView,
+    ClassroomReservationListView,
+    ClassroomReservationUpdateView,
+    ClassroomReservationDeleteView,
+    ClassroomListView,
+    ClassroomCreateView,
+    ClassroomUpdateView,
+    ClassroomDeleteView,
+    EquipmentCheckoutListView,
+    EquipmentCheckoutCreateView,
+    EquipmentCheckoutUpdateView,
+    EquipmentCheckoutDeleteView,
+    EquipmentCreateView,
+    EquipmentListView,
+    EquipmentUpdateView,
+    EquipmentDeleteView,
+    AnnouncementCreateView,
+    AnnouncementListView,
+    AnnouncementUpdateView,
+    AnnouncementDeleteView,
+    AdminAlertCreateView,
+    AdminAlertListView,
+    AdminAlertUpdateView,
+    AdminAlertDeleteView,
+    view_policies,
+    access_procedures,
+    download_guidelines,
+    contact_support,
+    it_help_desk,
+    student_services
     
-
     )
 
 urlpatterns = [
@@ -146,15 +173,61 @@ urlpatterns = [
     path('events/', CalendarEventListView.as_view(), name='event-list'),
     path('event/create/', CalendarEventCreateView.as_view(), name='event-create'),
     path('event/<int:pk>/update/', CalendarEventUpdateView.as_view(), name='event-update'),
-    path('api/edit-event/', edit_event, name='edit-event'),
-    path('api/delete-event/', delete_event, name='delete-event'),
+    # path('api/edit-event/', edit_event, name='edit-event'),
+    # path('api/delete-event/', delete_event, name='delete-event'),
 
     path('event/<int:pk>/delete/', CalendarEventDeleteView.as_view(), name='event-delete'),
     path('api/calendar-events/', calendar_events_api, name='calendar-events-api'),
 
     
+    #Classroom Reservation
+    path('classroom-reservations/', ClassroomReservationListView.as_view(), name='classroom_reservations'),
+    path('classroom-reservation/create/', ClassroomReservationCreateView.as_view(), name='classroom_reservation_create'),
+    path('classroom-reservation/<int:pk>/update/', ClassroomReservationUpdateView.as_view(), name='classroom_reservation_update'),
+    path('classroom-reservation/<int:pk>/delete/', ClassroomReservationDeleteView.as_view(), name='classroom_reservation_delete'),
 
+    #Classroom
+
+    path('classroom/', ClassroomListView.as_view(), name='classrooms'),
+    path('classroom/create/', ClassroomCreateView.as_view(), name='classroom-create'),
+    path('classroom/<int:pk>/update/', ClassroomUpdateView.as_view(), name='classroom-update'),
+    path('classroom/<int:pk>/delete/', ClassroomDeleteView.as_view(), name='classroom-delete'),
+
+    #Equipment Checkout
+
+    path('equipment-checkout/', EquipmentCheckoutListView.as_view(), name='equipment-checkout'),
+    path('equipment-checkout/create/', EquipmentCheckoutCreateView.as_view(), name='equipment-checkout-create'),
+    path('equipment-checkout/<int:pk>/update/', EquipmentCheckoutUpdateView.as_view(), name='equipment-checkout-update'),
+    path('equipment-checkout/<int:pk>/delete/', EquipmentCheckoutDeleteView.as_view(), name='equipment-checkout-delete'),   
     
+    #Equipment
+
+    path('equipment/', EquipmentListView.as_view(), name='equipments'),
+    path('equipment/create/', EquipmentCreateView.as_view(), name='equipment-create'),
+    path('equipment/<int:pk>/update/', EquipmentUpdateView.as_view(), name='equipment-update'),
+    path('equipment/<int:pk>/delete/', EquipmentDeleteView.as_view(), name='equipment-delete'),
+
+    # Announcement
+
+    path('announcement/', AnnouncementListView.as_view(), name='announcements'),
+    path('announcement/create/', AnnouncementCreateView.as_view(), name='announcement-create'),
+    path('announcement/<int:pk>/update/', AnnouncementUpdateView.as_view(), name='announcement-update'),
+    path('announcement/<int:pk>/delete/', AnnouncementDeleteView.as_view(), name='announcement-delete'),
+
+    # Admin Alert
+
+    path('admin-alert/', AdminAlertListView.as_view(), name='admin-alerts'),
+    path('admin-alert/create/', AdminAlertCreateView.as_view(), name='alert-create'),
+    path('admin-alert/<int:pk>/update/', AdminAlertUpdateView.as_view(), name='alert-update'),
+    path('admin-alert/<int:pk>/delete/', AdminAlertDeleteView.as_view(), name='alert-delete'),
+
+
+    path('view-policies/', view_policies, name='view-policies'),
+    path('access-procedures/', access_procedures, name='access-procedures'),
+    path('download-guidelines/', download_guidelines, name='download-guidelines'),
+    path('contact-support/', contact_support, name='contact-support'),
+    path('it-help-desk/', it_help_desk, name='it-help-desk'),
+    path('student-services/', student_services, name='student-services'),
 
     
 ]

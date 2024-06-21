@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+Classroom
+{% endblock title %}
+
+{% block breadcrumb %}
+  <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
+    <i class="fa fa-plus"></i>
+    Add new Classroom
+  </a>
+  <a class="btn btn-primary" href="{% url 'classroom_reservations' %}">
+    <i class="fa fa-plus"></i>
+    Reserve Classroom
+  </a>
+{% endblock breadcrumb %}
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="cohorttable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Capacity</th>
+          <th>Created By</th>
+          <th>Updated By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for classroom in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ classroom.name }}</td>
+            <td>{{ classroom.location }}</td>
+            <td>{{ classroom.capacity }}</td>
+
+            <td>{{ classroom.created_by }}</td>
+            <td>{{ classroom.updated_by }}</td>
+            <td>
+              <a href="{% url 'classroom-update' classroom.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'classroom-delete' classroom.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#classroomtable').DataTable({
+  });
+</script>
+{% endblock morejs %}

@@ -19,6 +19,7 @@ from django.db.models import Count
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from collections import defaultdict
+from django.utils import timezone
 
 
 from .forms import (
@@ -34,7 +35,13 @@ from .forms import (
     ProgramForm,
     CourseRegistrationPeriodForm,
     ScheduleForm,
-    CalendarEventForm
+    CalendarEventForm,
+    ClassroomReservationForm,
+    EquipmentCheckoutForm,
+    EquipmentForm,
+    ClassroomForm,
+    AnnouncementForm,
+    AdminAlertForm,
 
 )
 from .models import (
@@ -51,10 +58,17 @@ from .models import (
     Program,
     CourseRegistrationPeriod,
     Schedule,
-    CalendarEvent
+    CalendarEvent,
+    ClassroomReservation,
+    Classroom,
+    EquipmentCheckout,
+    Equipment,
+    Announcement,
+    AdminAlert
 
 
 )
+import json
 from apps.students.models import Student
 
 
@@ -80,13 +94,15 @@ class AdminDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)
         context["staffs"] = Staff.objects.all().count()
         context["users"] = User.objects.all().count()
-        enrollments = Student.objects.values('year_enrolled').annotate(number_of_students=Count('id')).order_by('year_enrolled')
-        context['enrollments'] = enrollments
-        graduations = Student.objects.filter(current_status="graduate").values('year_graduated').annotate(number_of_graduates=Count('id')).order_by('year_graduated')
-        context['graduations'] = graduations
+        enrollments = list(Student.objects.values('year_enrolled').annotate(number_of_students=Count('id')).order_by('year_enrolled'))
+        graduations = list(Student.objects.filter(current_status="graduate").values('year_graduated').annotate(number_of_graduates=Count('id')).order_by('year_graduated'))
+        context['enrollments'] = json.dumps(enrollments)
+        context['graduations'] = json.dumps(graduations)
+        today = timezone.now().date()
+        context["important_dates"] = CalendarEvent.objects.filter(event_type='important_date', start_date__gte=today).order_by('start_date')[:3]
+        context["holidays"] = CalendarEvent.objects.filter(event_type='holiday', start_date__gte=today).order_by('start_date')[:3]
         
         return context
-
 class LecturerDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
     template_name = "lecturer_dashboard.html"
 
@@ -971,15 +987,11 @@ class CalendarEventListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["form"] = CalendarEventForm()
-        
-        # Group events by type
-        events = CalendarEvent.objects.all()
-        grouped_events = defaultdict(list)
-        for event in events:
-            grouped_events[event.event_type].append(event)
-        print(grouped_events)
-
-        context["grouped_events"] = grouped_events
+        context["important_dates"] = CalendarEvent.objects.filter(event_type='important_date')
+        context["holidays"] = CalendarEvent.objects.filter(event_type='holiday')
+        context["sessions"] = AcademicSession.objects.all()
+        context["semesters"] = AcademicSemester.objects.all()
+        context["event_types"] = dict(CalendarEvent.EVENT_TYPES).items() 
         return context
     
 
@@ -1047,38 +1059,29 @@ def calendar_events_api(request):
 
     return JsonResponse(events_list, safe=False)
 
-@require_POST
-def edit_event(request):
-    event_id = request.POST.get('id')
-    event_title = request.POST.get('title')
-    event_description = request.POST.get('description')
-    event_type = request.POST.get('event_type')
-    event_start = request.POST.get('start_date')
-    event_end = request.POST.get('end_date')
-    event_semester = request.POST.get('semester')
-    event_session = request.POST.get('session')
+# @require_POST
+# def edit_event(request):
+#     event_id = request.POST.get('id')
+#     event_title = request.POST.get('title')
+#     event_description = request.POST.get('description')
+#     event_type = request.POST.get('event_type')
+#     event_start = request.POST.get('start_date')
+#     event_end = request.POST.get('end_date')
+#     event_semester = request.POST.get('semester')
+#     event_session = request.POST.get('session')
 
-    event = get_object_or_404(CalendarEvent, id=event_id)
-    event.title = event_title
-    event.description = event_description
-    event.event_type = event_type
-    event.start_date = event_start
-    event.end_date = event_end
-    event.semester = get_object_or_404(AcademicSemester, name=event_semester)
-    event.session = get_object_or_404(AcademicSession, name=event_session)
+#     event = get_object_or_404(CalendarEvent, id=event_id)
+#     event.title = event_title
+#     event.description = event_description
+#     event.event_type = event_type
+#     event.start_date = event_start
+#     event.end_date = event_end
+#     event.semester = get_object_or_404(AcademicSemester, name=event_semester)
+#     event.session = get_object_or_404(AcademicSession, name=event_session)
 
-    event.save()
+#     event.save()
 
-    return redirect('event-list')
-
-
-
-@require_POST
-def delete_event(request):
-    event_id = request.POST.get('id')
-    event = get_object_or_404(CalendarEvent, id=event_id)
-    event.delete()
-    return redirect('event-list')
+#     return redirect('event-list')
 
 class CalendarEventUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     model = CalendarEvent
@@ -1120,3 +1123,345 @@ class CalendarEventDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteVie
         return self.success_message.format(self.object.title)
     
 
+class ClassroomReservationListView(LoginRequiredMixin, ListView):
+    model = ClassroomReservation
+    template_name = 'corecode/classroom_reservation_list.html'
+    context_object_name = 'reservations'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['classrooms'] = Classroom.objects.all()
+        context['form'] = ClassroomReservationForm()
+        context['eform'] = ClassroomForm()  
+        return context
+
+class ClassroomReservationCreateView(LoginRequiredMixin, CreateView):
+    model = ClassroomReservation
+    form_class = ClassroomReservationForm
+    template_name = 'corecode/mgt_form.html'
+    success_url = '/classroom-reservations/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    
+class ClassroomReservationUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    model = ClassroomReservation
+    form_class = ClassroomReservationForm
+    template_name = 'corecode/mgt_form.html'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse('classroom_reservations')
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+class ClassroomReservationDeleteView(UserPassesTestMixin ,LoginRequiredMixin, DeleteView):
+    model = ClassroomReservation
+    template_name = 'corecode/core_confirm_delete.html'
+    success_url = '/classroom-reservations/'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, 'Classroom reservation successfully deleted')
+        return super().delete(request, *args, **kwargs)
+    
+# Classroom
+    
+class ClassroomListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Classroom
+    template_name = "corecode/classroom_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = ClassroomForm()
+        return context
+    
+
+class ClassroomCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Classroom
+    form_class = ClassroomForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("classrooms")
+    success_message = "New Classroom successfully added"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+
+
+class ClassroomUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Classroom
+    form_class = ClassroomForm
+    success_url = reverse_lazy("classrooms")
+    success_message = "Classroom successfully updated."
+    template_name = "corecode/mgt_form.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class ClassroomDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Classroom
+    success_url = reverse_lazy("classrooms")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Classroom {} has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.name))
+        return super(ClassroomDeleteView, self).delete(request, *args, **kwargs)
+class EquipmentCheckoutListView(LoginRequiredMixin, ListView):
+    model = EquipmentCheckout
+    template_name = 'corecode/equipment_checkout_list.html'
+    context_object_name = 'checkouts'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = EquipmentCheckoutForm() 
+        context['eform'] = EquipmentForm()
+        context['equipment'] = Equipment.objects.all()
+        return context
+    
+class   EquipmentListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Equipment
+    template_name = 'corecode/equipment_list.html'
+    context_object_name = 'equipments'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form'] = EquipmentForm()
+        return context
+
+class EquipmentCheckoutCreateView(LoginRequiredMixin, CreateView):
+    model = EquipmentCheckout
+    form_class = EquipmentCheckoutForm
+    template_name = 'corecode/equipment_checkout_form.html'
+    success_url = '/equipment-checkout/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    
+class EquipmentCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Equipment
+    form_class = EquipmentForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("equipments")
+    success_message = "New Equipment successfully added"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    
+    
+class EquipmentCheckoutUpdateView(UserPassesTestMixin, LoginRequiredMixin, UpdateView):
+    model = EquipmentCheckout
+    form_class = EquipmentCheckoutForm
+    template_name = 'corecode/mgt_form.html'
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_success_url(self):
+        return reverse('equipment-checkout')
+    
+class EquipmentUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Equipment
+    form_class = EquipmentForm
+    success_url = reverse_lazy("equipments")
+    success_message = "Equipment successfully updated."
+    template_name = "corecode/mgt_form.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+class EquipmentCheckoutDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = EquipmentCheckout
+    template_name = 'corecode/core_confirm_delete.html'
+    success_url = '/equipment-checkout/'
+
+    def test_func(self):
+        return self.request.user == self.object.user
+    
+    def delete(self, request, *args, **kwargs):
+        messages.success(request, 'Equipment checkout successfully deleted')
+        return super().delete(request, *args, **kwargs)
+    
+class EquipmentDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Equipment
+    success_url = reverse_lazy("equipments")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Equipment {} has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.name))
+        return super(EquipmentDeleteView, self).delete(request, *args, **kwargs)
+    
+
+# Announcement View
+    
+class AnnouncementListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = Announcement
+    template_name = "corecode/announcement_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = AnnouncementForm()
+        return context
+    
+
+class AnnouncementCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = Announcement
+    form_class = AnnouncementForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("announcements")
+    success_message = "Announcement sent successfully!"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class AnnouncementUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = Announcement
+    form_class = AnnouncementForm
+    success_url = reverse_lazy("announcements")
+    success_message = "Announcement successfully updated."
+    template_name = "corecode/mgt_form.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class AnnouncementDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = Announcement
+    success_url = reverse_lazy("announcements")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Announcement {} has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.title))
+        return super(AnnouncementDeleteView, self).delete(request, *args, **kwargs)
+    
+
+class AdminAlertListView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+    model = AdminAlert
+    template_name = "corecode/admin_alert_list.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["form"] = AdminAlertForm()
+        return context
+    
+
+class AdminAlertCreateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    model = AdminAlert
+    form_class = AdminAlertForm
+    template_name = "corecode/mgt_form.html"
+    success_url = reverse_lazy("admin-alerts")
+    success_message = "Admin Alert sent successfully!"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+    
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class AdminAlertUpdateView(UserPassesTestMixin, LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    model = AdminAlert
+    form_class = AdminAlertForm
+    success_url = reverse_lazy("admin-alerts")
+    success_message = "Admin Alert successfully updated."
+    template_name = "corecode/mgt_form.html"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def form_valid(self, form):
+        obj = self.object
+        return super().form_valid(form)
+    
+
+class AdminAlertDeleteView(UserPassesTestMixin, LoginRequiredMixin, DeleteView):
+    model = AdminAlert
+    success_url = reverse_lazy("admin-alerts")
+    template_name = "corecode/core_confirm_delete.html"
+    success_message = "The Admin Alert {} has been deleted with all its attached content"
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message.format(obj.title))
+        return super(AdminAlertDeleteView, self).delete(request, *args, **kwargs)
+    
+
+from django.shortcuts import render
+
+def view_policies(request):
+    return render(request, 'corecode/view_policies.html')
+
+def access_procedures(request):
+    return render(request, 'corecode/access_procedures.html')
+
+def download_guidelines(request):
+    return render(request, 'corecode/download_guidelines.html')
+
+def contact_support(request):
+    return render(request, 'corecode/contact_support.html')
+
+def it_help_desk(request):
+    return render(request, 'corecode/it_help_desk.html')
+
+def student_services(request):
+    return render(request, 'corecode/student_services.html')

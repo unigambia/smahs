@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center">Access Procedures</h1>
+
+    <nav class="mt-4">
+        <ul class="nav nav-pills flex-column flex-sm-row">
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link active" href="#access-to-facilities">Access to Facilities</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#library-access">Library Access</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#it-services">IT Services</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#clinical-lab-access">Clinical Lab Access</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#security-and-privacy">Security and Privacy</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="access-to-facilities" class="mt-4">
+        <h2>Access to Facilities</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>General Access</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Eligibility:</strong> All students, faculty, and staff are eligible for access to campus facilities during operating hours. Identification badges must be worn at all times.</p>
+                <p><strong>Hours of Operation:</strong> The facilities are open from 6 AM to 10 PM on weekdays and from 8 AM to 8 PM on weekends.</p>
+                <p><strong>Access Procedures:</strong> Swipe your ID card at the entrance to gain access. Report any issues with access to the campus security office.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="library-access" class="mt-4">
+        <h2>Library Access</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Library Services</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Eligibility:</strong> All enrolled students, faculty, and staff have access to the library and its resources.</p>
+                <p><strong>Operating Hours:</strong> The library is open from 8 AM to 11 PM on weekdays and from 9 AM to 9 PM on weekends.</p>
+                <p><strong>Borrowing Materials:</strong> Present your ID card at the circulation desk to borrow books and other materials. Online resources can be accessed using your institutional login credentials.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="it-services" class="mt-4">
+        <h2>IT Services</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>IT Support and Services</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Eligibility:</strong> IT services are available to all students, faculty, and staff.</p>
+                <p><strong>Help Desk:</strong> The IT help desk is available 24/7 for technical support. Contact them at (123) 456-7890 or it-support@medschool.edu.</p>
+                <p><strong>Services Provided:</strong> IT services include email support, software installations, network access, and troubleshooting hardware issues.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="clinical-lab-access" class="mt-4">
+        <h2>Clinical Lab Access</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Access to Clinical Laboratories</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Eligibility:</strong> Access to clinical labs is restricted to students enrolled in relevant courses, faculty, and authorized staff.</p>
+                <p><strong>Safety Protocols:</strong> All individuals must complete safety training before accessing the labs. Follow all posted safety procedures and wear appropriate protective gear.</p>
+                <p><strong>Access Procedures:</strong> Schedule lab time through the lab coordinator. Swipe your ID card at the lab entrance to gain access.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="security-and-privacy" class="mt-4">
+        <h2>Security and Privacy</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Maintaining Security and Privacy</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Data Security:</strong> All users must adhere to data security protocols to protect personal and institutional information. Report any security breaches immediately to the IT department.</p>
+                <p><strong>Privacy Policies:</strong> Respect the privacy of fellow students, faculty, and staff. Personal information should not be shared without consent.</p>
+                <p><strong>Secure Access:</strong> Use strong passwords for all institutional accounts and do not share your login credentials with others.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

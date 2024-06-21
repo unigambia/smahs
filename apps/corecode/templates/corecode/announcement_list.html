@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+Announcements
+{% endblock title %}
+
+{% block breadcrumb %}
+  <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
+    <i class="fa fa-plus"></i>
+    Send Announcement
+  </a>
+{% endblock breadcrumb %}
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="announcementtable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Recipient</th>
+          <th>Title</th>
+          <th>Message</th>
+          <th>File</th>
+          <th>Created By</th>
+          <th>Updated By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for announcement in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ announcement.recipient }}</td>
+            <td>{{ announcement.title }}</td>
+            <td>{{ announcement.message }}</td>
+            {% if announcement.file %}
+              <td><a href="{{ announcement.file.url }}" target="_blank"><button class="btn-primary btn-sm">Download</button></a></td>
+            {% else %}
+              <td>N/A</td>
+            {% endif %}
+            <td>{{ announcement.created_by }}</td>
+            <td>{{ announcement.updated_by }}</td>
+            <td>
+              <a href="{% url 'announcement-update' announcement.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'announcement-delete' announcement.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="sendAnnouncementModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sendAnnouncementModalLabel">Send Announcement</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="sendAnnouncementForm" method="post" action="{% url 'announcement-create' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="announcementRecipient">Recipient</label>
+                        <select class="form-control" id="announcementRecipient" name="recipient" required>
+                            <option value="students">Students</option>
+                            <option value="faculty">Faculty</option>
+                            <option value="institution">Institution</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="announcementTitle">Title</label>
+                        <input type="text" class="form-control" id="announcementTitle" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="announcementMessage">Message</label>
+                        <textarea class="form-control" id="announcementMessage" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="announcementFile">Attachment</label>
+                        <input type="file" class="form-control-file" id="announcementFile" name="file">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#announcementtable').DataTable({
+  });
+</script>
+{% endblock morejs %}

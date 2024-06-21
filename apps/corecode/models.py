@@ -320,7 +320,6 @@ class CalendarEvent(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     event_type = models.CharField(max_length=50, choices=EVENT_TYPES)
-
     session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE, null=True, blank=True)
     semester = models.ForeignKey(AcademicSemester, on_delete=models.CASCADE, null=True, blank=True)
     created_by = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
@@ -330,3 +329,97 @@ class CalendarEvent(models.Model):
     def __str__(self):
         return self.title
     
+class Classroom(models.Model):
+    name = models.CharField(max_length=100)
+    location = models.CharField(max_length=100)
+    capacity = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, related_name='classroom_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='classroom_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+    
+
+    def __str__(self):
+        return self.name
+
+class ClassroomReservation(models.Model):
+    classroom = models.ForeignKey(Classroom, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    start_time = models.DateTimeField()
+    end_time = models.DateTimeField()
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, related_name='classroom_reservation_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='classroom_reservation_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f"{self.classroom.name} reserved by {self.user.username} from {self.start_time} to {self.end_time}"
+    
+class Equipment(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True, null=True)
+    quantity = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, related_name='equipment_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='equipment_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.name
+
+class EquipmentCheckout(models.Model):
+    equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    checkout_date = models.DateTimeField()
+    return_date = models.DateTimeField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, related_name='equipment_checkout_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='equipment_checkout_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f"{self.equipment.name} checked out by {self.user.username} on {self.checkout_date}"
+    
+# announcement
+class Announcement(models.Model):
+    RECIPIENT_CHOICES = [
+        ('students', 'Students'),
+        ('faculty', 'Faculty'),
+        ('institution', 'Institution')
+    ]
+    recipient = models.CharField(max_length=20, choices=RECIPIENT_CHOICES)
+    title = models.CharField(max_length=200)
+    message = models.TextField()
+    file = models.FileField(upload_to="announcements", null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, related_name='announcement_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='announcement_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f"{self.get_recipient_display()} - {self.title}"
+
+class AdminAlert(models.Model):
+    ALERT_TYPE_CHOICES = [
+        ('deadlines', 'Important Deadlines'),
+        ('policy-updates', 'Policy Updates'),
+        ('emergency-notifications', 'Emergency Notifications')
+    ]
+    alert_type = models.CharField(max_length=30, choices=ALERT_TYPE_CHOICES)
+    title = models.CharField(max_length=200)
+    message = models.TextField()
+    file = models.FileField(upload_to="admin_alerts", null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    created_by = models.ForeignKey(User, related_name='admin_alert_created_by', null=True, blank=True, on_delete=models.SET_NULL)
+    updated_by = models.ForeignKey(User, related_name='admin_alert_updated_by', null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return f"{self.get_alert_type_display()} - {self.title}"
+
+
+
+
+

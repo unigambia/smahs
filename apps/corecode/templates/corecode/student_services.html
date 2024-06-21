@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center">Student Services</h1>
+
+    <nav class="mt-4">
+        <ul class="nav nav-pills flex-column flex-sm-row">
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link active" href="#academic-advising">Academic Advising</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#counseling-services">Counseling Services</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#career-services">Career Services</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#financial-aid">Financial Aid</a>
+            </li>
+            <li class="nav-item flex-sm-fill text-sm-center">
+                <a class="nav-link" href="#health-services">Health Services</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="academic-advising" class="mt-4">
+        <h2>Academic Advising</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Overview</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Academic advising helps students to navigate their educational pathways, make informed decisions about their courses, and achieve their academic goals.</p>
+                <p><strong>Services Provided:</strong> Course selection guidance, academic performance review, degree requirements clarification, and academic planning.</p>
+                <p><strong>How to Access:</strong> Schedule an appointment with an academic advisor through the student portal or visit the advising office during drop-in hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="counseling-services" class="mt-4">
+        <h2>Counseling Services</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Mental Health and Wellness</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Counseling services support the mental health and emotional well-being of students. Services include individual counseling, group therapy, and workshops on stress management, anxiety, and other topics.</p>
+                <p><strong>Confidentiality:</strong> All counseling sessions are confidential, and information is not shared without the student's consent.</p>
+                <p><strong>How to Access:</strong> Contact the counseling center to schedule an appointment or attend walk-in hours for immediate support.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="career-services" class="mt-4">
+        <h2>Career Services</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Career Development and Job Placement</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Career services assist students in exploring career options, preparing for the job market, and securing employment. Services include resume reviews, mock interviews, job search strategies, and networking opportunities.</p>
+                <p><strong>Workshops and Events:</strong> Attend workshops and career fairs to enhance your job search skills and connect with potential employers.</p>
+                <p><strong>How to Access:</strong> Schedule an appointment with a career advisor through the career services portal or attend drop-in hours.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="financial-aid" class="mt-4">
+        <h2>Financial Aid</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Financial Assistance and Scholarships</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> The financial aid office provides assistance to students in securing financial resources to support their education. Services include information on scholarships, grants, loans, and work-study programs.</p>
+                <p><strong>Application Process:</strong> Submit the Free Application for Federal Student Aid (FAFSA) and other required documents to be considered for financial aid.</p>
+                <p><strong>How to Access:</strong> Visit the financial aid office or schedule an appointment with a financial aid advisor for personalized assistance.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="health-services" class="mt-4">
+        <h2>Health Services</h2>
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3>Student Health and Wellness</h3>
+            </div>
+            <div class="card-body">
+                <p><strong>Purpose:</strong> Health services provide comprehensive healthcare to students, including primary care, preventive care, and wellness programs.</p>
+                <p><strong>Services Provided:</strong> Medical consultations, immunizations, lab tests, mental health services, and health education.</p>
+                <p><strong>How to Access:</strong> Schedule an appointment online or visit the student health center during operating hours. Emergency services are available 24/7.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock %}
