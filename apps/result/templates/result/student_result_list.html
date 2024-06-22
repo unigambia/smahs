@@ -5,11 +5,13 @@
 {% block title %}Results{% endblock title %}
 
 {% block breadcrumb %}
-<a class="btn btn-primary" href="{% url 'create-result' %}"><i class="fas fa-plus"></i> New Results</a>
-
-<a class="btn btn-primary" href="{% url 'student-upload' %}"><i class="fas fa-upload"></i> Upload Results</a>
-
-<a class="btn btn-primary" href="{% url 'download-transcript' student.id %}"><i class="fas fa-download"></i> Download Transcript </a>
+<div class="btn-toolbar" role="toolbar" aria-label="Results Actions">
+    <div class="btn-group mr-2" role="group" aria-label="First group">
+        <a class="btn btn-primary" href="{% url 'create-result' %}"><i class="fas fa-plus"></i> New Results</a>
+        <a class="btn btn-primary ml-2" href="{% url 'student-upload' %}"><i class="fas fa-upload"></i> Upload Results</a>
+        <a class="btn btn-primary ml-2" href="{% url 'download-transcript' student.id %}"><i class="fas fa-download"></i> Download Transcript </a>
+    </div>
+</div>
 {% endblock breadcrumb %}
 
 {% block content %}

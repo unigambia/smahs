@@ -1307,7 +1307,7 @@ class EquipmentCheckoutDeleteView(UserPassesTestMixin, LoginRequiredMixin, Delet
     success_url = '/equipment-checkout/'
 
     def test_func(self):
-        return self.request.user == self.object.user
+        return self.request.user.is_superuser
     
     def delete(self, request, *args, **kwargs):
         messages.success(request, 'Equipment checkout successfully deleted')

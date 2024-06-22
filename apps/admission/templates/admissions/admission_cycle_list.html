@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+Admission Cycles
+{% endblock title %}
+
+{% block breadcrumb %}
+  <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
+    <i class="fa fa-plus"></i>
+    Add new Admission Cycle
+  </a>
+{% endblock breadcrumb %}
+
+{% block content %}
+  <div class="table-responsive">
+    <table id="admissioncycletable" class="table table-bordered table-hover" data-page-length='100'>
+      <thead class="thead-light">
+        <tr>
+          <th>S/N</th>
+          <th>Name</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Created By</th>
+          <th>Updated By</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for cycle in object_list %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ cycle.name }}</td>
+            <td>{{ cycle.start_date }}</td>
+            <td>{{ cycle.end_date }}</td>
+            <td class="text-center">
+              {% if cycle.is_active %}
+                <span class="badge badge-success">Open</span>
+              {% else %}
+                <span class="badge badge-danger">Closed</span>
+              {% endif %}
+            </td>
+            <td>{{ cycle.created_by }}</td>
+            <td>{{ cycle.updated_by }}</td>
+            <td>
+              <a href="{% url 'admission-cycle-update' cycle.id %}"><i class="fa fa-edit"></i></a>
+              <a href="{% url 'admission-cycle-delete' cycle.id %}" class="text-danger"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form action="{% url 'admission-cycle-create' %}" method="POST">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add new Admission Cycle</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              {% csrf_token %}
+              {% for field in form %}
+                  <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field|add_class:"form-control" }}
+                    {{ field.help_text }}
+                    {{ field.errors }}
+                  </div>
+              {% endfor %}
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{% block morejs %}
+<script>
+  $('#admissioncycletable').DataTable({
+  });
+</script>
+{% endblock morejs %}
