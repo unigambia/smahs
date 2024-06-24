@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                Contact Information for Academic Advisors and Mentors
+            </div>
+            <div class="card-body">
+                <h5>Get in touch with your academic advisors and mentors for guidance and support.</h5>
+                <p>Our academic advisors and mentors are here to help you navigate your educational journey. Whether you need assistance with course selection, understanding degree requirements, or academic planning, they are available to provide support and advice.</p>
+                <p><strong>How to Access:</strong></p>
+                <ul>
+                    <li>Schedule an appointment through the student portal.</li>
+                    <li>Visit the advising office during drop-in hours.</li>
+                    <li>Contact your assigned advisor via email or phone.</li>
+                </ul>
+                <p>For more details, visit the <a href="{% url 'advisors' %}" class="nav-link">Academic Advisors page</a>.</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

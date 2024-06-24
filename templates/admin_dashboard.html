@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
     <div class="container mt-5">
         <h1>Dashboard Overview</h1>
@@ -412,9 +411,6 @@
     const enrollments = JSON.parse('{{ enrollments|escapejs }}');
     const graduations = JSON.parse('{{ graduations|escapejs }}');
 
-    console.log('Enrollments:', enrollments);
-    console.log('Graduations:', graduations);
-
     // Prepare data for Enrollment Chart
     const enrollmentYears = enrollments.map(item => item.year_enrolled);
     const enrollmentNumbers = enrollments.map(item => item.number_of_students);
@@ -523,9 +519,5 @@
     };
 </script>
 
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 {% endblock morejs %}

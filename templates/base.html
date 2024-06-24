@@ -7,20 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
-
   <title>SMAHS</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
   <link href="{% static 'select2/css/select2.min.css' %}" rel="stylesheet">
-
   <!-- overlayScrollbars -->
   <link rel="stylesheet"
     href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
   <link rel="stylesheet" href="{% static 'plugins/Datatables/datatables.min.css' %}" />
-    <!-- Theme style -->
+  <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
   <link rel="stylesheet" href="{% static 'dist/css/admin-dashboard.css' %}">
 
@@ -37,7 +34,6 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="{% static 'select2/js/select2.min.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 
 </head>
 
@@ -59,7 +55,7 @@
           <a href="{% url 'current-session' %}" class="nav-link">Session: {{ current_session }}</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="{% url 'current-session' %}" class="nav-link">Term: {{ current_semester }}</a>
+          <a href="{% url 'current-session' %}" class="nav-link">Program': {{ current_semester }}</a>
         </li>
       </ul>
       <!-- logged in user -->
@@ -70,20 +66,29 @@
       </ul>
 
 
-      <!-- Right navbar links -->      
+      <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="fas fa-bell"></i>  </a>
         <!-- Notifications Dropdown Menu -->
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-bell"></i>
+          </a>
+          <!-- Notifications Dropdown Menu -->
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> 4 new messages
+            </a>
+          </div>
+        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="far fa-user"></i>
           </a>
-  
-            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-              <a href="{% url 'profile' user.pk  %}" class="dropdown-item">
-                <i class="fas fa-user mr-2"></i> Profile
-              </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <a href="{% url 'profile' user.pk %}" class="dropdown-item">
+              <i class="fas fa-user mr-2"></i> Profile
+            </a>
             <div class="dropdown-divider"></div>
             <a href="{% url 'logout' %}" class="dropdown-item">
               <i class="fas fa-sign-out"></i> Sign out
@@ -99,7 +104,7 @@
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+   <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
       {% if request.user.is_superuser %}
       <a href="{% url 'admin' %}" class="brand-link">SMAHS</a>
@@ -113,101 +118,75 @@
 
       <!-- Sidebar -->
       <div class="sidebar">
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column"
-            data-widget="treeview" role="menu" data-accordion="false">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             {% if request.user.is_staff and not request.user.is_superuser %}
-
             <li class="nav-item">
               <a href="{% url 'lecturer' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
-                <p>
-                 Dashboard
-                </p>
+                <p>Dashboard</p>
               </a>
             </li>
             {% endif %}
             {% if not request.user.is_superuser and not request.user.is_staff %}
-
             <li class="nav-item">
               <a href="{% url 'student' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
-                <p>
-                 Dashboard
-                </p>
+                <p>Dashboard</p>
               </a>
             </li>
             {% endif %}
             {% if request.user.is_superuser %}
-            
             <li class="nav-item">
               <a href="{% url 'admin' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
-                <p>
-                  Dashboard
-                </p>
+                <p>Dashboard</p>
               </a>
             </li>
-            <li class="nav-header"> Student and Faculty </li>
+            <li class="nav-header">Student and Faculty</li>
             <li class="nav-item">
               <a href="{% url 'student-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-graduation-cap"></i>
-                <p>
-                  Students
-                </p>
+                <p>Students</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'staff-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-users"></i>
-                <p>
-                  Lecturers
-                </p>
+                <p>Lecturers</p>
               </a>
             </li>
             {% endif %}
             {% if request.user.is_superuser %}
-
             <li class="nav-header">Finance</li>
             <li class="nav-item">
               <a href="{% url 'invoice-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  Invoices
-                </p>
+                <p>Invoices</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{% url 'clearance-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  Clearance
-                </p>
+                <p>Clearance</p>
               </a>
             </li>
             {% endif %}
             {% if request.user.is_superuser %}
-
             <li class="nav-header">Results</li>
             <li class="nav-item">
               <a href="{% url 'create-result' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  Create Results
-                </p>
+                <p>Create Results</p>
               </a>
             </li>
-           
             {% endif %}
             {% if request.user.is_superuser %}
             <li class="nav-item">
               <a href="{% url 'result-student-list' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  View Results
-                </p>
+                <p>View Results</p>
               </a>
             </li>
             {% endif %}
@@ -215,55 +194,38 @@
             <li class="nav-item">
               <a href="{% url 'result-detail' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  Transcript
-                </p>
+                <p>Transcript</p>
               </a>
             </li>
             {% endif %}
             {% if request.user.is_staff and not request.user.is_superuser %}
-
             <li class="nav-header">Class</li>
             <li class="nav-item">
               <a href="{% url 'staff-courses' %}" class="nav-link">
                 <i class="nav-icon fas fa-money-bill-alt"></i>
-                <p>
-                  Class
-                </p>
+                <p>Class</p>
               </a>
             </li>
-            
             {% endif %}
-    
             {% if not request.user.is_staff and not request.user.is_superuser %}
-
             <li class="nav-item">
               <a href="{% url 'course-registration' %}" class="nav-link">
                 <i class="nav-icon fas fa-clipboard"></i>
-                <p>
-                  Course Registration
-                </p>
+                <p>Course Registration</p>
               </a>
             </li>
-
             <li class="nav-item">
               <a href="{% url 'registered-courses' %}" class="nav-link">
                 <i class="nav-icon fas fa-clipboard"></i>
-                <p>
-                  Registered Courses
-                </p>
+                <p>Registered Courses</p>
               </a>
             </li>
-
             {% endif %}
             {% if request.user.is_superuser %}
-
             <li class="nav-header">Others</li>
-          
             <li class="nav-item has-treeview">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-copy"></i>
-              
                 <p>
                   Management
                   <i class="fas fa-angle-left right"></i>
@@ -273,92 +235,60 @@
                 <li class="nav-item">
                   <a href="{% url 'sessions' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Sessions
-                    </p>
+                    <p>Sessions</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'semesters' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Rotation / Semester  
-                      <i class="right"></i>
-                    </p>
+                    <p>Rotation / Semester</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'courses' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Courses
-                    </p>
+                    <p>Courses</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'course-registration-periods' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Registration Period
-                    </p>
+                    <p>Registration Period</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'cohorts' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Cohorts
-                    </p>
+                    <p>Cohorts</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'departments' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Departments
-                    </p>
+                    <p>Departments</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'programs' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Programs
-                    </p>
+                    <p>Programs</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="{% url 'exams-list' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Exams
-                    </p>
+                    <p>Exams</p>
                   </a>
                 </li>
-
-                 <li class="nav-item">
+                <li class="nav-item">
                   <a href="{% url 'users' %}" class="nav-link">
                     <i class="nav-icon fas fa-bars"></i>
-                    <p>
-                      Users
-                    </p>
+                    <p>Users</p>
                   </a>
                 </li>
-
               </ul>
             </li>
             {% endif %} 
-  <!-- 
-              <li class="nav-item">
-                <a href="{% url 'configs' %}" class="nav-link">
-                  <i class="nav-icon fas fa-cog"></i>
-                  <p>
-                    Settings
-                  </p>
-                </a>
-              </li> -->
-
-
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -394,14 +324,12 @@
                   <div class="row">
                     <div class="col">
                       {% block content %}
-
                       {% endblock content %}
                     </div>
                   </div>
                   <!-- /.row -->
                 </div>
                 <!-- ./card-body -->
-
               </div>
               {% endblock fullcard %}
               <!-- /.card -->
@@ -463,7 +391,7 @@
     <script src="vendor/vector-map/jquery.vmap.min.js"></script>
     <script src="vendor/vector-map/jquery.vmap.sampledata.js"></script>
     <script src="vendor/vector-map/jquery.vmap.world.js"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 
   {% if messages %}
   {% for message in messages %}

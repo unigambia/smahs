@@ -2,14 +2,17 @@
 {% load widget_tweaks %}
 
 {% block title %}
-Schedule Management
+  Class Schedule
 {% endblock title %}
 
 {% block breadcrumb %}
+{% if user.is_superuser %}
   <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#modal1">
     <i class="fa fa-plus"></i>
     Add new Schedule
   </a>
+{% endif %}
+
 {% endblock breadcrumb %}
 
 {% block content %}

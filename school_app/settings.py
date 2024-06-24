@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     "apps.staffs",
     "apps.finance",
     "apps.result",
-    "apps.admission",
+    "apps.admission",   
     "users",
 
 ]
@@ -159,9 +159,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 MEDIA_URL = "/media/"
 
-LOGIN_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/login"
 
-LOGOUT_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/login"
 
 
 SESSION_SAVE_EVERY_REQUEST = True

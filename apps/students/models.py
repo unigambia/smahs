@@ -4,7 +4,6 @@ from django.urls import reverse
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 from apps.corecode.models import StudentCohort
-from apps.corecode.models import Course
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 from django.db.models.signals import post_save
@@ -33,6 +32,7 @@ class Student(models.Model):
     current_cohort = models.ForeignKey(
         StudentCohort, on_delete=models.SET_NULL, blank=True, null=True
     )
+    major = models.ForeignKey('corecode.Program', on_delete=models.SET_NULL, blank=True, null=True, default=None)
     date_of_admission = models.DateField(default=timezone.now)
 
     mobile_num_regex = RegexValidator(

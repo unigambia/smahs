@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
     <div class="container mt-5">
         <h1>Dashboard Overview</h1>
 
-        <!-- Profile Overview -->
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="card">
@@ -13,23 +12,31 @@
                         Profile Overview
                     </div>
                     <div class="card-body">
+                        {% if student %}
                         <div class="row">
-                            <div class="col-md-3">
-                                <img src="profile_photo_url" alt="Profile Photo" class="img-fluid rounded-circle">
+                            <div class="col-md-3 text-center">
+                                {% if student.passport %}
+                                <img src="{{ student.passport.url }}" alt="Profile Photo" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                                {% else %}
+                                <img src="{% static 'dist/img/avatar.png' %}" alt="Profile Photo" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+                                {% endif %}
                             </div>
                             <div class="col-md-9">
-                                <h5>Name: John Doe</h5>
-                                <p>Student ID: 123456</p>
-                                <p>Current Year: 2nd Year</p>
-                                <p>Major: Medicine</p>
-                                <p>GPA: 3.8</p>
+                                <h5><strong>Name:</strong> {{ student.surname }} {{ student.firstname }} {{ student.other_name }}</h5><hr>
+                                <p><strong>Mat Number:</strong> {{ student.mat_number }}</p><hr>
+                                <p><strong>Status:</strong> {{ student.current_status }}</p><hr>
+                                <p><strong>Cohort:</strong> {{ student.current_cohort.name }}</p><hr>
+                                <p><strong>Major:</strong> {{ student.major.name }}</p><hr>
+                                <p><strong>GPA:</strong> {{ gpa }}</p><hr>
                             </div>
                         </div>
+                        {% else %}
+                        <p>No student data available.</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- Course Information -->
         <div class="row mt-4">
             <div class="col-md-12">
@@ -42,17 +49,22 @@
                             <div class="col-md-6">
                                 <h5>Current Courses</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Anatomy</li>
-                                    <li class="list-group-item">Physiology</li>
-                                    <li class="list-group-item">Biochemistry</li>
+                                    {% for course in current_courses %}
+                                    <li class="list-group-item">{{ course.course.name }}</li><hr>
+                                    {% empty %}
+                                    <li class="list-group-item">No courses registered.</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                             <div class="col-md-6">
                                 <h5>Resources and Grades</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Course Materials</li>
-                                    <li class="list-group-item">Grades and Performance Tracking</li>
-                                    <li class="list-group-item">Registration for Upcoming Courses</li>
+                                    <a href="{% url 'registered-courses' %}" class="nav-link">
+                                    <li class="list-group-item">Course Materials</li></a>
+                                    <a href="{% url 'result-detail' %}" class="nav-link">
+                                    <li class="list-group-item">Grades and Performance Tracking</li></a>
+                                    <a href="{% url 'course-registration' %}" class="nav-link">
+                                    <li class="list-group-item">Registration for Upcoming Courses</li></a>
                                 </ul>
                             </div>
                         </div>
@@ -74,17 +86,39 @@
                                 <h5>Academic Calendar</h5>
                                 <ul class="list-group">
                                     <li class="list-group-item">Important Dates and Holidays</li>
-                                    <li class="list-group-item">Class Schedules</li>
-                                    <li class="list-group-item">Exam Schedules</li>
+                                    <ul class="list-group">
+                                        {% for event in important_dates %}
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                {{ event.title }}
+                                                <span class="badge badge-success badge-pill">{{ event.start_date|date:"F j" }} </span>
+                                                <span class="badge badge-danger badge-pill">{{ event.end_date | date:"F j" }} </span>
+
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
                                     <li class="list-group-item">Events and Extracurricular Activities</li>
+                                    <ul class="list-group">
+                                        {% for event in holidays %}
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                {{ event.title }}
+                                                <span class="badge badge-success badge-pill">{{ event.start_date|date:"F j" }} </span>
+                                                <span class="badge badge-danger badge-pill">{{ event.end_date | date:"F j" }} </span>
+
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
                                 </ul>
                             </div>
                             <div class="col-md-6">
-                                <h5>Class Schedule</h5>
+                                <a href="{% url 'schedules' %}" class="nav-link"><h5>Class Schedule</h5> </a>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Monday: Anatomy, Physiology</li>
-                                    <li class="list-group-item">Wednesday: Biochemistry</li>
-                                    <li class="list-group-item">Friday: Clinical Skills</li>
+                                    {% for schedule in schedules %}
+                                    <li class="list-group-item"> {{ schedule.course.name }} - {{ schedule.day }} - {{ schedule.start_time }} - {{ schedule.end_time }}</li>
+                                    {% empty %}
+                                    <li class="list-group
+                                    -item">No class schedule available.</li>
+                                    {% endfor %}
+
                                 </ul>
                             </div>
                         </div>
@@ -93,25 +127,39 @@
             </div>
         </div>
 
-        <!-- Announcements and Notifications -->
         <div class="row mt-4">
             <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-info text-white">
                         Announcements and Notifications
                     </div>
                     <div class="card-body">
+                        {% if announcements %}
                         <ul class="list-group">
-                            <li class="list-group-item">Important Announcements from Administration</li>
-                            <li class="list-group-item">Alerts for Upcoming Deadlines (Assignments, Exams, Registration)</li>
-                            <li class="list-group-item">Messages from Instructors</li>
+                            {% for announcement in announcements %}
+                            <li class="list-group-item">
+                                <h5>{{ announcement.title }}</h5>
+                                <p>{{ announcement.message }}</p>
+                                {% if announcement.file %}
+                                <a href="{{ announcement.file.url }}" target="_blank" class="btn btn-primary btn-sm">Download Attachment</a>
+
+                                {% else %}
+                                <p>No attachment available.</p>
+                                {% endif %}
+                                <br>
+                                <small class="text-muted">Posted on: {{ announcement.created_at|date:"F j, Y" }}</small>
+                            </li>
+                            {% endfor %}
                         </ul>
+                        {% else %}
+                        <p>No announcements available.</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Resources and Tools -->
+    </div>
+        <!-- Resources and Tools
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="card">
@@ -128,26 +176,39 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Student Services -->
         <div class="row mt-4">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header bg-primary text-white">
                         Student Services
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
-                            <li class="list-group-item">Contact Information for Academic Advisors and Mentors</li>
-                            <li class="list-group-item">Health and Wellness Resources</li>
-                            <li class="list-group-item">Career Services and Job Placement Information</li>
-                            <li class="list-group-item">Financial Aid and Scholarship Information</li>
+                            <li class="list-group-item">
+                                <a href="{% url 'contact-details' %}" class="nav-link"><h5>Contact Information for Academic Advisors and Mentors</h5></a>
+                                <p>Get in touch with your academic advisors and mentors for guidance and support.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'health-services' %}" class="nav-link"><h5>Health and Wellness Resources</h5></a>
+                                <p>Access various health and wellness resources to support your well-being.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'career-services' %}" class="nav-link"><h5>Career Services and Job Placement Information</h5></a>
+                                <p>Find career services and job placement information to help you transition into the workforce.</p>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{% url 'financial-aid' %}" class="nav-link"><h5>Financial Aid and Scholarship Information</h5></a>
+                                <p>Learn about financial aid and scholarship opportunities available to you.</p>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-
+        
     </div>
 {% endblock content %}

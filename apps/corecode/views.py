@@ -20,6 +20,8 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_POST
 from collections import defaultdict
 from django.utils import timezone
+from django.contrib.auth.views import LoginView as BaseLoginView
+
 
 
 from .forms import (
@@ -44,6 +46,7 @@ from .forms import (
     AdminAlertForm,
 
 )
+from ..result.models import Result
 from .models import (
     AcademicSession,
     AcademicSemester,
@@ -65,23 +68,24 @@ from .models import (
     Equipment,
     Announcement,
     AdminAlert
-
-
 )
 import json
 from apps.students.models import Student
 
 
-class DashboardView(LoginRequiredMixin, TemplateView):
-    
-   def get_template_names(self):
+def redirect_to_login(request):
+    return redirect(reverse('login'))
+class LoginView(BaseLoginView):
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
         user = self.request.user
         if user.is_superuser:
-            return "admin_dashboard.html"
+            return reverse_lazy('admin')
         elif user.is_staff:
-            return "lecturer_dashboard.html"
+            return reverse_lazy('lecturer')
         else:
-            return "student_dashboard.html"
+            return reverse_lazy('student')
 
 
 class AdminDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
@@ -115,24 +119,49 @@ class LecturerDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateVie
         # context["students"] = StudentCourse.objects.filter(course__lecturer=self.request.user.staff).count()
         context["sessions"] = AcademicSession.objects.all().count()
         context["semesters"] = AcademicSemester.objects.all().count()
+        today = timezone.now().date()
+        context["holidays"] = CalendarEvent.objects.filter(event_type='holiday', start_date__gte=today).order_by('start_date')[:3]
+        context["important_dates"] = CalendarEvent.objects.filter(event_type='important_date', start_date__gte=today).order_by('start_date')[:3]
+
         return context
 
 class StudentDashboardView(UserPassesTestMixin, LoginRequiredMixin, TemplateView):
     template_name = "student_dashboard.html"
 
     def test_func(self):
-        return not self.request.user.is_staff or self.request.user.is_superuser
-
+        return not self.request.user.is_staff and not self.request.user.is_superuser
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        student = Student.objects.get(user=self.request.user)
-        context["courses"] = StudentCourse.objects.filter(student=student).count()        
-        context["sessions"] = AcademicSession.objects.all().count()
-        context["semesters"] = AcademicSemester.objects.all().count()
-        context["assignments"] = CourseMaterial.objects.filter(type="assignment").count()
-        context["cohort_students"] = Student.objects.filter(current_cohort=self.request.user.student.current_cohort).count()
+        try:
+            student = Student.objects.get(user=self.request.user)
+            context["student"] = student
+            # Calculate GPA
+            results = Result.objects.filter(student=student)
+            total_points = sum(result.gpa() for result in results if result.gpa() is not None)
+            total_courses = results.count()
+            gpa = total_points / total_courses if total_courses > 0 else None
+            context["gpa"] = round(gpa, 2) if gpa is not None else 0.0
+            current_courses = StudentCourse.objects.filter(student=student)
+            context["current_courses"] = current_courses
+            
+            # Get schedules for the student's courses
+            registered_courses = current_courses.values_list('course', flat=True)
+            context['schedules'] = Schedule.objects.filter(course__in=registered_courses).order_by('day', 'start_time')
+            context["current_courses"] = current_courses
+            today = timezone.now().date()
 
-        return context    
+            announcements = Announcement.objects.filter(recipient='students').order_by('created_at')[:3]
+            context["announcements"] = announcements
+            context["holidays"] = CalendarEvent.objects.filter(event_type='holiday', start_date__gte=today).order_by('start_date')[:3]
+            context["important_dates"] = CalendarEvent.objects.filter(event_type='important_date', start_date__gte=today).order_by('start_date')[:3]
+        except Student.DoesNotExist:
+            context["student"] = None
+            context["gpa"] = 0.0
+            context["current_courses"] = []
+            context["announcements"] = []
+
+        return context
 
 
 class SiteConfigView(LoginRequiredMixin, View):
@@ -886,13 +915,10 @@ class CourseRegistrationPeriodCreateView(UserPassesTestMixin, LoginRequiredMixin
         obj = self.object
         return super().form_valid(form)
 
-class ScheduleManagementView(UserPassesTestMixin, LoginRequiredMixin, ListView):
+class ScheduleManagementView(LoginRequiredMixin, ListView):
     model = Schedule
     template_name = 'corecode/schedule_management.html'
     context_object_name = 'schedules'
-
-    def test_func(self):
-        return self.request.user.is_superuser
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -1465,3 +1491,18 @@ def it_help_desk(request):
 
 def student_services(request):
     return render(request, 'corecode/student_services.html')
+
+def contact_details(request):
+    return render(request, 'corecode/contact_details.html')
+
+def career_services(request):
+    return render(request, 'corecode/career-services.html')
+
+def advisors(request):
+    return render(request, 'corecode/advisors.html')
+
+def health_services(request):
+    return render(request, 'corecode/health_wellness.html')
+
+def financial_aid(request):
+    return render(request, 'corecode/scholarship.html')

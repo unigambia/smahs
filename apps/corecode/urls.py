@@ -34,7 +34,6 @@ from .views import (
     AdminDashboardView,
     LecturerDashboardView,
     StudentDashboardView,
-    DashboardView,
     DepartmentCreateView,
     DepartmentListView,
     DepartmentUpdateView,
@@ -80,18 +79,26 @@ from .views import (
     AdminAlertListView,
     AdminAlertUpdateView,
     AdminAlertDeleteView,
+    LoginView,
     view_policies,
     access_procedures,
     download_guidelines,
     contact_support,
     it_help_desk,
-    student_services
+    student_services,
+    redirect_to_login,
+    financial_aid,
+    health_services,
+    contact_details,
+    career_services,
+    advisors,
     
     )
 
 urlpatterns = [
     
-    path("", DashboardView.as_view(), name="dashboard"),
+    path('login/', LoginView.as_view(), name='login'),
+    path('', redirect_to_login, name='root_redirect'),
     path("admin/dashboard", AdminDashboardView.as_view(), name="admin"),
     path("lecturer/dashboard", LecturerDashboardView.as_view(), name="lecturer"),
     path("student/dashboard", StudentDashboardView.as_view(), name="student"),
@@ -228,6 +235,11 @@ urlpatterns = [
     path('contact-support/', contact_support, name='contact-support'),
     path('it-help-desk/', it_help_desk, name='it-help-desk'),
     path('student-services/', student_services, name='student-services'),
-
+    path('contacts/', contact_details, name='contact-details'),
+    path('financial-aid/', financial_aid, name='financial-aid'),
+    path('health-services/', health_services, name='health-services'),
+    path('career-services/', career_services, name='career-services'),
+    path('advisors/', advisors, name='advisors'),
+    
     
 ]

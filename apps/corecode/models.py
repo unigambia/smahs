@@ -132,6 +132,7 @@ class CourseMaterialQuerySet(models.QuerySet):
 
     def get_other_materials(self):
         return self.filter(type="others")
+    
 
 class CourseMaterialManager(models.Manager):
     def get_queryset(self):

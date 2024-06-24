@@ -8,7 +8,7 @@ Written in Django
 Enter the following commands into your terminal :
 
  ```
-    git clone https://github.com/UTG-IT/smahs.git
+    git clone https://github.com/unigambia/smahs.git
     cd smahs
     python3 -m venv venv
     source venv/bin/activate
